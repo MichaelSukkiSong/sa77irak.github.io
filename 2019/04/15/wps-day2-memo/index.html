@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day2 —–이거 알면 좋은 S/W 엔지니어(by 넥슨)——- Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가) Stack / Heap (메모리 레이아웃 알고 있느냐) Process/ Thread (OS &amp;amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니) Call b">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:58:56.249Z">
+<meta property="og:updated_time" content="2019-04-15T11:22:18.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day2_memo">
 <meta name="twitter:description" content="day2 —–이거 알면 좋은 S/W 엔지니어(by 넥슨)——- Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가) Stack / Heap (메모리 레이아웃 알고 있느냐) Process/ Thread (OS &amp;amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니) Call b">
@@ -105,8 +105,8 @@
 <p>a=10</p>
 <p>a=20 할 시,</p>
 <p>a-&gt;10          (10)</p>
-<pre><code>20      a-&gt;20
-</code></pre><p>상수는 immutable임. C에서의 box model이 아님.값 자체가 바뀌는게 아님. 20을 치면 다른 곳에 20이 채워지고 a가 20을 가리킴</p>
+<p>   20      a-&gt;20</p>
+<p>상수는 immutable임. C에서의 box model이 아님.값 자체가 바뀌는게 아님. 20을 치면 다른 곳에 20이 채워지고 a가 20을 가리킴</p>
 <p>list = [1,2,3,”hi”] 이거 경우 파이썬에서는,</p>
 <p>1,2,3의 경우 근접해 있을 수 있으나, ‘hi’는 동떨어져서 저장될 수도 있음. list=[<em>(포인터),</em>,<em>,</em>] 이런 형태에서 각각의 포인터는 값을 가리킴.</p>
 <p>========================================================================================</p>
@@ -153,13 +153,8 @@
 <p>8%3</p>
 <p>#산술연산자: +,-,<em>,**,/,//,%,+=,-=,</em>=,**=,</p>
 <p>#routine, subroutine, procedure, function</p>
-<p>def func_name(parameter1, paramwter2, …):</p>
-<pre><code>local_var=연산
-
-ret = ..
-
-return ret
-</code></pre><p>함수 호출시 저장되는? stack frame</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func_name(parameter1, paramwter2, ...):</span><br><span class="line"></span><br><span class="line">	local_var=연산</span><br><span class="line"></span><br><span class="line">	ret = ..</span><br><span class="line"></span><br><span class="line">	return ret</span><br></pre></td></tr></table></figure>
+<p>함수 호출시 저장되는? stack frame</p>
 <p>g_var = 20</p>
 <p>def func(val):</p>
 <pre><code>val += 100
@@ -230,7 +225,7 @@ for i in range(n-1):
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjui8yu6o000dj52ihof759l7" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjui9rw3r000egh2ir7s8mvt5" class="article-share-link">Share</a>
       
       
     </footer>
