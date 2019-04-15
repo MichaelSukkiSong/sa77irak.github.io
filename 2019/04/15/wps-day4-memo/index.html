@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day4 수 문자–&amp;gt;수     unicode     asci 수-정수-&amp;gt;양수    음수-&amp;gt;2의 보수    실수-&amp;gt;고정소수점 (잘 안씀,우리는 안할거임)    부동 소수점(floating,어려움,이거 배울것임) ###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:59:00.429Z">
+<meta property="og:updated_time" content="2019-04-15T11:46:55.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day4_memo">
 <meta name="twitter:description" content="day4 수 문자–&amp;gt;수     unicode     asci 수-정수-&amp;gt;양수    음수-&amp;gt;2의 보수    실수-&amp;gt;고정소수점 (잘 안씀,우리는 안할거임)    부동 소수점(floating,어려움,이거 배울것임) ###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?">
@@ -93,13 +93,7 @@
 <p>###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?).</p>
 <p>#fist class function(일급 시민 함수? ㅋㅋ)<br>1.함수를 파라미터(argument=parameter)로 사용할 수 있는가<br>2.함수를 변수(variable)로 사용할 수 있는가<br>3.함수를 리턴(return)할 수 있는가</p>
 <p>3가지를 모두만족해야 first class function이라 함(MDN 사이트?)</p>
-<p>1.파라미터 조건은 만족할까?(파이썬이라는 언어는)<br>def f(a,b):<br>    return a+b</p>
-<p>def g(func, c, d):<br>    return func(c,d)</p>
-<p>a=10<br>b=20<br>g(f,a,b)</p>
-<p>2.변수 조건은 만족할까?(파이썬이라는 언어는)<br>f_var=f<br>f_var(20,30)</p>
-<p>3.리턴 조건은 만족할까?(파이썬이라는 언어는)<br>def create_calc(kind):<br>    if kind=’add’:<br>        def add(a,b):<br>            return a+b<br>        return add<br>    else kind == ‘sub’:<br>        def sub(a,b):<br>            return a-b<br>        return sub</p>
-<p>f = create_calc(‘add’)<br>f(10,20)</p>
-<p>f = create_calc(‘sub’)<br>f(10,20)</p>
+<p>1.파라미터 조건은 만족할까?(파이썬이라는 언어는)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def f(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">def g(func, c, d):</span><br><span class="line">	return func(c,d)</span><br><span class="line"></span><br><span class="line">a=10</span><br><span class="line">b=20</span><br><span class="line">g(f,a,b)</span><br></pre></td></tr></table></figure><br>2.변수 조건은 만족할까?(파이썬이라는 언어는)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f_var=f</span><br><span class="line">f_var(20,30)</span><br></pre></td></tr></table></figure><br>3.리턴 조건은 만족할까?(파이썬이라는 언어는)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def create_calc(kind):</span><br><span class="line">	if kind=&apos;add&apos;:</span><br><span class="line">		def add(a,b):</span><br><span class="line">			return a+b</span><br><span class="line">		return add</span><br><span class="line">	else kind == &apos;sub&apos;:</span><br><span class="line">		def sub(a,b):</span><br><span class="line">			return a-b</span><br><span class="line">		return sub</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = create_calc(&apos;add&apos;)</span><br><span class="line">f(10,20)</span><br><span class="line"></span><br><span class="line">f = create_calc(&apos;sub&apos;)</span><br><span class="line">f(10,20)</span><br></pre></td></tr></table></figure></p>
 <p>###수</p>
 <p>정수-양의 정수-&gt;자연수<br>       0<br>      음의 정수</p>
 <p>1.기수(기본이 되는 수, radix=10,2,16같은 것)법</p>
@@ -141,17 +135,15 @@
 <p>23의 9의 보수 = 76 </p>
 <p>10의 보수= 어떤 숫자를 더했을 때 자릿수가 바뀌는 수</p>
 <p>1의 보수는 = 그냥 반전시켜주면 됨.</p>
-<p>###하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)</p>
-<p>high-level<br>language       </p>
+<p>###하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)<br><blockquote><p>high-level<br>language       </p>
 <pre><code>C언어  
 -----------------------
 </code></pre><p>low-level<br>language     assembly lan  -&gt; cpu에 있는 Reg이름을 알아야 코딩가능</p>
+</blockquote></p>
 <p>low-level은 hardware에 의존적인 언어<br>high-level에서는 제조사가 제공한 컴파일러만 있으면 됨.하드웨어 비의존적.즉 하드웨어가 가려지고 C언어 같이 로직만 짜면 됨. 즉 하드웨어 추상화.<br>C언어부터는 하드웨어 추상화가 한번 일어났기에 high level임. high level중에선 가장 낮은 단계.하드웨어까진 아니지만 자료형을 알아야함.즉, 메모리랑 바인딩 되어있음.<br>python,JS으로 넘어오면 추상화가 더 되어있음. 자료형 즉 메모리 부분을 몰라도 되는 단계</p>
-<p>#linear search</p>
-<p>li = [5,7,2,8,3,9,1]<br>def linear_search(li, target):<br>    ‘’’<br>    linear_search(li, target) -&gt; idx<br>    반환값은 target이 있다면 target의 인덱스<br>        target이 없다면 None을 반환<br>    ‘’’’<br>    for i in range(len(li)):<br>        if li[i] ==target:<br>            return i<br>    return None</p>
+<p>#linear search<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">li = [5,7,2,8,3,9,1]</span><br><span class="line">def linear_search(li, target):</span><br><span class="line">	&apos;&apos;&apos;</span><br><span class="line">	linear_search(li, target) -&gt; idx</span><br><span class="line">	반환값은 target이 있다면 target의 인덱스</span><br><span class="line">		target이 없다면 None을 반환</span><br><span class="line">	&apos;&apos;&apos;&apos;</span><br><span class="line">	for i in range(len(li)):</span><br><span class="line">		if li[i] ==target:</span><br><span class="line">			return i</span><br><span class="line">	return None</span><br></pre></td></tr></table></figure></p>
 <p>###BST(binary search tree)-&gt;interface는 동일한데 훨씬 빠름(알고리즘의 성능차이 분석하는 공부임)</p>
-<p>#입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다.</p>
-<p>def binary_search(li, target):<br>    ‘’’<br>    binary_search(li, target) -&gt; idx<br>    반환값은 target이 있다면 target의 인덱스<br>        target이 없다면 None을 반환<br>    ‘’’’<br>    pass</p>
+<p>#입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def binary_search(li, target):</span><br><span class="line">	&apos;&apos;&apos;</span><br><span class="line">	binary_search(li, target) -&gt; idx</span><br><span class="line">	반환값은 target이 있다면 target의 인덱스</span><br><span class="line">		target이 없다면 None을 반환</span><br><span class="line">	&apos;&apos;&apos;&apos;</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure></p>
 <p>##알고리즘의 성능<br>기준은 상대 시간 -&gt; 데이터의 개수(n)에 따른 연산(dominant 연산:일반적으로 비교 연산) 횟수</p>
 <p>x축:데이터의 개수( n )<br>y축:연산횟수( T(n) )</p>
 <p>알고리즘의 성능은 최악의 경우를 통해 표현함(이 알고리즘은 최악의 경우에도 이정도는 기능하더라 개념임)<br>최선의 경우<br>평균의 경우<br>최악의 경우</p>
@@ -159,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjui9rw3z000qgh2izqwayumy" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuiasnm6000p182ixgds60fh" class="article-share-link">Share</a>
       
       
     </footer>

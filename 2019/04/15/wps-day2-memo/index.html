@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day2 —–이거 알면 좋은 S/W 엔지니어(by 넥슨)——- Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가) Stack / Heap (메모리 레이아웃 알고 있느냐) Process/ Thread (OS &amp;amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니) Call b">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T11:22:18.778Z">
+<meta property="og:updated_time" content="2019-04-15T11:41:05.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day2_memo">
 <meta name="twitter:description" content="day2 —–이거 알면 좋은 S/W 엔지니어(by 넥슨)——- Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가) Stack / Heap (메모리 레이아웃 알고 있느냐) Process/ Thread (OS &amp;amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니) Call b">
@@ -116,21 +116,9 @@
 <p>False</p>
 <p>None</p>
 <p>“”</p>
-<blockquote>
-<blockquote>
-<blockquote>
 <p>bin(0b1010 } 0b1100)</p>
-</blockquote>
-</blockquote>
-</blockquote>
 <p>XOR</p>
-<blockquote>
-<blockquote>
-<blockquote>
 <p>bin(0b1100 ^ 0b1010)</p>
-</blockquote>
-</blockquote>
-</blockquote>
 <p>shift operator(엄청 빠름)</p>
 <p>1&lt;&lt;1                                0001(2)  왼쪽으로 하나 밈</p>
 <p>2</p>
@@ -155,10 +143,8 @@
 <p>#routine, subroutine, procedure, function</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func_name(parameter1, paramwter2, ...):</span><br><span class="line"></span><br><span class="line">	local_var=연산</span><br><span class="line"></span><br><span class="line">	ret = ..</span><br><span class="line"></span><br><span class="line">	return ret</span><br></pre></td></tr></table></figure>
 <p>함수 호출시 저장되는? stack frame</p>
-<p>g_var = 20</p>
-<p>def func(val):</p>
-<pre><code>val += 100
-</code></pre><p>func(g_var)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">g_var = 20</span><br><span class="line"></span><br><span class="line">def func(val):</span><br><span class="line"></span><br><span class="line">	val += 100</span><br></pre></td></tr></table></figure>
+<p>func(g_var)</p>
 <p><em>**</em>stack frame의 개념(call by ref, call by val 관련)</p>
 <p>global 변수 —–&gt;20을 가리키고 있음</p>
 <p>함수 호출시 stack frame이 생김. 그 안에 val이 생김</p>
@@ -167,52 +153,16 @@
 <p>func(val)——-&gt;120</p>
 <p>g_var———-&gt;20  글로벌은 얘를 가리킴</p>
 <p><a href="http://pythontutor.com/visualize.html#mode=edit" target="_blank" rel="noopener">http://pythontutor.com/visualize.html#mode=edit</a> 참조</p>
-<p>g_var=20</p>
-<p>def func():</p>
-<pre><code>global g_var
-
-g_var+=30
-</code></pre><p>func(g_var)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g_var=20</span><br><span class="line"></span><br><span class="line">def func():</span><br><span class="line"></span><br><span class="line">	global g_var</span><br><span class="line"></span><br><span class="line">	g_var+=30</span><br></pre></td></tr></table></figure>
+<p>func(g_var)</p>
 <p>#함수에서의 namespace 개념</p>
-<p>a=10</p>
-<p>def outer():</p>
-<pre><code>b=20
-
-def inner1():
-
-    c=30
-
-    def inner2():
-
-        d=40
-
-        nonlocal b
-
-        b=50
-
-        print(b)  #값을 변경하지 않고 접근만 함 print는
-
-    inner2()
-
-    print(b)
-
-inner1()
-</code></pre><p>outer()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line"></span><br><span class="line">def outer():</span><br><span class="line"></span><br><span class="line">	b=20</span><br><span class="line"></span><br><span class="line">	def inner1():</span><br><span class="line"></span><br><span class="line">		c=30</span><br><span class="line"></span><br><span class="line">		def inner2():</span><br><span class="line"></span><br><span class="line">			d=40</span><br><span class="line"></span><br><span class="line">			nonlocal b</span><br><span class="line"></span><br><span class="line">			b=50</span><br><span class="line"></span><br><span class="line">			print(b)  #값을 변경하지 않고 접근만 함 print는</span><br><span class="line"></span><br><span class="line">		inner2()</span><br><span class="line"></span><br><span class="line">		print(b)</span><br><span class="line"></span><br><span class="line">	inner1()</span><br><span class="line"></span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
 <p>non local을 찾아갈 때 안쪽에서부터 바깥쪽으로 하나씩 찾아감. </p>
 <p>nonlocal과 global의 차이?</p>
 <p>==================================================</p>
 <p>#bubble sort</p>
-<p>def bubble_sort(li):</p>
-<pre><code>n = len(li)
-
-for i in range(n-1):
-
-    for j in range(n-1-i):
-
-        if li[j] &gt; li[j+1]:
-
-            li[j], li[j+1] = li[j+1], li[j]
-</code></pre><p>n=4일 때,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def bubble_sort(li):</span><br><span class="line"></span><br><span class="line">	n = len(li)</span><br><span class="line"></span><br><span class="line">	for i in range(n-1):</span><br><span class="line"></span><br><span class="line">		for j in range(n-1-i):</span><br><span class="line"></span><br><span class="line">			if li[j] &gt; li[j+1]:</span><br><span class="line"></span><br><span class="line">				li[j], li[j+1] = li[j+1], li[j]</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<p>n=4일 때,</p>
 <p>총 3(=4-1)번 돌아야 함</p>
 <pre><code>j의 값
 </code></pre><p>1번째-&gt;3번 0 1 2</p>
@@ -225,7 +175,7 @@ for i in range(n-1):
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjui9rw3r000egh2ir7s8mvt5" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuiasnly000d182ij3kn9tsm" class="article-share-link">Share</a>
       
       
     </footer>
