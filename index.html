@@ -65,6 +65,409 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wps-day3-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day3-memo/" class="article-date">
+  <time datetime="2019-04-15T10:34:35.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day3-memo/">wps_day3_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day3</p>
+<p>프로그래머는 추상화를 한다(abstraction)</p>
+<p>-&gt;절차지향(procedual-oriented)사실 절차가 아니라 프로시저-지향이 맞음.</p>
+<p>procedure은 function을 의미. </p>
+<p>-&gt;프로그램이 커지면서 객체지향(OOP)생김.</p>
+<p>둘은 추상화를 어떻게 할것인가의 관점임.</p>
+<p>추상화란 interface(함수signature)와 implementation(내부구현)을 분리한 것.</p>
+<p>interface(함수 signature)는 크게 3가지로 구성되어있는데</p>
+<pre><code>함수 이름(함수의 기능을 명확하게 표현)
+
+매개변수(무엇을 인자로 받을 것인가)
+
+결과값(리턴을 모 할 것인가,어떤 결과를 반환할 것인가)
+</code></pre><p>implementation은 def쓰고 막 짜는거</p>
+<p>interface는 같은데 내부구현은 다를 수 있음. list.sort() -&gt;1.bubble sort  2. quick sort</p>
+<p>###가위바위보게임</p>
+<p>def func(a,b):</p>
+<pre><code>&quot;&quot;&quot;
+
+func(integer, integer) -&gt; integer
+
+두 값을 인자로 받고
+
+결과는 그 두 값을 더한 값
+
+&quot;&quot;&quot;
+
+return a+b
+</code></pre><p>help(func) 하면 설명이 떠줌.</p>
+<p>input_data = input(“무엇이든 입력하세용: “)</p>
+<p>data = int(input(“숫자를 입력하세요: “))</p>
+<p>def get_player_choice():</p>
+<pre><code>&quot;&quot;&quot;
+
+get_player_choice()-&gt;string
+
+string : {&apos;바위&apos;, &apos;가위&apos;, &apos;보&apos;|
+
+결과값이 위 세 값 중에 하나임을 보장한다
+
+&quot;&quot;&quot;
+
+pass
+</code></pre><p>def get_computer_choice():</p>
+<pre><code>&quot;&quot;&quot;
+
+get_computer_choice() -&gt;string
+
+string = {&apos;바위&apos;, &apos;가위&apos;, &apos;보&apos;}
+
+&quot;&quot;&quot;
+</code></pre><p>def who_wins(player, computer):</p>
+<pre><code>&quot;&quot;&quot;
+
+who_wins(player, computer) -&gt; string
+
+string = {&apos;player&apos;, &apos;computer&apos;, &apos;draw&apos;}
+
+&quot;&quot;&quot;
+
+pass
+</code></pre><p>who_wins(get_player_choice(), get_computer_choice())</p>
+<p>def play_one():</p>
+<pre><code>&quot;&quot;&quot;
+
+play_one() -&gt; string
+
+string = {&apos;player&apos;, &apos;computer&apos;}
+
+한판에 대해서
+
+플레이어가 이기면 &quot;플레이어 승&quot; 출력
+
+컴퓨터가 이기면 &quot;컴퓨터 승&quot; 출력
+
+비기면 &quot;무승부&quot;(무승부면 while문 또 돔)
+
+&quot;&quot;&quot;
+</code></pre><p>#win_list = [‘player’, ‘player’, ‘computer’]</p>
+<p>win_list=[]</p>
+<p>for _ in range(3):</p>
+<pre><code>win_list.append(play_one())
+
+if win_list.count(&apos;player&apos;) &gt;=2
+
+    print(&apos;플레이어 승&apos;)
+
+    break
+
+elif win_list.count(&apos;computer&apos;)&gt;=2:
+
+    print(&apos;컴퓨터 승&apos;)
+
+    break
+</code></pre><p>def play():</p>
+<pre><code>user_num_games=int(input(&quot;1:3판2선승, 2: 5판3선승: &quot;))
+
+while user_num_games!=1 and user_num_games!=2:
+
+    user_num_games=int(input(&quot;다시 입력해주세요 : &quot;))
+
+
+
+num_games= 3 if user_num_games==1 else 5
+</code></pre><p>##packing, unpacking</p>
+<p>#packing</p>
+<p>container = 1,2,3,4,5</p>
+<p>type(container)</p>
+<p>#unpacking</p>
+<p>a, *b = container</p>
+<p>a,b,*c = container</p>
+<p>##함수에서 가변인자 받는 방법</p>
+<p>def sum_int(<em>args)   —&gt; 이때의 </em>기호는 가변인자라는 것을 의미.</p>
+<pre><code>print(type(args))
+</code></pre><p>sum_int(1,2,3,4,5)  —&gt;여러개 넣으면 튜풀로 묶어준다 즉 packing 해준다.</p>
+<p>def sum_int(*args):</p>
+<pre><code>s=0
+
+for arg in args:
+
+    s+=arg
+
+return s
+</code></pre><p>#list를 바로 나누어서 튜풀로 unpacking 해주기</p>
+<p>li=[3,4,5,6]</p>
+<p>sum_int(*li)</p>
+<p>#모든 인자 거의 다 받기 가능 keywordargs</p>
+<p>def sum_int(*args, **kwargs):     </p>
+<pre><code>print(args)
+
+print(kwargs)
+</code></pre><p>sum_int(1,2,3,age=100,weight=100)</p>
+<p>###decorator할 때 중요한 문법임 이거##</p>
+<p>li=[1,2,3,4,5]</p>
+<p>dic={‘a’:1, ‘b’:2}</p>
+<p>sum_int(<em>li, **dic)   —&gt;호출할 때 </em>이 기호는 unpacking 의미</p>
+<p>###삼항 연산자</p>
+<p>a=10</p>
+<p>if a&gt;=10:</p>
+<pre><code>print(&apos;good!&apos;)
+</code></pre><p>else:</p>
+<pre><code>print(&apos;bad!&apos;)
+</code></pre><p>이거를 한줄로…</p>
+<p>print(‘good’) if a&gt;=10 else print(‘bad!’)</p>
+<p>###continue문</p>
+<p>###recursion(재귀함수)</p>
+<p>1.자기가 자기 자신을 호출하는 함수</p>
+<p>2.기저 조건(base case)(종료 조건,탈출조건)</p>
+<p>def func(num):</p>
+<pre><code>if num &lt;=0:           #탈출조건
+
+    return
+
+func(num-1)
+</code></pre><p>func(5)</p>
+<p>호출 시 stack이 터짐–&gt;stackoverflow</p>
+<p>#메모리 그림 찾아보기</p>
+<p>###factorial(계승) 0!=1 1!=1     5!</p>
+<p>5!=5*4!</p>
+<p>4!=4*3!</p>
+<p>3!=3*2!</p>
+<p>2!=2*1!</p>
+<p>1!=1</p>
+<p>1.점화식 만들어야. -&gt;fac(num)=fac(num-1)*num</p>
+<p>2.기저 조건 -&gt;if num==1 then return 1</p>
+<p>def factorial(num):</p>
+<pre><code>if num ==1:
+
+    return 1
+
+return factorial(num-1)*num
+</code></pre><p>for num in range(1,10):</p>
+<pre><code>print(factorial(num))
+</code></pre><p>##fibonacci</p>
+<p>1  1  2   3   5   8  </p>
+<p>[1][2][3] [4] [5] [6]ㄹ</p>
+<p>1.점화식: fibo(n)= fibo(n-2)+fibo(n-1)</p>
+<p>2.기저 조건: if n==1 or n==2 then return 1</p>
+<p>def fib(n):</p>
+<pre><code>if n==1 or n==2
+
+    return 1
+
+return fib(n-2)+fib(n-1)
+</code></pre><p>##하노이(  |   |   | )</p>
+<p>hanoi(num, ‘A’,’B’,’C’)</p>
+<p>hanoi(4, ‘A’, ‘B’, ‘C’)</p>
+<p>hanoi(3, ‘A’, ‘C’, ‘B’)</p>
+<p>hanoi(3, ‘B’, A, ‘C’)</p>
+<p>기저 조건은 쟁반이 하나일 때 A에서 C로</p>
+<p>-&gt;재귀 함수의 관례적 문제임 알아두어요~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjui82loy0004ln2irozuilfm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day2-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day2-memo/" class="article-date">
+  <time datetime="2019-04-15T10:32:47.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day2-memo/">wps_day2_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day2</p>
+<p>—–이거 알면 좋은 S/W 엔지니어(by 넥슨)——-</p>
+<p>Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가)</p>
+<p>Stack / Heap (메모리 레이아웃 알고 있느냐)</p>
+<p>Process/ Thread (OS &amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니)</p>
+<p>Call by Value / Call by Reference (함수에 대해 잘 아느냐, python은 call by obj ref))</p>
+<p>Native Code (C와 C++ 우리는 안함)</p>
+<p>MVC Architecture (design이야기, Model data, View, Controler //django: MTV)</p>
+<p>Write simple text-based games</p>
+<p>웹dev도 메모리에 대해서 알자</p>
+<p>========================================================================================</p>
+<p>dictionary 구현 방법:</p>
+<p>1.BST</p>
+<p>2.hash table (python은 이걸로 구현함)</p>
+<p>========================================================================================</p>
+<p>파이썬은</p>
+<p>a=10</p>
+<p>a=20 할 시,</p>
+<p>a-&gt;10          (10)</p>
+<pre><code>20      a-&gt;20
+</code></pre><p>상수는 immutable임. C에서의 box model이 아님.값 자체가 바뀌는게 아님. 20을 치면 다른 곳에 20이 채워지고 a가 20을 가리킴</p>
+<p>list = [1,2,3,”hi”] 이거 경우 파이썬에서는,</p>
+<p>1,2,3의 경우 근접해 있을 수 있으나, ‘hi’는 동떨어져서 저장될 수도 있음. list=[<em>(포인터),</em>,<em>,</em>] 이런 형태에서 각각의 포인터는 값을 가리킴.</p>
+<p>========================================================================================</p>
+<p>dictionary - view vs list의 차이 느끼기</p>
+<p>========================================================================================</p>
+<p>파이썬에서 false로 간주하는 객체</p>
+<p>False</p>
+<p>None</p>
+<p>“”</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>bin(0b1010 } 0b1100)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>XOR</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>bin(0b1100 ^ 0b1010)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>shift operator(엄청 빠름)</p>
+<p>1&lt;&lt;1                                0001(2)  왼쪽으로 하나 밈</p>
+<p>2</p>
+<p>1&lt;&lt;2</p>
+<p>4</p>
+<p>1&lt;&lt;3</p>
+<p>8</p>
+<p>10&gt;&gt;1</p>
+<p>5</p>
+<p>10&gt;&gt;2</p>
+<p>2</p>
+<p>#맨 마지막에 참조한 객체를 반환</p>
+<p>[1,2] or []</p>
+<p>[1,2] or [3,4]</p>
+<p>[1,2] and [3,4]</p>
+<p>[] and [1,2]</p>
+<p>#break문</p>
+<p>만나면 while,for문에서 바로 빠져나옴</p>
+<p>#모듈러 연산자</p>
+<p>8%3</p>
+<p>#산술연산자: +,-,<em>,**,/,//,%,+=,-=,</em>=,**=,</p>
+<p>#routine, subroutine, procedure, function</p>
+<p>def func_name(parameter1, paramwter2, …):</p>
+<pre><code>local_var=연산
+
+ret = ..
+
+return ret
+</code></pre><p>함수 호출시 저장되는? stack frame</p>
+<p>g_var = 20</p>
+<p>def func(val):</p>
+<pre><code>val += 100
+</code></pre><p>func(g_var)</p>
+<p><em>**</em>stack frame의 개념(call by ref, call by val 관련)</p>
+<p>global 변수 —–&gt;20을 가리키고 있음</p>
+<p>함수 호출시 stack frame이 생김. 그 안에 val이 생김</p>
+<p>즉,</p>
+<p>메모리 레이아웃</p>
+<p>func(val)——-&gt;120</p>
+<p>g_var———-&gt;20  글로벌은 얘를 가리킴</p>
+<p><a href="http://pythontutor.com/visualize.html#mode=edit" target="_blank" rel="noopener">http://pythontutor.com/visualize.html#mode=edit</a> 참조</p>
+<p>g_var=20</p>
+<p>def func():</p>
+<pre><code>global g_var
+
+g_var+=30
+</code></pre><p>func(g_var)</p>
+<p>#함수에서의 namespace 개념</p>
+<p>a=10</p>
+<p>def outer():</p>
+<pre><code>b=20
+
+def inner1():
+
+    c=30
+
+    def inner2():
+
+        d=40
+
+        nonlocal b
+
+        b=50
+
+        print(b)  #값을 변경하지 않고 접근만 함 print는
+
+    inner2()
+
+    print(b)
+
+inner1()
+</code></pre><p>outer()</p>
+<p>non local을 찾아갈 때 안쪽에서부터 바깥쪽으로 하나씩 찾아감. </p>
+<p>nonlocal과 global의 차이?</p>
+<p>==================================================</p>
+<p>#bubble sort</p>
+<p>def bubble_sort(li):</p>
+<pre><code>n = len(li)
+
+for i in range(n-1):
+
+    for j in range(n-1-i):
+
+        if li[j] &gt; li[j+1]:
+
+            li[j], li[j+1] = li[j+1], li[j]
+</code></pre><p>n=4일 때,</p>
+<p>총 3(=4-1)번 돌아야 함</p>
+<pre><code>j의 값
+</code></pre><p>1번째-&gt;3번 0 1 2</p>
+<p>2번째-&gt;2번 0 1</p>
+<p>3번째-&gt;1번 0</p>
+<p>i=0   j=3  = 4-1-0</p>
+<p>i=1   j=2  = 4-1-1</p>
+<p>i=2   j=1  = 4-1-2</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjui82low0002ln2i40lwxbqr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wps-day1-memo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/15/wps-day1-memo/" class="article-date">
@@ -97,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjui7rab000023y2irsh9jjbt" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjui82loy0003ln2ivmpfme1c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/04/hello-world/" data-id="cjui7raau00003y2insfmdnsc" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/04/hello-world/" data-id="cjui82lov0001ln2ii1zkud32" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/03/My-new-hexo-post/" data-id="cjui7raay00013y2iao8ta7c2" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/03/My-new-hexo-post/" data-id="cjui82lor0000ln2iw1qi9bzi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -220,6 +623,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day3-memo/">wps_day3_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day2-memo/">wps_day2_memo</a>
+          </li>
         
           <li>
             <a href="/2019/04/15/wps-day1-memo/">wps_day1_memo</a>
