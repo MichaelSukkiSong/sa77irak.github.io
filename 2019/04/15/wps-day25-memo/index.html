@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day25_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day25 ###네트워크 3/3 server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day25_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day25-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day25 ###네트워크 3/3 server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:48.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day25_memo">
+<meta name="twitter:description" content="day25 ###네트워크 3/3 server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day25-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day25-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:11.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day25_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day25</p>
+<p>###네트워크 3/3</p>
+<p>server</p>
+<p>serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!<br>serv.bind(add) 서버의 IP:port<br>serv.listen(back log num of unaccepted request))<br>data sock, clnt_addr=serv.accept<br>data, sock -&gt;는 socket 2 -&gt;데이터 통신용 소켓! 클라이언트랑 통신!</p>
+<p>client</p>
+<p>clnt=socket()</p>
+<p>connect() </p>
+<p>data socket ————TCP connection ———–&gt; clnt</p>
+<p>connect() 의 반환시점은 connect 완성 시점이 아니고 request queue에 등록이 될 때. 즉 enqueue가 될 때임.(듣고 잊어)</p>
+<p>datasocket.send()                                             clnt.send()<br>datasocket.recv()                                              clnt.recv()</p>
+<p>clnt의 ip와 port는 Os가 줌. Ip는 호스트가 넘기고 포트는 랜덤임.<br>처음 만든 serv를 listen socket이라 함.</p>
+<p>Concurrency programming개념이 들어오지. 한명이 블로킹 걸려 있는데 나머지 애들은 데이터를 주고 받아야 하니까. 즉 listen socket이 accept()를 통해 받는데 잠시 블로킹 걸려 있는 동안 나머지 clnt1, clny2,…이것들이 data socket 1 , data socket2 랑 주고 받아야 하지.<br>Clnt 1이 연결할 동안 clnt2가 들어오면  Request queue에 들어가서 기다리다가 후에 data socket 2가 생기면서 data socket이랑 clnt가 주고 받음.</p>
+<p>concurrency programming을 위해,<br>1.multithreading<br>2.multiprocessing<br>3.I/O multiplexing → select() 함수 →system call , event driven 방식이라 함.</p>
+<p>UDP socket programming</p>
+<p>서버단</p>
+<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import socket<br>serv=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>serv.bind((‘localhost’,3030))<br>data=serv.recvfrom(20)<br>data<br>(b’I am your fater!’, (‘127.0.0.1’, 52201))<br>data, clnt_addrr=serv.recvfrom(20)<br>data<br>b’hey~’<br>serv.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>클라이언트 단</p>
+<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import socket<br>clny=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>clnt=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>serv_addrr=(‘localhost’,3030)<br>clnt.sendto(b’I am your fater!’, serv_addrr)<br>16<br>clnt.sendto(b’hey~’,serv_addrr)<br>4<br>clnt.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Sliding window</p>
+<p>seq#, ack#, window 이 3개를 이용해 flow control을 함.<br>Flow control을 담당하는 애가 seq#, ack#, window 이것들임.</p>
+<p>Client                                                             server</p>
+<p>send buf                                                       send buf<br>recv buf                                                         recv buf</p>
+<p>TCB                                                              TCB<br><a href="s.ip:s.port" target="_blank" rel="noopener">s.ip:s.port</a>                                         &lt;c.ip: c.port&gt;<br>send buf pointer                                 send buf pointer<br>recv buf pointer                                  recv buf pointer</p>
+<p>커널에 있는 버퍼들.<br>TCP connection이 생기면 각 컴퓨터 메모리 안에 TCB 라는 메모리가 생김 즉 구조체가 생김.<br>TCP가 끊어지면 메모리가 날아가지. 그게 소켓의 closed임.</p>
+<p>send buf pointer에는,<br>UNA(UNAcknowledged) :아직 ack#를 받지 않는 애를 의미<br>NXT:  다음번 seq # 들어가 있음.<br>WND: window 크기<br>이게 있고,</p>
+<p>recv buf pointer에는,<br>NXT: 다음번에 받을 상대방의 seq#<br>WND: window 크기 →flow control 에 가장 큰 역할 함.<br>가 들어가 있음.</p>
+<p>Threeway handshaking에서 ISN 다음부터 data쏘기 시작하는데 이제 sliding window 나옴~</p>
+<p>pdf그림은 send buffer의 4가지 상태~</p>
+<p>수신 window와 송신 window는 서로 연동되지.ISN 뿐 아니라.<br>sliding window의 크기를 정하는 주체는 수신 window임.</p>
+<p>*Flow control : TCP의 핵심!<br>데이터 받을 수 있다!-&gt;window크기 늘림<br>데이터 받을 수 없다!→window 크기 줄임</p>
+<p>usuable window:<br>window는 이만큼 받을 수 있어하고 통보를 해준거지. ack를 받지 않더라도 윈도우 크기가 있으니까 일단 얼만큼 받을 수 있는지 알고 보낼 수 있다.</p>
+<hr>
+<p>network.pdf 그림 참조~</p>
+<p>DNS(Domain Name System)(53) : </p>
+<p>domain name  ————–DNS server———–→ IP address<br>google.com                                                                    172.217.26.14</p>
+<p>nslookup google.com</p>
+<p><a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a> 이걸 보고 뒤에서부터 넘김<br>chrome —→  DNS server<br>.com을 관리하는 서버에 물어봄. 그러면 알려줌<br>goole 을 관리하는 서버에 물어봄. 그러면 알려줌<br>www.을 관리하는 서버에 물어봄. 그러면 알려줌</p>
+<p>Nslookup 명령<br>non-authoritative answer의 의미:<br>DNS 서버는 cache로 가득차 잇음. cache를 관리하는 server가 또 있음. 쇼핑몰하고 망해도 남아있기에 난 책임 없어~하는 뜻으로 나는 권한 없어~하는 것.</p>
+<p>*네트워크 관련 추가 명령어:<br>Netstat<br>whois &lt;ip주소&gt;<br>arp</p>
+<p>HTTP(80) :<br>하이퍼텍스트를 전달해준다해서 HTTP. 논문 링크 같은 것. 지금은 더 이상 텍스트만은 아님. 웹에서 데이터를 주고 받을 수 있는 프로토콜이 HTTP. 근간은 그냥 문자열임. 문자열 받아서 encode()하고 decode()하는거.</p>
+<p>Header<br>Msg</p>
+<p>URL<br>URL은 HTTP만 쓰는 건 아니고 인터넷에 떠다니는 자원의 위치를 알려주는 것.</p>
+<p>http:// -&gt;스키마<br>Www →host : 컴퓨터 안의 디렉토리<br>naver.com -&gt;도메인 이름은 IP주소로 바뀜</p>
+<p><a href="https://www.google.com/search?source=hp&amp;ei=Ej2nXKDgC6iUr7wPkYqu0As&amp;q=python&amp;btnK=Google+%EA%B2%80%EC%83%89&amp;oq=python&amp;gs_l=psy-ab.3..35i39l2j0i131l3j0j0i131l2j0l2.3003.3608..3673...0.0..0.112.609.3j3......0....1..gws-wiz.....0._C7GqIrfVk8" target="_blank" rel="noopener">https://www.google.com/search?source=hp&amp;ei=Ej2nXKDgC6iUr7wPkYqu0As&amp;q=python&amp;btnK=Google+%EA%B2%80%EC%83%89&amp;oq=python&amp;gs_l=psy-ab.3..35i39l2j0i131l3j0j0i131l2j0l2.3003.3608..3673...0.0..0.112.609.3j3......0....1..gws-wiz.....0._C7GqIrfVk8</a></p>
+<p>HTTP/1.0 -&gt;일시적 연결</p>
+<p>client가 request문자열을 보내면 server 읽고 해석 후 response를 보내줌.<br>server는 ngnix나 apache같은 애들이 만든 것이 따로 있고 내부에 socket이 엄청 많음.<br>server중에서 http를 담당하는 서버를 웹 서버라 함.<br>어제 서버 하나 만든것.<br>장고를 통해 수많은 서버 중 http를 프로토콜로 가지는 웹서버를 만드는 것.<br>서버도 소켓 프로그래밍을 통해 만든 process.즉 socket으로 가득찬 process가 server.<br>client중에서 웹 클라이언트로 브라우저 즉 크롬을 썼지.<br>HTTP를 준수하는 서버 웹서버<br>HTTP를 준수하는 클라이언트 웹 클라이언트(브라우저)</p>
+<p>request를 날리면 request에 맞추어서 주는 역할을 장고가 함.<br>우리는 웹 어플리케이션 개발자. 서버사이드 프로그래머임 우리는.<br>서버 개발자는 ngnix를 만드는 사람들.</p>
+<p>HTTP/1.1  -&gt;지속적 연결<br>효율적인 캐싱과 프록싱 :<br>cache/proxy 서버: naver가기 전에 앞에 싹 깔아놔서 저장해둔거 바로 주는거일덧<br>proxy중에서 일부가 cache역할을 하는거고, proxy서버는 보안을 위해서 이렇게 앞에다가 깔아두기도 하고 그럼.<br>*컨텐트 협상의 종류<br>-&gt;서버 주도: 한번 주고 받음. 최선 추축. 항상 클리이언트가 원하는 형식 데이터를 받는 것은 아님.<br>-&gt;에이전트 주도:클라이언트가 자원을 고를 수 있다. client가 server한테 목록한번 넘겨봐~그러면 리스트를 줌~그러면 다시 안받아~그러면 다시 알았어~</p>
+<p>HTTP 요청</p>
+<p>메서드<br>get:url이 지정하는 자원을 찾아 클라에 전송(마니 씀)<br>head:get과 같으나 메시지 본문이 없다.. 테스트, 확인 용도<br>post:클라가 임의의 데이터를 서버로 보낸다.(마니 씀)<br>put:<br>delete:지정한 자원을 지우도록 요청<br>trace:클라가 서버에 보낸 요청의 복사본을 돌려받음.</p>
+<p>헤더는 알아야지~</p>
+<p>HTTPS(443) :<br>application 단과 transport단 사이에 SSL라는 보안 암호화 계층 단을 하나 추가한것. 지금은 TLS라는 것으로 진화됨. html만들어서 tcp로 내릴 때 암호화를 막 함. html은 string 문자열일 뿐임. 이 문자열을 암호화 하는 계층을 하나 더 넣는 것. 위로 올릴 때는 암호화 푸는거겠지. Port는 443. open ssl을 통해~ </p>
+<p>다음주 월화 데이터베이스 수요일 정도에 장고 프레임워크를 위한 작은 프레임워크~<br>목금 ~트리까지</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjui8yu6r000ij52i31flnjkx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day26-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day26_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day24-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day24_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

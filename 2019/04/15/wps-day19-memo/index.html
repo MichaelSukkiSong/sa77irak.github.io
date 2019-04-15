@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day19_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day19 ##merge sort필기 참조 ##stack 2개로 queue 만들기queue/queue.py ###iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day19_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day19-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day19 ##merge sort필기 참조 ##stack 2개로 queue 만들기queue/queue.py ###iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:34.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day19_memo">
+<meta name="twitter:description" content="day19 ##merge sort필기 참조 ##stack 2개로 queue 만들기queue/queue.py ###iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day19-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day19-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:52.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day19_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day19</p>
+<p>##merge sort<br>필기 참조</p>
+<p>##stack 2개로 queue 만들기<br>queue/queue.py</p>
+<p>###iterator (day6 메모참조)<br>1) next() 함수에 의해서 값을 하나씩 반환–&gt;next 호출 시점에 데이터를 가져옴<br>2) StopIteration 이 마지막에 떠야함<br>두 가지 조건 만족하면 iterator</p>
+<p>li=[1,2,3,4,5]<br>it=iter(li)<br>type(li)<br>type(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>for e in li:<br>    print(e)    –&gt;이 때 내부적으로 iter가 만들어짐.거기서 하나씩 가져오는거.</p>
+<h2 id="custum-iterator"><a href="#custum-iterator" class="headerlink" title="custum iterator"></a>custum iterator</h2><p>class MyIter:<br>    def <strong>init</strong>(self,li):<br>        self.container=li<br>        self.index=0<br>    def <strong>iter</strong>(self):<br>        return self<br>    def <strong>next</strong>(self):</p>
+<pre><code># 어느 시점에 StopIteration 에러만 넘겨줄 수 있으면 커스터마이징 조건 됨!!
+if self.index &gt;= len(self.container):
+    raise StopIteration
+ret=self.container[self.index]
+self.index+=1
+return ret
+</code></pre><p>it_obj=MyIter([1,2,3,4,5])<br>it=iter(it_obj)<br>type(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)</p>
+<p>**next를 호출하는 순간에 line 하나씩 test.txt(iterator 폴더)에서 가져오기 실습(Myiterator.py)</p>
+<p>class Reader:<br>    def <strong>init</strong>(self, filename):<br>        self.f=open(filename, ‘rt’)<br>    def <strong>iter</strong>(self):<br>        return self<br>    def <strong>next</strong>(self):<br>        line =self.f.readline()<br>        if line:<br>            return line[:-1]<br>        else:<br>            self.f.close()<br>            raise StopIteration        </p>
+<p>reader=Reader(‘test.txt’)<br>it=iter(reader)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)</p>
+<p>###generator<br>asyncio가 generator 기반</p>
+<p>꼭 읽어보기,(귀도 반로썸)<br><a href="http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html" target="_blank" rel="noopener">http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html</a><br>위 글의 강의 버전.(파이썬 튜터 교수님의 강의)<br><a href="https://www.youtube.com/watch?v=gBSdm-v86Qw&amp;list=PLzV58Zm8FuBLnWKpg7XVy3XdTf-1fHjRQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=gBSdm-v86Qw&amp;list=PLzV58Zm8FuBLnWKpg7XVy3XdTf-1fHjRQ</a></p>
+<p>#generator<br>: 함수임! 근데 특수 함수임!<br>: body 안에 yield가 있어야 함.</p>
+<p>def gen():<br>    print(‘gen start’)<br>    yield 1<br>    print(‘kjvkrjl’)<br>    yield 2<br>    print(‘aaaaaaaa’)<br>    yield 3<br>    print(‘g3333atart’)<br>    yield 4<br>    print(‘asdw’)<br>    return ‘done’</p>
+<h1 id="제너레이터를-호출했을-때-generator-객체가-생성됨"><a href="#제너레이터를-호출했을-때-generator-객체가-생성됨" class="headerlink" title="제너레이터를 호출했을 때 generator 객체가 생성됨."></a>제너레이터를 호출했을 때 generator 객체가 생성됨.</h1><p>g=gen()<br>g</p>
+<p>**iterator &gt; generator &lt;–제너레이터는 이터레이터의 부분집합~</p>
+<h1 id="첫번째-next-를-호출하면-이-때-함수가-실행-됨-yield를-만날-떄까지-실행-됨"><a href="#첫번째-next-를-호출하면-이-때-함수가-실행-됨-yield를-만날-떄까지-실행-됨" class="headerlink" title="첫번째 next()를 호출하면 이 때 함수가 실행 됨. yield를 만날 떄까지 실행 됨"></a>첫번째 next()를 호출하면 이 때 함수가 실행 됨. yield를 만날 떄까지 실행 됨</h1><p>next(g)<br>a=next(g)<br>print(a)<br>next(g)<br>next(g)<br>next(g)</p>
+<p>파이썬의 stackframe은 heap에서 조정됨. 따라서 oulive its function call할 수 있음. by 위에 귀도반썸 글<br> this means a Python stack frame can outlive its function call.</p>
+<p>##coroutine function<br>: 함수 실행 도중에 실행 주도권을 다른 함수에 이양 가능하고<br>: “내가 원하는 시점에” 다시 실행 주도권을 가져올 수 있는 함수를 coroutine 함수라 함.<br> (non-preemptive하게 실행 가능)<br>-&gt;주도권을 주고 받을 수 있다는 뜻.<br>-&gt;yield를 만나는 순간 stackframe를 유지한채로 주도권을 다른 함수에 넘김. 양보한다? yield~<br>-&gt;파이썬 coroutine은 구현 기반이 generator<br>-&gt;그럴려면 stackframe이 여러개 있어야 될텐데, 이것은 heap에 저장되어 있기에 가능한 일~</p>
+<h1 id="함수가-끝나면-stopiteration을-반환해야하는데-이-객체의-value라는-instance-member-아래-리턴값을-넣어서-반환함"><a href="#함수가-끝나면-stopiteration을-반환해야하는데-이-객체의-value라는-instance-member-아래-리턴값을-넣어서-반환함" class="headerlink" title="함수가 끝나면 stopiteration을 반환해야하는데, 이 객체의 value라는 instance member 아래 리턴값을 넣어서 반환함."></a>함수가 끝나면 stopiteration을 반환해야하는데, 이 객체의 value라는 instance member 아래 리턴값을 넣어서 반환함.</h1><p>try:<br>    next(g)<br>except StopIteration as exc:<br>    print(exc.value)<br>    pass</p>
+<p>*generator로 피보나치 만들기</p>
+<p>def fibo_gen(n):<br>    a, b = 0, 1<br>    for _ in range(n):<br>        yield a<br>        a, b = b, a + b</p>
+<p>fibo=fibo_gen(10)</p>
+<p>next(fibo)<br>0<br>next(fibo)<br>1<br>next(fibo)<br>1<br>next(fibo)</p>
+<p>for _ in range(10):<br>    print(next(fibo), end=’  ‘)</p>
+<p>***send() 함수 이해 —&gt;next랑 완전 똑같음!!. send안에 데이터를 넘긴다는 것만 다름.</p>
+<p>def gen():<br>    print(‘gen start’)<br>    data1=yield 1<br>    print(f’gen[1] : {data1}’)<br>    data2=yield 2<br>    print(f’gen[2] : {data2}’)<br>    return ‘done’</p>
+<p>g=gen()</p>
+<h1 id="이제-함수-실행을-시작해"><a href="#이제-함수-실행을-시작해" class="headerlink" title="이제 함수 실행을 시작해!!"></a>이제 함수 실행을 시작해!!</h1><p>first=g.send(None)  –&gt;처음 시작할 떄는 일반적으로 None을 던짐.<br>first</p>
+<p>second=g.send(‘world’)<br>second</p>
+<p>print(‘I am your father!’)</p>
+<p>try:<br>    g.send(‘hello’)<br>except StopIteration as exc:<br>    print(exc.value)</p>
+<h3 id="yield-from-문법에-대해서"><a href="#yield-from-문법에-대해서" class="headerlink" title="yield from 문법에 대해서~"></a>yield from 문법에 대해서~</h3><p>def gen():<br>    print(‘gen start’)<br>    data1=yield 1<br>    print(f’gen[1] : {data1}’)<br>    data2=yield 2<br>    print(f’gen[2] : {data2}’)<br>    return ‘done’   # 여기서 리턴 던질 때는 스트링을 던짐</p>
+<h1 id="delegate-위임자"><a href="#delegate-위임자" class="headerlink" title="delegate : 위임자"></a>delegate : 위임자</h1><h1 id="generator이지-yield-들어갔으니-일단"><a href="#generator이지-yield-들어갔으니-일단" class="headerlink" title="generator이지 yield 들어갔으니 일단"></a>generator이지 yield 들어갔으니 일단</h1><h1 id="yield-from-gen-객체-형식의-문법"><a href="#yield-from-gen-객체-형식의-문법" class="headerlink" title="yield from (gen 객체) 형식의 문법"></a>yield from (gen 객체) 형식의 문법</h1><p>def delegate():<br>    g=gen()<br>    print(“start”)<br>    ret=yield from g    # g부터 들어가서 다 조지고 나온다.<br>    print(“end”)<br>    print(f’return value : {ret}’)<br>    return ret  # 여기서는 stopiteration~ 에 value값 리턴</p>
+<p>g=delegate()</p>
+<p>#print(g)</p>
+<p>first=g.send(None)<br>print(first)<br>second=g.send(‘world’)<br>print(second)</p>
+<p>g.send(‘hello’)</p>
+<p>*——-await==yield from———–<br>async 붙이고 await쓰면 await랑 yield from이랑 완전히 같음.</p>
+<p>async def func():<br>    await asyncio.sleep()</p>
+<hr>
+<p>다음주 말쯤..<br>maria DB 깔기 리눅스/윈도우</p>
+<p>내일은..<br>linked list<br>compiler vs interpreter 언어</p>
+<p>git특강 복습 및 계정 관리</p>
+<p>주말에..<br>꼭 읽어보기,(귀도 반로썸)<br><a href="http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html" target="_blank" rel="noopener">http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html</a><br>위 글의 강의 버전.(파이썬 튜터 교수님의 강의)<br><a href="https://www.youtube.com/watch?v=gBSdm-v86Qw&amp;list=PLzV58Zm8FuBLnWKpg7XVy3XdTf-1fHjRQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=gBSdm-v86Qw&amp;list=PLzV58Zm8FuBLnWKpg7XVy3XdTf-1fHjRQ</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day19-memo/" data-id="cjui8yu6n000cj52ith1tdqjg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day20-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day20_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day18-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day18_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day24_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day24 ###네트워크2/2 IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day24_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day24-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day24 ###네트워크2/2 IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:46.264Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day24_memo">
+<meta name="twitter:description" content="day24 ###네트워크2/2 IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day24-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day24-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:08.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day24_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day24</p>
+<p>###네트워크2/2</p>
+<p>IP routing :<br>어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함.</p>
+<p>route table:</p>
+<p>netstat -r</p>
+<p>tcp/ip 완벽가이드(책?)</p>
+<p>TCP<br>신뢰도 높음<br>상호간에 connection 존재<br>패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정 시간 지나면 자동으로 재전송.<br>웬만한 HTTP는 TCP임.</p>
+<p>vsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvsvs</p>
+<p>UDP<br>신뢰도 낮음<br>상호 간 커넥션 없음.<br>패킷을 보내고 수신자가 받았는지 신경 안씀<br>영상(스트리밍 서비스)처럼 화질이 끊기고 품질이 낮더라도 받아서 보는게 좋은 경우 씀. 동영상은 UDP로 보내면 됨.<br>게임 같은 것도 상대방과의 동기화 문제 땜에 UDP해야지~</p>
+<p>장고가 하는 일이 application계층에서의 HTTP에서의 아주 작은 부분이므로 TCP중요~<br>apache ngnix 같은 웹 서버로부터 장고가 만든 web app이 request를 받아서 html을 하나 만들어서 웹서버에 보내주는게 장고가 하는 일임.?</p>
+<p><a href="https://www.w3schools.com/" target="_blank" rel="noopener">https://www.w3schools.com/</a><br>HTML CSS SQL<br>하나당 두번씩 보고 장고 들어갈 것.</p>
+<p>JavaScript는 선택~<br>TCB: 아래의 것들이 메모리로 저장되어 있는 정보 블록<br>(source IP, source port) (dst IP, dst port) 이것들, 즉 소켓쌍이 들어가 있음.<br>send buffer와 receuive buffer에 대한 포인터가 들어가 있음.<br>Window: 받을 수 있는 양을 나타내는 것.</p>
+<p><a href="https://d2.naver.com/helloworld/47667" target="_blank" rel="noopener">https://d2.naver.com/helloworld/47667</a><br>데이터 구조체 앞까지만 읽기~</p>
+<p>인터넷이 안될 때..!<br>1.router가 x<br>2.NIC가 x<br>3.linux(OS)단에 TCP/IP 4계층이 x<br>일수 있겠지.</p>
+<p>3번의 경우는..<br>Ping 127.0.0.1은 loopback(local host=내컴 자체를 의미)이라 하는데 OS 커널 4계층이 잘 되는지 확인하는 핑임. NIC를 고치는게 아님.<br>(외국인 영상 마지막 실습 내용인덧)</p>
+<p>ping 127.0.0.1을 때리면, packet이 리눅스 커널 4계층을 쭉 내려갔다가 다시 돌아왔다. 다시 받았다는 것은 4계층이 잘 동작했다는 것이지. NIC가 있는 device 앞 쪽은 short되어 있음. 따라서 ping을 때렸는데 작동 안했다고 NIC를 바꾸는 일은 절대! 해서 안되겠지! </p>
+<p>1번의 경우는..<br>netstat -r해서 Iptime 주소를 ping해보면 되겠지.<br>Traceroute google.com 은 한번 해봐. 막힌지 아닌지 알수 있겠지.</p>
+<p>Three-way handshaking</p>
+<p>Host 1                                                                      host 2<br>send buffer                                                                 send buffer<br>recv buffer                                                                   recv buffer</p>
+<p>send buffer recv buffer  는 커널이 관리함.<br>소켓마다 send buffer와 recv buffer가 따로 있다.(그냥 이리 알아둬라)</p>
+<p>unicode문자열을 받으면 encode해서 b’’이런식이 되지. 이게 byte string이지.  byte단위로 쏘는 스트링을 byte string b’\   \   \’여기서 하나씩 쏘는거. b’abc’라면 host1의 send buffer에 ‘abc’됨. 그래서 결국 host2의 recv buffer에 ‘abc’가 되는것이 목표지. 그래서 받고 나서 decode하는 과정임. Send buffer에 첫번째 바이트에 부여한 숫자를 ISN(Initial sequence number)이라 함. 예를 들어 1023 같이 ISN 지정. 이 다음은 1024였지만 해커 땜에 랜덤하게 부여됨.<br>host2도 받으면 쏴야하니 send buffer의 ISN는 62523으로 됬데. </p>
+<p>1)host1이 연결하자 ~ 나랑 동기화할래? SYN을 보냄~ 그리고 내 seq#는 1023이야~</p>
+<p>2)host2는 아 그래?내 recv buffer의 첫번째 바이트를 1023으로 초기회 해놓고(이게 동기화,host1의 send buffer는 host2의 recv buffer랑 동기화되겠지.)<br>host2도 보낼 수 있어야하니 send buffer의 ISN을 62523 해놓고 SYN+ACK(ackoledgement) seq#=62523 ack#=1024 보냄. 즉 host1의 recv buffer의 ISN을 초기화 시키는 정보도 주고 1023 다음인 1024도 전달하는거지.</p>
+<p>3)마지막으로 host1은 ack하면서 ack#=62524 를 보냄.</p>
+<p>이게 three-way handshaking. 이 때 데이터를 주는건 아님. 데이터 주기 전 전초 작업 같은 것.</p>
+<p>연결 종료</p>
+<p>client: client에서 크롬을 딱 끊으면 서버인 유툽한테 FIN을 보냄. 즉finish를 보냄. 모든 걸 보내고 finish보낸거니 더이상 send는 못함. receive는 ok임. finish날렸다고 뒤도 안돌아보고 가버리면 안되지. 영상은 다 받아야겠지.<br>Server: 아직 에플리케이션 게속 너한테 보내고 있단 말이야. 야 근데 ack는 알았어! </p>
+<p>Server:야 드뎌 다 보냈어! FIN 보냄.<br>Client:ok!나도 다 받았어~ timeout의 2배만큼 기다림.(why? ack가 유실되면 server는 finish를 재전송해야할수 있기 때문에) 기다렸다가 소켓을 끊어버림.<br>Server:  ack받고 바로 끊어버림.</p>
+<p>커넥션이 열려있다: established 라는 용어로 표현<br>netstat -t -p TCP<br>이러한 일들을 OS 커널에서 일어나는 일들임. Os의 TCP계층.</p>
+<p>소켓 프로그래밍</p>
+<p>서버 단</p>
+<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import socket<br>serv=socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>serv.bind((‘localhost’, 3030))<br>serv.listen()<br>data_sock,clnt_addr=serv.accept()<br>bnum=data_sock.recv(1)<br>bnum<br>b’\x11’<br>n=int.from_bytes(bnum, ‘big’)<br>n<br>17<br>recv_buf=data_sock.recv(17)<br>recv_buf<br>b’I am your father!’<br>msg=recv_buf.decode()<br>msg<br>‘I am your father!’<br>bnum=data_sock.recv(1)<br>bnum<br>b’\x13’<br>n=int.from_bytes(bnum, ‘big’)<br>n<br>19<br>recv_buf=data_sock.recv(n)<br>recv_buf<br>b’Where are you from?’<br>msg=recv_buf.decode()<br>msg<br>‘Where are you from?’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>클라이언트 단</p>
+<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import socket<br>clnt=socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>clnt.connect((‘localhost’, 3030))<br>msg=input(‘# ‘)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="I-am-your-father"><a href="#I-am-your-father" class="headerlink" title="I am your father!"></a>I am your father!</h1><blockquote>
+<blockquote>
+<blockquote>
+<p>msg<br>‘I am your father!’<br>send_buf=msg.encode()<br>send_buf<br>b’I am your father!’<br>n=len(send_buf)<br>n<br>17<br>bnum=n.to_bytes(1, ‘big’)<br>bnum<br>b’\x11’<br>clnt.send(bnum)<br>1<br>clnt.send(send_buf)<br>17<br>msg=input(‘# ‘)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="Where-are-you-from"><a href="#Where-are-you-from" class="headerlink" title="Where are you from?"></a>Where are you from?</h1><blockquote>
+<blockquote>
+<blockquote>
+<p>msg<br>‘Where are you from?’<br>send_buf=msg.encode()<br>send_buf<br>b’Where are you from?’<br>n=len(send_buf)<br>n<br>19<br>bnum=n.to_bytes(1, ‘big)<br>  File “<stdin>“, line 1<br>    bnum=n.to_bytes(1, ‘big)<br>                           ^<br>SyntaxError: EOL while scanning string literal<br>bnum=n.to_bytes(1, ‘big’)<br>clnt.send(bnum)<br>1<br>clnt.send(send_buf)<br>19</stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjui8yu6q000hj52iegu9rb1x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day25-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day25_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day23-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day23_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

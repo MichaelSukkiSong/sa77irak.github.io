@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day7_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day7 ###closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day7_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day7-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day7 ###closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:08.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day7_memo">
+<meta name="twitter:description" content="day7 ###closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day7-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day7-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:10.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day7_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day7</p>
+<p>###closure<br>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
+<p>(중요)###문자와 문자열 -&gt;character set<br>                                  ASCII –&gt;UNICODE –&gt;     utf-8 (웹표준)      &lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!!!!!!<br>                                           utf-16<br>                              utf-32</p>
+<p>##call by value         C로 보여만 줄거임, 면접 단골<br>    call by reference</p>
+<pre><code>call by object reference(좀 어려움,(중요))
+  (call by assignment)
+</code></pre><p>##일주일짜리 프로젝트, 계산기, 스택 하고<br>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
+<p>###closure<br>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
+<p>#은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것<br>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
+<p>my_acnt = account(‘greg’, 5000)<br>your_acnt = account(‘john’, 3000)</p>
+<p>type(my_acnt)</p>
+<p>my_acnt.<strong>name</strong> == your_acnt.<strong>name</strong><br>True</p>
+<p>my_acnt.<strong>name</strong><br>‘change_money’</p>
+<p>my_acnt(1000)     —–&gt;input은 같은데 결과값이 다름.<br>(‘greg’, 6000)</p>
+<p>your_acnt(1000)   —–&gt;input은 같은데 결과값이 다름.<br>(‘john’, 4000)</p>
+<p>-&gt;input + 상태정보에 따라 output이 결정됨. 원래 함수는 input따라 output이 결정되는거였지? 이건 이런면에서 다르다 이거야. 이 개념에 따라서 OOP가 나옴.</p>
+<p>my_acnt(-3000)<br>(‘greg’,3000)</p>
+<p>cells = my_acnt.<strong>closure</strong></p>
+<p>for cell in cells:<br>    print(cell.cell_contents)</p>
+<p>===========================================================================</p>
+<p>#문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</p>
+<p>character set </p>
+<p>character encoding (모스 부호)</p>
+<p>code point</p>
+<p>문자 하나에 매핑된 숫자를 코드 포인트라 함. 그 테이블을 ASCII라 함.<br>7bit로 모든 문자 표현할 수있음.ASCII 코드가 0~127(10)까지 있으니.<br>그래서 1byte면 충분히 저장 가능.<br>char 자료형(C에서)이 나옴. 1byte 자료형</p>
+<p>국가마다 테이블 많아지니..우리 통합 한번하자 해서..UNICODE 나옴</p>
+<p>7bit 부족해? 그러면UNICODE는 2byte면 충분하겠다~ 0x0000 ~ 0xffff</p>
+<p>혹시 모르니까…2byte(16bit) 테이블을 여러개 만들어 놓자~</p>
+<p>2byte 테이블을 17개 만들어 놈~ 실제로 쓰는거 2개..ㅠ</p>
+<p>unicode wiki<br>사이트 맨 아래 BMP(다국어 기본 평면) 그래프 하나만 가지고 거의 씀<br>0000 ~ 0FFF —-&gt;이게 ASCII 들어 있는 곳<br>ASCII가 BMP에 임베디드 된 것임.    </p>
+<p>16bit(2byte) 2진수를 16진수로 표현하면 4(16/4)자리 겠지. 0x_ _ _ _     </p>
+<p>U+0000 ~ U+007f<br>0x           0x   0111 1111</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>hex(ord(‘가’))<br>0xac00</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_0000~0FFF" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_0000~0FFF</a><br><a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF</a></p>
+<p>ASCII는 숫자 그대로 메모리(1byte)에 저장됨.</p>
+<p>unicode의 경우…<br>‘가’–&gt;0xac00 -&gt;2byte니까..메모리에 그대로 하면 안될까?  1010 1100 0000 0000 이렇게..근데 이렇지 않음.<br>평면이 17개 있기에..2번째 평면부터는 최소 3byte있어야 한다. 평면이 17개면 2byte+4bit만 있으면 모든 평면 커버하겠지.</p>
+<p>encoding 방식(메모리에 저장할 떄의 방식) utf-bit란 뜻임.<br>utf-8  —&gt;1byte, 웹표준,<br>utf-16  –&gt;1차 평면 같은 경우(BMP)는 그냥 그대로 이 숫자들을 0,1 로 바꾸어서 쓰지. ac00을 그대로 0,1로 바꾸어서~ 2byte 16 / 4byte 32<br>utf-32   —-&gt;모든 숫자를 다 4byte로</p>
+<hr>
+<p>a = ‘가’<br>b = a.encode(‘utf8’)<br>type(b)</p>
+<p><class 'bytes'><br>b    —-&gt;0xeab080 즉 3바이트</class></p>
+<p>a.encode(‘utf-16’)  —&gt; ac00 가 00ac로 바뀜(little endian)</p>
+<p>*little endian vs big endian<br>1423 사람이 알아보기 쉽게 앞에서부터 읽는걸 걸 big endian라 하고, 1이 most significant bit<br>3241 컴퓨터는 뒤에서부터 하기에 little endian ,1이 most significant bit</p>
+<p>network로 쏠때는 표준으로 big endian으로 쏘자 라고 약속.</p>
+<p>a.encode(‘cp949’) </p>
+<p>-&gt;encoding 방식 (유니코드 부호화 방식)(굉장히 중요) 코드 포인트가 메모리에 저장되는 다양한 방식</p>
+<p>웹 표준은 utf8<br>utf8에서 한글이 어떻게 변환하는지 볼 것.</p>
+<p>a = ‘가’<br>b = a.encode()  —&gt;부호화<br>b</p>
+<p>b.decode()   —&gt;복구화?</p>
+<p>c = a.encode(‘cp949’)<br>c</p>
+<p>c.decode()<br>error</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>try:<br>    d = c.decode()<br>except UnicodeDecodeError:<br>    d=c.decode(‘cp949’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>d<br>‘가’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><em>**</em>utf8은 endianless (가’의 encoding 과정 수업자료 참고)<br>‘가’의 코드 포인트 만들어서 프로토콜에 따라 진행됨.</p>
+<h2 id="https-ko-wikipedia-org-wiki-UTF-8"><a href="#https-ko-wikipedia-org-wiki-UTF-8" class="headerlink" title="https://ko.wikipedia.org/wiki/UTF-8"></a><a href="https://ko.wikipedia.org/wiki/UTF-8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/UTF-8</a></h2><p>함수의 종류(기준: 함수 정의가 아니라 호출에서의 인자(parameter,argument) 전달 방식)</p>
+<p>call by value<br>-&gt;함수 안에서 인자의 값이 변경되어도, 외부의 변수의 값은 변경되지 않는다<br>call by reference<br>-&gt;stack frame 넘나들 수 있음</p>
+<p>call by obj reference</p>
+<p>*immutable<br>def change_value(num, new_num):<br>    num = new_num<br>    print(‘%d in change value’ %num)</p>
+<p>num = 10  —&gt;immutable</p>
+<p>change_value(num,20)</p>
+<h2 id="print-num"><a href="#print-num" class="headerlink" title="print(num)"></a>print(num)</h2><p>*mutable</p>
+<p>li = [1,2,3]  —&gt;mutable<br>def change_elem(li, idx, new_elem):<br>    li[idx] = new_elem<br>    print(li)</p>
+<p>change_elem(li, 1, 100)<br>print(li)        —&gt;call by value는 확실히 아니군.</p>
+<p>###call by object reference<br>      (call by assignment)</p>
+<p>*immutable(상수)<br>할당(assignment) 할 때 바뀜<br>화살표가 바뀜</p>
+<p>*mutable<br>list 같은 것<br>list 내에서의 화살표가 바뀜</p>
+<p>유튜부 동영상이랑 같은 내용</p>
+<hr>
+<p>#reference counter<br>import sys<br>a=1<br>sys.getrefcount(a)  —-&gt;가리키는 숫자를 알 수 있음.</p>
+<hr>
+<p>tu = (1,2,3)<br>def change_elem(tu,a,b,c):<br>    tu = (a,b,c)<br>    print(tu)<br>    return tu</p>
+<p>tu = change_elem(tu, 1,100,2)<br>print(tu)</p>
+<hr>
+<p>##과제</p>
+<p>내일 스택이랑 과제 설명</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjui8yu6w000sj52ic5a2riri" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day8-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day8_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day6-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day6_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

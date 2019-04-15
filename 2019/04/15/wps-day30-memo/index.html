@@ -5,19 +5,19 @@
   
 
   
-  <title>My new hexo post | Sukki&#39;s Home :D</title>
+  <title>wps_day30_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#Wow Incredible!! testing :)">
+  <meta name="description" content="day30 ###트리 CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? #순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My new hexo post">
-<meta property="og:url" content="http://sa77irak.github.io/2019/04/03/My-new-hexo-post/index.html">
+<meta property="og:title" content="wps_day30_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day30-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="#Wow Incredible!! testing :)">
+<meta property="og:description" content="day30 ###트리 CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? #순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:10:20.407Z">
+<meta property="og:updated_time" content="2019-04-15T11:00:00.888Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My new hexo post">
-<meta name="twitter:description" content="#Wow Incredible!! testing :)">
+<meta name="twitter:title" content="wps_day30_memo">
+<meta name="twitter:description" content="day30 ###트리 CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? #순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-My-new-hexo-post" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-wps-day30-memo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/03/My-new-hexo-post/" class="article-date">
-  <time datetime="2019-04-03T03:48:20.000Z" itemprop="datePublished">2019-04-03</time>
+    <a href="/2019/04/15/wps-day30-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:29.000Z" itemprop="datePublished">2019-04-15</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      My new hexo post
+      wps_day30_memo
     </h1>
   
 
@@ -86,14 +86,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Wow</p>
-<p>Incredible!!</p>
-<p>testing :)</p>
+        <p>day30</p>
+<p>###트리</p>
+<p>CS/data_structure/tree/binary_tree.pdf</p>
+<p>단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념.</p>
+<p>완전 이진 트리(complete binary tree)<br>–&gt; heap의 근간?</p>
+<p>#순회(traversal)<br>-&gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.<br>-&gt;순회는<br>    Stack계열의 알고리즘(Graph에서는 DFS라 함. Depth First Search)<br>    전위 순회(preorder traversal): cur를 전에 돈다는 의미~<br>    중위 순회(inorder traversal): cur를 ~중에~<br>    후위 순회(postorder traversal): cur를 후에</p>
+<pre><code>      * Stack계열 알고리즘은 1)재귀(내부적으로 stackframe이 쌓이기에)
+                                     2)반복문+stack 자료구조            
+         를 통해 구현 가능.
+
+Queue계열의 알고리즘(Graph에서는 BFS라 함. Brouth First Search:너비 우선 탐색)
+레벨 순서 순회(level order)
+</code></pre><p>이 있음. tree는 graph의 일종임.</p>
+<p>#BST</p>
+<p>CS/data_structure/tree/BST.pdf<br>녹음 3:16:00~remove 내용</p>
+<p>*delete와 remove의 차이<br>delete()→None<br>remove()-&gt;removed-data</p>
+<p>dictionary 구현 방법</p>
+<ol>
+<li>hashing → table 이용(파이썬은 hashing으로 구현함)</li>
+<li>BST (우리는 이걸로 딕셔너리 구현할 것)</li>
+</ol>
+<p>*파이썬은 immutable 만 딕셔너리의 key값으로 씀. 파이썬은 해슁으로 구현 해놨구나~</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dic={}<br>dic[‘a’]=5<br>dic<br>{‘a’: 5}<br>dic[(1,2,3)]=6<br>dic[[1,2,3]]=7<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>TypeError: unhashable type: ‘list’</module></stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>*O(logn) →binary search는 이거니까 BST도 이거겠지.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/03/My-new-hexo-post/" data-id="cjui8yu6b0000j52ii49ul2ik" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjui8yu6u000nj52i1ofndu97" class="article-share-link">Share</a>
       
       
     </footer>
@@ -102,15 +129,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/04/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
+    <a href="/2019/04/15/wps-day29-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day29_memo</div>
+    </a>
   
 </nav>
 

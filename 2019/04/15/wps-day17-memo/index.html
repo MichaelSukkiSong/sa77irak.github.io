@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day17_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day17 ###class_eval을 OOP로(버그 수정 완료) ###queueCS/data_structure/queue/queue.pdf ADT(Abstract Data Type) : 자료구조 객체의 인터페이스 몸 queue.py ###CS/process_thread/process.pdfCS/process_thread/os.md program : 하드디스">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day17_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day17-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day17 ###class_eval을 OOP로(버그 수정 완료) ###queueCS/data_structure/queue/queue.pdf ADT(Abstract Data Type) : 자료구조 객체의 인터페이스 몸 queue.py ###CS/process_thread/process.pdfCS/process_thread/os.md program : 하드디스">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:30.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day17_memo">
+<meta name="twitter:description" content="day17 ###class_eval을 OOP로(버그 수정 완료) ###queueCS/data_structure/queue/queue.pdf ADT(Abstract Data Type) : 자료구조 객체의 인터페이스 몸 queue.py ###CS/process_thread/process.pdfCS/process_thread/os.md program : 하드디스">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day17-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day17-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:45.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day17_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day17</p>
+<p>###class_eval을 OOP로(버그 수정 완료)</p>
+<p>###queue<br>CS/data_structure/queue/queue.pdf</p>
+<p>ADT(Abstract Data Type) : 자료구조 객체의 인터페이스 몸</p>
+<p>queue.py</p>
+<p>###CS/process_thread/process.pdf<br>CS/process_thread/os.md</p>
+<p>program : 하드디스크 이미지<br>process : 실행중인 프로그램</p>
+<p>노트패드를 여러번 더블클릭하면 각자 독립적으로 VAS가 생김. PID(Process ID) 로 OS가 이를구분.<br>linux는 순차적으로 PID를 발급. 윈도우는 랜덤하게 PID 발급.</p>
+<p>더블클릭 순간 RAM을 할당받지는 않음.<br>프로세스가 생기고 run queue로 들어감. priority queue 개념이 있음..<br>우선순위가 높은애가 들어오면 디스패치/프리엠션 통해..왔다갔다~<br>pre-emptive scheduling(선점령 스케줄링) : 한마디로 새치기<br>모든 OS가 이를 지원. 이 것 땜에 multi tasking 가능.<br>OS가 선점형 스케줄링을 하기 떔에 멀티태스킹 가능.<br>Job/task scheduler : 프로세스들한테 CPU자원을 할당해주는 일을 하는 애들</p>
+<p>CPU는 하나인데 실행중인 프로세스가 5개라면, OS는 CPU자원을 할당해서 마치 동시에 실행하는것처럼보이게 함.<br>할당해주는 작업을 process scheduling이라 함.<br>어떤 알고리즘에 입각해서 기준을 정함.<br>그중 하나가 priority algorithm(리눅스,윈도우 모두 구현되어있음)<br>윈도우에서는 nice값. nice값이 높으면 우선순위는 낮다.(착한 얘는 양보를 잘해준다 개념)</p>
+<p>priority가 모두 같을 경우는?<br>이때는 round-robin algorithm. 모든 프로세스한테 1초씩 줌. 모든 프로세스가 공평하게 조금씩 시간 할당 받음.<br>하지만 최악의 상황으로..실행중인데 끌어내리는 최악의 단점! ㄷㄷ context switching<br>time slice(quantum) : round-robin을 할 때 한 프로세스에 할당해주는 시간</p>
+<p>scheduler는<br>time slice가 끝났을 때마다 다음 실행할 애를 찾겠지. 그 때 실행되겠지.<br>프로세스가 처음 생성되거나 CPU할당해서 돌다가 끝났을 때.<br>블로킹이 걸리면 CPU 자원이 남으니까 그 다음애 누구야라고 찾게 될 때</p>
+<hr>
+<p>CS/process_thread/process.pdf</p>
+<p>process state(프로세스 상태) : 첫 그림</p>
+<p>running: CPU 할당 받은 상태</p>
+<p>프로세스가 실행 도중에</p>
+<p>1.파일 I/O<br>2.네트워크 통신 - byte 단위로. socket을 이용해서 s.send(write)함수와 s.receive(read) 함수<br>3.키보드(input), 모니터(output)<br>이런 것들을 I/O라 함. </p>
+<p>I/O bound. -&gt;<br>CPU bound -&gt; + - * / AND </p>
+<p>I/O작업 시작하면 blocked로 보냄. CPU쓰지 않고 I/O작업함.<br>I/O작업이 끝난애들은 무조건 waiting으로 먼저 감.<br>Round robin으로 내 차례가 올때까지 기다림.</p>
+<p>리눅스에서는..top치면 나오는 프로세스에서<br>R이 뜨면 running+waiting<br>T는 stopped</p>
+<p>리눅스에서는 또..<br>running과 waiting을 하나로 합쳐서 R이라 하고,</p>
+<p>system call : 인터페이스를 열어놨음(대표적으로 sleep())<br>I/O<br>이 둘중 하나가 걸리면blocked으로 빠짐.</p>
+<p>여기서 나오는 개념이 context switching!!! </p>
+<p>context switching :<br>memory에서 process1이 할당 되어 있고 s라는 공간에 10 a에 2가 들어있고 s+a 바로 계산 못하는데~<br>cpu에서 가져와서 계산을 하고 mem에 보내서 저장하면 되는 상황인데!!<br>cpu가 끝나서 안되 함! cpu를 가지고 있다가 쫓겨날 때 메모리 안에 블록을 하나 만들고 PCB(process control block)을<br>만들어 cpu안에 있는 모든 reg 정보 를 끌어옴. PCB는 mem상에 만들어놔서 CPU에 있는 모든 reg정보를 복사해놓음.<br>그 후 기다리고 있다가 process1 이 cpu할당 받는 순간 그것을 그대로 reg에 복사해서 그 다음 instruction부터 실행<br>가능하게 함.</p>
+<p>context란 cpu에 있는 모든 reg정보값들을 context라 함. 지금 현재 실행되고 있는 문맥!! 의미<br>즉 cpu에 저장되어 있는 상태정보. 그리고 그것을 pcb에 저장함.</p>
+<p>top에서 pcb에 있는 process state정보를 가져와 R이런걸 쓰는 것.</p>
+<p>context를 RoundRobin을 통해서 스케줄러가 바꿀 때 현재 돌고 있는 process1의 데이터들을<br>싹 내리고 그 다음 실행 될 애들을 올리는 작업 : context switching!!</p>
+<p>context switching이 많이 일어날수록 동시에 일어나는 것처럼 보이겠지.</p>
+<p>time slice을 짧게 잡으면 동시에 일어나는 것처럼 점점 보이겠지.<br>하지만 context switching가 빈번히 일어나면 OS가 엄청난 부담을 느낌.</p>
+<p>time slice를 얼마를 잡을 것인가가 큰 주제가 됨~ 개발자들이 심심하면 이야기하는 context switching 개념임~</p>
+<p>————————————————-여기까지가 process——————————–</p>
+<p>process vs thread<br>공통점은 instruction의 나열. 결국 실행 흐름일 뿐인 것.<br>process은 기본적으로 하나 이상의 thread를 가짐.<br>process는 개념적인 것이고 thread가 실체인 것이 개념적으로 이해한 것.</p>
+<p>우리가 짐까지 한건 single thread(단일 쓰레드)</p>
+<p>In parallel computing, a computational task is typically broken down into several, often many, very similar sub-tasks that can be processed independently and whose results are combined afterwards, upon completion. In contrast, in concurrent computing, the various processes often do not address related tasks; when they do, as is typical in distributed computing, the separate tasks may have a varied nature and often require some inter-process communication during execution.</p>
+<p>thread를 여러개 하기 위해..<br>concurrency programming(동시성 프로그래밍) 개념이 나옴.<br>이는 아래를 통해 구현 가능..<br>1.multi-processing<br>2.multi-threading<br>3.IO-bound한 작업을 할 때 -&gt; asynchronus I/O(비동기 IO)(요즘 대세)</p>
+<p>thread 하나에서는 네트워크 쓰레드, 또 다른 하나는 전처리 쓰레드 또 다른 하나는 분석하는 쓰레드로 나누어 동시에 할수</p>
+<p>web쪽에서는..어떤 개념이냐면<br>request날리면 response가 오는데<br>단일 쓰레드에서는 데이터 받고 그 다음에 랜더링을 했었음.<br>요즘은 쓰레드를 2개 돌림.</p>
+<p>어떻게 구현?<br>프로세스를 여러개 돌림. process를 네트워크 통신/데이터 핸들링/분석 각각 나누어서 함.<br>IPC(Inter Process Comunication) 를 통해 데이터를 줘야함. 공유 데이터 개념 땜에 multi processing은 구림…</p>
+<p>multi thread는?<br>프로세스 하나에 thread는 stack영역만 프로세스마다 따로 잡히고 나머지 code/data/heap은 완벽하게 동일<br>메모리를 물리적으로, 원천적으로 공유함.<br>이 때문에 multi process보다는 multi thread을 함.</p>
+<p>왜 stack은 공유할 수 없는가?<br>thread라는 개념이 instruction의 나열이고 이는 즉 함수가 됨.<br>thread가 여러개라는 이야기는 지금 현재 실행하고 있는 함수만 다르다는 이야기.<br>함수를 실행할 때 필요한 영역이 stack이지. 따라서 stack만 따로 가지고 있고 나머지 공간을 공유할 수 잇는 이유.</p>
+<p>process.pdf에서<br>3번째 그림 - multi process 그림<br>4번째 그림 - multi thread 그림</p>
+<hr>
+<p>스피드를 위해 concurency를 하는게 아님.<br>single core-single thread </p>
+<p>single core-multi thread</p>
+<p>multi core-multi thread가 되는 순간-&gt;concurency programming / parrellelism programming<br>concurency ok, speed ok</p>
+<p>python의 단점<br>GIL(Global Interpreter Lock) :<br>멀티 코어이더라도, 바이트 코드의 실행을 한번에 하나의 쓰레드로 막는다.<br>코어가 여러개여도 한번에 한 쓰레드까지 밖에 못 씀.</p>
+<hr>
+<p>multithread_exam.py</p>
+<p>multithread_race_condition.py : g_num이라는 공유 자원에 race하듯이 경쟁적으로 달려든다.<br>                                           해결책으로 lock을 건다.</p>
+<p>thread pool :<br> a thread pool maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program</p>
+<p>—————OS 끝—————-</p>
+<p>CS/OOP/SOLID/SOLID.md</p>
+<p>OOP의 3대 개념<br>1.encapsulation(캡슐화) -&gt; 관련 있는(single responsibility) 변수(데이터)+함수를 하나의 단위(class)로 묶는 것.<br>                                     어떤 멤버와 메서드를 공개/비공개 할지 개념이 정보 은닉 개념<br>2.정보은닉(information hiding)<br>3.다형성(polymorphism) -&gt; 상속(inheritance)에 대해서만 됨(전제 조건).<br>                                      문법적으로는 method overriding을 통해 구현<br>                                      같은 이름의 메서드를 호출 -&gt; 호출의 주체인 객체가 서로 다름 -&gt; 결과값이 달라짐</p>
+<p>relation of classes<br>1.IS-A -&gt;상속(inheritance)<br>2.HAS-A -&gt;1)composition -&gt; same life cycle, strongly coupled<br>                2)aggregation -&gt; different life cycle, weakly coupled</p>
+<p>code reusability -&gt; composition을 고려해야</p>
+<p>CS/OOP/SOLID/SOLID.md</p>
+<p>SOLID<br>Single responsibility principle<br>Open-closed principle(양대산맥)<br>Liskov substitution principle<br>-&gt; 인터페이스 명세!(개발자들이)<br>Interface segregation principle<br>-&gt; 넘어감<br>Dependency inversion principle(양대산맥)<br>-&gt;모듈과 모듈을 디커플링. character랑 attack_kind.<br>변화하는 부분을 추상 클래스로 만들어서 추상화(abstract class)함.이거를 상속받게 해서<br>character와 attack_kind를 decoupling 시켰지.</p>
+<hr>
+<p>CS/OOP/SOLID/examples/liskov/liskov.py<br>부모의 명세를 따르지 않으면 에러가 날 수 있다.<br>-&gt;깃허브 예시로 넘김</p>
+<p>유툽</p>
+<h2 id="what-the-heck-is-the-event-loop-philip-roberts"><a href="#what-the-heck-is-the-event-loop-philip-roberts" class="headerlink" title="what the heck is the event loop (philip roberts)"></a>what the heck is the event loop (philip roberts)</h2><p>###quick sort<br>CS/data_structure/quick_sort/quick_sort.pdf</p>
+<p>start, end 는 index.<br>pivot은 가운데 위치한 값.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day17-memo/" data-id="cjui8yu6n000bj52igh9wptxy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day18-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day18_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day16-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day16_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

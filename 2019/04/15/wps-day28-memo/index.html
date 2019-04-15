@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day28_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day28 ##git 특강 3/4  sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git bbisect   blame    branch   bundlesukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ clear sukki@sukki-17Z990-VA76K:~/Documents/dev/g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day28_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day28-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day28 ##git 특강 3/4  sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git bbisect   blame    branch   bundlesukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ clear sukki@sukki-17Z990-VA76K:~/Documents/dev/g">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:55.736Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day28_memo">
+<meta name="twitter:description" content="day28 ##git 특강 3/4  sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git bbisect   blame    branch   bundlesukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ clear sukki@sukki-17Z990-VA76K:~/Documents/dev/g">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day28-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day28-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:21.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day28_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day28</p>
+<p>##git 특강 3/4 </p>
+<p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git b<br>bisect   blame    branch   bundle<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ clear</p>
+<p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git branch</p>
+<ul>
+<li>master<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git flow init</li>
+</ul>
+<p>Which branch should be used for bringing forth production releases?</p>
+<ul>
+<li>master<br>Branch name for production releases: [master]<br>Branch name for “next release” development: [develop] </li>
+</ul>
+<p>How to name your supporting branch prefixes?<br>Feature branches? [feature/]<br>Bugfix branches? [bugfix/]<br>Release branches? [release/]<br>Hotfix branches? [hotfix/]<br>Support branches? [support/]<br>Version tag prefix? []<br>Hooks and filters directory? [/home/sukki/Documents/dev/git3/.git/hooks]<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git branch</p>
+<ul>
+<li>develop<br>master<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ python3 hello.py<br>Nothing to say<br>hello python with git in another dimension.<br>Nothing to say<br>hello python with git in another dimension.<br>Nothing to say<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git flow feature start fizzbuzz<br>Switched to a new branch ‘feature/fizzbuzz’</li>
+</ul>
+<p>Summary of actions:</p>
+<ul>
+<li>A new branch ‘feature/fizzbuzz’ was created, based on ‘develop’</li>
+<li>You are now on branch ‘feature/fizzbuzz’</li>
+</ul>
+<p>Now, start committing on your feature. When done, use:</p>
+<pre><code>git flow feature finish fizzbuzz
+</code></pre><p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ vim hello.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ vim do_fizzbuzz.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ python3 do_fizzbuzz.py<br>1<br>2<br>Fizz<br>4<br>Buzz<br>Fizz<br>7<br>8<br>Fizz<br>Buzz<br>11<br>Fizz<br>13<br>14<br>Fizz<br>16<br>17<br>Fizz<br>19<br>Buzz<br>Fizz<br>22<br>23<br>Fizz<br>Buzz<br>26<br>Fizz<br>28<br>29<br>Fizz<br>31<br>32<br>Fizz<br>34<br>Buzz<br>Fizz<br>37<br>38<br>Fizz<br>Buzz<br>41<br>Fizz<br>43<br>44<br>Fizz<br>46<br>47<br>Fizz<br>49<br>Buzz<br>Fizz<br>52<br>53<br>Fizz<br>Buzz<br>56<br>Fizz<br>58<br>59<br>Fizz<br>61<br>62<br>Fizz<br>64<br>Buzz<br>Fizz<br>67<br>68<br>Fizz<br>Buzz<br>71<br>Fizz<br>73<br>74<br>Fizz<br>76<br>77<br>Fizz<br>79<br>Buzz<br>Fizz<br>82<br>83<br>Fizz<br>Buzz<br>86<br>Fizz<br>88<br>89<br>Fizz<br>91<br>92<br>Fizz<br>94<br>Buzz<br>Fizz<br>97<br>98<br>Fizz<br>Buzz<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ vim do_fizzbuzz.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ python3 do_fizzbuzz.py<br>1<br>2<br>Fizz<br>4<br>Buzz<br>Fizz<br>7<br>8<br>Fizz<br>Buzz<br>11<br>Fizz<br>13<br>14<br>FizzBuzz<br>16<br>17<br>Fizz<br>19<br>Buzz<br>Fizz<br>22<br>23<br>Fizz<br>Buzz<br>26<br>Fizz<br>28<br>29<br>FizzBuzz<br>31<br>32<br>Fizz<br>34<br>Buzz<br>Fizz<br>37<br>38<br>Fizz<br>Buzz<br>41<br>Fizz<br>43<br>44<br>FizzBuzz<br>46<br>47<br>Fizz<br>49<br>Buzz<br>Fizz<br>52<br>53<br>Fizz<br>Buzz<br>56<br>Fizz<br>58<br>59<br>FizzBuzz<br>61<br>62<br>Fizz<br>64<br>Buzz<br>Fizz<br>67<br>68<br>Fizz<br>Buzz<br>71<br>Fizz<br>73<br>74<br>FizzBuzz<br>76<br>77<br>Fizz<br>79<br>Buzz<br>Fizz<br>82<br>83<br>Fizz<br>Buzz<br>86<br>Fizz<br>88<br>89<br>FizzBuzz<br>91<br>92<br>Fizz<br>94<br>Buzz<br>Fizz<br>97<br>98<br>Fizz<br>Buzz<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ ls -l<br>total 16<br>-rw-r–r– 1 sukki sukki  354 Apr 10 12:28 do_fizzbuzz.py<br>-rw-r–r– 1 sukki sukki  326 Apr 10 12:18 hello.py<br>-rw-r–r– 1 sukki sukki 1065 Apr 10 10:15 LICENSE<br>-rw-r–r– 1 sukki sukki    6 Apr 10 10:15 README.md<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ vim do_fizzbuzz.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ vim do_fizzbuzz.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ python3 do_fizzbuzz.py<br>1<br>2<br>Fizz<br>4<br>Buzz<br>Fizz<br>7<br>8<br>Fizz<br>Buzz<br>11<br>Fizz<br>13<br>14<br>FizzBuzz<br>16<br>17<br>Fizz<br>19<br>Buzz<br>Fizz<br>22<br>23<br>Fizz<br>Buzz<br>26<br>Fizz<br>28<br>29<br>FizzBuzz<br>31<br>32<br>Fizz<br>34<br>Buzz<br>Fizz<br>37<br>38<br>Fizz<br>Buzz<br>41<br>Fizz<br>43<br>44<br>FizzBuzz<br>46<br>47<br>Fizz<br>49<br>Buzz<br>Fizz<br>52<br>53<br>Fizz<br>Buzz<br>56<br>Fizz<br>58<br>59<br>FizzBuzz<br>61<br>62<br>Fizz<br>64<br>Buzz<br>Fizz<br>67<br>68<br>Fizz<br>Buzz<br>71<br>Fizz<br>73<br>74<br>FizzBuzz<br>76<br>77<br>Fizz<br>79<br>Buzz<br>Fizz<br>82<br>83<br>Fizz<br>Buzz<br>86<br>Fizz<br>88<br>89<br>FizzBuzz<br>91<br>92<br>Fizz<br>94<br>Buzz<br>Fizz<br>97<br>98<br>Fizz<br>Buzz<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git status<br>On branch feature/fizzbuzz<br>Untracked files:<br>  (use “git add <file>…” to include in what will be committed)</file></p>
+<pre><code>do_fizzbuzz.py
+</code></pre><p>nothing added to commit but untracked files present (use “git add” to track)<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git add do_fizzbuzz.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git status<br>On branch feature/fizzbuzz<br>Changes to be committed:<br>  (use “git reset HEAD <file>…” to unstage)</file></p>
+<pre><code>new file:   do_fizzbuzz.py
+</code></pre><p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git commit -m “feat: add do fizzbuzz.py</p>
+<blockquote>
+<p>while i=1 is go up to 100,<br>if i is times of 3, print ‘fizz’<br>if i is times of 5, print ‘buzz’<br>if i is times of 15, print ‘fizzbuzz’<br>or print i<br>with for, if statements”<br>[feature/fizzbuzz 6537da4] feat: add do fizzbuzz.py while i=1 is go up to 100, if i is times of 3, print ‘fizz’ if i is times of 5, print ‘buzz’ if i is times of 15, print ‘fizzbuzz’ or print i with for, if statements<br> 1 file changed, 20 insertions(+)<br> create mode 100644 do_fizzbuzz.py<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git push -u origin feature/fizzbuzz<br>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: sa77irak<br>Password for ‘<a href="https://sa77irak@github.com&#39;" target="_blank" rel="noopener">https://sa77irak@github.com&#39;</a>:<br>Counting objects: 3, done.<br>Delta compression using up to 8 threads.<br>Compressing objects: 100% (3/3), done.<br>Writing objects: 100% (3/3), 557 bytes | 557.00 KiB/s, done.<br>Total 3 (delta 1), reused 0 (delta 0)<br>remote: Resolving deltas: 100% (1/1), completed with 1 local object.<br>remote:<br>remote: Create a pull request for ‘feature/fizzbuzz’ on GitHub by visiting:<br>remote:      <a href="https://github.com/sa77irak/git3/pull/new/feature/fizzbuzz" target="_blank" rel="noopener">https://github.com/sa77irak/git3/pull/new/feature/fizzbuzz</a><br>remote:<br>To <a href="https://github.com/sa77irak/git3.git" target="_blank" rel="noopener">https://github.com/sa77irak/git3.git</a></p>
+<ul>
+<li>[new branch]      feature/fizzbuzz -&gt; feature/fizzbuzz<br>Branch ‘feature/fizzbuzz’ set up to track remote branch ‘feature/fizzbuzz’ from ‘origin’.<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git flow feature finish fizzbuzz<br>Switched to branch ‘develop’<br>Your branch is up to date with ‘origin/develop’.<br>Updating e674527..6537da4<br>Fast-forward<br>do_fizzbuzz.py | 20 ++++++++++++++++++++<br>1 file changed, 20 insertions(+)<br>create mode 100644 do_fizzbuzz.py<br>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: sa77irak<br>Password for ‘<a href="https://sa77irak@github.com&#39;" target="_blank" rel="noopener">https://sa77irak@github.com&#39;</a>:<br>To <a href="https://github.com/sa77irak/git3.git" target="_blank" rel="noopener">https://github.com/sa77irak/git3.git</a></li>
+</ul>
+<ul>
+<li>[deleted]         feature/fizzbuzz<br>Deleted branch feature/fizzbuzz (was 6537da4).</li>
+</ul>
+</blockquote>
+<p>Summary of actions:</p>
+<ul>
+<li>The feature branch ‘feature/fizzbuzz’ was merged into ‘develop’</li>
+<li>Feature branch ‘feature/fizzbuzz’ has been locally deleted; it has been remotely deleted from ‘origin’</li>
+<li>You are now on branch ‘develop’</li>
+</ul>
+<p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git push -u origin develop<br>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: sa77irak<br>Password for ‘<a href="https://sa77irak@github.com&#39;" target="_blank" rel="noopener">https://sa77irak@github.com&#39;</a>:<br>Counting objects: 3, done.<br>Delta compression using up to 8 threads.<br>Compressing objects: 100% (3/3), done.<br>Writing objects: 100% (3/3), 557 bytes | 557.00 KiB/s, done.<br>Total 3 (delta 1), reused 0 (delta 0)<br>remote: Resolving deltas: 100% (1/1), completed with 1 local object.<br>To <a href="https://github.com/sa77irak/git3.git" target="_blank" rel="noopener">https://github.com/sa77irak/git3.git</a><br>   e674527..6537da4  develop -&gt; develop<br>Branch ‘develop’ set up to track remote branch ‘develop’ from ‘origin’.<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git branch</p>
+<ul>
+<li>develop<br>master<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git flow release start v0.0.1.00190410001<br>Switched to a new branch ‘release/v0.0.1.00190410001’</li>
+</ul>
+<p>Summary of actions:</p>
+<ul>
+<li>A new branch ‘release/v0.0.1.00190410001’ was created, based on ‘develop’</li>
+<li>You are now on branch ‘release/v0.0.1.00190410001’</li>
+</ul>
+<p>Follow-up actions:</p>
+<ul>
+<li>Bump the version number now!</li>
+<li>Start committing last-minute fixes in preparing your release</li>
+<li><p>When done, run:</p>
+<p>   git flow release finish ‘v0.0.1.00190410001’</p>
+</li>
+</ul>
+<p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git branch<br>  develop<br>  master</p>
+<ul>
+<li>release/v0.0.1.00190410001<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git flow release finish v0.0.1.00190410001<br>Switched to branch ‘master’<br>Your branch is up to date with ‘origin/master’.<br>Merge made by the ‘recursive’ strategy.<br>do_fizzbuzz.py | 20 ++++++++++++++++++++<br>hello.py       | 16 +++++++++++—–<br>2 files changed, 31 insertions(+), 5 deletions(-)<br>create mode 100644 do_fizzbuzz.py<br>Already on ‘master’<br>Your branch is ahead of ‘origin/master’ by 3 commits.<br>(use “git push” to publish your local commits)<br>Switched to branch ‘develop’<br>Your branch is up to date with ‘origin/develop’.<br>Already up to date!<br>Merge made by the ‘recursive’ strategy.<br>Deleted branch release/v0.0.1.00190410001 (was 6537da4).</li>
+</ul>
+<p>Summary of actions:</p>
+<ul>
+<li>Release branch ‘release/v0.0.1.00190410001’ has been merged into ‘master’</li>
+<li>The release was tagged ‘v0.0.1.00190410001’</li>
+<li>Release tag ‘v0.0.1.00190410001’ has been back-merged into ‘develop’</li>
+<li>Release branch ‘release/v0.0.1.00190410001’ has been locally deleted</li>
+<li>You are now on branch ‘develop’</li>
+</ul>
+<p>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git branch</p>
+<ul>
+<li>develop<br>master<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git checkout master<br>Switched to branch ‘master’<br>Your branch is ahead of ‘origin/master’ by 3 commits.<br>(use “git push” to publish your local commits)<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git push origin master<br>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: sa77irak<br>Password for ‘<a href="https://sa77irak@github.com&#39;" target="_blank" rel="noopener">https://sa77irak@github.com&#39;</a>:<br>Counting objects: 1, done.<br>Writing objects: 100% (1/1), 230 bytes | 230.00 KiB/s, done.<br>Total 1 (delta 0), reused 0 (delta 0)<br>To <a href="https://github.com/sa77irak/git3.git" target="_blank" rel="noopener">https://github.com/sa77irak/git3.git</a><br> 9f614e1..116be4a  master -&gt; master<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git checkout develop<br>Switched to branch ‘develop’<br>Your branch is ahead of ‘origin/develop’ by 2 commits.<br>(use “git push” to publish your local commits)<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ git push origin develop<br>Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: sa77irak<br>Password for ‘<a href="https://sa77irak@github.com&#39;" target="_blank" rel="noopener">https://sa77irak@github.com&#39;</a>:<br>Counting objects: 1, done.<br>Writing objects: 100% (1/1), 291 bytes | 291.00 KiB/s, done.<br>Total 1 (delta 0), reused 0 (delta 0)<br>To <a href="https://github.com/sa77irak/git3.git" target="_blank" rel="noopener">https://github.com/sa77irak/git3.git</a><br> 6537da4..1d1d5d6  develop -&gt; develop<br>sukki@sukki-17Z990-VA76K:~/Documents/dev/git3$ </li>
+</ul>
+<p>TIL/</p>
+<pre><code>python/
+    190410_function.md
+Algorithms/
+Data_Structures/
+DB/
+git/
+    190410_git_flow.md
+</code></pre><h3 id="데이터베이스-3일차"><a href="#데이터베이스-3일차" class="headerlink" title="데이터베이스 3일차"></a>데이터베이스 3일차</h3><p>***파이썬으로 데이터베이스에 접속해서 조작해보고 하기~</p>
+<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from mysql.connector import MySQLConnection<br>conn=MySQLConnection(host=’localhost’, database=’mydb’,user=’greg’,password=’1234’)<br>conn</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;mysql.connector.connection.MySQLConnection object at 0x7fe2e9687550&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cursor=conn.cursor()<br>cursor</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;mysql.connector.cursor.MySQLCursor object at 0x7fe2e9687ac8&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cursor.execute(“””<br>… SELECT * FROM students<br>… “””)<br>cursor.fetchone()<br>(1, ‘Greg’, 180, 87, datetime.date(2002, 3, 23), 1)<br>cursor.fetchmany(4)<br>[(2, ‘John’, 175, 95, datetime.date(2002, 4, 2), 2), (3, ‘Mark’, 178, 50, datetime.date(2002, 5, 12), 1), (4, ‘James’, 170, 56, datetime.date(2002, 7, 14), 3), (5, ‘Johanna’, 165, 90, datetime.date(2001, 9, 23), 1)]<br>cursor.fetchall()<br>[(6, ‘Mary’, 160, 50, datetime.date(2002, 1, 5), 2), (7, ‘Kelly’, 176, 80, datetime.date(2002, 9, 17), 3), (8, ‘Sam’, 172, 78, datetime.date(2002, 6, 5), 1), (9, ‘Daniel’, 187, 90, datetime.date(2002, 12, 1), 2), (10, ‘Ann’, 165, 46, datetime.date(2002, 9, 18), 3), (11, ‘Kreizig’, 175, 75, datetime.date(2002, 9, 19), None), (12, ‘Elizabeth’, 165, 80, datetime.date(2003, 1, 17), None), (13, ‘Emily’, 180, 60, datetime.date(2002, 9, 18), None), (14, ‘Lily’, 155, 100, datetime.date(2002, 9, 18), None)]<br>cursor.close()<br>True<br>conn.close()<br>exit()<br>sukki@sukki-17Z990-VA76K:~$ cd desktop<br>bash: cd: desktop: No such file or directory<br>sukki@sukki-17Z990-VA76K:~$ cd Desktop/<br>sukki@sukki-17Z990-VA76K:~/Desktop$ mkdir today<br>sukki@sukki-17Z990-VA76K:~/Desktop$ cd today<br>sukki@sukki-17Z990-VA76K:~/Desktop/today$ touch conf.ini<br>sukki@sukki-17Z990-VA76K:~/Desktop/today$ vim conf.ini<br>sukki@sukki-17Z990-VA76K:~/Desktop/today$ cat conf.ini<br>[mysql]<br>host=localhost<br>database=mydb<br>user=greg<br>password=1234</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>sukki@sukki-17Z990-VA76K:~/Desktop/today$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from mysql.connector import MySQLConnection<br>from configparser import ConfigParser<br>parser=ConfigParser()<br>parser</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;configparser.ConfigParser object at 0x7f57372895c0&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>parser.read(‘conf.ini’)<br>[‘conf.ini’]<br>parser.has_section(‘mysql’)<br>True<br>conf={}<br>if parser.has_section(‘mysql’):<br>…     items=parser.items()<br>…     for key, value in items:<br>…             conf[key]=value<br>…<br>conf<br>{‘DEFAULT’: &lt;Section: DEFAULT&gt;, ‘mysql’: &lt;Section: mysql&gt;}<br>if parser.has_section(‘mysql’):<br>…     items=parser.items(‘mysql’)<br>…     for key, value in items:<br>…             conf[key]=value<br>…<br>conf<br>{‘DEFAULT’: &lt;Section: DEFAULT&gt;, ‘mysql’: &lt;Section: mysql&gt;, ‘host’: ‘localhost’, ‘database’: ‘mydb’, ‘user’: ‘greg’, ‘password’: ‘1234’}<br>conf.pop(‘DEFAULT’)<br>&lt;Section: DEFAULT&gt;<br>conf.pop(‘mysql’)<br>&lt;Section: mysql&gt;<br>conf<br>{‘host’: ‘localhost’, ‘database’: ‘mydb’, ‘user’: ‘greg’, ‘password’: ‘1234’}<br>conn=MySQLConnection(**conf)<br>conn</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;mysql.connector.connection.MySQLConnection object at 0x7f5733589c88&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cursor=conn.cursor()<br>cursor</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;mysql.connector.cursor.MySQLCursor object at 0x7f5733589dd8&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cursor.execute(“””<br>… CREATE TABLE ct (<br>… id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,<br>… name VARCHAR(20) DEFAULT ‘John doe’,<br>… score SMALLINT NULL,<br>… birthday DATE NOT NULL);<br>… “””)<br>cursor.execute(“””<br>… INSERT INTO ct<br>… (name, score, birthday)<br>… VALUES<br>… (‘Greg’, 99, ‘2002-2-2’);<br>… “””)<br>cursor.execute(“””<br>… SELECT <em> FROM ct<br>… “””)<br>cursor.fetchone()<br>(1, ‘Greg’, 99, datetime.date(2002, 2, 2))<br>conn.commit()<br>cursor.execute(“””<br>… UPDATE ct<br>… SET score=120<br>… WHERE name like ‘Greg’;<br>… “””)<br>cursor.execute(“””<br>… SELECT </em> FROM ct”””)<br>cursor.fetchall()<br>[(1, ‘Greg’, 120, datetime.date(2002, 2, 2))]<br>conn.rollback()<br>cursor.execute(“SELECT * FROM ct”)<br>cursor.fetchone()<br>(1, ‘Greg’, 99, datetime.date(2002, 2, 2))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>***mysql 클라에서 파이썬으로 변경한 것 어떻게 변했는지 봐보기</p>
+<p>sukki@sukki-17Z990-VA76K:~$ mysql -u root<br>ERROR 1698 (28000): Access denied for user ‘root‘@’localhost’<br>sukki@sukki-17Z990-VA76K:~$ sudo mysql -u root<br>[sudo] password for sukki:<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 32<br>Server version: 10.1.38-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04</p>
+<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>MariaDB [(none)]&gt; use mydb;<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A</p>
+<p>Database changed<br>MariaDB [mydb]&gt; show tables;<br>+—————–+<br>| Tables_in_mydb  |<br>+—————–+<br>| student_subject |<br>| students        |<br>| subjects        |<br>| teachers        |<br>+—————–+<br>4 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; show tables;<br>+—————–+<br>| Tables_in_mydb  |<br>+—————–+<br>| ct              |<br>| student_subject |<br>| students        |<br>| subjects        |<br>| teachers        |<br>+—————–+<br>5 rows in set (0.01 sec)</p>
+<p>MariaDB [mydb]&gt; SHOW CREATE TABLE ct;<br>+——-+———————————————————————————————————————————————————————————————————————————–+<br>| Table | Create Table                                                                                                                                                                                                                      |<br>+——-+———————————————————————————————————————————————————————————————————————————–+<br>| ct    | CREATE TABLE <code>ct</code> (<br>  <code>id</code> int(11) NOT NULL AUTO_INCREMENT,<br>  <code>name</code> varchar(20) DEFAULT ‘John doe’,<br>  <code>score</code> smallint(6) DEFAULT NULL,<br>  <code>birthday</code> date NOT NULL,<br>  PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |<br>+——-+———————————————————————————————————————————————————————————————————————————–+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM ct;<br>Empty set (0.01 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM ct;<br>+—-+——+——-+————+<br>| id | name | score | birthday   |<br>+—-+——+——-+————+<br>|  1 | Greg |    99 | 2002-02-02 |<br>+—-+——+——-+————+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM ct;<br>+—-+——+——-+————+<br>| id | name | score | birthday   |<br>+—-+——+——-+————+<br>|  1 | Greg |    99 | 2002-02-02 |<br>+—-+——+——-+————+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; Ctrl-C – exit!<br>Aborted<br>sukki@sukki-17Z990-VA76K:~$ sudo mysql -u root<br>[sudo] password for sukki:<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 34<br>Server version: 10.1.38-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04</p>
+<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>MariaDB [(none)]&gt; show databases;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| mydb               |<br>| mysql              |<br>| performance_schema |<br>+——————–+<br>4 rows in set (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; use mydb<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A</p>
+<p>Database changed<br>MariaDB [mydb]&gt; </p>
+<p>요약</p>
+<ol>
+<li>자료 → 숫자    정수<pre><code>실수-&gt;부동소수점 -&gt;엡실론
+        문자 -&gt;인코딩 -&gt;ASCII/유니코드 UTF-8 ….
+</code></pre></li>
+</ol>
+<p>2.CPU→ instruction , Reg, ALU</p>
+<p>3.memory → VAS , reg,cache(locality),mem,hard disk,   clock, CPI(clocks per instr~)</p>
+<p>4.하드웨어 아키텍처<br>code<br>data</p>
+<p>가상메모리, page, page fault</p>
+<p>5.네트워크</p>
+<p>TCP/IP 4계층<br>ethernet<br>IP<br>ARP<br>TCP → sliding window<br>HTTP<br>HTTPS</p>
+<p>6.데이터베이스<br>SQL<br>transaction<br>session<br>index -clustered, secondary.<br>view-</p>
+<p>***regular expression 예제</p>
+<p>정규 표현식을 읽을 수는 있어야</p>
+<p>w3school python 튜토리얼 Regex~<br>점프투 파이썬~</p>
+<p>정규 표현식 수업 코드~</p>
+<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import re<br>str=”I am your father!”<br>str.startswith(‘I’)<br>True<br>re.match(r’[abc]’,’abcde’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 1), match=’a’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.match(r’[abc]’, ‘345ab’)<br>re.match(r’[a-z]’, ‘opinion’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 1), match=’o’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.match(r’[0-9]’, ‘345ab’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 1), match=’3’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.match(r’[abc]’, ‘345ab’)<br>re.search(r’[abc]’, ‘345ab’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(3, 4), match=’a’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’[abc]+’, ‘abc123’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 3), match=’abc’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’[abc]*’, ‘123’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 0), match=’’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’[abc]+’, ‘123’)<br>re.search(r’a{4}’, ‘aabb’)<br>re.search(r’a{4}’, ‘aaaaaaaabb’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 4), match=’aaaa’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’a{3,10}’, ‘aaaaaabbbbb’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 6), match=’aaaaaa’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’a{3, 10}’, ‘aaaaaabbbbb’)<br>re.search(r’abc’, ‘defabcxyz’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(3, 6), match=’abc’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’^abc’, ‘defabcxyz’)<br>re.search(r’[^abc]’, ‘abbbababcczabbaba’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(10, 11), match=’z’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’xyz$’, ‘abcxyz’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(3, 6), match=’xyz’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>re.search(r’\d+’, ‘abc 123 bbb’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(4, 7), match=’123’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>m=re.search(r’\d+’, ‘abc 123 bbb’)<br>m</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(4, 7), match=’123’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>m.group()<br>‘123’<br>m.start()<br>4<br>m.end()<br>7<br>m.span()<br>(4, 7)<br>cell_li=[‘010-1111-2222’, ‘01022223333’, ‘010.333.4444’, ‘010 4444 5555’]<br>pattern=r’\d{3}[-./ ]<em>\d{3,4}[-./ ]</em>\d{4}’<br>for cell in cell_li:<br>…     m=re.search(pattern, cell)<br>…     if m:<br>…             print(m.group())<br>…<br>010-1111-2222<br>01022223333<br>010.333.4444<br>010 4444 5555</p>
+<p>‘\d’<br>‘\d’<br>‘\b’<br>‘\x08’<br>r’\b’<br>‘\b’<br>re.search(r’\‘,’dir1\dir2’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(4, 5), match=’\‘&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>pattern=r’([0-9]{3})[-./ ]<em>(\d{3,4})[-./ ]</em>(\d{4})’<br>string=’010-1111-2222’<br>m=re.search(pattern, string)<br>m</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 13), match=’010-1111-2222’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>m.group()<br>‘010-1111-2222’<br>m.group(1)<br>‘010’<br>m.group(2)<br>‘1111’<br>m.group(3)<br>‘2222’</p>
+<p>pat=re.compile(<br>… r’(\d{3})([.-]|\s)?(\d{3,4})([.-]|\s)?(\d{4})’<br>… )<br>pat<br>re.compile(‘(\d{3})([.-]|\s)?(\d{3,4})([.-]|\s)?(\d{4})’)<br>string=’ 전화번호1 : 010-1111-1111’\<br>… ‘ 전화번호2 : 01011112222’\<br>… ‘ 전화번호3 : 010 333 4444’\<br>… ‘ 전화번호3 : 010.444.5555’<br>pat.search(string)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(9, 22), match=’010-1111-1111’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>pat.findall(string)<br>[(‘010’, ‘-‘, ‘1111’, ‘-‘, ‘1111’), (‘010’, ‘’, ‘1111’, ‘’, ‘2222’), (‘010’, ‘ ‘, ‘333’, ‘ ‘, ‘4444’), (‘010’, ‘.’, ‘444’, ‘.’, ‘5555’)]</p>
+<p>pattern=r’([a-zA-Z_]\w<em>)\s</em>=\s<em>([0-9]+)’<br>re.compile(pattern)<br>re.compile(‘([a-zA-Z_]\w</em>)\s<em>=\s</em>([0-9]+)’)<br>p=re.compile(pattern)<br>p<br>re.compile(‘([a-zA-Z_]\w<em>)\s</em>=\s*([0-9]+)’)<br>m=p.search(‘a_1 = 100’)<br>m</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>&lt;re.Match object; span=(0, 9), match=’a_1 = 100’&gt;</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>m.group()<br>‘a_1 = 100’<br>m.group(1)<br>‘a_1’<br>m.group(2)<br>‘100’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>내일…<br>미로찾기<br>linkedlist으로 스택이랑 큐 구현<br>트리<br>BST</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day28-memo/" data-id="cjui8yu6t000mj52ik2czjix6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day29-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day29_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day27-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day27_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

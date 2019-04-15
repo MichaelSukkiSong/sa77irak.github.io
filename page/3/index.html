@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="keeping track of my studies for personal reasons">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sukki&#39;s Home :D">
+<meta property="og:url" content="http://sa77irak.github.io/page/3/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="keeping track of my studies for personal reasons">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sukki&#39;s Home :D">
+<meta name="twitter:description" content="keeping track of my studies for personal reasons">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-wps-day10-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day10-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:23.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day10-memo/">wps_day10_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day10</p>
+<p>###list의 참조,shallow copy,deep copy</p>
+<h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
+<p>–&gt;참조는 완전히 같은거라 보면 됨.</p>
+<p>**shallow copy<br>li3 = li.copy()<br>li3<br>li3.append(5)<br>li3<br>li<br>li.append([6,7])<br>li<br>li3 = li<br>li3 = li.copy()<br>li3<br>li3[4].append(8)<br>li3<br>li</p>
+<p>–&gt;shallow copy 다른 곳에 만들어진다. </p>
+<p>**deep copy<br>import copy<br>li4 = copy.deepcopy(li)<br>li4<br>li4[4][1]=10<br>li4<br>li</p>
+<p>—&gt;deep copy. 다른곳에 만들어지고 완전히독립적. 내용물 공유 안함.</p>
+<p>—&gt;필기 노트 그림 참고</p>
+<p>#<br>fetch - PC가 가리키고 있던 instruction을 mem-&gt;cpu IR로 가져오는 것<br>decode CU가 IR 을 분석,해석 하는 것<br>execute 실제 연산</p>
+<p>——오늘의 핵심—-<br>1.MMU</p>
+<h2 id="2-logical-address-논리-주소-physical-address-물리-주소"><a href="#2-logical-address-논리-주소-physical-address-물리-주소" class="headerlink" title="2.logical address(논리 주소) physical address(물리 주소)"></a>2.logical address(논리 주소) <->physical address(물리 주소)</-></h2><p>code<br>data         user 영역<br>heap<br>stack</p>
+<p>code<br>data          kernel 영역 -&gt;os가 관리<br>heap<br>stack            </p>
+<p>-&gt;어셈블리어를 통해 직접 kernel 영역을 조작하는 것을 막기 위해 OS가 가운데서 막아줌.</p>
+<p>메모리를 준것 같지만 실제로 준건 아님(우리가 생각할 때는 가상 공간이지민 실제 공간이라 생각하고 코딩하면 됨)<br>OS가 프로세스가 시작될 때 할당해주는 가상 메모리 공간 -&gt;가상 주소 공간(virtual address space, VAS)<br>OS가 나 믿고 있는 척해~</p>
+<p>User 영역에서…<br>code - instruction들이 들어가는 곳<br>data - 전역변수가(BSS 포함) 들어감<br>heap - 할당과 해제를 프로그래머가 결정<br>stack - 지역변수가 쌓임(왜냐면, stackframe이 쌓이는 곳이니까), </p>
+<p>data영역의 전역변수는 생성이 언제되냐면..프로세스가 생성될 때 생성됨.<br>                                소멸은…프로세스가 종료될 때<br>-&gt;따라서 프로그래머가 생성과 소멸을 결정할 수 없다. 따라서 메모리 아까우니까 전역변수는 되도록 쓰지 말아라는 것이 나오는 것.</p>
+<p>stack의 경우 생성시기는..함수가 호출 될때지.<br>                 소멸은 함수 실행이 종료 될 때지<br>-&gt;이건 프로그래머가 통제권을 약간 가지고 있음. 함수가 실행되는 순간 쌓였다가 종료되면 사라지기 때문에. data영역에 비해는 권한 있지만 아래의 단점도 있다.<br>call by reference 를 통해서 함수 호출이 끝나고 stackframe가 사라져도 바깥 변수한테 변경된 값 유지 가능.</p>
+<p>heap데이터의 생성시기가 프로그래머가 원할 때<br>                    소멸시기도 프로그래머가 원할 때!! ㄷ.ㄷ<br>-&gt;생성과 소멸시기가 내 마음임. </p>
+<p>일단 code에 instruction이 들어가고..data heap stack 영역은 공통적으로 데이터(변수 객체)를 저장하는 공간인데 위 같은 차이가 있는 것.</p>
+<hr>
+<p>파이썬은 내가 선언하는 함수 등이 모두 heap에 들어감</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>python.exe abc.py<br>이거를 실행하는 순간..<br>abc.py는 python.exe에 넘겨주는 문자열일 뿐임. text editor는 문자열 편집기임.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>code<br>data<br>heap<br>stack</p>
+<h2 id="C에서-main-함수에-인자를-넣어서-실행하는-것처럼-파이썬은-python-exe-가-abc-py를-받아서-하는-것"><a href="#C에서-main-함수에-인자를-넣어서-실행하는-것처럼-파이썬은-python-exe-가-abc-py를-받아서-하는-것" class="headerlink" title="C에서 main 함수에 인자를 넣어서 실행하는 것처럼..파이썬은 python.exe.가 abc.py를 받아서 하는 것."></a>C에서 main 함수에 인자를 넣어서 실행하는 것처럼..파이썬은 python.exe.가 abc.py를 받아서 하는 것.</h2><p>malloc : heap에다가 메모리를 할당하는 함수<br>프로그래머가 malloc함수를 호출 했을 때~!(내가 결정할 수 있는거지~) heap 영역에 OS가 일정한 size의 메모리 공간 만듬<br>int <em>ptr = (int</em>)malloc(sizeof(int));                     –&gt;그 메모리 공간의 주소를 ptr에 저장<br>*ptr = c+100;</p>
+<p>heap에다가 저장해 놓으면, 함수 호출이 끝나서 stackframe이 사라지더라도 데이터가 남아 있게 된다. 함수의 호출과 생성에 묶이지 않는다는 말이지.<br>free(x) —&gt;이거 하면 heap영역의 메모리 해제 가능. 즉 내가 원하는 시점에 해제 가능.</p>
+<p>—-메모리 누수란(memory leak)(heap의 단점 중 하나)—-<br>stackframe이 사라지면서 가리키고 있던 것이 사라지고..프로그램이 끝날 때까지 어떤 것도 지울 수 데이터가 쌓이는 것.<br>heap에 할당은 되어있는데 소멸은 안되는 상태.<br>언어차원에서 지원하는 garbage collector가 메모리 누수를 막음.</p>
+<hr>
+<p>다음주 월요일까지<br>visual studio code깔기<br>다음주 금요일까지</p>
+<h2 id="우분투"><a href="#우분투" class="headerlink" title="우분투"></a>우분투</h2><p>**heap의 단점:<br>1.메모리누수(memory leak)<br>2.느리다(malloc이 느리다)<br>3.메모리 단편화(memory fragmentation): 전체로 봤을 떄 충분하지만 메모리가 쪼개져 있어서 메모리를 할당하기 힘들거나 찾는데 오래 걸리는 많은 어려움이 있다.</p>
+<p>stack은 왜 빠른데?..<br>-&gt;메모리 할당 주소를 찾을 필요가 없다(stack pointer가 가리키고 있기 때문에 그 위에 그냥 쌓으면 됨)-&gt;speed가 엄청나게 빠르다.</p>
+<p>heap은 왜 느린데?<br>double linked list개념..<br>malloc();하면 OS가 heap에 쌓을 때..헤더마다 OS가 찾아가서 너 비어있어? 물어봄..돌아다니다가 빈 곳 찾음.</p>
+<p>메모리 단편화(memory fragmentation)이란?<br>-&gt;8byte를 넣으려는데 2+4+4=10 byte같은 공간이 heap있다 하더라도 넣을 수가 없다. 이런 현상을 memory fragmentation.</p>
+<hr>
+<p>dynamic heap 기법: 메모리 단편화 해결 가능(시스템 프로그래밍의 세상)<br>사용자(프로그래머)가 heap을 크게 나누어서 하는 것? working set을 한쪽에 모아서 하는 것.!</p>
+<p>파이썬은 heap을 쓴다..파이썬은 PyMem Malloc 처럼 OS가 하는 일을 대신할 수 있는 애가 있음. 메모리를 할당하는 OS역할을 하는거지. </p>
+<hr>
+<p>Garbage Collector : 언어차원에서 메모리 관리(heap관리)를 해줄게.<br>-&gt;기법중 하나가 : reference counter(파이썬은 이거 함): reference counter가 0이 되면 지워줌.</p>
+<p>a = “I am your F!”<br>import sys<br>sys.getrefcount(a)<br>b=a<br>sys.getrefcount(a)<br>c=b<br>sys.getrefcount(c)<br>c=10<br>sys.getrefcount(a)<br>del b<br>sys.getrefcount(a)<br>a=1<br>sys.getrefcount(a)<br>b=2<br>sys.getrefcount(b)</p>
+<hr>
+<p>##가상메모리</p>
+<p>virtual_memory.md 참조</p>
+<p>virtual_memory.pdf 그림 참조</p>
+<p>virtual address space이란?</p>
+<h2 id="user영역"><a href="#user영역" class="headerlink" title="user영역"></a>user영역</h2><p>kernel영역</p>
+<hr>
+<p>page란?</p>
+<p>VAS의 주소 공간 4G을 4096byte단위로 쪼갬 그 하나를 page라 함.<br>32bit computer에서..</p>
+<p>#of pages = 2^32 / 2^12 = 2^20</p>
+<p>—–page, page #, offset 알기가 목표</p>
+<p>ex)어떤 주소값 a145 = page # (1) + offset (45) 로 구성  (offset는 어떤 기준으로부터 얼마만큼 떨어져 있는지 나타내는 개념이지)</p>
+<p>32bit 주소체계에서 20bit가 page#(왜? 32-12했으니)이고 뒤에 숫자는 offset이다.(0x1212a | bab 같은 것을 logical address라 함)<br>                                                                                      page#    offset</p>
+<h1 id="number-즉-갯수가-2-20개라는-말은-이를-표현하기-위해-20bit가-필요하다는-이야기이다-20bit즉-5개의-16진수로-넘버링을-할-수-있는-셈"><a href="#number-즉-갯수가-2-20개라는-말은-이를-표현하기-위해-20bit가-필요하다는-이야기이다-20bit즉-5개의-16진수로-넘버링을-할-수-있는-셈" class="headerlink" title="number 즉 갯수가 2^20개라는 말은 이를 표현하기 위해 20bit가 필요하다는 이야기이다. 20bit즉 5개의 16진수로 # 넘버링을 할 수 있는 셈."></a>number 즉 갯수가 2^20개라는 말은 이를 표현하기 위해 20bit가 필요하다는 이야기이다. 20bit즉 5개의 16진수로 # 넘버링을 할 수 있는 셈.</h1><p>32bit의 주소체계중 20개로 넘버를 표현하고 나머지 12bit가 offset이 된다. 즉 20개의 bit로 넘버링을 통해 기준을 정하고 12개의 bit로 얼마나 떨어져 있는지 제시하는 것.</p>
+<p>—-같은 개념을 실제 main memory에 적용</p>
+<p>main memory(RAM)을 같은 식으로 쪼갤거임.<br>4096byte로 쪼갤거임. 4G를.<br>쪼갠 하나의 크기를 page frame이라 함. 여기서의 frame은 진짜 memory<br>그러면 frame # = 2^32 / 2^12 = 2^20<br>그러면 frame #는 0~ 2^20 -1 까지 있겠지.<br>예를 들면 0x5252aef3 같은 경우 0x5252a | ef3 같이 frame# | offset 처럼 볼 수 있지.</p>
+<p>CPU가 야 0x12345abc에서 가져와 그러면<br>이걸 쪼갬 0x12345 | abc<br>실제 RAM에 있는 어떤 code를 가져와야 하는데..</p>
+<p>0x12345 abc에서 앞부분만 대체를 0xabcde |abc 이걸로 하면 찾아올 수 있겠지<br>logical address                        physical address</p>
+<p>짜가 주소인 logical address 에서 page #만 frame#만 바꾸어주면 physical address 알 수 있지 결국.<br>page#와 frame#를 연결해주는 무엇인가가 table이 있어야겠지</p>
+<p>1.MMU(Memory Management Unit): 하드웨어.CPU에 들어 있음.<br>2.page table</p>
+<p>내가 더블클릭하면 OS가 4G를 할당해준다. = 프로세스마다 page table을 main memory에 만들고 이 page table의 첫 주소를 프로세스한테 가르쳐준다.<br>RAM에 있는 일부 공간에다가 page table을 만듬</p>
+<p>process 1<br>스타를 하고 싶어서 내가 스타를 딱킴. OS가 4G를 줌. 스타에 할당된 page table을 만듬</p>
+<p>page table은 크게 3개 칼럼 존재..<br>page#   frame#   valid bit</p>
+<p>preparing : 지금 당장 필요할 것 같은 애들을 4096단위로 main memory에 올림</p>
+<p>process1                        page table                        main memory</p>
+<p>가짜 공간             page#   frame#   valid bit</p>
+<p>PC 0x00000000</p>
+<p>MAR &lt;- 0x12345 0000</p>
+<p>MMU: PC가 가리키고 있는 logical address를 runtime(프로그램이 돌고 있는 상태)  page table을 참조해서 physical address로 바꾸어 주는 역할.</p>
+<p>page fault:<br>CPU가 가짜 메모리를 요청했을 떄 VAS의 메모리 주소가 PC저장되고..MMU는 page table을 참조해서 해당 physical address 0x12345 abc의 앞 부분을 0x_ _ _ _ _ abc로 전환하고 MAR에 저장한다. 이때 valid bit가 0이면 memory 안에 없다는 뜻이고 하드에서 가져와야 하는 상태가 되는데 이를 page fault라고 한다.<br>후에 하드에서 mem으로 mem의 비어 있는 공간에다 올린다. (virtual_memory.md 참조)</p>
+<p>page fault는 치명적 cache miss랑은 급이 다르다.(CPI의 차이 때문에 장시간 기다려야할 수도 있다)</p>
+<p>page table은 공유하지 않음. process마다 생김. </p>
+<p>pagefile이란?<br>pagefile은 하드 안에 있음.<br>리눅스에서는 swap이라 부름<br>하드 디스크게 있는 일정 용령의 크기를 마치 RAM처럼 쓰겠다 개념. 이때 이 크기를 pagefile이라 부름.<br>윈도우에서는 고급시스템정보-&gt;성능-&gt;고급-&gt;가상메모리 에서 확인 가능.</p>
+<p>page out이란?<br>무엇인가가 있는 상태에서 새로운 애를 올리는데 누군가는 pagefile로 내려와야 하는데 ..이 때 victim page가 정해지면서 내려오는 것을 page out이라 함.</p>
+<p>page in은 하드에서 memory(RAM)으로 올리는 것. 올리면 valid 1로 바꾸어주고 새로운 공간을 가리킴.</p>
+<p>결국 page file은 victim page만 모여 있는 곳이 되지.</p>
+<p>가상메모리 = RAM + page file(짜가)</p>
+<p>이 과정을 paging</p>
+<h2 id="virtual-memory-md-참조"><a href="#virtual-memory-md-참조" class="headerlink" title="virtual_memory.md 참조"></a>virtual_memory.md 참조</h2><p>thrashing :</p>
+<p>page 교체가 필요하지만 이미 활발히 사용되는 페이지들만으로 이루어져 있으므로 어떤 페이지가 교체되던 바로 다시 page 교체가 필요한 상황에서 지속적으로 page fault가 발생하고 교체된 page는 얼마<br>지나지 않아 다시 읽어올 필요가 있게 되는 것이 무한히 반복하는 상태</p>
+<p>실행은 안되면서 page out은 무한 반복상황. 프로그램은 작동되는 상태.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjui8yu6h0003j52ic51pipg7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day9-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day9-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:18.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day9-memo/">wps_day9_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day9</p>
+<p>#<br>call by value<br>-&gt;stack frame 바깥으로 나갈 수 없다. 안에 있는 값만 바꿀 수 있고 바깥 변수는 바꿀 수 없다.<br>call by reference</p>
+<h2 id="gt-stack-frame-바깥으로-나갈-수-있다-바깥에-있는-변수에-접근할-수있어서-값을-바꿀-수-있다"><a href="#gt-stack-frame-바깥으로-나갈-수-있다-바깥에-있는-변수에-접근할-수있어서-값을-바꿀-수-있다" class="headerlink" title="-&gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다."></a>-&gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다.</h2><p>#CPU/memory.pdf</p>
+<p>ctrl+shift+esc -&gt;작업관리자-&gt;성능</p>
+<p>Program Counter(PC) : 다음에 실행될 instruction의 주소값(메모리에 있는)을 저장하고 있는 레지스터<br>IR(Instruction Register): 지금 현재 CPU가 실행하는 Instruction이 저장되어 있는 곳. 기계어 자체가 저장되는 공간. Instruction은 기계어 0101 한줄한줄을 의미</p>
+<p>***(중요!)메모리에 있는 값을 CPU에 있는 레지스터로 가져와서 ALU를 통해 계산하고 계산된 값이 반드시 ax에 먼저 저장되고, 그 다음에 다음 instruction이 진행되면서 다시 메모리로 보내는 개념.</p>
+<h2 id="필기-그림-참조-C에서-이렇다는-거임-파이썬에서는-heap인듯"><a href="#필기-그림-참조-C에서-이렇다는-거임-파이썬에서는-heap인듯" class="headerlink" title="필기 그림 참조.(C에서 이렇다는 거임. 파이썬에서는 heap인듯..)"></a>필기 그림 참조.(C에서 이렇다는 거임. 파이썬에서는 heap인듯..)</h2><p>##이것만은 알자.</p>
+<ol>
+<li>Instruction = 기계어&lt;—1:1—&gt;어셈블리어<pre><code>Assembler
+</code></pre>2.c = a+b;</li>
+</ol>
+<p>mem에 있는 a=10과 b=20을 반드시! cpu의 ax=10 bx=20 (범용 레지스터: 데이터를 일시적으로 저장(general purpose register)) 에 옮겨왔다가 결과값을 반드시 한번더 레지스터에 저장하고!!!! 그 다음에<br>그 값을 mem의 c에 줌.</p>
+<p>3.<br>PC(Program Counter): 다음에 실행될 Instruction이 메모리에서(메인메모리,RAM) 저장된 주소값을 저장하는 레지스터</p>
+<h2 id="IR-Instruction-Register-현재-실행중인-Instruction-자체가-저장된-레지스터-lt-—————-이런IR을-CU-실행의-주체-총책임-가-참조함"><a href="#IR-Instruction-Register-현재-실행중인-Instruction-자체가-저장된-레지스터-lt-—————-이런IR을-CU-실행의-주체-총책임-가-참조함" class="headerlink" title="IR(Instruction Register): 현재 실행중인 Instruction 자체가 저장된 레지스터.&lt;—————-이런IR을 CU(실행의 주체,총책임)가 참조함"></a>IR(Instruction Register): 현재 실행중인 Instruction 자체가 저장된 레지스터.&lt;—————-이런IR을 CU(실행의 주체,총책임)가 참조함</h2><p>#CPU.pdf<br>clock</p>
+<p>GHz -&gt; 주파수(frequency)</p>
+<p>f = 1/T, T=주기</p>
+<p>T(period, sec):<br>0.43ns라면…0.43ns마다 한번씩 instuction을 실행하려고 함.</p>
+<p>Instruction이 실행되거나, 실행되고 있는 시간.</p>
+<p>(안중요)<br>RISC(Reduced Instruction set computer): 기계어 = 어셈블리어<br>CISC(complex Instruction set computer): 기계어 =(거의) 어셈블리어</p>
+<p>한 instruction 당 걸리는 clock수 -&gt;clock cycles per Instruction -&gt;CPI (알아야)<br><a href="https://en.wikipedia.org/wiki/Cycles_per_instruction" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Cycles_per_instruction</a></p>
+<p>결국…<br>gcc랑 fbstring의 차이는 CPI차이라 할 수 있지.<br>gcc는 CPI가 높은거고 fbstring은 CPI가 낮은거지.</p>
+<p>###stackframe.pdf</p>
+<p>stack pointer(파이썬에선 instruction pointer?): stack segment 의 맨 위를 가리킨다.<br>frame pointer(base pointer): stack frame의 기준(가운데)을 가리킨다.</p>
+<p>ret addr: 리턴 주소값. PC가 call을 통해 함수의 라인들을 실행하고 return을 통해 돌아올 때 돌아올 주소값을 알아야 돌아올 수 있다. 이 주소값을 저장하는 곳.</p>
+<p>n,b,a,를 쌓고 ret addr을 쌓았고<br>ebp가 메인함수의 기준을 가리키고 있다가 stack frame이 생기고 stack frame이 지워질 때 원래 가리키고 있던 main 함수 기준의 주소를 모르니 이 주소값을 original ebp value로 저장?<br>esp에서 지역변수 3개 만큼의 공간을 빼서 -&gt;esp에 저장. 빼는 이유는 위로 이동하려면 주소값에서 빼야함. 위에서부터 code/data/heap/stack순서이지<br>esp는 스택의 맨위를 가리킴.<br>ebp는 stackframe이 쌓여 있을 때, 데이터에 접근할 때 아래쪽에 접근할 떄는 ebp+8/12 지역변수에 접근할 떄는 ebp-8/12<br>esp=ebp함으로써 esp가 ebp로 내려옴-&gt;값은 남아있지만 지워진것 같이 된다.(stackframe이 사라지는 개념)<br>pop을 통해 ebp가 main을 가리키게 됨.<br>add를 통해 esp가 내려옴.지워진것 같이 됨.</p>
+<p>stack pointer : stackframe을 생성하는 얘. stack이라는 segment의 맨 꼭대기.<br>frame pointer(base pointer): stackframe 내에서 변수(data,memory)에 접근할 때 그 기준점이 됨.</p>
+<p>하드웨어 아키텍처는 여기까지. CPU는 끝!<br><a href="https://www.youtube.com/watch?v=cNN_tTXABUA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cNN_tTXABUA</a><br>좋은 영상!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<hr>
+<h1 id><a href="#" class="headerlink" title="==================================================================================================="></a>===================================================================================================</h1><p>===================================================================================================</p>
+<p>###memory</p>
+<p>CS/memory/memory.md<br>CS/memory/memory.pdf</p>
+<p>*메모리 계층구조</p>
+<p>  Register(CPU)<br>   Cache (L1, ,,,)<br>   Memory(RAM)<br>  Hard Disk(SSD)</p>
+<p>-&gt;위로 올라갈수록 빠르다. 위로 올라갈수록 용량이 작다<br>-&gt;한번에 가져올 수는 없다. 각 단계를 거쳐야지만 다른 단계로 갈 수 있다.<br>-&gt;cache에서 reg가져올 떄는 3 cycle, mem에서 reg 가져올 떄는 20cycle.</p>
+<p>*locality(지역성)<br>temporal locality 시간 지역성 :<br>spatial locality 공간 지역성 : </p>
+<p>li = [1, 2, 3, 4, 5]<br>res = 0<br>for e in li:</p>
+<p>#temporal locality + spatial locality<br>    res += e</p>
+<p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
+<p>cache line: cache에 들어올 때 뭉탱이로 들어옴.<br>cache miss: CPU가 요청했을 때 cache에 없을 때<br>cache hit: CPU가 요청했을 떄 CPU에 요청한 데이터가 있을 때 cache에서 CPU로 바로 data를 줄 수 있을 때</p>
+<p>과학연구 결과 cache hit가 일어날 확률이 기본적으로 95% ㄷ.ㄷ</p>
+<p>gcc와 fbstring 에서 cache miss 내용 이해 가능.</p>
+<p>L1 cache  –&gt;빠르지만 용량 작고.<br>L2     ‘’<br>L3     ‘’</p>
+<hr>
+<p>내일:<br>RAM을 OS가 어떻게 관리하나.<br>가상메모리(어려움)</p>
+<h2 id="다음주에-OOP"><a href="#다음주에-OOP" class="headerlink" title="다음주에 OOP"></a>다음주에 OOP</h2><p>#기존 자료 구조를 이용해 새로운 자료구조를 만드는 것</p>
+<p>#어댑터(adapter): </p>
+<p>#컨테이너(container)</p>
+<p>내부를 이용해 ——&gt;내가 이용하고자 하는 인터페이스를 완성하는 것.<br>                   adapter?</p>
+<p>class Stack:<br>    def <strong>init</strong>(self):<br>        self.container = list()</p>
+<pre><code>def empty(self):
+    &apos;&apos;&apos;
+    s.empty() -&gt; bool
+    만약에 스택에 요소가 있다면 False
+    아니면 True
+    &apos;&apos;&apos;
+    if len(container)==0:
+        return True
+    else:
+        return False    
+
+
+def push(self, data):
+    &apos;&apos;&apos;
+    s.push(data) -&gt; None
+    리스트의 append를 이용해서 구현하세요
+    &apos;&apos;&apos;
+    container.append(data)
+
+def pop(self):
+    &apos;&apos;&apos;
+    s.pop() -&gt; data
+    스택의 맨 꼭대기 값을 반환하면서 삭제
+    리스트의 pop 함수 이용
+    &apos;&apos;&apos;
+    container.pop()
+
+
+def peek(self):
+    &apos;&apos;&apos;
+    s.peek() -&gt;data
+    스택의 맨 꼭대기 값을 반환
+    리스트의 인덱스를 이용해서 구현
+    &apos;&apos;&apos;
+    container[len(container)+1]
+</code></pre><p>——————-내가 해본거-0- ————————–<br>class Stack:</p>
+<pre><code>def __init__(self):
+    self.container = list()
+
+def empty(self):
+
+    if len(self.container)==0:
+        return print(True)
+    else:
+        return print(False)    
+
+def push(self, data):
+    self.container.append(data)
+
+def pop(self):
+    return print(self.container.pop())
+
+def peek(self):
+    return print(self.container[-1])
+</code></pre><p>s = Stack()<br>s.push(1)<br>s.push(2)<br>s.push(3)<br>s.pop()<br>s.empty()</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjui8yu6x000uj52iz9vkrdks" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day8-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day8-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:14.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day8-memo/">wps_day8_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day8</p>
+<p>##면접 출제 문제 작년<br>1~100,000,000 를 모두 더한 값 (for/while문은 안됨.)</p>
+<h2 id="def-sumto-start-end-gt-int"><a href="#def-sumto-start-end-gt-int" class="headerlink" title="def sumto(start, end) -&gt;int"></a>def sumto(start, end) -&gt;int</h2><p>def sumto(start, end):<br>    result = (start+end)*(end-start+1) // 2<br>    return result</p>
+<p>def sumto_step(start, end,step):</p>
+<p>*푼 사람 풀이</p>
+<p>1.재귀함수</p>
+<p>def sumto(s,e):<br>    if s==e:<br>        return s<br>    return sumto(s,e-1)+e</p>
+<p>2.터지는걸 인지하고 수학적으로 푼것<br>내가 한 것.</p>
+<hr>
+<p>#stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)</p>
+<p>스택이나 큐는  데이터를 일시적으로 저장할 때 많이 쓰는 자료 구조</p>
+<p>LIFO(Last in First Out)</p>
+<p>ADT (Abstract Data Type): 추상 자료형<br>-&gt;한마디로, 어떤 자료 구조가 가지고 있는 operation(함수)의 나열/목록<br>-&gt;함수 시그니처(interface)만 나열할 뿐, 내부 구현은 표기하지 않는다.<br>-&gt;함수(operation)의 작동방식 약간 설명</p>
+<p>dir(list)</p>
+<p>help(list.append)<br>-&gt;이 설명을 싹 모아놓은 글이 ADT</p>
+<p>stack -&gt; 1.linked list<br>        -&gt; 2. python list</p>
+<p>(stack 수업자료 참조)</p>
+<p>ADT-는 operation의 나열.<br>stack의 ADT</p>
+<p>S.empty()<br>S.push(data)<br>S.pop()<br>S.peek()</p>
+<p>자료구조에서는 insert/search/delete 를 항상 신경써라</p>
+<p>stack의 경우<br>insert - push<br>search - peek<br>delete - pop<br>이렇게 되징</p>
+<hr>
+<p>visual studio 설치</p>
+<h2 id="다음주까지-듀얼부팅-우분투-깔려-있어야"><a href="#다음주까지-듀얼부팅-우분투-깔려-있어야" class="headerlink" title="다음주까지 듀얼부팅(우분투)깔려 있어야"></a>다음주까지 듀얼부팅(우분투)깔려 있어야</h2><p>data_structure/stack/calculator.pdf 참고</p>
+<p>후위표기법 계산(pdf중간부터~): 후위표기법 설명~<br>expression 예제들 해봐라~</p>
+<p>제한 조건:<br>1.입력시 피연산자는 1자리<br>2.정수 연산</p>
+<p>from stack import Stack<br>st = Stack()   #list만들 때 list()만드는 것처럼 빈 스택 만드는 방법</p>
+<p>for ch in ‘322 <em> + 4 - 3 </em> 257 - * +’</p>
+<p>st.push(int(ch))<br>st.isdigit<br>st.pop<br>이런거 쓰기</p>
+<h2 id="그냥-숫자-보고-계산해봄"><a href="#그냥-숫자-보고-계산해봄" class="headerlink" title="그냥 숫자 보고 계산해봄"></a>그냥 숫자 보고 계산해봄</h2><p>후위표기법으로 바꾸는 법 함.<br>빈 리스트와 스택 각 1개씩 필요</p>
+<h2 id="pdf파일-calculator-앞부분-내용"><a href="#pdf파일-calculator-앞부분-내용" class="headerlink" title="pdf파일 calculator 앞부분 내용"></a>pdf파일 calculator 앞부분 내용</h2><p>다음주에 OOP끝날 떄까지는 절차지향으로 해보기</p>
+<hr>
+<p>#그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</p>
+<p>#example.py<br>from stack import Stack</p>
+<p>st = Stack()   #li = list()같은 것</p>
+<p>st.push(1)<br>st.push(2)<br>st.push(3)<br>st.push(4)<br>st.push(5)</p>
+<p>while not st.empty():<br>    data = st.pop()<br>    print(data)</p>
+<p>##하드웨어 아키텍처</p>
+<p>CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.<br>    CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)<br>              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </p>
+<pre><code>- Instruction Register (IR) : the instruction register (IR) or current instruction register (CIR) is the part of a CPU&apos;s control unit that holds the instruction currently being executed or decoded
+- Stack pointer :  a computer central processor register whose purpose is to keep track of a call stack
+- base pointer(frame pointer)      
+</code></pre><p>Register를 해야 context switching을 알 수있음.</p>
+<p>범용 레지스터 EAX EBX …</p>
+<p>##메모리 레이아웃 / Memory 계층</p>
+<pre><code>                       Reg
+locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 데이터가 cache 에 있을 때!
+            Main memory - (RAM)             cache miss 개념: 찾는 데이터가 cache에 없을 때!
+           하드 디스크 (HDD, SSD)
+</code></pre><p>cache: computer memory with short access time used for the storage of frequently or recently used instructions or data<br>locality: programs tend to use data and instructions with addresses near or equal to those have used recently</p>
+<p>##memory segment<br>code seg<br>data seg<br>stack seg(빠름)<br>heap seg(느림)</p>
+<p>data stack heap부분은 변수랑 관련..</p>
+<p>#가상메모리(어려움,프로그래머라면 넘어야 할 장벽)<br>OS이론과 하드웨어 아키텍처 이론 모두 들어감.</p>
+<p>OS가 -&gt;4G 주는데 나는 400G 가까이 쓰지<br>근데 램은 12G이지 이 갭은 무엇인가에 대한 이야기</p>
+<hr>
+<p>알아야 들어야 하는데 목표 영상<br>유투브 검색: fbstring cpp</p>
+<p>benchmarking - 함수 성능 비교하는 것</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjui8yu6x000tj52ixfu4cssm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day7-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day7-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:10.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day7-memo/">wps_day7_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day7</p>
+<p>###closure<br>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
+<p>(중요)###문자와 문자열 -&gt;character set<br>                                  ASCII –&gt;UNICODE –&gt;     utf-8 (웹표준)      &lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!!!!!!<br>                                           utf-16<br>                              utf-32</p>
+<p>##call by value         C로 보여만 줄거임, 면접 단골<br>    call by reference</p>
+<pre><code>call by object reference(좀 어려움,(중요))
+  (call by assignment)
+</code></pre><p>##일주일짜리 프로젝트, 계산기, 스택 하고<br>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
+<p>###closure<br>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
+<p>#은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것<br>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
+<p>my_acnt = account(‘greg’, 5000)<br>your_acnt = account(‘john’, 3000)</p>
+<p>type(my_acnt)</p>
+<p>my_acnt.<strong>name</strong> == your_acnt.<strong>name</strong><br>True</p>
+<p>my_acnt.<strong>name</strong><br>‘change_money’</p>
+<p>my_acnt(1000)     —–&gt;input은 같은데 결과값이 다름.<br>(‘greg’, 6000)</p>
+<p>your_acnt(1000)   —–&gt;input은 같은데 결과값이 다름.<br>(‘john’, 4000)</p>
+<p>-&gt;input + 상태정보에 따라 output이 결정됨. 원래 함수는 input따라 output이 결정되는거였지? 이건 이런면에서 다르다 이거야. 이 개념에 따라서 OOP가 나옴.</p>
+<p>my_acnt(-3000)<br>(‘greg’,3000)</p>
+<p>cells = my_acnt.<strong>closure</strong></p>
+<p>for cell in cells:<br>    print(cell.cell_contents)</p>
+<p>===========================================================================</p>
+<p>#문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</p>
+<p>character set </p>
+<p>character encoding (모스 부호)</p>
+<p>code point</p>
+<p>문자 하나에 매핑된 숫자를 코드 포인트라 함. 그 테이블을 ASCII라 함.<br>7bit로 모든 문자 표현할 수있음.ASCII 코드가 0~127(10)까지 있으니.<br>그래서 1byte면 충분히 저장 가능.<br>char 자료형(C에서)이 나옴. 1byte 자료형</p>
+<p>국가마다 테이블 많아지니..우리 통합 한번하자 해서..UNICODE 나옴</p>
+<p>7bit 부족해? 그러면UNICODE는 2byte면 충분하겠다~ 0x0000 ~ 0xffff</p>
+<p>혹시 모르니까…2byte(16bit) 테이블을 여러개 만들어 놓자~</p>
+<p>2byte 테이블을 17개 만들어 놈~ 실제로 쓰는거 2개..ㅠ</p>
+<p>unicode wiki<br>사이트 맨 아래 BMP(다국어 기본 평면) 그래프 하나만 가지고 거의 씀<br>0000 ~ 0FFF —-&gt;이게 ASCII 들어 있는 곳<br>ASCII가 BMP에 임베디드 된 것임.    </p>
+<p>16bit(2byte) 2진수를 16진수로 표현하면 4(16/4)자리 겠지. 0x_ _ _ _     </p>
+<p>U+0000 ~ U+007f<br>0x           0x   0111 1111</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>hex(ord(‘가’))<br>0xac00</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_0000~0FFF" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_0000~0FFF</a><br><a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF</a></p>
+<p>ASCII는 숫자 그대로 메모리(1byte)에 저장됨.</p>
+<p>unicode의 경우…<br>‘가’–&gt;0xac00 -&gt;2byte니까..메모리에 그대로 하면 안될까?  1010 1100 0000 0000 이렇게..근데 이렇지 않음.<br>평면이 17개 있기에..2번째 평면부터는 최소 3byte있어야 한다. 평면이 17개면 2byte+4bit만 있으면 모든 평면 커버하겠지.</p>
+<p>encoding 방식(메모리에 저장할 떄의 방식) utf-bit란 뜻임.<br>utf-8  —&gt;1byte, 웹표준,<br>utf-16  –&gt;1차 평면 같은 경우(BMP)는 그냥 그대로 이 숫자들을 0,1 로 바꾸어서 쓰지. ac00을 그대로 0,1로 바꾸어서~ 2byte 16 / 4byte 32<br>utf-32   —-&gt;모든 숫자를 다 4byte로</p>
+<hr>
+<p>a = ‘가’<br>b = a.encode(‘utf8’)<br>type(b)</p>
+<p><class 'bytes'><br>b    —-&gt;0xeab080 즉 3바이트</class></p>
+<p>a.encode(‘utf-16’)  —&gt; ac00 가 00ac로 바뀜(little endian)</p>
+<p>*little endian vs big endian<br>1423 사람이 알아보기 쉽게 앞에서부터 읽는걸 걸 big endian라 하고, 1이 most significant bit<br>3241 컴퓨터는 뒤에서부터 하기에 little endian ,1이 most significant bit</p>
+<p>network로 쏠때는 표준으로 big endian으로 쏘자 라고 약속.</p>
+<p>a.encode(‘cp949’) </p>
+<p>-&gt;encoding 방식 (유니코드 부호화 방식)(굉장히 중요) 코드 포인트가 메모리에 저장되는 다양한 방식</p>
+<p>웹 표준은 utf8<br>utf8에서 한글이 어떻게 변환하는지 볼 것.</p>
+<p>a = ‘가’<br>b = a.encode()  —&gt;부호화<br>b</p>
+<p>b.decode()   —&gt;복구화?</p>
+<p>c = a.encode(‘cp949’)<br>c</p>
+<p>c.decode()<br>error</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>try:<br>    d = c.decode()<br>except UnicodeDecodeError:<br>    d=c.decode(‘cp949’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>d<br>‘가’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><em>**</em>utf8은 endianless (가’의 encoding 과정 수업자료 참고)<br>‘가’의 코드 포인트 만들어서 프로토콜에 따라 진행됨.</p>
+<h2 id="https-ko-wikipedia-org-wiki-UTF-8"><a href="#https-ko-wikipedia-org-wiki-UTF-8" class="headerlink" title="https://ko.wikipedia.org/wiki/UTF-8"></a><a href="https://ko.wikipedia.org/wiki/UTF-8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/UTF-8</a></h2><p>함수의 종류(기준: 함수 정의가 아니라 호출에서의 인자(parameter,argument) 전달 방식)</p>
+<p>call by value<br>-&gt;함수 안에서 인자의 값이 변경되어도, 외부의 변수의 값은 변경되지 않는다<br>call by reference<br>-&gt;stack frame 넘나들 수 있음</p>
+<p>call by obj reference</p>
+<p>*immutable<br>def change_value(num, new_num):<br>    num = new_num<br>    print(‘%d in change value’ %num)</p>
+<p>num = 10  —&gt;immutable</p>
+<p>change_value(num,20)</p>
+<h2 id="print-num"><a href="#print-num" class="headerlink" title="print(num)"></a>print(num)</h2><p>*mutable</p>
+<p>li = [1,2,3]  —&gt;mutable<br>def change_elem(li, idx, new_elem):<br>    li[idx] = new_elem<br>    print(li)</p>
+<p>change_elem(li, 1, 100)<br>print(li)        —&gt;call by value는 확실히 아니군.</p>
+<p>###call by object reference<br>      (call by assignment)</p>
+<p>*immutable(상수)<br>할당(assignment) 할 때 바뀜<br>화살표가 바뀜</p>
+<p>*mutable<br>list 같은 것<br>list 내에서의 화살표가 바뀜</p>
+<p>유튜부 동영상이랑 같은 내용</p>
+<hr>
+<p>#reference counter<br>import sys<br>a=1<br>sys.getrefcount(a)  —-&gt;가리키는 숫자를 알 수 있음.</p>
+<hr>
+<p>tu = (1,2,3)<br>def change_elem(tu,a,b,c):<br>    tu = (a,b,c)<br>    print(tu)<br>    return tu</p>
+<p>tu = change_elem(tu, 1,100,2)<br>print(tu)</p>
+<hr>
+<p>##과제</p>
+<p>내일 스택이랑 과제 설명</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjui8yu6w000sj52ic5a2riri" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day6-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day6-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:06.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day6-memo/">wps_day6_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day6</p>
+<p>###lambda functin: 익명함수(이름이 없다)<br>함수를 재사용하지 않고 몇 번정도만 쓸 때 쓴다.</p>
+<p>def func(a,b):<br>    return a+b</p>
+<p>lambda a,b: a+b</p>
+<p>f=lambda a,b:a+b  –&gt;이런식으로 하지 않으면 메모리에서 다음 라인 가는 순간 사라져버림</p>
+<p>f=lambda a,b:a+b<br>f(1,2)<br>–&gt;first class function임</p>
+<p>##파이썬의 함수는 “식”임.</p>
+<p>#식은 expression임.</p>
+<p>a=10<br>b = 20<br>a+b  -&gt;&gt;이런걸 식이라 하지. 이항식이라 함</p>
+<p>10  –&gt; 이런걸 단항식(unary expression)이라 함.</p>
+<p>식이란, 반환값이 있다 즉 값이 있다.</p>
+<p>“I am your father!” –&gt;이것도 식</p>
+<p>a=10<br>b=29<br>a+b –&gt;이것도 식</p>
+<p>def func(a,b):<br>    a+b  –&gt; return이 없다면? 값을 반환하지 않는다. 하지만 그럼에도 불구하고 식이라 한다. 파이썬에서 그리했기에.</p>
+<p>print(func(10,20))</p>
+<p>print(print(func(10,20)))  –&gt;이것도 식이다. 반환값이 None</p>
+<p>파이썬의 함수는 무조건 식이다.<br>이건 언어마다 다른 것.</p>
+<p>##lambda 문법</p>
+<p>lambda a, b: a+b  –&gt;람다는 무조건 값을 반환하기 때문에 return을 a+b앞에 쓰지 않음. 람다는 값을 반환하지 않게 할수 없음.<br>                             리턴이 명시되지 않았지만 암묵적으로 무조건 return이 있는것.</p>
+<p>f2=lambda a,b:a+b<br>f2(1,2)</p>
+<p>###<br>li = [5,2,3,1,7,10]</p>
+<p>def pred(x):<br>    return x % 2    </p>
+<p>li.sort(key=pred, reverse = True)         ——&gt;나머지가 0,1의 순서로 정렬됨.</p>
+<p>li</p>
+<p>stable sorting 쏘팅 개념으로 됨-기존 정렬은 유지되면서..</p>
+<p>li.sort(key=lambda x: x%2, reverse = True)</p>
+<p>##filter, map,reduce</p>
+<p>#lazy evaluation(게으른 연산)</p>
+<p>from functools import reduce</p>
+<p>reduce</p>
+<p>##filter</p>
+<p>li = [-3,5,1,2,-5,-4,14]</p>
+<p>f = filter(lambda e: e &gt;0, list)    —-&gt;filter 객체가 나옴. list에 iterable을 넣어줌. 앞쪽에 리턴값은 부울리언. true는 반환해주고 아닌것은 버림.</p>
+<p>f</p>
+<p>next(f)<br>5<br>next(f)<br>1<br>next(f)<br>14</p>
+<p>next(f)<br>stopiteration error.</p>
+<p>다시 filter객체를 만들고,,,<br>for e in f:<br>    print(e)</p>
+<p>without_neg = list(filter(lambda e: e&gt;0, li))</p>
+<p>##lazy evaluation의 개념<br>map,filter,reduce,generator를 쓰는 이유!<br>함수의 실행 시기를 내가 결정한다!<br>그래서 내가 원할 때만 결과값을 가져온다!</p>
+<p>li=[1,2,3]</p>
+<p>def func(x):<br>    print(“func executed”)<br>    return x&gt;0</p>
+<p>f= filter(func, li)</p>
+<p>next(f)</p>
+<p>next(f)</p>
+<p>result=[]<br>for elem in li:<br>    if elem &gt;0:<br>        result.append(elem)</p>
+<p>result</p>
+<p>f= filter(func,li)<br>print(“다른 작업”)<br>next(f)<br>print(‘another job’)</p>
+<p>next(f)  –&gt;다른 일하다가 내가 필요한 순간에 그 다음 값을 쓸 수있다.<br>           값을 하나 가져오고 쓴다음에 버린다.</p>
+<p>1.내가 함수의 실행시간을 결정 가능(연산을 게으르게 쉬다가 니가 나를 호출할 때만 그 때 계산해줄게)<br>2.메모리 절약 가능</p>
+<p>##map<br>사상한다, 선형대수에서 나오는 개념. 한마디로 함수 같이 연결의 의미</p>
+<p>li = [2,3,5,7]</p>
+<p>m = map(lambda x: x**2 ,li)  –&gt;map 객체</p>
+<p>next(m)<br>4<br>next(m)<br>9<br>next(m)<br>25<br>next(m)<br>49<br>next(m)<br>stopiteration</p>
+<p>map객체,filter 객체 &lt; generator객체고,&lt;iterator &lt; iterate —-&gt;따라서 map과 filter에도 for문 적용 가능</p>
+<p>li = [2,3,-5,6,-2,1,-10]<br>양수를 골라내서 제곱한 값을 리스트로 만드시오</p>
+<p>result = list(map(lambda b: b**2,  filter(lambda a: a &gt;0, li)  ))</p>
+<p>result</p>
+<p>##reduce<br>자료구조 (list,tuple)를 연산을 통해서 단 하나의 값으로 만드는 함수</p>
+<p>from functools import reduce</p>
+<p>help(reduce)</p>
+<p>li = [2,3,-5,6,-2,1,-10]</p>
+<p>result = reduce(lambda a,b: a+b, li)  —&gt;앞에서부터 2개씩 들어가서 계산 후 값을 넣어준다. 2+3 = 5,, 5+(-5) = 0………………쭉~</p>
+<p>result<br>-5</p>
+<p>result = reduce(lambda a,b: a+b, li, 100)  —&gt;초기값을 100넣어줄 경우,, 100+2해서 넣어주고 쭉~<br>result</p>
+<p>#간단 문제(최대값 구하기)</p>
+<p>li = [3,6,8,-10,2,1,100,50,46,-47]</p>
+<p>result = reduce(lambda a,b: b if a&lt;b else a , li)</p>
+<p>(최소값 구하기)<br>result = reduce(lambda a,b: b if a&gt;b else a , li)</p>
+<p>##문자수 세기 문제~</p>
+<p>li = [‘a’, ‘b’,’a’,’b’,’b’,’a’,’c’,’a’]</p>
+<p>dic = {‘a’:4, ‘b’:3, ‘c’:1} –&gt;목표</p>
+<p>1.파이썬의 함수는 식이니까–&gt;무조건 값을 반환함. 없으면 none 반환<br>2.부울린 연산을 할 때 마지막으로 참조한 값을 반환한다.<br>아래 3가지 이용…</p>
+<p>[1,2] or []  —&gt; or의 특성 이용<br>[1,2]      </p>
+<p>dic = {‘a’:1, ‘b’:2}<br>dic.get(‘a’)<br>1</p>
+<p>dic.get(‘c’,0)<br>0</p>
+<p>result = reduce(람다식, li, {})</p>
+<p>dic.get(‘a’,0) +1  —&gt;이용. 초기값 세워주고 그 후론 해당 값을 반환</p>
+<p>dic.update({})   —&gt;이용. none을 반환함</p>
+<p>li = [‘a’, ‘b’,’a’,’b’,’b’,’a’,’c’,’a’]</p>
+<p>result = reduce(lambda dic, ch:  …  , li, {})</p>
+<p>result = reduce(lambda dic, ch: dic.update({ch: dic.get(ch,0)+1}) or dic, li, {})</p>
+<p>###decorator(데코레이터)<br>쉽게 기능을 추가 할 수 있다.함수를 추가한다.</p>
+<p>from fancy import decofunc</p>
+<p>@decofunc         —–&gt;골뱅이로 부치면 그냥 된다. 위에서부터 아래로 실행된다.<br>@deco2<br>@deco3<br>@deco4<br>def func(a,b):</p>
+<pre><code>return a+b
+</code></pre><hr>
+<p>#함수 기능을 대변하는 이름으로<br>def outer(org_func):     —&gt;내가 정의하는 함수, function을 매개변수로 받음<br>    def inner(*args, **kwargs):    —-&gt;인자들, 가변인자들</p>
+<pre><code>    #추가하는 기능을 구현한다.
+    print(&apos;added functionalty&apos;)
+    return org_func(*args, **kwargs)  ---&gt;함수실행, unpacking하겠다는 거지.
+return inner  -----&gt;function을 리턴
+</code></pre><p>def func(a,b):<br>    return a+b</p>
+<p>func = outer(func)</p>
+<p>func(10,1)</p>
+<p>func.<strong>name</strong><br>‘inner’</p>
+<p>@outer<br>def func(a,b):<br>    return a+b</p>
+<h2 id="func-10-1"><a href="#func-10-1" class="headerlink" title="func(10,1)"></a>func(10,1)</h2><p>def f(a,b):<br>    return a+b</p>
+<p>def f(a,b):<br>    return a*b</p>
+<p>f(2,7)  —&gt;위에것이 생겼다가 아래것이 덮어버림.function overloading  <-> overriding (?)<br>14</-></p>
+<p>Overloading is a concept where a method/function can have multiple calling signatures as compared to just one in non-overloaded method/function. To be specific, number of arguments with which a function can be called with, in python defines overloading in python.<br>Overriding is a concept to redefine the definition of a function in the inheritance hierarchies. This simply means that, if a method is defined in a parent class, and the child class redefines the same method again inside it, that method is said to be overridden.</p>
+<hr>
+<p>##데코레이터 다시 보기</p>
+<p>def outer(org_func):    —&gt;org_func는 주니어가 개발한 함수<br>    def inner(<em>args, **kwargs):  —-&gt;<br>        print(“여기에 기능 추가”)<br>        return org_func(</em>args, **kwargs)  —–&gt;namespace 개념 적용..안에 없으니 바깥에서 매개변수 org_func로 찾음<br>    return inner  —&gt;실행이 아니라 반환</p>
+<p>def func(a,b):<br>    return a+b</p>
+<p>func.<strong>name</strong><br>‘func’</p>
+<p>func = outer(func)    —&gt;func는 inner</p>
+<p>func.<strong>name</strong><br>‘inner’</p>
+<p>func(4,5)<br>여기에 기능 추가<br>9</p>
+<p>———–아름답게 하기 위해 아래와 같이 압축시켜 표현———<br>@outer<br>def func(a,b):<br>    return a+b</p>
+<p>###타이머 만들어보기<br>친구가 만든 함수의 실행시간을 재고싶음</p>
+<p>from functools import wraps</p>
+<p>import time</p>
+<p>def benchmarker(org_func):<br>    @wraps(org_func)<br>    def inner(<em>args, **kwargs):<br>        start = time.time()           —-&gt;현재 시간을 반환.1970년 1월 1일 0시0분 0초부터 지금까지 지난 초수.<br>        result = org_func(</em>args,**kwargs)<br>        elapsed = time.time() - start<br>        print(f’elapsed time : {elapsed: .2f}’)<br>        return result<br>    return inner</p>
+<p>@benchmarker<br>def something(a,b):<br>    time.sleep(5)<br>    return a+b</p>
+<p>something(1,2)</p>
+<p>elapsed time:5.00<br>3</p>
+<p>###과제</p>
+<p>#callcounter</p>
+<p>#어떤 함수를 호출한 횟수를 보여준다. </p>
+<p>#func(a,b)</p>
+<p>#–&gt;’5번 호출되었습니다’</p>
+<p>#–&gt; 15</p>
+<p>g_call_num = 0<br>def callcounter(org_func):<br>    pass</p>
+<p>@callcounter<br>def func(a,b):<br>    return a+b</p>
+<p>for _ in range(10):<br>    func(1,2)<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>…<br>3                             —-&gt;이런식으로 나오면 됨.</p>
+<p>답:<br>g_call_num = 0</p>
+<p>def callcounter(org_func):<br>    @wraps(org_func)<br>    def inner(<em>args, **kwargs):<br>        global g_call_num<br>        g_call_num+=1<br>        print(f’{g_call_num}번 호출했습니다.’)<br>        return org_func(</em>args, **kwargs)<br>    return inner</p>
+<p>@callcounter<br>def func(a,b):<br>    return a+b</p>
+<p>for _ in range(10):<br>    func(1,2)</p>
+<hr>
+<p>2개 연속으로 있을 경우 독립성 부여하는 방법…</p>
+<p>@benchmarker<br>@callcounter<br>def another_func(a,b):<br>    return a+b</p>
+<p>–&gt;    </p>
+<p>from functools import wraps<br>@wraps(org_func)<br> 이거를 붙여서 benchmaker가 callcounter 적용된 another_func을 먹지 않고,<br>callcounter가 another_func에 붙고 benchmarker가 another_func에 독립적으로 붙게 해준다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjui8yu6w000rj52iz28paj74" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day5-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day5-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:01.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day5-memo/">wps_day5_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day5</p>
+<p>곱셈,나눗셈 - CPU에서 어떻게 이루어지는지<br>1.CPU에는 ALU가 있음.</p>
+<p>덧셈,뺏셈-가산기+보수 통해 계산<br>곱셈-가산기와 shifter를 통해 곱셈 가능</p>
+<p>2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit)</p>
+<p>3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,<br>RAM -&gt;Reg -&gt; ALU-&gt;Reg-&gt;RAM 과정을 거침 꼭 알아야. (이걸 알아야 나중에 context switching 할 수 있음) </p>
+<p>=============================================</p>
+<p>##곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)<br>ALU에서 일어나는 일 이해</p>
+<p>4bit Reg면 4번 shift한다.</p>
+<p>#곱셈<br>가산기와 shift통해</p>
+<pre><code>1010
+</code></pre><h2 id="x0101"><a href="#x0101" class="headerlink" title="  x0101"></a>  x0101</h2><p>110010           +1010     0000 | 0101     —-&gt;끝이 1이면 더해줌<br>              1010<br>                                  —————   shift 1 (&gt;&gt;)<br>                                 0101 | 0010      —-&gt;끝이 0이면 그냥 shift만</p>
+<p>#나눗셈<br>이번에는 왼쪽으로 shift 한다음에…공석을 0또는 1을 채운다.<br>        <strong>____</strong><br>0011 | 1011                         0000  |  1011   shift 1 (&lt;&lt;) 나눗셈에서의 shift는 사람이 나누기 할 때 안나누어질 때 자릿수 이동하는 개념을 컴퓨터가 쉬프트 방식으로 하는 것<br>                                        ( 0001)  |  011?  &lt;—여기서 ?이 값은 0 혹은 1인데 구할 때는 (괄호)안의 값을 0011의 2의 보수인 1101과 더해서 차이를 비교한다.-&gt;<br>                                                                   그러고나서 그 결과값이 음수인지 양수인지 판별해서 대소값 비교-&gt;<br>                    음수가 나왔다는것은 0011이 크다는 것이기에 끝에 0을 붙인다.<br>                    양수가 나왔다는 것은 0011이 작다는 것이고 나누어진다는 것이여서 1을 붙인다.</p>
+<p>###실수(어려움)<br>고정 소수점-&gt;정밀도는 높은데 표현 범위가 좁음(이젠 안씀)<br>부동 소수점(floating point) -&gt; 정밀도가 급감해서 최악됨 하지만 표현범위가 정말 좋아짐.<br>정밀도가 떨어지는데 이걸 어떻게 다뤄야하나 이 것에 대한 이야기<br>실수가 메모리에 어떻게 표현되는지. 실제 코딩은 어떻게 해야하는데 에 대한 이야기</p>
+<p>비교할 때 어떻게 하냐는 이야기<br>a=0.12~<br>b=0.12~~~</p>
+<p>if a==b:</p>
+<p>실수를 비교할 때 문제가 됨..<br>이걸 알면…직접 함수를 조절해서 내가 원하는 정밀도 조정해서 쓸 수 있음.<br>epsilon comparison을 알아야함 결국…(굉장히 중요한 주제임)</p>
+<hr>
+<p>부동 소수점</p>
+<p>   10.23   *    10^2<br>가수부       지수부<br>mantissa    exponent</p>
+<p>1.011 * 2^3을 메모리에 어떻게 표현할건데에 대한 이야기</p>
+<hr>
+<p>부동 소수점<br>1.single precision<br> 1) 32bit 4byte float<br> 2) 부호(1bit)+지수(8bit)+가수(23bit)</p>
+<p>2.double precision(파이썬은 이거씀)<br> 1)  64bit 8byte double<br> 2) 부호(1 bit)+ 지수(11bit)+ 가수(52bit)</p>
+<p>가수부는 정밀도 담당<br>지수범위는 표현범위 담당</p>
+<p>정규화-(normalization)</p>
+<p>5234 - 523.4 <em> 10^1<br>          52.34 </em> 10^2<br>          5.234<em>10^3 -&gt;&gt;&gt;&gt;이게 정규화임. 0이 아닌 자연수 1자리가 정수 부분에 와야함. 2진수의 경우는 무조건 1.xxx일케 되겠지. 그래서 1.man </em> 이런식으로 되는거. 무조건 1이므로 1비트는 저장하지 않음.<br>                                      따라서 1.man * ~에서<br>                                               1bit 52bit</p>
+<p>이런식으로 man은 채워짐.</p>
+<p>지수부에서는…<br>아래 식을 통해..<br>1.0101 * 2^5에서<br>Ere = Emem - bias<br>5  =           - 127 (float의 경우)<br>Ere -&gt; 실제 표현해야 하는<br>Emem -&gt; 메모리에 저장되는</p>
+<p>따라서 Emem = 132를 2진수로 바꾼수가 메모리에 저장됨..</p>
+<hr>
+<p>엡실론</p>
+<p>파이썬은 double인데 책에서는 소수점이하 15자리 까지 정밀 나와있음..<br>dig=15이런게 있는데 여기서 digits은<br>digits -정밀도 자릿수 을 의미</p>
+<p>10진수 1자리를 표현하기 위해서는 2진수 4자리 필요<br>즉, 9(10)  -&gt;   1001(2)</p>
+<p>2진수 7자리수는 10진수 2자리수까지 커버가능=즉 10진수 2자리의 정밀도를 보장한다.<br>2진수 10자리수는 10진수 3자리수까지 커버<br>2진수 24자리수는 10진수 7자리수까지 커버</p>
+<p>2진수 52 (가수부의 bit수)자리수는 10진수 15자리수까지 표현가능하다. man_dig = 15의 의미임.</p>
+<p>a = 1.0*(2**53)<br>a+=1<br>a</p>
+<p>엡실론 정의 : 메모리가 한정되어 있기 때문에 메모리에서 바로 다음 수를 알 수 있다. 그래서 그 차이를 구한게 엡실론이다. 1과 그 다음 메모리상에서 표현할 수 있는 수 사이의 차이임.</p>
+<p>파이썬의 경우 double이므로,<br>import sys<br>sys.float_info.epsilon == 2.0**-52   # 52는 가수부 bit<br>True</p>
+<p>###<br>diff = 2^E <em> epsilon  (이 식은 유도 안함 그냥 그렇다라고 알아두자)<br>      = |num|</em>epsilon (근사를 통해서  magnitude 퉁치기)</p>
+<p>!!따라서 어떤수가 있을 때 그 다음 수와의 차이를 알고 싶을 때 그 수에다가 엡실론을 곱하면 그 (차이)를 단번에 구할 수있다는 결론</p>
+<p>어떤 수와 그 다음 수의 그 작은 차이에 어떤수가 들어 있으면 그 수는 가장작은수로 퉁칠 수 있겠지. 즉 둘이 같다고 할 수 있겠지.</p>
+<p>1.절대 비교 -&gt;충분히 작은 수를 설정하는게 근거가 없을 수 있다. 매번 내부 함수를 바꿔야하니 추상화 위배됨.</p>
+<p>from math import fabs<br>def is_equal(a,b):<br>    return fabs(a-b) &lt;= 1.0e-10</p>
+<p>if is_equal(a,b):<br>    print(‘이정도 차이면 봐줄게’)<br>else:<br>    print(‘이건 같은수가 아니지…’)</p>
+<p>2.상대 비교 </p>
+<p>import math</p>
+<p>def is_equal2(a,b,w):<br>    ep = 2<strong>(-23)<br>    diff = abs(a-b)<br>    return diff &lt;= max(abs(a),abs(b)) <em> ep </em> 2</strong>(w)</p>
+<p>#상대오차 ,절대오차에 대해 더 공부하고 싶으시면<br>알고리즘 문제 해결 전략 세트 (책)</p>
+<p>#####빅오</p>
+<p>n —–&gt; T(n) = 3n^2 + 2n -1<br>이렇다고 하면 빅오는,<br>O (n^2)<br>big</p>
+<p>(big o of n^2) 라고 부름<br>O(n) 는 상한선 개념임. </p>
+<p>if&gt; T(n) = 3n+3<br>O(n)</p>
+<p>if&gt; T(n) = log n<br>O(log n )</p>
+<p>Big O 성능 순 순위</p>
+<p>1등. O(상수): 상수시간( constant)<br>ex) array의 indexing -&gt; arr[3] 같은 것<br>     linked list의 inert()와 delete() 함수 </p>
+<p>2.O(logn): 로그시간<br>ex)binary search<br>    BST의 insert 함수와 search(), delete() 계열의 모든 함수가 log n계열임</p>
+<ol start="3">
+<li>O(n): 선형시간<br>ex) linear search<br>  array의 insert,delete<br>  linked list의 search</li>
+</ol>
+<p>4.O(n*logn)<br>ex)quick sort(현업에서 쓰는 소팅 기법)<br>    merge sort<br>    heap sort</p>
+<p>   comparison sorting- 두 수를 직접적으로 비교하는 소팅은 그 알고리즘 속도가 O(n*logn)보다 절대 좋아질 수 없다.(알고리즘 책에 나옴) </p>
+<p>5.O(n^2)<br>ex) bubble sort<br>    insertion sort<br>    selection sort</p>
+<p>   for문은 2개 이상 쓰면 이리 됨.for문이 3개 이상 나오면 다시 짜면 됨.</p>
+<p>성능의 정도:  4등&gt;&gt;&gt;5등<br>빅오도 맹신하지는 말아라…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjui8yu6v000qj52iei5q425c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day4-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day4-memo/" class="article-date">
+  <time datetime="2019-04-15T10:43:48.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day4-memo/">wps_day4_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day4</p>
+<p>수</p>
+<p>문자–&gt;수<br>     unicode<br>     asci</p>
+<p>수-정수-&gt;양수<br>    음수-&gt;2의 보수<br>    실수-&gt;고정소수점 (잘 안씀,우리는 안할거임)<br>    부동 소수점(floating,어려움,이거 배울것임)</p>
+<p>###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?).</p>
+<p>#fist class function(일급 시민 함수? ㅋㅋ)<br>1.함수를 파라미터(argument=parameter)로 사용할 수 있는가<br>2.함수를 변수(variable)로 사용할 수 있는가<br>3.함수를 리턴(return)할 수 있는가</p>
+<p>3가지를 모두만족해야 first class function이라 함(MDN 사이트?)</p>
+<p>1.파라미터 조건은 만족할까?(파이썬이라는 언어는)<br>def f(a,b):<br>    return a+b</p>
+<p>def g(func, c, d):<br>    return func(c,d)</p>
+<p>a=10<br>b=20<br>g(f,a,b)</p>
+<p>2.변수 조건은 만족할까?(파이썬이라는 언어는)<br>f_var=f<br>f_var(20,30)</p>
+<p>3.리턴 조건은 만족할까?(파이썬이라는 언어는)<br>def create_calc(kind):<br>    if kind=’add’:<br>        def add(a,b):<br>            return a+b<br>        return add<br>    else kind == ‘sub’:<br>        def sub(a,b):<br>            return a-b<br>        return sub</p>
+<p>f = create_calc(‘add’)<br>f(10,20)</p>
+<p>f = create_calc(‘sub’)<br>f(10,20)</p>
+<p>###수</p>
+<p>정수-양의 정수-&gt;자연수<br>       0<br>      음의 정수</p>
+<p>1.기수(기본이 되는 수, radix=10,2,16같은 것)법</p>
+<p>10진수 0,1,2,3,4,5,6,7,8,9<br>2진수 0,1<br>16진수 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f<br>8진수(리눅스 같은 경우 쓰이는데,우리는 안 다룸)</p>
+<p>1.10진수-&gt;2진수</p>
+<p> 2  32<br> 2  16  0<br> 2   8   0<br> 2   4   0<br> 2    2   0<br>      1   0<br>100000(2)</p>
+<p>27-&gt; 2^4+2^3+2+1<br>11011(2)</p>
+<p>140-&gt;2^7+2^3+2^2<br>10001100(2)</p>
+<p>47-&gt;2^5+2^3+2^2+2^1+1<br>101111(2)</p>
+<p>10-&gt;2^3+2^1<br>1010(2)</p>
+<p>2.16진수-&gt;2진수(외우기)</p>
+<p>a-&gt;1010   &lt;–이거 기본으로 외우기<br>b  1011<br>c-&gt;1100  &lt;–이거 기본으로 외우기<br>d 1101<br>e 1110<br>f-&gt;1111  &lt;–이거 기본으로 외우기</p>
+<p>5e(16) -&gt;  0101    1110  (2)     -&gt;무조건 16진수 하나당 2진수 4개다. 이런식으로 변환</p>
+<p>fa(16) -&gt; 1111 1010 (2)</p>
+<p>74(16) -&gt;0111   0100 (2)</p>
+<p>8d(16) -&gt; 1000 1101 (2)</p>
+<p>2.2진수-&gt;16진수<br>반대</p>
+<p>11 0111 0001(2)  -&gt;   371 (16)</p>
+<p>10 1111 0101 -&gt; 2f5</p>
+<p>1000 1111 0111 -&gt; 8f7</p>
+<p>1111 1010 1100 -&gt; fac</p>
+<p>###32bit 컴퓨터 vs 64bit 컴퓨터</p>
+<p>1.한번에 보낼 수 있는 데이터의 양<br>32bit 컴퓨터 vs 64bit 컴퓨터</p>
+<p>하드웨어 적으로 CPU가 RAM에 쏠 수 있는 와이어의 양이 몇개냐 로 나눔</p>
+<p>2.메모리 주소를 표현할 때<br>32bit-&gt;메모리 주소를 할당할 때 1byte당 하나씩 주소를 매기는데 얘는 2진수로 32자리<br>0b 0000 0000 0000 0000 0000 0000 0000 0000 (2)<br>2^32승까지 메모리 할당 가능<br>0x00000000 ~ 0xffffffff (2^32 = 4G) –&gt; if each memory location holds 1 byte the adressable memory space is 4GB</p>
+<p>*메모리 주소 하나당 1byte(8bit)의 정보 용량(byte of storage)<br><a href="https://en.wikipedia.org/wiki/Memory_address" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Memory_address</a><br>address location 과 address space의 차이가 헷갈렸었음. </p>
+<p>hex(id(a)) —-&gt;이거 실행시, 32bit 에선 실제로 0x00000000 나옴</p>
+<p>64bit-&gt;</p>
+<p>64bit 컴퓨터여도 OS를 32bit를 쓰면 와이어 몇개는 안쓰겠다는 이야기</p>
+<p>1byte=8bit(거의 지금 정설)</p>
+<p>###정수의 표현<br>일반적으로 1/2/4/8 바이트에 저장<br>부호가 있는 정수(signed)와 부호가 없는 정수(unsigned)로 나뉨<br>부호가 있는 경우 첫 bit가 부호를 나타탬(0:양수,1:음수)</p>
+<p>#양의 정수 표현<br>부호 비트는 0<br>정수의 2진수로 표현하고 나머지는 0으로 채움</p>
+<p>43을 1바이트로 표현</p>
+<p>43 = 0010 1011(2)<br>           0x2b</p>
+<p>#음의 정수 표현<br>부호 비트는 1<br>정수를 2의 보수로 저장</p>
+<p>43-&gt;0010 1011(2)-&gt;1101 0100(2)(1의 보수=반전시킴)-&gt;1101 0101(2) = 0xd5 (2의 보수=반전시킨 것에 +1해줌) -&gt;이게 -43</p>
+<p>9의 보수</p>
+<p>3의 9의 보수 = 3에다가 무엇을 더했을 때 max가 나오는가</p>
+<p>23의 9의 보수 = 76 </p>
+<p>10의 보수= 어떤 숫자를 더했을 때 자릿수가 바뀌는 수</p>
+<p>1의 보수는 = 그냥 반전시켜주면 됨.</p>
+<p>###하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)</p>
+<p>high-level<br>language       </p>
+<pre><code>C언어  
+-----------------------
+</code></pre><p>low-level<br>language     assembly lan  -&gt; cpu에 있는 Reg이름을 알아야 코딩가능</p>
+<p>low-level은 hardware에 의존적인 언어<br>high-level에서는 제조사가 제공한 컴파일러만 있으면 됨.하드웨어 비의존적.즉 하드웨어가 가려지고 C언어 같이 로직만 짜면 됨. 즉 하드웨어 추상화.<br>C언어부터는 하드웨어 추상화가 한번 일어났기에 high level임. high level중에선 가장 낮은 단계.하드웨어까진 아니지만 자료형을 알아야함.즉, 메모리랑 바인딩 되어있음.<br>python,JS으로 넘어오면 추상화가 더 되어있음. 자료형 즉 메모리 부분을 몰라도 되는 단계</p>
+<p>#linear search</p>
+<p>li = [5,7,2,8,3,9,1]<br>def linear_search(li, target):<br>    ‘’’<br>    linear_search(li, target) -&gt; idx<br>    반환값은 target이 있다면 target의 인덱스<br>        target이 없다면 None을 반환<br>    ‘’’’<br>    for i in range(len(li)):<br>        if li[i] ==target:<br>            return i<br>    return None</p>
+<p>###BST(binary search tree)-&gt;interface는 동일한데 훨씬 빠름(알고리즘의 성능차이 분석하는 공부임)</p>
+<p>#입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다.</p>
+<p>def binary_search(li, target):<br>    ‘’’<br>    binary_search(li, target) -&gt; idx<br>    반환값은 target이 있다면 target의 인덱스<br>        target이 없다면 None을 반환<br>    ‘’’’<br>    pass</p>
+<p>##알고리즘의 성능<br>기준은 상대 시간 -&gt; 데이터의 개수(n)에 따른 연산(dominant 연산:일반적으로 비교 연산) 횟수</p>
+<p>x축:데이터의 개수( n )<br>y축:연산횟수( T(n) )</p>
+<p>알고리즘의 성능은 최악의 경우를 통해 표현함(이 알고리즘은 최악의 경우에도 이정도는 기능하더라 개념임)<br>최선의 경우<br>평균의 경우<br>최악의 경우</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjui8yu6v000pj52imcggere5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day3-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day3-memo/" class="article-date">
+  <time datetime="2019-04-15T10:34:35.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day3-memo/">wps_day3_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day3</p>
+<p>프로그래머는 추상화를 한다(abstraction)</p>
+<p>-&gt;절차지향(procedual-oriented)사실 절차가 아니라 프로시저-지향이 맞음.</p>
+<p>procedure은 function을 의미. </p>
+<p>-&gt;프로그램이 커지면서 객체지향(OOP)생김.</p>
+<p>둘은 추상화를 어떻게 할것인가의 관점임.</p>
+<p>추상화란 interface(함수signature)와 implementation(내부구현)을 분리한 것.</p>
+<p>interface(함수 signature)는 크게 3가지로 구성되어있는데</p>
+<pre><code>함수 이름(함수의 기능을 명확하게 표현)
+
+매개변수(무엇을 인자로 받을 것인가)
+
+결과값(리턴을 모 할 것인가,어떤 결과를 반환할 것인가)
+</code></pre><p>implementation은 def쓰고 막 짜는거</p>
+<p>interface는 같은데 내부구현은 다를 수 있음. list.sort() -&gt;1.bubble sort  2. quick sort</p>
+<p>###가위바위보게임</p>
+<p>def func(a,b):</p>
+<pre><code>&quot;&quot;&quot;
+
+func(integer, integer) -&gt; integer
+
+두 값을 인자로 받고
+
+결과는 그 두 값을 더한 값
+
+&quot;&quot;&quot;
+
+return a+b
+</code></pre><p>help(func) 하면 설명이 떠줌.</p>
+<p>input_data = input(“무엇이든 입력하세용: “)</p>
+<p>data = int(input(“숫자를 입력하세요: “))</p>
+<p>def get_player_choice():</p>
+<pre><code>&quot;&quot;&quot;
+
+get_player_choice()-&gt;string
+
+string : {&apos;바위&apos;, &apos;가위&apos;, &apos;보&apos;|
+
+결과값이 위 세 값 중에 하나임을 보장한다
+
+&quot;&quot;&quot;
+
+pass
+</code></pre><p>def get_computer_choice():</p>
+<pre><code>&quot;&quot;&quot;
+
+get_computer_choice() -&gt;string
+
+string = {&apos;바위&apos;, &apos;가위&apos;, &apos;보&apos;}
+
+&quot;&quot;&quot;
+</code></pre><p>def who_wins(player, computer):</p>
+<pre><code>&quot;&quot;&quot;
+
+who_wins(player, computer) -&gt; string
+
+string = {&apos;player&apos;, &apos;computer&apos;, &apos;draw&apos;}
+
+&quot;&quot;&quot;
+
+pass
+</code></pre><p>who_wins(get_player_choice(), get_computer_choice())</p>
+<p>def play_one():</p>
+<pre><code>&quot;&quot;&quot;
+
+play_one() -&gt; string
+
+string = {&apos;player&apos;, &apos;computer&apos;}
+
+한판에 대해서
+
+플레이어가 이기면 &quot;플레이어 승&quot; 출력
+
+컴퓨터가 이기면 &quot;컴퓨터 승&quot; 출력
+
+비기면 &quot;무승부&quot;(무승부면 while문 또 돔)
+
+&quot;&quot;&quot;
+</code></pre><p>#win_list = [‘player’, ‘player’, ‘computer’]</p>
+<p>win_list=[]</p>
+<p>for _ in range(3):</p>
+<pre><code>win_list.append(play_one())
+
+if win_list.count(&apos;player&apos;) &gt;=2
+
+    print(&apos;플레이어 승&apos;)
+
+    break
+
+elif win_list.count(&apos;computer&apos;)&gt;=2:
+
+    print(&apos;컴퓨터 승&apos;)
+
+    break
+</code></pre><p>def play():</p>
+<pre><code>user_num_games=int(input(&quot;1:3판2선승, 2: 5판3선승: &quot;))
+
+while user_num_games!=1 and user_num_games!=2:
+
+    user_num_games=int(input(&quot;다시 입력해주세요 : &quot;))
+
+
+
+num_games= 3 if user_num_games==1 else 5
+</code></pre><p>##packing, unpacking</p>
+<p>#packing</p>
+<p>container = 1,2,3,4,5</p>
+<p>type(container)</p>
+<p>#unpacking</p>
+<p>a, *b = container</p>
+<p>a,b,*c = container</p>
+<p>##함수에서 가변인자 받는 방법</p>
+<p>def sum_int(<em>args)   —&gt; 이때의 </em>기호는 가변인자라는 것을 의미.</p>
+<pre><code>print(type(args))
+</code></pre><p>sum_int(1,2,3,4,5)  —&gt;여러개 넣으면 튜풀로 묶어준다 즉 packing 해준다.</p>
+<p>def sum_int(*args):</p>
+<pre><code>s=0
+
+for arg in args:
+
+    s+=arg
+
+return s
+</code></pre><p>#list를 바로 나누어서 튜풀로 unpacking 해주기</p>
+<p>li=[3,4,5,6]</p>
+<p>sum_int(*li)</p>
+<p>#모든 인자 거의 다 받기 가능 keywordargs</p>
+<p>def sum_int(*args, **kwargs):     </p>
+<pre><code>print(args)
+
+print(kwargs)
+</code></pre><p>sum_int(1,2,3,age=100,weight=100)</p>
+<p>###decorator할 때 중요한 문법임 이거##</p>
+<p>li=[1,2,3,4,5]</p>
+<p>dic={‘a’:1, ‘b’:2}</p>
+<p>sum_int(<em>li, **dic)   —&gt;호출할 때 </em>이 기호는 unpacking 의미</p>
+<p>###삼항 연산자</p>
+<p>a=10</p>
+<p>if a&gt;=10:</p>
+<pre><code>print(&apos;good!&apos;)
+</code></pre><p>else:</p>
+<pre><code>print(&apos;bad!&apos;)
+</code></pre><p>이거를 한줄로…</p>
+<p>print(‘good’) if a&gt;=10 else print(‘bad!’)</p>
+<p>###continue문</p>
+<p>###recursion(재귀함수)</p>
+<p>1.자기가 자기 자신을 호출하는 함수</p>
+<p>2.기저 조건(base case)(종료 조건,탈출조건)</p>
+<p>def func(num):</p>
+<pre><code>if num &lt;=0:           #탈출조건
+
+    return
+
+func(num-1)
+</code></pre><p>func(5)</p>
+<p>호출 시 stack이 터짐–&gt;stackoverflow</p>
+<p>#메모리 그림 찾아보기</p>
+<p>###factorial(계승) 0!=1 1!=1     5!</p>
+<p>5!=5*4!</p>
+<p>4!=4*3!</p>
+<p>3!=3*2!</p>
+<p>2!=2*1!</p>
+<p>1!=1</p>
+<p>1.점화식 만들어야. -&gt;fac(num)=fac(num-1)*num</p>
+<p>2.기저 조건 -&gt;if num==1 then return 1</p>
+<p>def factorial(num):</p>
+<pre><code>if num ==1:
+
+    return 1
+
+return factorial(num-1)*num
+</code></pre><p>for num in range(1,10):</p>
+<pre><code>print(factorial(num))
+</code></pre><p>##fibonacci</p>
+<p>1  1  2   3   5   8  </p>
+<p>[1][2][3] [4] [5] [6]ㄹ</p>
+<p>1.점화식: fibo(n)= fibo(n-2)+fibo(n-1)</p>
+<p>2.기저 조건: if n==1 or n==2 then return 1</p>
+<p>def fib(n):</p>
+<pre><code>if n==1 or n==2
+
+    return 1
+
+return fib(n-2)+fib(n-1)
+</code></pre><p>##하노이(  |   |   | )</p>
+<p>hanoi(num, ‘A’,’B’,’C’)</p>
+<p>hanoi(4, ‘A’, ‘B’, ‘C’)</p>
+<p>hanoi(3, ‘A’, ‘C’, ‘B’)</p>
+<p>hanoi(3, ‘B’, A, ‘C’)</p>
+<p>기저 조건은 쟁반이 하나일 때 A에서 C로</p>
+<p>-&gt;재귀 함수의 관례적 문제임 알아두어요~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjui8yu6u000oj52ihzngj8dh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day2-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day2-memo/" class="article-date">
+  <time datetime="2019-04-15T10:32:47.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day2-memo/">wps_day2_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day2</p>
+<p>—–이거 알면 좋은 S/W 엔지니어(by 넥슨)——-</p>
+<p>Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가)</p>
+<p>Stack / Heap (메모리 레이아웃 알고 있느냐)</p>
+<p>Process/ Thread (OS &amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니)</p>
+<p>Call by Value / Call by Reference (함수에 대해 잘 아느냐, python은 call by obj ref))</p>
+<p>Native Code (C와 C++ 우리는 안함)</p>
+<p>MVC Architecture (design이야기, Model data, View, Controler //django: MTV)</p>
+<p>Write simple text-based games</p>
+<p>웹dev도 메모리에 대해서 알자</p>
+<p>========================================================================================</p>
+<p>dictionary 구현 방법:</p>
+<p>1.BST</p>
+<p>2.hash table (python은 이걸로 구현함)</p>
+<p>========================================================================================</p>
+<p>파이썬은</p>
+<p>a=10</p>
+<p>a=20 할 시,</p>
+<p>a-&gt;10          (10)</p>
+<pre><code>20      a-&gt;20
+</code></pre><p>상수는 immutable임. C에서의 box model이 아님.값 자체가 바뀌는게 아님. 20을 치면 다른 곳에 20이 채워지고 a가 20을 가리킴</p>
+<p>list = [1,2,3,”hi”] 이거 경우 파이썬에서는,</p>
+<p>1,2,3의 경우 근접해 있을 수 있으나, ‘hi’는 동떨어져서 저장될 수도 있음. list=[<em>(포인터),</em>,<em>,</em>] 이런 형태에서 각각의 포인터는 값을 가리킴.</p>
+<p>========================================================================================</p>
+<p>dictionary - view vs list의 차이 느끼기</p>
+<p>========================================================================================</p>
+<p>파이썬에서 false로 간주하는 객체</p>
+<p>False</p>
+<p>None</p>
+<p>“”</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>bin(0b1010 } 0b1100)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>XOR</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>bin(0b1100 ^ 0b1010)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>shift operator(엄청 빠름)</p>
+<p>1&lt;&lt;1                                0001(2)  왼쪽으로 하나 밈</p>
+<p>2</p>
+<p>1&lt;&lt;2</p>
+<p>4</p>
+<p>1&lt;&lt;3</p>
+<p>8</p>
+<p>10&gt;&gt;1</p>
+<p>5</p>
+<p>10&gt;&gt;2</p>
+<p>2</p>
+<p>#맨 마지막에 참조한 객체를 반환</p>
+<p>[1,2] or []</p>
+<p>[1,2] or [3,4]</p>
+<p>[1,2] and [3,4]</p>
+<p>[] and [1,2]</p>
+<p>#break문</p>
+<p>만나면 while,for문에서 바로 빠져나옴</p>
+<p>#모듈러 연산자</p>
+<p>8%3</p>
+<p>#산술연산자: +,-,<em>,**,/,//,%,+=,-=,</em>=,**=,</p>
+<p>#routine, subroutine, procedure, function</p>
+<p>def func_name(parameter1, paramwter2, …):</p>
+<pre><code>local_var=연산
+
+ret = ..
+
+return ret
+</code></pre><p>함수 호출시 저장되는? stack frame</p>
+<p>g_var = 20</p>
+<p>def func(val):</p>
+<pre><code>val += 100
+</code></pre><p>func(g_var)</p>
+<p><em>**</em>stack frame의 개념(call by ref, call by val 관련)</p>
+<p>global 변수 —–&gt;20을 가리키고 있음</p>
+<p>함수 호출시 stack frame이 생김. 그 안에 val이 생김</p>
+<p>즉,</p>
+<p>메모리 레이아웃</p>
+<p>func(val)——-&gt;120</p>
+<p>g_var———-&gt;20  글로벌은 얘를 가리킴</p>
+<p><a href="http://pythontutor.com/visualize.html#mode=edit" target="_blank" rel="noopener">http://pythontutor.com/visualize.html#mode=edit</a> 참조</p>
+<p>g_var=20</p>
+<p>def func():</p>
+<pre><code>global g_var
+
+g_var+=30
+</code></pre><p>func(g_var)</p>
+<p>#함수에서의 namespace 개념</p>
+<p>a=10</p>
+<p>def outer():</p>
+<pre><code>b=20
+
+def inner1():
+
+    c=30
+
+    def inner2():
+
+        d=40
+
+        nonlocal b
+
+        b=50
+
+        print(b)  #값을 변경하지 않고 접근만 함 print는
+
+    inner2()
+
+    print(b)
+
+inner1()
+</code></pre><p>outer()</p>
+<p>non local을 찾아갈 때 안쪽에서부터 바깥쪽으로 하나씩 찾아감. </p>
+<p>nonlocal과 global의 차이?</p>
+<p>==================================================</p>
+<p>#bubble sort</p>
+<p>def bubble_sort(li):</p>
+<pre><code>n = len(li)
+
+for i in range(n-1):
+
+    for j in range(n-1-i):
+
+        if li[j] &gt; li[j+1]:
+
+            li[j], li[j+1] = li[j+1], li[j]
+</code></pre><p>n=4일 때,</p>
+<p>총 3(=4-1)번 돌아야 함</p>
+<pre><code>j의 값
+</code></pre><p>1번째-&gt;3번 0 1 2</p>
+<p>2번째-&gt;2번 0 1</p>
+<p>3번째-&gt;1번 0</p>
+<p>i=0   j=3  = 4-1-0</p>
+<p>i=1   j=2  = 4-1-1</p>
+<p>i=2   j=1  = 4-1-2</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjui8yu6o000dj52ihof759l7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wps-day1-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day1-memo/" class="article-date">
+  <time datetime="2019-04-15T10:15:14.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day1-memo/">wps_day1_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day1</p>
+<p>dual booting(bare-metal): HW 위에 window와 linux 동등하게 깔기</p>
+<p>혹은</p>
+<p>HW위에 window(host) linux(guest)</p>
+<p>우분투?</p>
+<p>pyenv-virtualenv 깔기</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjui8yu6g0002j52ic2hnbgfm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

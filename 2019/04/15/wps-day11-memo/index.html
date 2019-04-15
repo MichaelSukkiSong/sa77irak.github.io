@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day11_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day11 #실습pip install openpyxl pip list pip freeze 로 깔려 있는 것 확인 import openpyxl  students=[{‘name’:’greg’, ‘math’:95, ‘literature’: 65, ‘science’: 75},{‘name’:’john’, ‘math’:30, ‘literature’: 55, ‘scie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day11_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day11-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day11 #실습pip install openpyxl pip list pip freeze 로 깔려 있는 것 확인 import openpyxl  students=[{‘name’:’greg’, ‘math’:95, ‘literature’: 65, ‘science’: 75},{‘name’:’john’, ‘math’:30, ‘literature’: 55, ‘scie">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:17.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day11_memo">
+<meta name="twitter:description" content="day11 #실습pip install openpyxl pip list pip freeze 로 깔려 있는 것 확인 import openpyxl  students=[{‘name’:’greg’, ‘math’:95, ‘literature’: 65, ‘science’: 75},{‘name’:’john’, ‘math’:30, ‘literature’: 55, ‘scie">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day11-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day11-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:26.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day11_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day11</p>
+<p>#실습<br>pip install openpyxl</p>
+<p>pip list</p>
+<p>pip freeze 로 깔려 있는 것 확인</p>
+<p>import openpyxl</p>
+<hr>
+<p>students=[{‘name’:’greg’, ‘math’:95, ‘literature’: 65, ‘science’: 75},<br>{‘name’:’john’, ‘math’:30, ‘literature’: 55, ‘science’: 45}<br> ….]<br>이런식으로…</p>
+<p>import openpyxl as op<br>dir(op)</p>
+<p>workbook = op.load_workbook(‘exam.xlsx’)</p>
+<p>workbook</p>
+<p>workbook.sheetnames</p>
+<p>ws=workbook.active</p>
+<p>dir(ws)</p>
+<p>g=ws.rows</p>
+<p>keys = next(g)<br>dir(keys[0])</p>
+<p>keys[0].value</p>
+<p>key_list=[]<br>for cell in keys:<br>    key_list.append(cell.value)</p>
+<p>key_list</p>
+<hr>
+<p>*이거 사용</p>
+<p>dic = {}<br>tu1 = (‘name’, ‘math’, ‘liter’, ‘sci’)<br>tu2=(‘greg’,76,5,100)<br>z=zip(tu1,tu2)<br>z<br>for elem in z:<br>    print(elem)</p>
+<p>dic = {k:v for k,v in zip(tu1,tu2)}<br>dic</p>
+<hr>
+<p>students=[]<br>for row in g:<br>    students.append({k:})</p>
+<p><a href="https://github.com/ythwork/CS/blob/master/procedure/exam_openpyxl.ipynb" target="_blank" rel="noopener">https://github.com/ythwork/CS/blob/master/procedure/exam_openpyxl.ipynb</a><br>정답</p>
+<hr>
+<p>선형대수랑 확률은 할 줄 알아야..</p>
+<p>pyenv virtualenv</p>
+<p>(해커가)</p>
+<p>Python –version</p>
+<p>python</p>
+<p>li = []<br>for I in range(1000000000000000000000000000):<br>    li.append(i)</p>
+<p>exit()</p>
+<p>python</p>
+<p>li=[]</p>
+<p>for i in range(1000000000000000000000000):<br>    li.append(i)</p>
+<p>새 터미널 띄워서…(시니어)</p>
+<p>kill -9 5681(제일 처음 나와 있는PID,process ID) -&gt;내가 서비스 하고 있는 서비스만 죽이는 것. 서버를 살려야 하니까..</p>
+<p>(top)화면으로 돌아와서..<br>f<br>Q로 돌아오기</p>
+<p>d누르고 칼럼 바꾸기</p>
+<p>man top<br>/virtual address space</p>
+<p>demand paging(중요 개)</p>
+<p>clear</p>
+<p>###stack이 늘어가는 것을 보고 싶자나요~</p>
+<p>ls</p>
+<p>mkdir test2</p>
+<p>file test2</p>
+<p>cd test2</p>
+<p>vim test.py</p>
+<p>sudo apt-get install vim</p>
+<p>vim test.py</p>
+<p>import time</p>
+<h1 id="recursion"><a href="#recursion" class="headerlink" title="recursion"></a>recursion</h1><p>def func(a):<br>    time.sleep(0.1)<br>    func(a-1)</p>
+<p>func(10)<br>esc누르기<br>:wq 하고 enter</p>
+<p>cat test.py</p>
+<p>python test.py</p>
+<p>(다른 터미널 띄워서)<br>man top<br>man pmap<br>q해서 나오고<br>pmap </p>
+<p>top에서<br>o누르고<br>command = python</p>
+<p>top에서 =누르면 돌아옴</p>
+<p>Pycon / python,linkers, and virtual memory</p>
+<p><a href="https://www.youtube.com/watch?v=twQKAoq2OPE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=twQKAoq2OPE</a></p>
+<p>꼭보기</p>
+<p>리눅스 강의 담주에<br>top좀더 하고..</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day11-memo/" data-id="cjui8yu6i0004j52i3pevs0h0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day12-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day12_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day10-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day10_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

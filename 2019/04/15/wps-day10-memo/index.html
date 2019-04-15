@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day10_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day10 ###list의 참조,shallow copy,deep copy help(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day10_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day10-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day10 ###list의 참조,shallow copy,deep copy help(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])l">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:15.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day10_memo">
+<meta name="twitter:description" content="day10 ###list의 참조,shallow copy,deep copy help(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])l">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day10-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day10-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:23.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day10_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day10</p>
+<p>###list의 참조,shallow copy,deep copy</p>
+<h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
+<p>–&gt;참조는 완전히 같은거라 보면 됨.</p>
+<p>**shallow copy<br>li3 = li.copy()<br>li3<br>li3.append(5)<br>li3<br>li<br>li.append([6,7])<br>li<br>li3 = li<br>li3 = li.copy()<br>li3<br>li3[4].append(8)<br>li3<br>li</p>
+<p>–&gt;shallow copy 다른 곳에 만들어진다. </p>
+<p>**deep copy<br>import copy<br>li4 = copy.deepcopy(li)<br>li4<br>li4[4][1]=10<br>li4<br>li</p>
+<p>—&gt;deep copy. 다른곳에 만들어지고 완전히독립적. 내용물 공유 안함.</p>
+<p>—&gt;필기 노트 그림 참고</p>
+<p>#<br>fetch - PC가 가리키고 있던 instruction을 mem-&gt;cpu IR로 가져오는 것<br>decode CU가 IR 을 분석,해석 하는 것<br>execute 실제 연산</p>
+<p>——오늘의 핵심—-<br>1.MMU</p>
+<h2 id="2-logical-address-논리-주소-physical-address-물리-주소"><a href="#2-logical-address-논리-주소-physical-address-물리-주소" class="headerlink" title="2.logical address(논리 주소) physical address(물리 주소)"></a>2.logical address(논리 주소) <->physical address(물리 주소)</-></h2><p>code<br>data         user 영역<br>heap<br>stack</p>
+<p>code<br>data          kernel 영역 -&gt;os가 관리<br>heap<br>stack            </p>
+<p>-&gt;어셈블리어를 통해 직접 kernel 영역을 조작하는 것을 막기 위해 OS가 가운데서 막아줌.</p>
+<p>메모리를 준것 같지만 실제로 준건 아님(우리가 생각할 때는 가상 공간이지민 실제 공간이라 생각하고 코딩하면 됨)<br>OS가 프로세스가 시작될 때 할당해주는 가상 메모리 공간 -&gt;가상 주소 공간(virtual address space, VAS)<br>OS가 나 믿고 있는 척해~</p>
+<p>User 영역에서…<br>code - instruction들이 들어가는 곳<br>data - 전역변수가(BSS 포함) 들어감<br>heap - 할당과 해제를 프로그래머가 결정<br>stack - 지역변수가 쌓임(왜냐면, stackframe이 쌓이는 곳이니까), </p>
+<p>data영역의 전역변수는 생성이 언제되냐면..프로세스가 생성될 때 생성됨.<br>                                소멸은…프로세스가 종료될 때<br>-&gt;따라서 프로그래머가 생성과 소멸을 결정할 수 없다. 따라서 메모리 아까우니까 전역변수는 되도록 쓰지 말아라는 것이 나오는 것.</p>
+<p>stack의 경우 생성시기는..함수가 호출 될때지.<br>                 소멸은 함수 실행이 종료 될 때지<br>-&gt;이건 프로그래머가 통제권을 약간 가지고 있음. 함수가 실행되는 순간 쌓였다가 종료되면 사라지기 때문에. data영역에 비해는 권한 있지만 아래의 단점도 있다.<br>call by reference 를 통해서 함수 호출이 끝나고 stackframe가 사라져도 바깥 변수한테 변경된 값 유지 가능.</p>
+<p>heap데이터의 생성시기가 프로그래머가 원할 때<br>                    소멸시기도 프로그래머가 원할 때!! ㄷ.ㄷ<br>-&gt;생성과 소멸시기가 내 마음임. </p>
+<p>일단 code에 instruction이 들어가고..data heap stack 영역은 공통적으로 데이터(변수 객체)를 저장하는 공간인데 위 같은 차이가 있는 것.</p>
+<hr>
+<p>파이썬은 내가 선언하는 함수 등이 모두 heap에 들어감</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>python.exe abc.py<br>이거를 실행하는 순간..<br>abc.py는 python.exe에 넘겨주는 문자열일 뿐임. text editor는 문자열 편집기임.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>code<br>data<br>heap<br>stack</p>
+<h2 id="C에서-main-함수에-인자를-넣어서-실행하는-것처럼-파이썬은-python-exe-가-abc-py를-받아서-하는-것"><a href="#C에서-main-함수에-인자를-넣어서-실행하는-것처럼-파이썬은-python-exe-가-abc-py를-받아서-하는-것" class="headerlink" title="C에서 main 함수에 인자를 넣어서 실행하는 것처럼..파이썬은 python.exe.가 abc.py를 받아서 하는 것."></a>C에서 main 함수에 인자를 넣어서 실행하는 것처럼..파이썬은 python.exe.가 abc.py를 받아서 하는 것.</h2><p>malloc : heap에다가 메모리를 할당하는 함수<br>프로그래머가 malloc함수를 호출 했을 때~!(내가 결정할 수 있는거지~) heap 영역에 OS가 일정한 size의 메모리 공간 만듬<br>int <em>ptr = (int</em>)malloc(sizeof(int));                     –&gt;그 메모리 공간의 주소를 ptr에 저장<br>*ptr = c+100;</p>
+<p>heap에다가 저장해 놓으면, 함수 호출이 끝나서 stackframe이 사라지더라도 데이터가 남아 있게 된다. 함수의 호출과 생성에 묶이지 않는다는 말이지.<br>free(x) —&gt;이거 하면 heap영역의 메모리 해제 가능. 즉 내가 원하는 시점에 해제 가능.</p>
+<p>—-메모리 누수란(memory leak)(heap의 단점 중 하나)—-<br>stackframe이 사라지면서 가리키고 있던 것이 사라지고..프로그램이 끝날 때까지 어떤 것도 지울 수 데이터가 쌓이는 것.<br>heap에 할당은 되어있는데 소멸은 안되는 상태.<br>언어차원에서 지원하는 garbage collector가 메모리 누수를 막음.</p>
+<hr>
+<p>다음주 월요일까지<br>visual studio code깔기<br>다음주 금요일까지</p>
+<h2 id="우분투"><a href="#우분투" class="headerlink" title="우분투"></a>우분투</h2><p>**heap의 단점:<br>1.메모리누수(memory leak)<br>2.느리다(malloc이 느리다)<br>3.메모리 단편화(memory fragmentation): 전체로 봤을 떄 충분하지만 메모리가 쪼개져 있어서 메모리를 할당하기 힘들거나 찾는데 오래 걸리는 많은 어려움이 있다.</p>
+<p>stack은 왜 빠른데?..<br>-&gt;메모리 할당 주소를 찾을 필요가 없다(stack pointer가 가리키고 있기 때문에 그 위에 그냥 쌓으면 됨)-&gt;speed가 엄청나게 빠르다.</p>
+<p>heap은 왜 느린데?<br>double linked list개념..<br>malloc();하면 OS가 heap에 쌓을 때..헤더마다 OS가 찾아가서 너 비어있어? 물어봄..돌아다니다가 빈 곳 찾음.</p>
+<p>메모리 단편화(memory fragmentation)이란?<br>-&gt;8byte를 넣으려는데 2+4+4=10 byte같은 공간이 heap있다 하더라도 넣을 수가 없다. 이런 현상을 memory fragmentation.</p>
+<hr>
+<p>dynamic heap 기법: 메모리 단편화 해결 가능(시스템 프로그래밍의 세상)<br>사용자(프로그래머)가 heap을 크게 나누어서 하는 것? working set을 한쪽에 모아서 하는 것.!</p>
+<p>파이썬은 heap을 쓴다..파이썬은 PyMem Malloc 처럼 OS가 하는 일을 대신할 수 있는 애가 있음. 메모리를 할당하는 OS역할을 하는거지. </p>
+<hr>
+<p>Garbage Collector : 언어차원에서 메모리 관리(heap관리)를 해줄게.<br>-&gt;기법중 하나가 : reference counter(파이썬은 이거 함): reference counter가 0이 되면 지워줌.</p>
+<p>a = “I am your F!”<br>import sys<br>sys.getrefcount(a)<br>b=a<br>sys.getrefcount(a)<br>c=b<br>sys.getrefcount(c)<br>c=10<br>sys.getrefcount(a)<br>del b<br>sys.getrefcount(a)<br>a=1<br>sys.getrefcount(a)<br>b=2<br>sys.getrefcount(b)</p>
+<hr>
+<p>##가상메모리</p>
+<p>virtual_memory.md 참조</p>
+<p>virtual_memory.pdf 그림 참조</p>
+<p>virtual address space이란?</p>
+<h2 id="user영역"><a href="#user영역" class="headerlink" title="user영역"></a>user영역</h2><p>kernel영역</p>
+<hr>
+<p>page란?</p>
+<p>VAS의 주소 공간 4G을 4096byte단위로 쪼갬 그 하나를 page라 함.<br>32bit computer에서..</p>
+<p>#of pages = 2^32 / 2^12 = 2^20</p>
+<p>—–page, page #, offset 알기가 목표</p>
+<p>ex)어떤 주소값 a145 = page # (1) + offset (45) 로 구성  (offset는 어떤 기준으로부터 얼마만큼 떨어져 있는지 나타내는 개념이지)</p>
+<p>32bit 주소체계에서 20bit가 page#(왜? 32-12했으니)이고 뒤에 숫자는 offset이다.(0x1212a | bab 같은 것을 logical address라 함)<br>                                                                                      page#    offset</p>
+<h1 id="number-즉-갯수가-2-20개라는-말은-이를-표현하기-위해-20bit가-필요하다는-이야기이다-20bit즉-5개의-16진수로-넘버링을-할-수-있는-셈"><a href="#number-즉-갯수가-2-20개라는-말은-이를-표현하기-위해-20bit가-필요하다는-이야기이다-20bit즉-5개의-16진수로-넘버링을-할-수-있는-셈" class="headerlink" title="number 즉 갯수가 2^20개라는 말은 이를 표현하기 위해 20bit가 필요하다는 이야기이다. 20bit즉 5개의 16진수로 # 넘버링을 할 수 있는 셈."></a>number 즉 갯수가 2^20개라는 말은 이를 표현하기 위해 20bit가 필요하다는 이야기이다. 20bit즉 5개의 16진수로 # 넘버링을 할 수 있는 셈.</h1><p>32bit의 주소체계중 20개로 넘버를 표현하고 나머지 12bit가 offset이 된다. 즉 20개의 bit로 넘버링을 통해 기준을 정하고 12개의 bit로 얼마나 떨어져 있는지 제시하는 것.</p>
+<p>—-같은 개념을 실제 main memory에 적용</p>
+<p>main memory(RAM)을 같은 식으로 쪼갤거임.<br>4096byte로 쪼갤거임. 4G를.<br>쪼갠 하나의 크기를 page frame이라 함. 여기서의 frame은 진짜 memory<br>그러면 frame # = 2^32 / 2^12 = 2^20<br>그러면 frame #는 0~ 2^20 -1 까지 있겠지.<br>예를 들면 0x5252aef3 같은 경우 0x5252a | ef3 같이 frame# | offset 처럼 볼 수 있지.</p>
+<p>CPU가 야 0x12345abc에서 가져와 그러면<br>이걸 쪼갬 0x12345 | abc<br>실제 RAM에 있는 어떤 code를 가져와야 하는데..</p>
+<p>0x12345 abc에서 앞부분만 대체를 0xabcde |abc 이걸로 하면 찾아올 수 있겠지<br>logical address                        physical address</p>
+<p>짜가 주소인 logical address 에서 page #만 frame#만 바꾸어주면 physical address 알 수 있지 결국.<br>page#와 frame#를 연결해주는 무엇인가가 table이 있어야겠지</p>
+<p>1.MMU(Memory Management Unit): 하드웨어.CPU에 들어 있음.<br>2.page table</p>
+<p>내가 더블클릭하면 OS가 4G를 할당해준다. = 프로세스마다 page table을 main memory에 만들고 이 page table의 첫 주소를 프로세스한테 가르쳐준다.<br>RAM에 있는 일부 공간에다가 page table을 만듬</p>
+<p>process 1<br>스타를 하고 싶어서 내가 스타를 딱킴. OS가 4G를 줌. 스타에 할당된 page table을 만듬</p>
+<p>page table은 크게 3개 칼럼 존재..<br>page#   frame#   valid bit</p>
+<p>preparing : 지금 당장 필요할 것 같은 애들을 4096단위로 main memory에 올림</p>
+<p>process1                        page table                        main memory</p>
+<p>가짜 공간             page#   frame#   valid bit</p>
+<p>PC 0x00000000</p>
+<p>MAR &lt;- 0x12345 0000</p>
+<p>MMU: PC가 가리키고 있는 logical address를 runtime(프로그램이 돌고 있는 상태)  page table을 참조해서 physical address로 바꾸어 주는 역할.</p>
+<p>page fault:<br>CPU가 가짜 메모리를 요청했을 떄 VAS의 메모리 주소가 PC저장되고..MMU는 page table을 참조해서 해당 physical address 0x12345 abc의 앞 부분을 0x_ _ _ _ _ abc로 전환하고 MAR에 저장한다. 이때 valid bit가 0이면 memory 안에 없다는 뜻이고 하드에서 가져와야 하는 상태가 되는데 이를 page fault라고 한다.<br>후에 하드에서 mem으로 mem의 비어 있는 공간에다 올린다. (virtual_memory.md 참조)</p>
+<p>page fault는 치명적 cache miss랑은 급이 다르다.(CPI의 차이 때문에 장시간 기다려야할 수도 있다)</p>
+<p>page table은 공유하지 않음. process마다 생김. </p>
+<p>pagefile이란?<br>pagefile은 하드 안에 있음.<br>리눅스에서는 swap이라 부름<br>하드 디스크게 있는 일정 용령의 크기를 마치 RAM처럼 쓰겠다 개념. 이때 이 크기를 pagefile이라 부름.<br>윈도우에서는 고급시스템정보-&gt;성능-&gt;고급-&gt;가상메모리 에서 확인 가능.</p>
+<p>page out이란?<br>무엇인가가 있는 상태에서 새로운 애를 올리는데 누군가는 pagefile로 내려와야 하는데 ..이 때 victim page가 정해지면서 내려오는 것을 page out이라 함.</p>
+<p>page in은 하드에서 memory(RAM)으로 올리는 것. 올리면 valid 1로 바꾸어주고 새로운 공간을 가리킴.</p>
+<p>결국 page file은 victim page만 모여 있는 곳이 되지.</p>
+<p>가상메모리 = RAM + page file(짜가)</p>
+<p>이 과정을 paging</p>
+<h2 id="virtual-memory-md-참조"><a href="#virtual-memory-md-참조" class="headerlink" title="virtual_memory.md 참조"></a>virtual_memory.md 참조</h2><p>thrashing :</p>
+<p>page 교체가 필요하지만 이미 활발히 사용되는 페이지들만으로 이루어져 있으므로 어떤 페이지가 교체되던 바로 다시 page 교체가 필요한 상황에서 지속적으로 page fault가 발생하고 교체된 page는 얼마<br>지나지 않아 다시 읽어올 필요가 있게 되는 것이 무한히 반복하는 상태</p>
+<p>실행은 안되면서 page out은 무한 반복상황. 프로그램은 작동되는 상태.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjui8yu6h0003j52ic51pipg7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day11-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day11_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day9-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day9_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

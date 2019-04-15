@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day26_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day26 ###데이터베이스 1일차 CS/database/practice_env.md database - 객체 – table, view,index 우리가 배우는 건 관계형 데이터베이스(집합론에 근거) table → entity, relation이라고 부름.  열:  column 또는 field라 부름. 행:  row,tuple,record 라 부름. col">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day26_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day26-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day26 ###데이터베이스 1일차 CS/database/practice_env.md database - 객체 – table, view,index 우리가 배우는 건 관계형 데이터베이스(집합론에 근거) table → entity, relation이라고 부름.  열:  column 또는 field라 부름. 행:  row,tuple,record 라 부름. col">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:50.972Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day26_memo">
+<meta name="twitter:description" content="day26 ###데이터베이스 1일차 CS/database/practice_env.md database - 객체 – table, view,index 우리가 배우는 건 관계형 데이터베이스(집합론에 근거) table → entity, relation이라고 부름.  열:  column 또는 field라 부름. 행:  row,tuple,record 라 부름. col">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day26-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day26-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:14.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day26_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day26</p>
+<p>###데이터베이스 1일차</p>
+<p>CS/database/practice_env.md</p>
+<p>database - 객체 – table, view,index</p>
+<p>우리가 배우는 건 관계형 데이터베이스(집합론에 근거)</p>
+<p>table → entity, relation이라고 부름. </p>
+<p>열:  column 또는 field라 부름.</p>
+<p>행:  row,tuple,record 라 부름.</p>
+<p>column은 자료형을 가지고 있어야 하겠지. 즉 칼럼마다 unique/not unique, null/not null 을 구분해야겠지. 이것을 제약조건(constraint)이라 함.<br>제약 조건에서 가장 중요한 primary key와 foreign key이 있음. </p>
+<p>primary key : table에서 오직 하나. 이것을 기반으로 데이터가 정렬되어 있음.</p>
+<p>foreign key : </p>
+<p>CS/database/my_db.md<br>CS/database/SQL.md</p>
+<p>TCL (Transaction control language) : 이 메모 뒤쪽에 써있음~</p>
+<p>COMMIT<br>ROLLBACK</p>
+<p>DDL은 commit이 자동 커밋</p>
+<p>#데이터베이스 1일차 녹음 (3:22:00~)</p>
+<p>mysql -u root<br>일케 하면 데이터베이스에 접속하지.connection 연결 . 데이터의 무결성이 보장되어야 하니 TCP connection~소켓을 이용해서 TCP를 뚷은거. 데이터베이스에서는 TCP를 뚫은거를 session을 열었다 함. 즉 TCP 연결을 했다 의미~</p>
+<p>mysql server -&gt;이게 유투브인셈 <---tcp 커넥션--->client →mysql(database client)-&gt;이게 크롬</---tcp></p>
+<p>mysql john                              mysql greg<br>   client                                           client</p>
+<p>server에서는 listen socket이 필요하고 각각의 client에 대해서 쓰레드가 따로 돌면서 data socket이랑 연결되겠지. 데이터베이스는 안에 테이블을 가지고 있지. 공유자원에 대해서 여러개의 쓰레드가 동시에 쓰면 race condition! table이 shared recource 즉 공유자원이 됨. race condition! 개념이 있겠지.</p>
+<p>만약 어떤 한 클라이언트가 update문을 통해서 balance를 5천원에서 3천원으로 떨어뜨리고 상대방한테 전송중인데 접속이 끊겨버림!. 상대방에 대해서 2천원을 올리기전! 그럼 문제 겠지! 그래서 디비는 무결성을 보장해야함..! 매번 반영되버리면 난리나는거지 그렇기 때문에..</p>
+<p>*데이터베이스 무결성(transaction과 session의 차이, 즉 session은 tcp connection의 의미고 transaction은 DB 처리 작업이 모두 왼료되거나 아니면 모두 취소되게 되는 작업의 단위를 의미. 즉 transaction은 업데이트 되는 단위를 의미 ):<br>1)DML의 경우: COMMIT 하기 전까지는 transaction이 완료 안됨. 즉 다른 client한테까지 반영 안됨.(DML의 경우를 말하는 것, UPDATE/DELETE 명령 같은 경우). 즉 DML같이 데이터 조작을 하는 경우에는, 업데이트를 하는 순간 그 쓰레드에 대해서만 바뀌고 나머지 애들은 그대로 있고 실제 테이블 값도 update했다고 바뀌지는 않음. 이 업데이트 단위를 transaction이라 함. update한 후에 commit이라는 명령어를 통해 transaction을 끝내야 함. 실제 데이터베이스의 값들을 commit한 순간 바뀜. 그래야 나머지 클라들도 따라서 다 바뀜. commit전에는 어떤 dml 작업을 하더라도 절대 나머지 디비애들한테는 영향을 미치지 않는다는 데이터베이스 무결성 대전제임.<br>→ROLLBACK 명령: commit하기 전에 무효화 하겠다. </p>
+<p>2)DDL의 경우 바로 됨. 즉 바뢰 commit 됨. 다른 client에서도 자동 업데이트 되서 공유됨. 자동으로 transaction이 닫힘. DDL같은 경우는 자동 commit임. drop같은 경우는 복구가 안됨.</p>
+<hr>
+<p>commit을 하는 순간 lock이 걸림~.</p>
+<p>내일 group by랑 join~</p>
+<p>수업 시간 터미널 복붙</p>
+<p>ㅍ                                                                                                                                                              |<br>+———-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>| teachers | CREATE TABLE <code>teachers</code> (<br>  <code>teacherID</code> int(11) NOT NULL AUTO_INCREMENT,<br>  <code>subject</code> varchar(20) DEFAULT NULL,<br>  <code>classID</code> int(11) DEFAULT NULL,<br>  <code>teacherNAme</code> varchar(30) NOT NULL,<br>  PRIMARY KEY (<code>teacherID</code>),<br>  UNIQUE KEY <code>subject</code> (<code>subject</code>),<br>  KEY <code>classID</code> (<code>classID</code>),<br>  CONSTRAINT <code>teachers_ibfk_1</code> FOREIGN KEY (<code>classID</code>) REFERENCES <code>classes</code> (<code>classID</code>)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |<br>+———-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>1 row in set (0.01 sec)</p>
+<p>MariaDB [mydb]&gt; SHOW INDEX FROM teachers;<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>| Table    | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>| teachers |          0 | PRIMARY  |            1 | teacherID   | A         |           0 |     NULL | NULL   |      | BTREE      |         |               |<br>| teachers |          0 | subject  |            1 | subject     | A         |           0 |     NULL | NULL   | YES  | BTREE      |         |               |<br>| teachers |          1 | classID  |            1 | classID     | A         |           0 |     NULL | NULL   | YES  | BTREE      |         |               |<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>3 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO teachers<br>    -&gt; (teacherName, subject, classID)<br>    -&gt; VALUES<br>    -&gt; (‘yang’, ‘math’, 1),<br>    -&gt; (‘park’, ‘literature’, 2),<br>    -&gt; (‘lee’, ‘science’, 3);<br>Query OK, 3 rows affected (0.00 sec)<br>Records: 3  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM teachers;<br>+———–+————+———+————-+<br>| teacherID | subject    | classID | teacherNAme |<br>+———–+————+———+————-+<br>|         1 | math       |       1 | yang        |<br>|         2 | literature |       2 | park        |<br>|         3 | science    |       3 | lee         |<br>+———–+————+———+————-+<br>3 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; exit<br>Bye<br>sukki@sukki-17Z990-VA76K:~$ clear</p>
+<p>sukki@sukki-17Z990-VA76K:~$ mysqldump -u greg -p –databases mydb &gt; mydb.sql<br>Enter password:<br>sukki@sukki-17Z990-VA76K:~$ ls<br>문서      다운로드  Documents  examples.desktop  mydb.sql  Public  Templates<br>바탕화면  Desktop   Downloads  Music             Pictures  snap    Videos<br>sukki@sukki-17Z990-VA76K:~$ sudo mysql -u greg -p<br>[sudo] password for sukki:<br>Enter password:<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 35<br>Server version: 10.1.38-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04</p>
+<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>MariaDB [(none)]&gt; show databases;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| mydb               |<br>| mysql              |<br>| performance_schema |<br>+——————–+<br>4 rows in set (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; DROP DATABASE mydb;<br>Query OK, 3 rows affected (0.03 sec)</p>
+<p>MariaDB [(none)]&gt; SHOW DATABASES;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| mysql              |<br>| performance_schema |<br>+——————–+<br>3 rows in set (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; source mydb.sql<br>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 1 row affected (0.00 sec)</p>
+<p>Database changed<br>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.03 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 3 rows affected (0.00 sec)<br>Records: 3  Duplicates: 0  Warnings: 0</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.01 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.02 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 10 rows affected (0.01 sec)<br>Records: 10  Duplicates: 0  Warnings: 0</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.01 sec)</p>
+<p>Query OK, 0 rows affected (0.02 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 3 rows affected (0.01 sec)<br>Records: 3  Duplicates: 0  Warnings: 0</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; show tables;<br>+—————-+<br>| Tables_in_mydb |<br>+—————-+<br>| classes        |<br>| students       |<br>| teachers       |<br>+—————-+<br>3 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM students;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>+———–+————-+——–+——-+————+———+<br>10 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; exit<br>Bye<br>sukki@sukki-17Z990-VA76K:~$ ls<br>문서      다운로드  Documents  examples.desktop  mydb.sql  Public  Templates<br>바탕화면  Desktop   Downloads  Music             Pictures  snap    Videos<br>sukki@sukki-17Z990-VA76K:~$ vim mydb.sql<br>sukki@sukki-17Z990-VA76K:~$ sudo mysql -u greg -p<br>Enter password:<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 36<br>Server version: 10.1.38-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04</p>
+<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>MariaDB [(none)]&gt; SHOW DATABASES;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| mydb               |<br>| mysql              |<br>| performance_schema |<br>+——————–+<br>4 rows in set (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; USE bydb;<br>ERROR 1049 (42000): Unknown database ‘bydb’<br>MariaDB [(none)]&gt; show tables;<br>ERROR 1046 (3D000): No database selected<br>MariaDB [(none)]&gt; USE mydb;<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A</p>
+<p>Database changed<br>MariaDB [mydb]&gt; show tables;<br>+—————-+<br>| Tables_in_mydb |<br>+—————-+<br>| classes        |<br>| students       |<br>| teachers       |<br>+—————-+<br>3 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO students<br>    -&gt; (studentName, height, score, birthday)<br>    -&gt; VALUES<br>    -&gt; (‘Kreizig’, 175, 75, ‘2002-9-19’),<br>    -&gt; (‘Elizabeth’, 165, 80, ‘2003-1-17’);<br>Query OK, 2 rows affected (0.00 sec)<br>Records: 2  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM students;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>12 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO students<br>    -&gt; (studentName, height, score, birthday, classID)<br>    -&gt; VALUES (‘Emily’, 180, 60, ‘2002-9-18’, NULL),<br>    -&gt; (‘Lily’, 155, 100, ‘2002-9-18’, NULL);<br>Query OK, 2 rows affected (0.01 sec)<br>Records: 2  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM students;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>|        14 | Lily        |    155 |   100 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>14 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO teachers (teacherName, subject)<br>    -&gt; VALUES (‘kim’, ‘english’),<br>    -&gt; (‘choi’, ‘ethics’);<br>Query OK, 2 rows affected (0.00 sec)<br>Records: 2  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM teachers;<br>+———–+————+———+————-+<br>| teacherID | subject    | classID | teacherNAme |<br>+———–+————+———+————-+<br>|         1 | math       |       1 | yang        |<br>|         2 | literature |       2 | park        |<br>|         3 | science    |       3 | lee         |<br>|         4 | english    |    NULL | kim         |<br>|         5 | ethics     |    NULL | choi        |<br>+———–+————+———+————-+<br>5 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DESC students;<br>+————-+————-+——+—–+———+—————-+<br>| Field       | Type        | Null | Key | Default | Extra          |<br>+————-+————-+——+—–+———+—————-+<br>| studentID   | int(11)     | NO   | PRI | NULL    | auto_increment |<br>| studentName | varchar(20) | NO   |     | NULL    |                |<br>| height      | smallint(6) | YES  |     | 200     |                |<br>| score       | smallint(6) | YES  |     | NULL    |                |<br>| birthday    | date        | NO   |     | NULL    |                |<br>| classID     | int(11)     | YES  | MUL | NULL    |                |<br>+————-+————-+——+—–+———+—————-+<br>6 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; CREATE TABLE student_cp<br>    -&gt; (SELECT * FROM students);<br>Query OK, 14 rows affected (0.03 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>|        14 | Lily        |    155 |   100 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>14 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; UPDATE student_cp<br>    -&gt; SET score=100<br>    -&gt; WHERE studentName=’Mary’;<br>Query OK, 1 row affected (0.01 sec)<br>Rows matched: 1  Changed: 1  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT studentName, score FROM student_cp<br>    -&gt; WHERE studentName like ‘Mary’;<br>+————-+——-+<br>| studentName | score |<br>+————-+——-+<br>| Mary        |   100 |<br>+————-+——-+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT studentName, score<br>    -&gt; FROM student_cp<br>    -&gt; WHERE studentName like ‘Ma%’;<br>+————-+——-+<br>| studentName | score |<br>+————-+——-+<br>| Mark        |    50 |<br>| Mary        |   100 |<br>+————-+——-+<br>2 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT studentName, score FROM student_cp WHERE studentName like ‘Ma__’;<br>+————-+——-+<br>| studentName | score |<br>+————-+——-+<br>| Mark        |    50 |<br>| Mary        |   100 |<br>+————-+——-+<br>2 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT studentName, score<br>    -&gt; FROM student_cp<br>    -&gt; WHERE score &gt; 50;<br>+————-+——-+<br>| studentName | score |<br>+————-+——-+<br>| Greg        |    87 |<br>| John        |    95 |<br>| James       |    56 |<br>| Johanna     |    90 |<br>| Mary        |   100 |<br>| Kelly       |    80 |<br>| Sam         |    78 |<br>| Daniel      |    90 |<br>| Kreizig     |    75 |<br>| Elizabeth   |    80 |<br>| Emily       |    60 |<br>| Lily        |   100 |<br>+————-+——-+<br>12 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT studentName, score<br>    -&gt; FROM student_cp<br>    -&gt; WHERE score &gt;50 and score &lt; 70;<br>+————-+——-+<br>| studentName | score |<br>+————-+——-+<br>| James       |    56 |<br>| Emily       |    60 |<br>+————-+——-+<br>2 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; show tables;<br>+—————-+<br>| Tables_in_mydb |<br>+—————-+<br>| classes        |<br>| student_cp     |<br>| students       |<br>| teachers       |<br>+—————-+<br>4 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp<br>    -&gt; Ctrl-C – exit!<br>Aborted<br>sukki@sukki-17Z990-VA76K:~$ sudo mysql -u greg -p<br>[sudo] password for sukki:<br>Enter password:<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 37<br>Server version: 10.1.38-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04</p>
+<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>MariaDB [(none)]&gt; use mydb;<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A</p>
+<p>Database changed<br>MariaDB [mydb]&gt; show tables;<br>+—————-+<br>| Tables_in_mydb |<br>+—————-+<br>| classes        |<br>| student_cp     |<br>| students       |<br>| teachers       |<br>+—————-+<br>4 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |   100 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>|        14 | Lily        |    155 |   100 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>14 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DELETE FROM student_cp<br>    -&gt; WHERE studentNAme like ‘Kreizig’;<br>Query OK, 1 row affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DELETE FROM student_cp;<br>Query OK, 13 rows affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO student_cp<br>    -&gt; (SELECT * FROM students);<br>Query OK, 14 rows affected (0.01 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>|        14 | Lily        |    155 |   100 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>14 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; TRUNCATE student_cp;<br>Query OK, 0 rows affected (0.02 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>Empty set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DESC student_cp;<br>+————-+————-+——+—–+———+——-+<br>| Field       | Type        | Null | Key | Default | Extra |<br>+————-+————-+——+—–+———+——-+<br>| studentID   | int(11)     | NO   |     | 0       |       |<br>| studentName | varchar(20) | NO   |     | NULL    |       |<br>| height      | smallint(6) | YES  |     | 200     |       |<br>| score       | smallint(6) | YES  |     | NULL    |       |<br>| birthday    | date        | NO   |     | NULL    |       |<br>| classID     | int(11)     | YES  |     | NULL    |       |<br>+————-+————-+——+—–+———+——-+<br>6 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO student_cp<br>    -&gt; (SELECT * FROM students);<br>Query OK, 14 rows affected (0.02 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; DELETE FROM student_cp;<br>Query OK, 14 rows affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; INSERT INTO student_cp (SELECT * FROM students);<br>Query OK, 14 rows affected (0.01 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM students;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>|        14 | Lily        |    155 |   100 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>14 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DROP TABLE IF EXISTS student_cp;<br>Query OK, 0 rows affected (0.01 sec)</p>
+<p>MariaDB [mydb]&gt; show tables;<br>+—————-+<br>| Tables_in_mydb |<br>+—————-+<br>| classes        |<br>| students       |<br>| teachers       |<br>+—————-+<br>3 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; exit<br>Bye<br>sukki@sukki-17Z990-VA76K:~$ ^C<br>sukki@sukki-17Z990-VA76K:~$ sudo mysql -u root<br>[sudo] password for sukki:<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 38<br>Server version: 10.1.38-MariaDB-0ubuntu0.18.04.1 Ubuntu 18.04</p>
+<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
+<p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p>
+<p>MariaDB [(none)]&gt; SELECT @@AUTOCOMMIT;<br>+————–+<br>| @@AUTOCOMMIT |<br>+————–+<br>|            1 |<br>+————–+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; SET AUTOCOMMIT=FALSE;<br>Query OK, 0 rows affected (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; SELECT @@AUTOCOMMIT;<br>+————–+<br>| @@AUTOCOMMIT |<br>+————–+<br>|            0 |<br>+————–+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [(none)]&gt; CREATE TABLE student_cp<br>    -&gt; (SELECT * FROM students)<br>    -&gt; \c<br>MariaDB [(none)]&gt; use mydb;<br>Reading table information for completion of table and column names<br>You can turn off this feature to get a quicker startup with -A</p>
+<p>Database changed<br>MariaDB [mydb]&gt; CREATE TABLE student_cp<br>    -&gt; (SELECT * FROM students);<br>Query OK, 14 rows affected (0.03 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>|        14 | Lily        |    155 |   100 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>14 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DELETE FROM student_cp<br>    -&gt; WHERE studentName like ‘Lily’;<br>Query OK, 1 row affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>13 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; COMMIT;<br>Query OK, 0 rows affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DELETE FROM student_cp<br>    -&gt; WHERE studentName like ‘Emily’;<br>Query OK, 1 row affected (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>12 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; ROLLBACK;<br>Query OK, 0 rows affected (0.01 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT * FROM student_cp;<br>+———–+————-+——–+——-+————+———+<br>| studentID | studentName | height | score | birthday   | classID |<br>+———–+————-+——–+——-+————+———+<br>|         1 | Greg        |    180 |    87 | 2002-03-23 |       1 |<br>|         2 | John        |    175 |    95 | 2002-04-02 |       2 |<br>|         3 | Mark        |    178 |    50 | 2002-05-12 |       1 |<br>|         4 | James       |    170 |    56 | 2002-07-14 |       3 |<br>|         5 | Johanna     |    165 |    90 | 2001-09-23 |       1 |<br>|         6 | Mary        |    160 |    50 | 2002-01-05 |       2 |<br>|         7 | Kelly       |    176 |    80 | 2002-09-17 |       3 |<br>|         8 | Sam         |    172 |    78 | 2002-06-05 |       1 |<br>|         9 | Daniel      |    187 |    90 | 2002-12-01 |       2 |<br>|        10 | Ann         |    165 |    46 | 2002-09-18 |       3 |<br>|        11 | Kreizig     |    175 |    75 | 2002-09-19 |    NULL |<br>|        12 | Elizabeth   |    165 |    80 | 2003-01-17 |    NULL |<br>|        13 | Emily       |    180 |    60 | 2002-09-18 |    NULL |<br>+———–+————-+——–+——-+————+———+<br>13 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; exit<br>Bye<br>sukki@sukki-17Z990-VA76K:~$ </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day26-memo/" data-id="cjui8yu6r000jj52i51zavkmr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day27-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day27_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day25-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day25_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

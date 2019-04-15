@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day4_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day4 수 문자–&amp;gt;수     unicode     asci 수-정수-&amp;gt;양수    음수-&amp;gt;2의 보수    실수-&amp;gt;고정소수점 (잘 안씀,우리는 안할거임)    부동 소수점(floating,어려움,이거 배울것임) ###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day4_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day4-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day4 수 문자–&amp;gt;수     unicode     asci 수-정수-&amp;gt;양수    음수-&amp;gt;2의 보수    실수-&amp;gt;고정소수점 (잘 안씀,우리는 안할거임)    부동 소수점(floating,어려움,이거 배울것임) ###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:00.429Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day4_memo">
+<meta name="twitter:description" content="day4 수 문자–&amp;gt;수     unicode     asci 수-정수-&amp;gt;양수    음수-&amp;gt;2의 보수    실수-&amp;gt;고정소수점 (잘 안씀,우리는 안할거임)    부동 소수점(floating,어려움,이거 배울것임) ###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day4-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day4-memo/" class="article-date">
+  <time datetime="2019-04-15T10:43:48.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day4_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day4</p>
+<p>수</p>
+<p>문자–&gt;수<br>     unicode<br>     asci</p>
+<p>수-정수-&gt;양수<br>    음수-&gt;2의 보수<br>    실수-&gt;고정소수점 (잘 안씀,우리는 안할거임)<br>    부동 소수점(floating,어려움,이거 배울것임)</p>
+<p>###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?).</p>
+<p>#fist class function(일급 시민 함수? ㅋㅋ)<br>1.함수를 파라미터(argument=parameter)로 사용할 수 있는가<br>2.함수를 변수(variable)로 사용할 수 있는가<br>3.함수를 리턴(return)할 수 있는가</p>
+<p>3가지를 모두만족해야 first class function이라 함(MDN 사이트?)</p>
+<p>1.파라미터 조건은 만족할까?(파이썬이라는 언어는)<br>def f(a,b):<br>    return a+b</p>
+<p>def g(func, c, d):<br>    return func(c,d)</p>
+<p>a=10<br>b=20<br>g(f,a,b)</p>
+<p>2.변수 조건은 만족할까?(파이썬이라는 언어는)<br>f_var=f<br>f_var(20,30)</p>
+<p>3.리턴 조건은 만족할까?(파이썬이라는 언어는)<br>def create_calc(kind):<br>    if kind=’add’:<br>        def add(a,b):<br>            return a+b<br>        return add<br>    else kind == ‘sub’:<br>        def sub(a,b):<br>            return a-b<br>        return sub</p>
+<p>f = create_calc(‘add’)<br>f(10,20)</p>
+<p>f = create_calc(‘sub’)<br>f(10,20)</p>
+<p>###수</p>
+<p>정수-양의 정수-&gt;자연수<br>       0<br>      음의 정수</p>
+<p>1.기수(기본이 되는 수, radix=10,2,16같은 것)법</p>
+<p>10진수 0,1,2,3,4,5,6,7,8,9<br>2진수 0,1<br>16진수 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f<br>8진수(리눅스 같은 경우 쓰이는데,우리는 안 다룸)</p>
+<p>1.10진수-&gt;2진수</p>
+<p> 2  32<br> 2  16  0<br> 2   8   0<br> 2   4   0<br> 2    2   0<br>      1   0<br>100000(2)</p>
+<p>27-&gt; 2^4+2^3+2+1<br>11011(2)</p>
+<p>140-&gt;2^7+2^3+2^2<br>10001100(2)</p>
+<p>47-&gt;2^5+2^3+2^2+2^1+1<br>101111(2)</p>
+<p>10-&gt;2^3+2^1<br>1010(2)</p>
+<p>2.16진수-&gt;2진수(외우기)</p>
+<p>a-&gt;1010   &lt;–이거 기본으로 외우기<br>b  1011<br>c-&gt;1100  &lt;–이거 기본으로 외우기<br>d 1101<br>e 1110<br>f-&gt;1111  &lt;–이거 기본으로 외우기</p>
+<p>5e(16) -&gt;  0101    1110  (2)     -&gt;무조건 16진수 하나당 2진수 4개다. 이런식으로 변환</p>
+<p>fa(16) -&gt; 1111 1010 (2)</p>
+<p>74(16) -&gt;0111   0100 (2)</p>
+<p>8d(16) -&gt; 1000 1101 (2)</p>
+<p>2.2진수-&gt;16진수<br>반대</p>
+<p>11 0111 0001(2)  -&gt;   371 (16)</p>
+<p>10 1111 0101 -&gt; 2f5</p>
+<p>1000 1111 0111 -&gt; 8f7</p>
+<p>1111 1010 1100 -&gt; fac</p>
+<p>###32bit 컴퓨터 vs 64bit 컴퓨터</p>
+<p>1.한번에 보낼 수 있는 데이터의 양<br>32bit 컴퓨터 vs 64bit 컴퓨터</p>
+<p>하드웨어 적으로 CPU가 RAM에 쏠 수 있는 와이어의 양이 몇개냐 로 나눔</p>
+<p>2.메모리 주소를 표현할 때<br>32bit-&gt;메모리 주소를 할당할 때 1byte당 하나씩 주소를 매기는데 얘는 2진수로 32자리<br>0b 0000 0000 0000 0000 0000 0000 0000 0000 (2)<br>2^32승까지 메모리 할당 가능<br>0x00000000 ~ 0xffffffff (2^32 = 4G) –&gt; if each memory location holds 1 byte the adressable memory space is 4GB</p>
+<p>*메모리 주소 하나당 1byte(8bit)의 정보 용량(byte of storage)<br><a href="https://en.wikipedia.org/wiki/Memory_address" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Memory_address</a><br>address location 과 address space의 차이가 헷갈렸었음. </p>
+<p>hex(id(a)) —-&gt;이거 실행시, 32bit 에선 실제로 0x00000000 나옴</p>
+<p>64bit-&gt;</p>
+<p>64bit 컴퓨터여도 OS를 32bit를 쓰면 와이어 몇개는 안쓰겠다는 이야기</p>
+<p>1byte=8bit(거의 지금 정설)</p>
+<p>###정수의 표현<br>일반적으로 1/2/4/8 바이트에 저장<br>부호가 있는 정수(signed)와 부호가 없는 정수(unsigned)로 나뉨<br>부호가 있는 경우 첫 bit가 부호를 나타탬(0:양수,1:음수)</p>
+<p>#양의 정수 표현<br>부호 비트는 0<br>정수의 2진수로 표현하고 나머지는 0으로 채움</p>
+<p>43을 1바이트로 표현</p>
+<p>43 = 0010 1011(2)<br>           0x2b</p>
+<p>#음의 정수 표현<br>부호 비트는 1<br>정수를 2의 보수로 저장</p>
+<p>43-&gt;0010 1011(2)-&gt;1101 0100(2)(1의 보수=반전시킴)-&gt;1101 0101(2) = 0xd5 (2의 보수=반전시킨 것에 +1해줌) -&gt;이게 -43</p>
+<p>9의 보수</p>
+<p>3의 9의 보수 = 3에다가 무엇을 더했을 때 max가 나오는가</p>
+<p>23의 9의 보수 = 76 </p>
+<p>10의 보수= 어떤 숫자를 더했을 때 자릿수가 바뀌는 수</p>
+<p>1의 보수는 = 그냥 반전시켜주면 됨.</p>
+<p>###하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)</p>
+<p>high-level<br>language       </p>
+<pre><code>C언어  
+-----------------------
+</code></pre><p>low-level<br>language     assembly lan  -&gt; cpu에 있는 Reg이름을 알아야 코딩가능</p>
+<p>low-level은 hardware에 의존적인 언어<br>high-level에서는 제조사가 제공한 컴파일러만 있으면 됨.하드웨어 비의존적.즉 하드웨어가 가려지고 C언어 같이 로직만 짜면 됨. 즉 하드웨어 추상화.<br>C언어부터는 하드웨어 추상화가 한번 일어났기에 high level임. high level중에선 가장 낮은 단계.하드웨어까진 아니지만 자료형을 알아야함.즉, 메모리랑 바인딩 되어있음.<br>python,JS으로 넘어오면 추상화가 더 되어있음. 자료형 즉 메모리 부분을 몰라도 되는 단계</p>
+<p>#linear search</p>
+<p>li = [5,7,2,8,3,9,1]<br>def linear_search(li, target):<br>    ‘’’<br>    linear_search(li, target) -&gt; idx<br>    반환값은 target이 있다면 target의 인덱스<br>        target이 없다면 None을 반환<br>    ‘’’’<br>    for i in range(len(li)):<br>        if li[i] ==target:<br>            return i<br>    return None</p>
+<p>###BST(binary search tree)-&gt;interface는 동일한데 훨씬 빠름(알고리즘의 성능차이 분석하는 공부임)</p>
+<p>#입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다.</p>
+<p>def binary_search(li, target):<br>    ‘’’<br>    binary_search(li, target) -&gt; idx<br>    반환값은 target이 있다면 target의 인덱스<br>        target이 없다면 None을 반환<br>    ‘’’’<br>    pass</p>
+<p>##알고리즘의 성능<br>기준은 상대 시간 -&gt; 데이터의 개수(n)에 따른 연산(dominant 연산:일반적으로 비교 연산) 횟수</p>
+<p>x축:데이터의 개수( n )<br>y축:연산횟수( T(n) )</p>
+<p>알고리즘의 성능은 최악의 경우를 통해 표현함(이 알고리즘은 최악의 경우에도 이정도는 기능하더라 개념임)<br>최선의 경우<br>평균의 경우<br>최악의 경우</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjui8yu6v000pj52imcggere5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day5-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day5_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day3-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day3_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

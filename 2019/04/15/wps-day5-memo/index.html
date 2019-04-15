@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day5_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day5 곱셈,나눗셈 - CPU에서 어떻게 이루어지는지1.CPU에는 ALU가 있음. 덧셈,뺏셈-가산기+보수 통해 계산곱셈-가산기와 shifter를 통해 곱셈 가능 2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit) 3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,RAM -&amp;gt;Reg -&amp;gt; ALU-&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day5_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day5-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day5 곱셈,나눗셈 - CPU에서 어떻게 이루어지는지1.CPU에는 ALU가 있음. 덧셈,뺏셈-가산기+보수 통해 계산곱셈-가산기와 shifter를 통해 곱셈 가능 2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit) 3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,RAM -&amp;gt;Reg -&amp;gt; ALU-&amp;gt">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:02.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day5_memo">
+<meta name="twitter:description" content="day5 곱셈,나눗셈 - CPU에서 어떻게 이루어지는지1.CPU에는 ALU가 있음. 덧셈,뺏셈-가산기+보수 통해 계산곱셈-가산기와 shifter를 통해 곱셈 가능 2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit) 3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,RAM -&amp;gt;Reg -&amp;gt; ALU-&amp;gt">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day5-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day5-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:01.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day5_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day5</p>
+<p>곱셈,나눗셈 - CPU에서 어떻게 이루어지는지<br>1.CPU에는 ALU가 있음.</p>
+<p>덧셈,뺏셈-가산기+보수 통해 계산<br>곱셈-가산기와 shifter를 통해 곱셈 가능</p>
+<p>2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit)</p>
+<p>3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,<br>RAM -&gt;Reg -&gt; ALU-&gt;Reg-&gt;RAM 과정을 거침 꼭 알아야. (이걸 알아야 나중에 context switching 할 수 있음) </p>
+<p>=============================================</p>
+<p>##곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)<br>ALU에서 일어나는 일 이해</p>
+<p>4bit Reg면 4번 shift한다.</p>
+<p>#곱셈<br>가산기와 shift통해</p>
+<pre><code>1010
+</code></pre><h2 id="x0101"><a href="#x0101" class="headerlink" title="  x0101"></a>  x0101</h2><p>110010           +1010     0000 | 0101     —-&gt;끝이 1이면 더해줌<br>              1010<br>                                  —————   shift 1 (&gt;&gt;)<br>                                 0101 | 0010      —-&gt;끝이 0이면 그냥 shift만</p>
+<p>#나눗셈<br>이번에는 왼쪽으로 shift 한다음에…공석을 0또는 1을 채운다.<br>        <strong>____</strong><br>0011 | 1011                         0000  |  1011   shift 1 (&lt;&lt;) 나눗셈에서의 shift는 사람이 나누기 할 때 안나누어질 때 자릿수 이동하는 개념을 컴퓨터가 쉬프트 방식으로 하는 것<br>                                        ( 0001)  |  011?  &lt;—여기서 ?이 값은 0 혹은 1인데 구할 때는 (괄호)안의 값을 0011의 2의 보수인 1101과 더해서 차이를 비교한다.-&gt;<br>                                                                   그러고나서 그 결과값이 음수인지 양수인지 판별해서 대소값 비교-&gt;<br>                    음수가 나왔다는것은 0011이 크다는 것이기에 끝에 0을 붙인다.<br>                    양수가 나왔다는 것은 0011이 작다는 것이고 나누어진다는 것이여서 1을 붙인다.</p>
+<p>###실수(어려움)<br>고정 소수점-&gt;정밀도는 높은데 표현 범위가 좁음(이젠 안씀)<br>부동 소수점(floating point) -&gt; 정밀도가 급감해서 최악됨 하지만 표현범위가 정말 좋아짐.<br>정밀도가 떨어지는데 이걸 어떻게 다뤄야하나 이 것에 대한 이야기<br>실수가 메모리에 어떻게 표현되는지. 실제 코딩은 어떻게 해야하는데 에 대한 이야기</p>
+<p>비교할 때 어떻게 하냐는 이야기<br>a=0.12~<br>b=0.12~~~</p>
+<p>if a==b:</p>
+<p>실수를 비교할 때 문제가 됨..<br>이걸 알면…직접 함수를 조절해서 내가 원하는 정밀도 조정해서 쓸 수 있음.<br>epsilon comparison을 알아야함 결국…(굉장히 중요한 주제임)</p>
+<hr>
+<p>부동 소수점</p>
+<p>   10.23   *    10^2<br>가수부       지수부<br>mantissa    exponent</p>
+<p>1.011 * 2^3을 메모리에 어떻게 표현할건데에 대한 이야기</p>
+<hr>
+<p>부동 소수점<br>1.single precision<br> 1) 32bit 4byte float<br> 2) 부호(1bit)+지수(8bit)+가수(23bit)</p>
+<p>2.double precision(파이썬은 이거씀)<br> 1)  64bit 8byte double<br> 2) 부호(1 bit)+ 지수(11bit)+ 가수(52bit)</p>
+<p>가수부는 정밀도 담당<br>지수범위는 표현범위 담당</p>
+<p>정규화-(normalization)</p>
+<p>5234 - 523.4 <em> 10^1<br>          52.34 </em> 10^2<br>          5.234<em>10^3 -&gt;&gt;&gt;&gt;이게 정규화임. 0이 아닌 자연수 1자리가 정수 부분에 와야함. 2진수의 경우는 무조건 1.xxx일케 되겠지. 그래서 1.man </em> 이런식으로 되는거. 무조건 1이므로 1비트는 저장하지 않음.<br>                                      따라서 1.man * ~에서<br>                                               1bit 52bit</p>
+<p>이런식으로 man은 채워짐.</p>
+<p>지수부에서는…<br>아래 식을 통해..<br>1.0101 * 2^5에서<br>Ere = Emem - bias<br>5  =           - 127 (float의 경우)<br>Ere -&gt; 실제 표현해야 하는<br>Emem -&gt; 메모리에 저장되는</p>
+<p>따라서 Emem = 132를 2진수로 바꾼수가 메모리에 저장됨..</p>
+<hr>
+<p>엡실론</p>
+<p>파이썬은 double인데 책에서는 소수점이하 15자리 까지 정밀 나와있음..<br>dig=15이런게 있는데 여기서 digits은<br>digits -정밀도 자릿수 을 의미</p>
+<p>10진수 1자리를 표현하기 위해서는 2진수 4자리 필요<br>즉, 9(10)  -&gt;   1001(2)</p>
+<p>2진수 7자리수는 10진수 2자리수까지 커버가능=즉 10진수 2자리의 정밀도를 보장한다.<br>2진수 10자리수는 10진수 3자리수까지 커버<br>2진수 24자리수는 10진수 7자리수까지 커버</p>
+<p>2진수 52 (가수부의 bit수)자리수는 10진수 15자리수까지 표현가능하다. man_dig = 15의 의미임.</p>
+<p>a = 1.0*(2**53)<br>a+=1<br>a</p>
+<p>엡실론 정의 : 메모리가 한정되어 있기 때문에 메모리에서 바로 다음 수를 알 수 있다. 그래서 그 차이를 구한게 엡실론이다. 1과 그 다음 메모리상에서 표현할 수 있는 수 사이의 차이임.</p>
+<p>파이썬의 경우 double이므로,<br>import sys<br>sys.float_info.epsilon == 2.0**-52   # 52는 가수부 bit<br>True</p>
+<p>###<br>diff = 2^E <em> epsilon  (이 식은 유도 안함 그냥 그렇다라고 알아두자)<br>      = |num|</em>epsilon (근사를 통해서  magnitude 퉁치기)</p>
+<p>!!따라서 어떤수가 있을 때 그 다음 수와의 차이를 알고 싶을 때 그 수에다가 엡실론을 곱하면 그 (차이)를 단번에 구할 수있다는 결론</p>
+<p>어떤 수와 그 다음 수의 그 작은 차이에 어떤수가 들어 있으면 그 수는 가장작은수로 퉁칠 수 있겠지. 즉 둘이 같다고 할 수 있겠지.</p>
+<p>1.절대 비교 -&gt;충분히 작은 수를 설정하는게 근거가 없을 수 있다. 매번 내부 함수를 바꿔야하니 추상화 위배됨.</p>
+<p>from math import fabs<br>def is_equal(a,b):<br>    return fabs(a-b) &lt;= 1.0e-10</p>
+<p>if is_equal(a,b):<br>    print(‘이정도 차이면 봐줄게’)<br>else:<br>    print(‘이건 같은수가 아니지…’)</p>
+<p>2.상대 비교 </p>
+<p>import math</p>
+<p>def is_equal2(a,b,w):<br>    ep = 2<strong>(-23)<br>    diff = abs(a-b)<br>    return diff &lt;= max(abs(a),abs(b)) <em> ep </em> 2</strong>(w)</p>
+<p>#상대오차 ,절대오차에 대해 더 공부하고 싶으시면<br>알고리즘 문제 해결 전략 세트 (책)</p>
+<p>#####빅오</p>
+<p>n —–&gt; T(n) = 3n^2 + 2n -1<br>이렇다고 하면 빅오는,<br>O (n^2)<br>big</p>
+<p>(big o of n^2) 라고 부름<br>O(n) 는 상한선 개념임. </p>
+<p>if&gt; T(n) = 3n+3<br>O(n)</p>
+<p>if&gt; T(n) = log n<br>O(log n )</p>
+<p>Big O 성능 순 순위</p>
+<p>1등. O(상수): 상수시간( constant)<br>ex) array의 indexing -&gt; arr[3] 같은 것<br>     linked list의 inert()와 delete() 함수 </p>
+<p>2.O(logn): 로그시간<br>ex)binary search<br>    BST의 insert 함수와 search(), delete() 계열의 모든 함수가 log n계열임</p>
+<ol start="3">
+<li>O(n): 선형시간<br>ex) linear search<br>  array의 insert,delete<br>  linked list의 search</li>
+</ol>
+<p>4.O(n*logn)<br>ex)quick sort(현업에서 쓰는 소팅 기법)<br>    merge sort<br>    heap sort</p>
+<p>   comparison sorting- 두 수를 직접적으로 비교하는 소팅은 그 알고리즘 속도가 O(n*logn)보다 절대 좋아질 수 없다.(알고리즘 책에 나옴) </p>
+<p>5.O(n^2)<br>ex) bubble sort<br>    insertion sort<br>    selection sort</p>
+<p>   for문은 2개 이상 쓰면 이리 됨.for문이 3개 이상 나오면 다시 짜면 됨.</p>
+<p>성능의 정도:  4등&gt;&gt;&gt;5등<br>빅오도 맹신하지는 말아라…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjui8yu6v000qj52iei5q425c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day6-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day6_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day4-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day4_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

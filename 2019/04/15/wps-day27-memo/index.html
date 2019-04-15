@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>wps_day27_memo | Sukki&#39;s Home :D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day27 ###데이터베이스 2일차 #join foreign key : table간의 관계 형성할 때 잡지. 1:N 관계, rooms의 bid가 buildings의 bid를 레퍼런스 할 수 있도록 할 때. 부모와 자식 관계. Join 한다음에,M:N 관계 (장고에서도 내부적으로 테이블을 M:N으로 설정하는 개념이 있음. Join:Inner joinOuter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wps_day27_memo">
+<meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day27-memo/index.html">
+<meta property="og:site_name" content="Sukki&#39;s Home :D">
+<meta property="og:description" content="day27 ###데이터베이스 2일차 #join foreign key : table간의 관계 형성할 때 잡지. 1:N 관계, rooms의 bid가 buildings의 bid를 레퍼런스 할 수 있도록 할 때. 부모와 자식 관계. Join 한다음에,M:N 관계 (장고에서도 내부적으로 테이블을 M:N으로 설정하는 개념이 있음. Join:Inner joinOuter">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:59:53.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wps_day27_memo">
+<meta name="twitter:description" content="day27 ###데이터베이스 2일차 #join foreign key : table간의 관계 형성할 때 잡지. 1:N 관계, rooms의 bid가 buildings의 bid를 레퍼런스 할 수 있도록 할 때. 부모와 자식 관계. Join 한다음에,M:N 관계 (장고에서도 내부적으로 테이블을 M:N으로 설정하는 개념이 있음. Join:Inner joinOuter">
+  
+    <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sukki&#39;s Home :D</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sa77irak.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wps-day27-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day27-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:18.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wps_day27_memo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day27</p>
+<p>###데이터베이스 2일차</p>
+<p>#join</p>
+<p>foreign key : table간의 관계 형성할 때 잡지.</p>
+<p>1:N 관계, rooms의 bid가 buildings의 bid를 레퍼런스 할 수 있도록 할 때. 부모와 자식 관계.</p>
+<p>Join 한다음에,<br>M:N 관계 (장고에서도 내부적으로 테이블을 M:N으로 설정하는 개념이 있음.</p>
+<p>Join:<br>Inner join<br>Outer join: Left outer, Right outer, Full outer</p>
+<p>mysql이나 mariaDB는 full outer join을 지원하지 않음.<br>하지만 UNION문 을 통해 해볼거임.</p>
+<p>schema: 테이블이 어떤 모양으로 만들건가의 의미임.<br>schema를 만들 때 데이터의 중복을 허용하지 않는다가 전제임. 그래서 테이블을 쪼갬.</p>
+<p>join은 table을 가로로 연결할 때 쓰임!!<br>일반적으로 join하면 inner join을 함.</p>
+<p>#GROUP BY HAVING</p>
+<p>WHERE문: grouping 전에 조건절 수행<br>HAVING문: grouping 후에 조건절 수행</p>
+<p>HAVING은 반드시 그루핑 한 것에 대해서만 조건을 먹이는 것! 즉 group by에 대한 조건문임. Group by가 없으면 안쓰겠지.</p>
+<p>M:N 관계 → 학생과 수강과목의 관계처럼. 서로가 다 대 다인 관계.</p>
+<p>Primary key 안써도 unique not null 쓰면 완벽하게 대체 됨.</p>
+<p>#view = select문임. 마치 table처럼 쓰는 것.<br>1.select문일 뿐이지 table이 새로 만들어지는 것은 아님.<br>2.가독성이 높아짐.<br>3.보안 문제 때문에 씀!. view를 통해 다른 민감한 정보를 못보게 뽑아내서 유저한테 grant하게 해서 보안 높아짐.</p>
+<p>#index<br>index는 데이터 써치(검색)에 씀.</p>
+<p>Tree-&gt;BST →  O(logn)</p>
+<p>Index는 BTree로 만들어짐.</p>
+<p>BST를 보완한게 균형이진 트리(그중 하나가 red-black tree) 이고 한번 더 업그레이드 한게 B-tree</p>
+<p>index 종류:<br>*clustered index:<br>1)한 table마다 1개씩만 존재<br>2)data자체를 이 clustered index에 맞추어서 저장.<br>3)primary key가 clustered index가 되는 것. Create table할 때 primary key를 걸어두고 작업하는게 좋지 나중에 데이터 들어간 후 나중에 정렬하려면 하루 걸릴 수도 있음 ㅜㅜ.</p>
+<p>*secondary index:<br>1)우리가 원하는만큼 붙일 수 있음.<br>2)B-tree라는 자료구조를 내부적으로 만들고, 얘가 실제 데이터를 참조하는 식으로 되어있음.<br>3)where를 자주 쓰는 상황에서 secondary index를 쓰면 됨. where절에 나오는 field name에다가 index를 걸어주면 됨.</p>
+<p>index는 어떤 field를 기준으로 자료를 검색.field에다가 index를 붙임.<br>index는 where에 걸리는것. Where classID=3 이런것 처럼.<br>index의 장점은 검색속도 빨라짐.<br>단점은 insert나 update문 등의 데이터 수정 삽입을 많이 일어나면 성능이 현저히 떨어짐.</p>
+<p>1)where를 얼마나 많이 쓸건가<br>2)검색속도와 vs 수정/삽입해서의 성능<br>—-→ 를 고려해서 index를 만들지 말지 판단해야~</p>
+<p>CREATE INDEX &lt;–이 명렁어는 secondary index만 만들 수 있다.</p>
+<p>Clustered index를 만들려면 만드시 ALTER TABLE문을 이용해야 함.</p>
+<p>내일 python으로 DB조작하는 거 함.<br>안되면 자료구조로 넘어갈 것.</p>
+<p>*primary key를 지웠다가 딴데 설정하는 방법(수업에서 한 터미널 코드)</p>
+<p>MariaDB [mydb]&gt; show create table students;<br>+———-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>| Table    | Create Table                                                                                                                                                                                                                                                                                                                                 |<br>+———-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>| students | CREATE TABLE <code>students</code> (<br>  <code>studentID</code> int(11) NOT NULL AUTO_INCREMENT,<br>  <code>studentName</code> varchar(20) NOT NULL,<br>  <code>height</code> smallint(6) DEFAULT ‘200’,<br>  <code>score</code> smallint(6) DEFAULT NULL,<br>  <code>birthday</code> date NOT NULL,<br>  <code>classID</code> int(11) DEFAULT NULL,<br>  PRIMARY KEY (<code>studentID</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 |<br>+———-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; alter table students<br>    -&gt; \c<br>MariaDB [mydb]&gt; ALTER TABLE students<br>    -&gt; MODIFY COLUMN studentID INT NOT NULL;<br>Query OK, 14 rows affected (0.05 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; DESC students;<br>+————-+————-+——+—–+———+——-+<br>| Field       | Type        | Null | Key | Default | Extra |<br>+————-+————-+——+—–+———+——-+<br>| studentID   | int(11)     | NO   | PRI | NULL    |       |<br>| studentName | varchar(20) | NO   |     | NULL    |       |<br>| height      | smallint(6) | YES  |     | 200     |       |<br>| score       | smallint(6) | YES  |     | NULL    |       |<br>| birthday    | date        | NO   |     | NULL    |       |<br>| classID     | int(11)     | YES  |     | NULL    |       |<br>+————-+————-+——+—–+———+——-+<br>6 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; ALTER TABLE students<br>    -&gt; DROP PRIMARY KEY;<br>Query OK, 14 rows affected (0.05 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; show create table students;<br>+———-+——————————————————————————————————————————————————————————————————————————————————————————–+<br>| Table    | Create Table                                                                                                                                                                                                                                                                   |<br>+———-+——————————————————————————————————————————————————————————————————————————————————————————–+<br>| students | CREATE TABLE <code>students</code> (<br>  <code>studentID</code> int(11) NOT NULL,<br>  <code>studentName</code> varchar(20) NOT NULL,<br>  <code>height</code> smallint(6) DEFAULT ‘200’,<br>  <code>score</code> smallint(6) DEFAULT NULL,<br>  <code>birthday</code> date NOT NULL,<br>  <code>classID</code> int(11) DEFAULT NULL<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |<br>+———-+——————————————————————————————————————————————————————————————————————————————————————————–+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; show index from students;<br>Empty set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; ALTER TABLE students<br>    -&gt; ADD CONSTRAINT<br>    -&gt; PRIMARY KEY(studentName);<br>Query OK, 0 rows affected (0.04 sec)<br>Records: 0  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; SHOW CREATE TABLE students;<br>+———-+—————————————————————————————————————————————————————————————————————————————————————————————————————+<br>| Table    | Create Table                                                                                                                                                                                                                                                                                                  |<br>+———-+—————————————————————————————————————————————————————————————————————————————————————————————————————+<br>| students | CREATE TABLE <code>students</code> (<br>  <code>studentID</code> int(11) NOT NULL,<br>  <code>studentName</code> varchar(20) NOT NULL,<br>  <code>height</code> smallint(6) DEFAULT ‘200’,<br>  <code>score</code> smallint(6) DEFAULT NULL,<br>  <code>birthday</code> date NOT NULL,<br>  <code>classID</code> int(11) DEFAULT NULL,<br>  PRIMARY KEY (<code>studentName</code>)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |<br>+———-+—————————————————————————————————————————————————————————————————————————————————————————————————————+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SHOW INDEX FROM students;<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>| Table    | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>| students |          0 | PRIMARY  |            1 | studentName | A         |          14 |     NULL | NULL   |      | BTREE      |         |               |<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DROP INDEX <code>PRIMARY</code> on students;<br>Query OK, 14 rows affected (0.05 sec)<br>Records: 14  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; show create table students;<br>+———-+——————————————————————————————————————————————————————————————————————————————————————————–+<br>| Table    | Create Table                                                                                                                                                                                                                                                                   |<br>+———-+——————————————————————————————————————————————————————————————————————————————————————————–+<br>| students | CREATE TABLE <code>students</code> (<br>  <code>studentID</code> int(11) NOT NULL,<br>  <code>studentName</code> varchar(20) NOT NULL,<br>  <code>height</code> smallint(6) DEFAULT ‘200’,<br>  <code>score</code> smallint(6) DEFAULT NULL,<br>  <code>birthday</code> date NOT NULL,<br>  <code>classID</code> int(11) DEFAULT NULL<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |<br>+———-+——————————————————————————————————————————————————————————————————————————————————————————–+<br>1 row in set (0.01 sec)</p>
+<p>MariaDB [mydb]&gt; alter table students<br>    -&gt; ADD CONSTRAINT<br>    -&gt; PRIMARY KEY(studentID);<br>Query OK, 0 rows affected (0.04 sec)<br>Records: 0  Duplicates: 0  Warnings: 0</p>
+<p>MariaDB [mydb]&gt; show create table students;<br>+———-+————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>| Table    | Create Table                                                                                                                                                                                                                                                                                                |<br>+———-+————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>| students | CREATE TABLE <code>students</code> (<br>  <code>studentID</code> int(11) NOT NULL,<br>  <code>studentName</code> varchar(20) NOT NULL,<br>  <code>height</code> smallint(6) DEFAULT ‘200’,<br>  <code>score</code> smallint(6) DEFAULT NULL,<br>  <code>birthday</code> date NOT NULL,<br>  <code>classID</code> int(11) DEFAULT NULL,<br>  PRIMARY KEY (<code>studentID</code>)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |<br>+———-+————————————————————————————————————————————————————————————————————————————————————————————————————-+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; DESC students;<br>+————-+————-+——+—–+———+——-+<br>| Field       | Type        | Null | Key | Default | Extra |<br>+————-+————-+——+—–+———+——-+<br>| studentID   | int(11)     | NO   | PRI | NULL    |       |<br>| studentName | varchar(20) | NO   |     | NULL    |       |<br>| height      | smallint(6) | YES  |     | 200     |       |<br>| score       | smallint(6) | YES  |     | NULL    |       |<br>| birthday    | date        | NO   |     | NULL    |       |<br>| classID     | int(11)     | YES  |     | NULL    |       |<br>+————-+————-+——+—–+———+——-+<br>6 rows in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SHOW INDEX FROM students;<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>| Table    | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>| students |          0 | PRIMARY  |            1 | studentID   | A         |          14 |     NULL | NULL   |      | BTREE      |         |               |<br>+———-+————+———-+————–+————-+———–+————-+———-+——–+——+————+———+—————+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; SELECT @@AUTOCOMMIT;<br>+————–+<br>| @@AUTOCOMMIT |<br>+————–+<br>|            1 |<br>+————–+<br>1 row in set (0.00 sec)</p>
+<p>MariaDB [mydb]&gt; </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day27-memo/" data-id="cjui8yu6s000kj52iqtuzt3nh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/wps-day28-memo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          wps_day28_memo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/wps-day26-memo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">wps_day26_memo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day29-memo/">wps_day29_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
