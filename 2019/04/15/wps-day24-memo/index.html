@@ -7,17 +7,17 @@
   
   <title>wps_day24_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day24 ###네트워크2/2 IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정">
+  <meta name="description" content="day24 네트워크2/2IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정 시간 지">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day24_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day24-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day24 ###네트워크2/2 IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정">
+<meta property="og:description" content="day24 네트워크2/2IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정 시간 지">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:59:46.264Z">
+<meta property="og:updated_time" content="2019-04-15T12:36:10.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day24_memo">
-<meta name="twitter:description" content="day24 ###네트워크2/2 IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정">
+<meta name="twitter:description" content="day24 네트워크2/2IP routing :어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함. route table: netstat -r tcp/ip 완벽가이드(책?) TCP신뢰도 높음상호간에 connection 존재패킷을 보내고 수신 호스트가 잘 받았다고 ACK라는 걸 보내서 계속 체크함. 일정 시간 지">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,8 +87,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day24</p>
-<p>###네트워크2/2</p>
-<p>IP routing :<br>어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함.</p>
+<h3 id="네트워크2-2"><a href="#네트워크2-2" class="headerlink" title="네트워크2/2"></a>네트워크2/2</h3><p>IP routing :<br>어떤 라우터들을 거쳐서 갈 것인지 정하는 것이 IP routing. 일종의 알고리즘임. 엄청 복잡함.</p>
 <p>route table:</p>
 <p>netstat -r</p>
 <p>tcp/ip 완벽가이드(책?)</p>
@@ -104,7 +103,8 @@
 <p>ping 127.0.0.1을 때리면, packet이 리눅스 커널 4계층을 쭉 내려갔다가 다시 돌아왔다. 다시 받았다는 것은 4계층이 잘 동작했다는 것이지. NIC가 있는 device 앞 쪽은 short되어 있음. 따라서 ping을 때렸는데 작동 안했다고 NIC를 바꾸는 일은 절대! 해서 안되겠지! </p>
 <p>1번의 경우는..<br>netstat -r해서 Iptime 주소를 ping해보면 되겠지.<br>Traceroute google.com 은 한번 해봐. 막힌지 아닌지 알수 있겠지.</p>
 <p>Three-way handshaking</p>
-<p>Host 1                                                                      host 2<br>send buffer                                                                 send buffer<br>recv buffer                                                                   recv buffer</p>
+<blockquote><p>Host 1                                                                      host 2<br>send buffer                                                                 send buffer<br>recv buffer                                                                   recv buffer</p>
+</blockquote>
 <p>send buffer recv buffer  는 커널이 관리함.<br>소켓마다 send buffer와 recv buffer가 따로 있다.(그냥 이리 알아둬라)</p>
 <p>unicode문자열을 받으면 encode해서 b’’이런식이 되지. 이게 byte string이지.  byte단위로 쏘는 스트링을 byte string b’\   \   \’여기서 하나씩 쏘는거. b’abc’라면 host1의 send buffer에 ‘abc’됨. 그래서 결국 host2의 recv buffer에 ‘abc’가 되는것이 목표지. 그래서 받고 나서 decode하는 과정임. Send buffer에 첫번째 바이트에 부여한 숫자를 ISN(Initial sequence number)이라 함. 예를 들어 1023 같이 ISN 지정. 이 다음은 1024였지만 해커 땜에 랜덤하게 부여됨.<br>host2도 받으면 쏴야하니 send buffer의 ISN는 62523으로 됬데. </p>
 <p>1)host1이 연결하자 ~ 나랑 동기화할래? SYN을 보냄~ 그리고 내 seq#는 1023이야~</p>
@@ -117,42 +117,14 @@
 <p>커넥션이 열려있다: established 라는 용어로 표현<br>netstat -t -p TCP<br>이러한 일들을 OS 커널에서 일어나는 일들임. Os의 TCP계층.</p>
 <p>소켓 프로그래밍</p>
 <p>서버 단</p>
-<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import socket<br>serv=socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>serv.bind((‘localhost’, 3030))<br>serv.listen()<br>data_sock,clnt_addr=serv.accept()<br>bnum=data_sock.recv(1)<br>bnum<br>b’\x11’<br>n=int.from_bytes(bnum, ‘big’)<br>n<br>17<br>recv_buf=data_sock.recv(17)<br>recv_buf<br>b’I am your father!’<br>msg=recv_buf.decode()<br>msg<br>‘I am your father!’<br>bnum=data_sock.recv(1)<br>bnum<br>b’\x13’<br>n=int.from_bytes(bnum, ‘big’)<br>n<br>19<br>recv_buf=data_sock.recv(n)<br>recv_buf<br>b’Where are you from?’<br>msg=recv_buf.decode()<br>msg<br>‘Where are you from?’</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sukki@sukki-17Z990-VA76K:~$ python</span><br><span class="line">Python 3.7.2 (default, Mar 20 2019, 17:02:11) </span><br><span class="line">[GCC 7.3.0] on linux</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import socket</span><br><span class="line">&gt;&gt;&gt; serv=socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">&gt;&gt;&gt; serv.bind((&apos;localhost&apos;, 3030))</span><br><span class="line">&gt;&gt;&gt; serv.listen()</span><br><span class="line">&gt;&gt;&gt; data_sock,clnt_addr=serv.accept()</span><br><span class="line">&gt;&gt;&gt; bnum=data_sock.recv(1)</span><br><span class="line">&gt;&gt;&gt; bnum</span><br><span class="line">b&apos;\x11&apos;</span><br><span class="line">&gt;&gt;&gt; n=int.from_bytes(bnum, &apos;big&apos;)</span><br><span class="line">&gt;&gt;&gt; n</span><br><span class="line">17</span><br><span class="line">&gt;&gt;&gt; recv_buf=data_sock.recv(17)</span><br><span class="line">&gt;&gt;&gt; recv_buf</span><br><span class="line">b&apos;I am your father!&apos;</span><br><span class="line">&gt;&gt;&gt; msg=recv_buf.decode()</span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&apos;I am your father!&apos;</span><br><span class="line">&gt;&gt;&gt; bnum=data_sock.recv(1)</span><br><span class="line">&gt;&gt;&gt; bnum</span><br><span class="line">b&apos;\x13&apos;</span><br><span class="line">&gt;&gt;&gt; n=int.from_bytes(bnum, &apos;big&apos;)</span><br><span class="line">&gt;&gt;&gt; n</span><br><span class="line">19</span><br><span class="line">&gt;&gt;&gt; recv_buf=data_sock.recv(n)</span><br><span class="line">&gt;&gt;&gt; recv_buf</span><br><span class="line">b&apos;Where are you from?&apos;</span><br><span class="line">&gt;&gt;&gt; msg=recv_buf.decode()</span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&apos;Where are you from?&apos;</span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>클라이언트 단</p>
-<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import socket<br>clnt=socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>clnt.connect((‘localhost’, 3030))<br>msg=input(‘# ‘)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="I-am-your-father"><a href="#I-am-your-father" class="headerlink" title="I am your father!"></a>I am your father!</h1><blockquote>
-<blockquote>
-<blockquote>
-<p>msg<br>‘I am your father!’<br>send_buf=msg.encode()<br>send_buf<br>b’I am your father!’<br>n=len(send_buf)<br>n<br>17<br>bnum=n.to_bytes(1, ‘big’)<br>bnum<br>b’\x11’<br>clnt.send(bnum)<br>1<br>clnt.send(send_buf)<br>17<br>msg=input(‘# ‘)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="Where-are-you-from"><a href="#Where-are-you-from" class="headerlink" title="Where are you from?"></a>Where are you from?</h1><blockquote>
-<blockquote>
-<blockquote>
-<p>msg<br>‘Where are you from?’<br>send_buf=msg.encode()<br>send_buf<br>b’Where are you from?’<br>n=len(send_buf)<br>n<br>19<br>bnum=n.to_bytes(1, ‘big)<br>  File “<stdin>“, line 1<br>    bnum=n.to_bytes(1, ‘big)<br>                           ^<br>SyntaxError: EOL while scanning string literal<br>bnum=n.to_bytes(1, ‘big’)<br>clnt.send(bnum)<br>1<br>clnt.send(send_buf)<br>19</stdin></p>
-</blockquote>
-</blockquote>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sukki@sukki-17Z990-VA76K:~$ python</span><br><span class="line">Python 3.7.2 (default, Mar 20 2019, 17:02:11) </span><br><span class="line">[GCC 7.3.0] on linux</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import socket</span><br><span class="line">&gt;&gt;&gt; clnt=socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">&gt;&gt;&gt; clnt.connect((&apos;localhost&apos;, 3030))</span><br><span class="line">&gt;&gt;&gt; msg=input(&apos;# &apos;)</span><br><span class="line"># I am your father!</span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&apos;I am your father!&apos;</span><br><span class="line">&gt;&gt;&gt; send_buf=msg.encode()</span><br><span class="line">&gt;&gt;&gt; send_buf</span><br><span class="line">b&apos;I am your father!&apos;</span><br><span class="line">&gt;&gt;&gt; n=len(send_buf)</span><br><span class="line">&gt;&gt;&gt; n</span><br><span class="line">17</span><br><span class="line">&gt;&gt;&gt; bnum=n.to_bytes(1, &apos;big&apos;)</span><br><span class="line">&gt;&gt;&gt; bnum</span><br><span class="line">b&apos;\x11&apos;</span><br><span class="line">&gt;&gt;&gt; clnt.send(bnum)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; clnt.send(send_buf)</span><br><span class="line">17</span><br><span class="line">&gt;&gt;&gt; msg=input(&apos;# &apos;)</span><br><span class="line"># Where are you from?</span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&apos;Where are you from?&apos;</span><br><span class="line">&gt;&gt;&gt; send_buf=msg.encode()</span><br><span class="line">&gt;&gt;&gt; send_buf</span><br><span class="line">b&apos;Where are you from?&apos;</span><br><span class="line">&gt;&gt;&gt; n=len(send_buf)</span><br><span class="line">&gt;&gt;&gt; n</span><br><span class="line">19</span><br><span class="line">&gt;&gt;&gt; bnum=n.to_bytes(1, &apos;big)</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1</span><br><span class="line">    bnum=n.to_bytes(1, &apos;big)</span><br><span class="line">                           ^</span><br><span class="line">SyntaxError: EOL while scanning string literal</span><br><span class="line">&gt;&gt;&gt; bnum=n.to_bytes(1, &apos;big&apos;)</span><br><span class="line">&gt;&gt;&gt; clnt.send(bnum)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; clnt.send(send_buf)</span><br><span class="line">19</span><br><span class="line">&gt;&gt;&gt; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjuiasnm0000g182ir10r4hj0" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjuicgm71000hhi2i24juzgi1" class="article-share-link">Share</a>
       
       
     </footer>

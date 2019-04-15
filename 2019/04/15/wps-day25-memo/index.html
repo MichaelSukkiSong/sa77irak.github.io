@@ -7,17 +7,17 @@
   
   <title>wps_day25_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day25 ###네트워크 3/3 server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는">
+  <meta name="description" content="day25 네트워크 3/3server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는 sock">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day25_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day25-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day25 ###네트워크 3/3 server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는">
+<meta property="og:description" content="day25 네트워크 3/3server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는 sock">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:59:48.476Z">
+<meta property="og:updated_time" content="2019-04-15T12:35:49.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day25_memo">
-<meta name="twitter:description" content="day25 ###네트워크 3/3 server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는">
+<meta name="twitter:description" content="day25 네트워크 3/3server serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!serv.bind(add) 서버의 IP:portserv.listen(back log num of unaccepted request))data sock, clnt_addr=serv.acceptdata, sock -&amp;gt;는 sock">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,42 +87,28 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day25</p>
-<p>###네트워크 3/3</p>
-<p>server</p>
+<h3 id="네트워크-3-3"><a href="#네트워크-3-3" class="headerlink" title="네트워크 3/3"></a>네트워크 3/3</h3><p>server</p>
 <p>serv=socket() →socket 1  ← 문지기 역할: 클라이언트의 요청을 받는다!!<br>serv.bind(add) 서버의 IP:port<br>serv.listen(back log num of unaccepted request))<br>data sock, clnt_addr=serv.accept<br>data, sock -&gt;는 socket 2 -&gt;데이터 통신용 소켓! 클라이언트랑 통신!</p>
 <p>client</p>
 <p>clnt=socket()</p>
 <p>connect() </p>
-<p>data socket ————TCP connection ———–&gt; clnt</p>
+<blockquote><p>data socket ————TCP connection ———–&gt; clnt</p>
+</blockquote>
 <p>connect() 의 반환시점은 connect 완성 시점이 아니고 request queue에 등록이 될 때. 즉 enqueue가 될 때임.(듣고 잊어)</p>
 <p>datasocket.send()                                             clnt.send()<br>datasocket.recv()                                              clnt.recv()</p>
 <p>clnt의 ip와 port는 Os가 줌. Ip는 호스트가 넘기고 포트는 랜덤임.<br>처음 만든 serv를 listen socket이라 함.</p>
 <p>Concurrency programming개념이 들어오지. 한명이 블로킹 걸려 있는데 나머지 애들은 데이터를 주고 받아야 하니까. 즉 listen socket이 accept()를 통해 받는데 잠시 블로킹 걸려 있는 동안 나머지 clnt1, clny2,…이것들이 data socket 1 , data socket2 랑 주고 받아야 하지.<br>Clnt 1이 연결할 동안 clnt2가 들어오면  Request queue에 들어가서 기다리다가 후에 data socket 2가 생기면서 data socket이랑 clnt가 주고 받음.</p>
 <p>concurrency programming을 위해,<br>1.multithreading<br>2.multiprocessing<br>3.I/O multiplexing → select() 함수 →system call , event driven 방식이라 함.</p>
 <p>UDP socket programming</p>
-<p>서버단</p>
-<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import socket<br>serv=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>serv.bind((‘localhost’,3030))<br>data=serv.recvfrom(20)<br>data<br>(b’I am your fater!’, (‘127.0.0.1’, 52201))<br>data, clnt_addrr=serv.recvfrom(20)<br>data<br>b’hey~’<br>serv.close()</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>서버단<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sukki@sukki-17Z990-VA76K:~$ python</span><br><span class="line">Python 3.7.2 (default, Mar 20 2019, 17:02:11) </span><br><span class="line">[GCC 7.3.0] on linux</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import socket</span><br><span class="line">&gt;&gt;&gt; serv=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">&gt;&gt;&gt; serv.bind((&apos;localhost&apos;,3030))</span><br><span class="line">&gt;&gt;&gt; data=serv.recvfrom(20)</span><br><span class="line">&gt;&gt;&gt; data</span><br><span class="line">(b&apos;I am your fater!&apos;, (&apos;127.0.0.1&apos;, 52201))</span><br><span class="line">&gt;&gt;&gt; data, clnt_addrr=serv.recvfrom(20)</span><br><span class="line">&gt;&gt;&gt; data</span><br><span class="line">b&apos;hey~&apos;</span><br><span class="line">&gt;&gt;&gt; serv.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p>클라이언트 단</p>
-<p>sukki@sukki-17Z990-VA76K:~$ python<br>Python 3.7.2 (default, Mar 20 2019, 17:02:11)<br>[GCC 7.3.0] on linux<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import socket<br>clny=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>clnt=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>serv_addrr=(‘localhost’,3030)<br>clnt.sendto(b’I am your fater!’, serv_addrr)<br>16<br>clnt.sendto(b’hey~’,serv_addrr)<br>4<br>clnt.close()</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sukki@sukki-17Z990-VA76K:~$ python</span><br><span class="line">Python 3.7.2 (default, Mar 20 2019, 17:02:11) </span><br><span class="line">[GCC 7.3.0] on linux</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import socket</span><br><span class="line">&gt;&gt;&gt; clny=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">&gt;&gt;&gt; clnt=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">&gt;&gt;&gt; serv_addrr=(&apos;localhost&apos;,3030)</span><br><span class="line">&gt;&gt;&gt; clnt.sendto(b&apos;I am your fater!&apos;, serv_addrr)</span><br><span class="line">16</span><br><span class="line">&gt;&gt;&gt; clnt.sendto(b&apos;hey~&apos;,serv_addrr)</span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; clnt.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>Sliding window</p>
 <p>seq#, ack#, window 이 3개를 이용해 flow control을 함.<br>Flow control을 담당하는 애가 seq#, ack#, window 이것들임.</p>
-<p>Client                                                             server</p>
+<blockquote><p>Client                                                             server</p>
 <p>send buf                                                       send buf<br>recv buf                                                         recv buf</p>
 <p>TCB                                                              TCB<br><a href="s.ip:s.port" target="_blank" rel="noopener">s.ip:s.port</a>                                         &lt;c.ip: c.port&gt;<br>send buf pointer                                 send buf pointer<br>recv buf pointer                                  recv buf pointer</p>
+</blockquote>
 <p>커널에 있는 버퍼들.<br>TCP connection이 생기면 각 컴퓨터 메모리 안에 TCB 라는 메모리가 생김 즉 구조체가 생김.<br>TCP가 끊어지면 메모리가 날아가지. 그게 소켓의 closed임.</p>
 <p>send buf pointer에는,<br>UNA(UNAcknowledged) :아직 ack#를 받지 않는 애를 의미<br>NXT:  다음번 seq # 들어가 있음.<br>WND: window 크기<br>이게 있고,</p>
 <p>recv buf pointer에는,<br>NXT: 다음번에 받을 상대방의 seq#<br>WND: window 크기 →flow control 에 가장 큰 역할 함.<br>가 들어가 있음.</p>
@@ -134,7 +120,8 @@
 <hr>
 <p>network.pdf 그림 참조~</p>
 <p>DNS(Domain Name System)(53) : </p>
-<p>domain name  ————–DNS server———–→ IP address<br>google.com                                                                    172.217.26.14</p>
+<blockquote><p>domain name  ————–DNS server———–→ IP address<br>google.com                                                                    172.217.26.14</p>
+</blockquote>
 <p>nslookup google.com</p>
 <p><a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a> 이걸 보고 뒤에서부터 넘김<br>chrome —→  DNS server<br>.com을 관리하는 서버에 물어봄. 그러면 알려줌<br>goole 을 관리하는 서버에 물어봄. 그러면 알려줌<br>www.을 관리하는 서버에 물어봄. 그러면 알려줌</p>
 <p>Nslookup 명령<br>non-authoritative answer의 의미:<br>DNS 서버는 cache로 가득차 잇음. cache를 관리하는 server가 또 있음. 쇼핑몰하고 망해도 남아있기에 난 책임 없어~하는 뜻으로 나는 권한 없어~하는 것.</p>
@@ -157,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjuiasnm1000h182ilhks0bb1" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjuicgm72000ihi2ikhb6jgi7" class="article-share-link">Share</a>
       
       
     </footer>

@@ -177,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuiasnlq0002182i2lflltnp" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuicgm6s0002hi2i2de5wyzh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -317,7 +317,7 @@ def peek(self):
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuiasnm8000s182iqth56xky" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuicgm79000uhi2igv43rmn7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -410,7 +410,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuiasnm8000t182i84z8sa0t" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuicgm79000thi2iczf677em" class="article-share-link">Share</a>
       
       
     </footer>
@@ -538,7 +538,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuiasnm9000u182iwch7cip0" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuicgm78000rhi2igxs2l6bb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -708,7 +708,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuiasnm7000r182ia34e4ld8" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuicgm78000shi2iqi152bcr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -746,13 +746,13 @@ return inner  -----&gt;function을 리턴
 <p>2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit)</p>
 <p>3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,<br>RAM -&gt;Reg -&gt; ALU-&gt;Reg-&gt;RAM 과정을 거침 꼭 알아야. (이걸 알아야 나중에 context switching 할 수 있음) </p>
 <p>=============================================</p>
-<p>##곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)<br>ALU에서 일어나는 일 이해</p>
+<h2 id="곱셈에서는-Reg-2개-필요-4bit-4-bit-이런식"><a href="#곱셈에서는-Reg-2개-필요-4bit-4-bit-이런식" class="headerlink" title="곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)"></a>곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)</h2><p>ALU에서 일어나는 일 이해</p>
 <p>4bit Reg면 4번 shift한다.</p>
-<p>#곱셈<br>가산기와 shift통해<br><blockquote><pre><code>1010
+<h1 id="곱셈"><a href="#곱셈" class="headerlink" title="곱셈"></a>곱셈</h1><p>가산기와 shift통해<br><blockquote><pre><code>1010
 </code></pre><h2 id="x0101"><a href="#x0101" class="headerlink" title="  x0101"></a>  x0101</h2><p>110010           +1010     0000 | 0101     —-&gt;끝이 1이면 더해줌<br>              1010<br>                                  —————   shift 1 (&gt;&gt;)<br>                                 0101 | 0010      —-&gt;끝이 0이면 그냥 shift만</p>
 </blockquote></p>
-<p>#나눗셈<br>이번에는 왼쪽으로 shift 한다음에…공석을 0또는 1을 채운다.<br>        <strong>____</strong><br>0011 | 1011                         0000  |  1011   shift 1 (&lt;&lt;) 나눗셈에서의 shift는 사람이 나누기 할 때 안나누어질 때 자릿수 이동하는 개념을 컴퓨터가 쉬프트 방식으로 하는 것<br>                                        ( 0001)  |  011?  &lt;—여기서 ?이 값은 0 혹은 1인데 구할 때는 (괄호)안의 값을 0011의 2의 보수인 1101과 더해서 차이를 비교한다.-&gt;<br>                                                                   그러고나서 그 결과값이 음수인지 양수인지 판별해서 대소값 비교-&gt;<br>                    음수가 나왔다는것은 0011이 크다는 것이기에 끝에 0을 붙인다.<br>                    양수가 나왔다는 것은 0011이 작다는 것이고 나누어진다는 것이여서 1을 붙인다.</p>
-<p>###실수(어려움)<br>고정 소수점-&gt;정밀도는 높은데 표현 범위가 좁음(이젠 안씀)<br>부동 소수점(floating point) -&gt; 정밀도가 급감해서 최악됨 하지만 표현범위가 정말 좋아짐.<br>정밀도가 떨어지는데 이걸 어떻게 다뤄야하나 이 것에 대한 이야기<br>실수가 메모리에 어떻게 표현되는지. 실제 코딩은 어떻게 해야하는데 에 대한 이야기</p>
+<h1 id="나눗셈"><a href="#나눗셈" class="headerlink" title="나눗셈"></a>나눗셈</h1><p>이번에는 왼쪽으로 shift 한다음에…공석을 0또는 1을 채운다.<br>        <strong>____</strong><br>0011 | 1011                         0000  |  1011   shift 1 (&lt;&lt;) 나눗셈에서의 shift는 사람이 나누기 할 때 안나누어질 때 자릿수 이동하는 개념을 컴퓨터가 쉬프트 방식으로 하는 것<br>                                        ( 0001)  |  011?  &lt;—여기서 ?이 값은 0 혹은 1인데 구할 때는 (괄호)안의 값을 0011의 2의 보수인 1101과 더해서 차이를 비교한다.-&gt;<br>                                                                   그러고나서 그 결과값이 음수인지 양수인지 판별해서 대소값 비교-&gt;<br>                    음수가 나왔다는것은 0011이 크다는 것이기에 끝에 0을 붙인다.<br>                    양수가 나왔다는 것은 0011이 작다는 것이고 나누어진다는 것이여서 1을 붙인다.</p>
+<h3 id="실수-어려움"><a href="#실수-어려움" class="headerlink" title="실수(어려움)"></a>실수(어려움)</h3><p>고정 소수점-&gt;정밀도는 높은데 표현 범위가 좁음(이젠 안씀)<br>부동 소수점(floating point) -&gt; 정밀도가 급감해서 최악됨 하지만 표현범위가 정말 좋아짐.<br>정밀도가 떨어지는데 이걸 어떻게 다뤄야하나 이 것에 대한 이야기<br>실수가 메모리에 어떻게 표현되는지. 실제 코딩은 어떻게 해야하는데 에 대한 이야기</p>
 <p>비교할 때 어떻게 하냐는 이야기<br>a=0.12~<br>b=0.12~~~</p>
 <p>if a==b:</p>
 <p>실수를 비교할 때 문제가 됨..<br>이걸 알면…직접 함수를 조절해서 내가 원하는 정밀도 조정해서 쓸 수 있음.<br>epsilon comparison을 알아야함 결국…(굉장히 중요한 주제임)</p>
@@ -783,9 +783,8 @@ return inner  -----&gt;function을 리턴
 <p>어떤 수와 그 다음 수의 그 작은 차이에 어떤수가 들어 있으면 그 수는 가장작은수로 퉁칠 수 있겠지. 즉 둘이 같다고 할 수 있겠지.</p>
 <p>1.절대 비교 -&gt;충분히 작은 수를 설정하는게 근거가 없을 수 있다. 매번 내부 함수를 바꿔야하니 추상화 위배됨.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from math import fabs</span><br><span class="line">def is_equal(a,b):</span><br><span class="line">	return fabs(a-b) &lt;= 1.0e-10</span><br><span class="line"></span><br><span class="line">if is_equal(a,b):</span><br><span class="line">	print(&apos;이정도 차이면 봐줄게&apos;)</span><br><span class="line">else:</span><br><span class="line">	print(&apos;이건 같은수가 아니지...&apos;)</span><br></pre></td></tr></table></figure></p>
 <p>2.상대 비교<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line"></span><br><span class="line">def is_equal2(a,b,w):</span><br><span class="line">	ep = 2**(-23)</span><br><span class="line">	diff = abs(a-b)</span><br><span class="line">	return diff &lt;= max(abs(a),abs(b)) * ep * 2**(w)</span><br></pre></td></tr></table></figure></p>
-<p>#상대오차 ,절대오차에 대해 더 공부하고 싶으시면<br>알고리즘 문제 해결 전략 세트 (책)</p>
-<p>#####빅오</p>
-<p>n —–&gt; T(n) = 3n^2 + 2n -1<br>이렇다고 하면 빅오는,<br>O (n^2)<br>big</p>
+<h1 id="상대오차-절대오차에-대해-더-공부하고-싶으시면"><a href="#상대오차-절대오차에-대해-더-공부하고-싶으시면" class="headerlink" title="상대오차 ,절대오차에 대해 더 공부하고 싶으시면"></a>상대오차 ,절대오차에 대해 더 공부하고 싶으시면</h1><p>알고리즘 문제 해결 전략 세트 (책)</p>
+<h3 id="빅오"><a href="#빅오" class="headerlink" title="빅오"></a>빅오</h3><p>n —–&gt; T(n) = 3n^2 + 2n -1<br>이렇다고 하면 빅오는,<br>O (n^2)<br>big</p>
 <p>(big o of n^2) 라고 부름<br>O(n) 는 상한선 개념임. </p>
 <p>if&gt; T(n) = 3n+3<br>O(n)</p>
 <p>if&gt; T(n) = log n<br>O(log n )</p>
@@ -802,7 +801,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuiasnm7000q182izj200jor" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuicgm77000qhi2izbcw0dk6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -838,12 +837,10 @@ return inner  -----&gt;function을 리턴
 <p>수</p>
 <p>문자–&gt;수<br>     unicode<br>     asci</p>
 <p>수-정수-&gt;양수<br>    음수-&gt;2의 보수<br>    실수-&gt;고정소수점 (잘 안씀,우리는 안할거임)<br>    부동 소수점(floating,어려움,이거 배울것임)</p>
-<p>###blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?).</p>
-<p>#fist class function(일급 시민 함수? ㅋㅋ)<br>1.함수를 파라미터(argument=parameter)로 사용할 수 있는가<br>2.함수를 변수(variable)로 사용할 수 있는가<br>3.함수를 리턴(return)할 수 있는가</p>
+<h3 id="blocking-함수-호출시-stack-frame이-쌓이고-위-함수에-실행-권한을-넘겨준다-아래쪽은-blocking"><a href="#blocking-함수-호출시-stack-frame이-쌓이고-위-함수에-실행-권한을-넘겨준다-아래쪽은-blocking" class="headerlink" title="blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?)."></a>blocking- 함수 호출시 stack frame이 쌓이고 위 함수에 실행 권한을 넘겨준다. 아래쪽은 blocking(?).</h3><h1 id="fist-class-function-일급-시민-함수-ㅋㅋ"><a href="#fist-class-function-일급-시민-함수-ㅋㅋ" class="headerlink" title="fist class function(일급 시민 함수? ㅋㅋ)"></a>fist class function(일급 시민 함수? ㅋㅋ)</h1><p>1.함수를 파라미터(argument=parameter)로 사용할 수 있는가<br>2.함수를 변수(variable)로 사용할 수 있는가<br>3.함수를 리턴(return)할 수 있는가</p>
 <p>3가지를 모두만족해야 first class function이라 함(MDN 사이트?)</p>
 <p>1.파라미터 조건은 만족할까?(파이썬이라는 언어는)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def f(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">def g(func, c, d):</span><br><span class="line">	return func(c,d)</span><br><span class="line"></span><br><span class="line">a=10</span><br><span class="line">b=20</span><br><span class="line">g(f,a,b)</span><br></pre></td></tr></table></figure><br>2.변수 조건은 만족할까?(파이썬이라는 언어는)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f_var=f</span><br><span class="line">f_var(20,30)</span><br></pre></td></tr></table></figure><br>3.리턴 조건은 만족할까?(파이썬이라는 언어는)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def create_calc(kind):</span><br><span class="line">	if kind=&apos;add&apos;:</span><br><span class="line">		def add(a,b):</span><br><span class="line">			return a+b</span><br><span class="line">		return add</span><br><span class="line">	else kind == &apos;sub&apos;:</span><br><span class="line">		def sub(a,b):</span><br><span class="line">			return a-b</span><br><span class="line">		return sub</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = create_calc(&apos;add&apos;)</span><br><span class="line">f(10,20)</span><br><span class="line"></span><br><span class="line">f = create_calc(&apos;sub&apos;)</span><br><span class="line">f(10,20)</span><br></pre></td></tr></table></figure></p>
-<p>###수</p>
-<p>정수-양의 정수-&gt;자연수<br>       0<br>      음의 정수</p>
+<h3 id="수"><a href="#수" class="headerlink" title="수"></a>수</h3><p>정수-양의 정수-&gt;자연수<br>       0<br>      음의 정수</p>
 <p>1.기수(기본이 되는 수, radix=10,2,16같은 것)법</p>
 <p>10진수 0,1,2,3,4,5,6,7,8,9<br>2진수 0,1<br>16진수 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f<br>8진수(리눅스 같은 경우 쓰이는데,우리는 안 다룸)</p>
 <p>1.10진수-&gt;2진수</p>
@@ -863,8 +860,7 @@ return inner  -----&gt;function을 리턴
 <p>10 1111 0101 -&gt; 2f5</p>
 <p>1000 1111 0111 -&gt; 8f7</p>
 <p>1111 1010 1100 -&gt; fac</p>
-<p>###32bit 컴퓨터 vs 64bit 컴퓨터</p>
-<p>1.한번에 보낼 수 있는 데이터의 양<br>32bit 컴퓨터 vs 64bit 컴퓨터</p>
+<h3 id="32bit-컴퓨터-vs-64bit-컴퓨터"><a href="#32bit-컴퓨터-vs-64bit-컴퓨터" class="headerlink" title="32bit 컴퓨터 vs 64bit 컴퓨터"></a>32bit 컴퓨터 vs 64bit 컴퓨터</h3><p>1.한번에 보낼 수 있는 데이터의 양<br>32bit 컴퓨터 vs 64bit 컴퓨터</p>
 <p>하드웨어 적으로 CPU가 RAM에 쏠 수 있는 와이어의 양이 몇개냐 로 나눔</p>
 <p>2.메모리 주소를 표현할 때<br>32bit-&gt;메모리 주소를 할당할 때 1byte당 하나씩 주소를 매기는데 얘는 2진수로 32자리<br>0b 0000 0000 0000 0000 0000 0000 0000 0000 (2)<br>2^32승까지 메모리 할당 가능<br>0x00000000 ~ 0xffffffff (2^32 = 4G) –&gt; if each memory location holds 1 byte the adressable memory space is 4GB</p>
 <p>*메모리 주소 하나당 1byte(8bit)의 정보 용량(byte of storage)<br><a href="https://en.wikipedia.org/wiki/Memory_address" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Memory_address</a><br>address location 과 address space의 차이가 헷갈렸었음. </p>
@@ -872,34 +868,33 @@ return inner  -----&gt;function을 리턴
 <p>64bit-&gt;</p>
 <p>64bit 컴퓨터여도 OS를 32bit를 쓰면 와이어 몇개는 안쓰겠다는 이야기</p>
 <p>1byte=8bit(거의 지금 정설)</p>
-<p>###정수의 표현<br>일반적으로 1/2/4/8 바이트에 저장<br>부호가 있는 정수(signed)와 부호가 없는 정수(unsigned)로 나뉨<br>부호가 있는 경우 첫 bit가 부호를 나타탬(0:양수,1:음수)</p>
-<p>#양의 정수 표현<br>부호 비트는 0<br>정수의 2진수로 표현하고 나머지는 0으로 채움</p>
+<h3 id="정수의-표현"><a href="#정수의-표현" class="headerlink" title="정수의 표현"></a>정수의 표현</h3><p>일반적으로 1/2/4/8 바이트에 저장<br>부호가 있는 정수(signed)와 부호가 없는 정수(unsigned)로 나뉨<br>부호가 있는 경우 첫 bit가 부호를 나타탬(0:양수,1:음수)</p>
+<h1 id="양의-정수-표현"><a href="#양의-정수-표현" class="headerlink" title="양의 정수 표현"></a>양의 정수 표현</h1><p>부호 비트는 0<br>정수의 2진수로 표현하고 나머지는 0으로 채움</p>
 <p>43을 1바이트로 표현</p>
 <p>43 = 0010 1011(2)<br>           0x2b</p>
-<p>#음의 정수 표현<br>부호 비트는 1<br>정수를 2의 보수로 저장</p>
+<h1 id="음의-정수-표현"><a href="#음의-정수-표현" class="headerlink" title="음의 정수 표현"></a>음의 정수 표현</h1><p>부호 비트는 1<br>정수를 2의 보수로 저장</p>
 <p>43-&gt;0010 1011(2)-&gt;1101 0100(2)(1의 보수=반전시킴)-&gt;1101 0101(2) = 0xd5 (2의 보수=반전시킨 것에 +1해줌) -&gt;이게 -43</p>
 <p>9의 보수</p>
 <p>3의 9의 보수 = 3에다가 무엇을 더했을 때 max가 나오는가</p>
 <p>23의 9의 보수 = 76 </p>
 <p>10의 보수= 어떤 숫자를 더했을 때 자릿수가 바뀌는 수</p>
 <p>1의 보수는 = 그냥 반전시켜주면 됨.</p>
-<p>###하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)<br><blockquote><p>high-level<br>language       </p>
+<h3 id="하드웨어-추상화-low-level-gt-high-level-언어에-대한-추상화-high-level-언어중-하위-gt-high-level-언어중-상위"><a href="#하드웨어-추상화-low-level-gt-high-level-언어에-대한-추상화-high-level-언어중-하위-gt-high-level-언어중-상위" class="headerlink" title="하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)"></a>하드웨어 추상화(=low-level-&gt;high level) / 언어에 대한 추상화(=high-level 언어중 하위-&gt;high-level 언어중 상위)</h3><blockquote><p>high-level<br>language       </p>
 <pre><code>C언어  
 -----------------------
 </code></pre><p>low-level<br>language     assembly lan  -&gt; cpu에 있는 Reg이름을 알아야 코딩가능</p>
-</blockquote></p>
+</blockquote>
 <p>low-level은 hardware에 의존적인 언어<br>high-level에서는 제조사가 제공한 컴파일러만 있으면 됨.하드웨어 비의존적.즉 하드웨어가 가려지고 C언어 같이 로직만 짜면 됨. 즉 하드웨어 추상화.<br>C언어부터는 하드웨어 추상화가 한번 일어났기에 high level임. high level중에선 가장 낮은 단계.하드웨어까진 아니지만 자료형을 알아야함.즉, 메모리랑 바인딩 되어있음.<br>python,JS으로 넘어오면 추상화가 더 되어있음. 자료형 즉 메모리 부분을 몰라도 되는 단계</p>
-<p>#linear search<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">li = [5,7,2,8,3,9,1]</span><br><span class="line">def linear_search(li, target):</span><br><span class="line">	&apos;&apos;&apos;</span><br><span class="line">	linear_search(li, target) -&gt; idx</span><br><span class="line">	반환값은 target이 있다면 target의 인덱스</span><br><span class="line">		target이 없다면 None을 반환</span><br><span class="line">	&apos;&apos;&apos;&apos;</span><br><span class="line">	for i in range(len(li)):</span><br><span class="line">		if li[i] ==target:</span><br><span class="line">			return i</span><br><span class="line">	return None</span><br></pre></td></tr></table></figure></p>
-<p>###BST(binary search tree)-&gt;interface는 동일한데 훨씬 빠름(알고리즘의 성능차이 분석하는 공부임)</p>
-<p>#입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def binary_search(li, target):</span><br><span class="line">	&apos;&apos;&apos;</span><br><span class="line">	binary_search(li, target) -&gt; idx</span><br><span class="line">	반환값은 target이 있다면 target의 인덱스</span><br><span class="line">		target이 없다면 None을 반환</span><br><span class="line">	&apos;&apos;&apos;&apos;</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure></p>
-<p>##알고리즘의 성능<br>기준은 상대 시간 -&gt; 데이터의 개수(n)에 따른 연산(dominant 연산:일반적으로 비교 연산) 횟수</p>
+<h1 id="linear-search"><a href="#linear-search" class="headerlink" title="linear search"></a>linear search</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">li = [5,7,2,8,3,9,1]</span><br><span class="line">def linear_search(li, target):</span><br><span class="line">	&apos;&apos;&apos;</span><br><span class="line">	linear_search(li, target) -&gt; idx</span><br><span class="line">	반환값은 target이 있다면 target의 인덱스</span><br><span class="line">		target이 없다면 None을 반환</span><br><span class="line">	&apos;&apos;&apos;&apos;</span><br><span class="line">	for i in range(len(li)):</span><br><span class="line">		if li[i] ==target:</span><br><span class="line">			return i</span><br><span class="line">	return None</span><br></pre></td></tr></table></figure>
+<h3 id="BST-binary-search-tree-gt-interface는-동일한데-훨씬-빠름-알고리즘의-성능차이-분석하는-공부임"><a href="#BST-binary-search-tree-gt-interface는-동일한데-훨씬-빠름-알고리즘의-성능차이-분석하는-공부임" class="headerlink" title="BST(binary search tree)-&gt;interface는 동일한데 훨씬 빠름(알고리즘의 성능차이 분석하는 공부임)"></a>BST(binary search tree)-&gt;interface는 동일한데 훨씬 빠름(알고리즘의 성능차이 분석하는 공부임)</h3><h1 id="입력으로-들어오는-데이터는-반드시-정렬된-상태이어야-한다"><a href="#입력으로-들어오는-데이터는-반드시-정렬된-상태이어야-한다" class="headerlink" title="입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다."></a>입력으로 들어오는 데이터는 반드시 정렬된 상태이어야 한다.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def binary_search(li, target):</span><br><span class="line">	&apos;&apos;&apos;</span><br><span class="line">	binary_search(li, target) -&gt; idx</span><br><span class="line">	반환값은 target이 있다면 target의 인덱스</span><br><span class="line">		target이 없다면 None을 반환</span><br><span class="line">	&apos;&apos;&apos;&apos;</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure>
+<h2 id="알고리즘의-성능"><a href="#알고리즘의-성능" class="headerlink" title="알고리즘의 성능"></a>알고리즘의 성능</h2><p>기준은 상대 시간 -&gt; 데이터의 개수(n)에 따른 연산(dominant 연산:일반적으로 비교 연산) 횟수</p>
 <p>x축:데이터의 개수( n )<br>y축:연산횟수( T(n) )</p>
 <p>알고리즘의 성능은 최악의 경우를 통해 표현함(이 알고리즘은 최악의 경우에도 이정도는 기능하더라 개념임)<br>최선의 경우<br>평균의 경우<br>최악의 경우</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuiasnm6000p182ixgds60fh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuicgm76000phi2ig7357fsb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -946,48 +941,36 @@ return inner  -----&gt;function을 리턴
 결과값(리턴을 모 할 것인가,어떤 결과를 반환할 것인가)
 </code></pre><p>implementation은 def쓰고 막 짜는거</p>
 <p>interface는 같은데 내부구현은 다를 수 있음. list.sort() -&gt;1.bubble sort  2. quick sort</p>
-<p>###가위바위보게임</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def func(a,b):</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	func(integer, integer) -&gt; integer</span><br><span class="line"></span><br><span class="line">	두 값을 인자로 받고</span><br><span class="line"></span><br><span class="line">	결과는 그 두 값을 더한 값</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	return a+b</span><br></pre></td></tr></table></figure>
+<h3 id="가위바위보게임"><a href="#가위바위보게임" class="headerlink" title="가위바위보게임"></a>가위바위보게임</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def func(a,b):</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	func(integer, integer) -&gt; integer</span><br><span class="line"></span><br><span class="line">	두 값을 인자로 받고</span><br><span class="line"></span><br><span class="line">	결과는 그 두 값을 더한 값</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	return a+b</span><br></pre></td></tr></table></figure>
 <p>help(func) 하면 설명이 떠줌.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">input_data = input(&quot;무엇이든 입력하세용: &quot;)</span><br><span class="line"></span><br><span class="line">data = int(input(&quot;숫자를 입력하세요: &quot;))</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">def get_player_choice():</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	get_player_choice()-&gt;string</span><br><span class="line"></span><br><span class="line">	string : &#123;&apos;바위&apos;, &apos;가위&apos;, &apos;보&apos;|</span><br><span class="line"></span><br><span class="line">	결과값이 위 세 값 중에 하나임을 보장한다</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">def get_computer_choice():</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	get_computer_choice() -&gt;string</span><br><span class="line"></span><br><span class="line">	string = &#123;&apos;바위&apos;, &apos;가위&apos;, &apos;보&apos;&#125;</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">def who_wins(player, computer):</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	who_wins(player, computer) -&gt; string</span><br><span class="line"></span><br><span class="line">	string = &#123;&apos;player&apos;, &apos;computer&apos;, &apos;draw&apos;&#125;</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">who_wins(get_player_choice(), get_computer_choice())</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">def play_one():</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">	play_one() -&gt; string</span><br><span class="line"></span><br><span class="line">	string = &#123;&apos;player&apos;, &apos;computer&apos;&#125;</span><br><span class="line"></span><br><span class="line">	한판에 대해서</span><br><span class="line"></span><br><span class="line">	플레이어가 이기면 &quot;플레이어 승&quot; 출력</span><br><span class="line"></span><br><span class="line">	컴퓨터가 이기면 &quot;컴퓨터 승&quot; 출력</span><br><span class="line"></span><br><span class="line">	비기면 &quot;무승부&quot;(무승부면 while문 또 돔)</span><br><span class="line"></span><br><span class="line">	&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#win_list = [&apos;player&apos;, &apos;player&apos;, &apos;computer&apos;]</span><br><span class="line"></span><br><span class="line">win_list=[]</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">for _ in range(3):</span><br><span class="line"></span><br><span class="line">	win_list.append(play_one())</span><br><span class="line"></span><br><span class="line">	if win_list.count(&apos;player&apos;) &gt;=2</span><br><span class="line"></span><br><span class="line">		print(&apos;플레이어 승&apos;)</span><br><span class="line"></span><br><span class="line">		break</span><br><span class="line"></span><br><span class="line">	elif win_list.count(&apos;computer&apos;)&gt;=2:</span><br><span class="line"></span><br><span class="line">		print(&apos;컴퓨터 승&apos;)</span><br><span class="line"></span><br><span class="line">		break</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">def play():</span><br><span class="line"></span><br><span class="line">	user_num_games=int(input(&quot;1:3판2선승, 2: 5판3선승: &quot;))</span><br><span class="line"></span><br><span class="line">	while user_num_games!=1 and user_num_games!=2:</span><br><span class="line"></span><br><span class="line">		user_num_games=int(input(&quot;다시 입력해주세요 : &quot;))</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	num_games= 3 if user_num_games==1 else 5</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-<p>##packing, unpacking</p>
-<p>#packing</p>
-<p>container = 1,2,3,4,5</p>
+<h2 id="packing-unpacking"><a href="#packing-unpacking" class="headerlink" title="packing, unpacking"></a>packing, unpacking</h2><h1 id="packing"><a href="#packing" class="headerlink" title="packing"></a>packing</h1><p>container = 1,2,3,4,5</p>
 <p>type(container)</p>
-<p>#unpacking</p>
-<p>a, *b = container</p>
+<h1 id="unpacking"><a href="#unpacking" class="headerlink" title="unpacking"></a>unpacking</h1><p>a, *b = container</p>
 <p>a,b,*c = container</p>
-<p>##함수에서 가변인자 받는 방법</p>
-<p>def sum_int(<em>args)   —&gt; 이때의 </em>기호는 가변인자라는 것을 의미.</p>
+<h2 id="함수에서-가변인자-받는-방법"><a href="#함수에서-가변인자-받는-방법" class="headerlink" title="함수에서 가변인자 받는 방법"></a>함수에서 가변인자 받는 방법</h2><p>def sum_int(<em>args)   —&gt; 이때의 </em>기호는 가변인자라는 것을 의미.</p>
 <pre><code>print(type(args))
 </code></pre><p>sum_int(1,2,3,4,5)  —&gt;여러개 넣으면 튜풀로 묶어준다 즉 packing 해준다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def sum_int(*args):</span><br><span class="line"></span><br><span class="line">	s=0</span><br><span class="line"></span><br><span class="line">	for arg in args:</span><br><span class="line"></span><br><span class="line">		s+=arg</span><br><span class="line"></span><br><span class="line">	return s</span><br></pre></td></tr></table></figure>
-<p>#list를 바로 나누어서 튜풀로 unpacking 해주기</p>
-<p>li=[3,4,5,6]</p>
+<h1 id="list를-바로-나누어서-튜풀로-unpacking-해주기"><a href="#list를-바로-나누어서-튜풀로-unpacking-해주기" class="headerlink" title="list를 바로 나누어서 튜풀로 unpacking 해주기"></a>list를 바로 나누어서 튜풀로 unpacking 해주기</h1><p>li=[3,4,5,6]</p>
 <p>sum_int(*li)</p>
-<p>#모든 인자 거의 다 받기 가능 keywordargs</p>
-<p>def sum_int(*args, **kwargs):     </p>
+<h1 id="모든-인자-거의-다-받기-가능-keywordargs"><a href="#모든-인자-거의-다-받기-가능-keywordargs" class="headerlink" title="모든 인자 거의 다 받기 가능 keywordargs"></a>모든 인자 거의 다 받기 가능 keywordargs</h1><p>def sum_int(*args, **kwargs):     </p>
 <pre><code>print(args)
 
 print(kwargs)
 </code></pre><p>sum_int(1,2,3,age=100,weight=100)</p>
-<p>###decorator할 때 중요한 문법임 이거##</p>
-<p>li=[1,2,3,4,5]</p>
+<h3 id="decorator할-때-중요한-문법임-이거"><a href="#decorator할-때-중요한-문법임-이거" class="headerlink" title="decorator할 때 중요한 문법임 이거"></a>decorator할 때 중요한 문법임 이거</h3><p>li=[1,2,3,4,5]</p>
 <p>dic={‘a’:1, ‘b’:2}</p>
 <p>sum_int(<em>li, **dic)   —&gt;호출할 때 </em>이 기호는 unpacking 의미</p>
-<p>###삼항 연산자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line"></span><br><span class="line">if a&gt;=10:</span><br><span class="line"></span><br><span class="line">	print(&apos;good!&apos;)</span><br><span class="line"></span><br><span class="line">else:</span><br><span class="line"></span><br><span class="line">	print(&apos;bad!&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line"></span><br><span class="line">if a&gt;=10:</span><br><span class="line"></span><br><span class="line">	print(&apos;good!&apos;)</span><br><span class="line"></span><br><span class="line">else:</span><br><span class="line"></span><br><span class="line">	print(&apos;bad!&apos;)</span><br></pre></td></tr></table></figure>
 <p>이거를 한줄로…</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;good&apos;) if a&gt;=10 else print(&apos;bad!&apos;)</span><br></pre></td></tr></table></figure>
-<p>###continue문</p>
-<p>###recursion(재귀함수)</p>
-<p>1.자기가 자기 자신을 호출하는 함수</p>
+<h3 id="continue문"><a href="#continue문" class="headerlink" title="continue문"></a>continue문</h3><h3 id="recursion-재귀함수"><a href="#recursion-재귀함수" class="headerlink" title="recursion(재귀함수)"></a>recursion(재귀함수)</h3><p>1.자기가 자기 자신을 호출하는 함수</p>
 <p>2.기저 조건(base case)(종료 조건,탈출조건)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func(num):</span><br><span class="line"></span><br><span class="line">	if num &lt;=0:           #탈출조건</span><br><span class="line"></span><br><span class="line">		return</span><br><span class="line"></span><br><span class="line">	func(num-1)</span><br></pre></td></tr></table></figure>
 <p>func(5)</p>
 <p>호출 시 stack이 터짐–&gt;stackoverflow</p>
-<p>#메모리 그림 찾아보기</p>
-<p>###factorial(계승) 0!=1 1!=1     5!</p>
-<p>5!=5*4!</p>
+<h1 id="메모리-그림-찾아보기"><a href="#메모리-그림-찾아보기" class="headerlink" title="메모리 그림 찾아보기"></a>메모리 그림 찾아보기</h1><h3 id="factorial-계승-0-1-1-1-5"><a href="#factorial-계승-0-1-1-1-5" class="headerlink" title="factorial(계승) 0!=1 1!=1     5!"></a>factorial(계승) 0!=1 1!=1     5!</h3><p>5!=5*4!</p>
 <p>4!=4*3!</p>
 <p>3!=3*2!</p>
 <p>2!=2*1!</p>
@@ -995,14 +978,12 @@ print(kwargs)
 <p>1.점화식 만들어야. -&gt;fac(num)=fac(num-1)*num</p>
 <p>2.기저 조건 -&gt;if num==1 then return 1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def factorial(num):</span><br><span class="line"></span><br><span class="line">	if num ==1:</span><br><span class="line"></span><br><span class="line">		return 1</span><br><span class="line"></span><br><span class="line">	return factorial(num-1)*num</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">for num in range(1,10):</span><br><span class="line"></span><br><span class="line">	print(factorial(num))</span><br></pre></td></tr></table></figure>
-<p>##fibonacci</p>
-<p>1  1  2   3   5   8  </p>
+<h2 id="fibonacci"><a href="#fibonacci" class="headerlink" title="fibonacci"></a>fibonacci</h2><p>1  1  2   3   5   8  </p>
 <p>[1][2][3] [4] [5] [6]ㄹ</p>
 <p>1.점화식: fibo(n)= fibo(n-2)+fibo(n-1)</p>
 <p>2.기저 조건: if n==1 or n==2 then return 1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def fib(n):</span><br><span class="line"></span><br><span class="line">	if n==1 or n==2</span><br><span class="line"></span><br><span class="line">		return 1</span><br><span class="line"></span><br><span class="line">	return fib(n-2)+fib(n-1)</span><br></pre></td></tr></table></figure>
-<p>##하노이(  |   |   | )</p>
-<p>hanoi(num, ‘A’,’B’,’C’)</p>
+<h2 id="하노이"><a href="#하노이" class="headerlink" title="하노이(  |   |   | )"></a>하노이(  |   |   | )</h2><p>hanoi(num, ‘A’,’B’,’C’)</p>
 <p>hanoi(4, ‘A’, ‘B’, ‘C’)</p>
 <p>hanoi(3, ‘A’, ‘C’, ‘B’)</p>
 <p>hanoi(3, ‘B’, A, ‘C’)</p>
@@ -1012,7 +993,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuiasnm5000n182ixools78a" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuicgm75000nhi2iepuybua8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1088,18 +1069,13 @@ print(kwargs)
 <p>5</p>
 <p>10&gt;&gt;2</p>
 <p>2</p>
-<p>#맨 마지막에 참조한 객체를 반환</p>
-<p>[1,2] or []</p>
+<h1 id="맨-마지막에-참조한-객체를-반환"><a href="#맨-마지막에-참조한-객체를-반환" class="headerlink" title="맨 마지막에 참조한 객체를 반환"></a>맨 마지막에 참조한 객체를 반환</h1><p>[1,2] or []</p>
 <p>[1,2] or [3,4]</p>
 <p>[1,2] and [3,4]</p>
 <p>[] and [1,2]</p>
-<p>#break문</p>
-<p>만나면 while,for문에서 바로 빠져나옴</p>
-<p>#모듈러 연산자</p>
-<p>8%3</p>
-<p>#산술연산자: +,-,<em>,**,/,//,%,+=,-=,</em>=,**=,</p>
-<p>#routine, subroutine, procedure, function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func_name(parameter1, paramwter2, ...):</span><br><span class="line"></span><br><span class="line">	local_var=연산</span><br><span class="line"></span><br><span class="line">	ret = ..</span><br><span class="line"></span><br><span class="line">	return ret</span><br></pre></td></tr></table></figure>
+<h1 id="break문"><a href="#break문" class="headerlink" title="break문"></a>break문</h1><p>만나면 while,for문에서 바로 빠져나옴</p>
+<h1 id="모듈러-연산자"><a href="#모듈러-연산자" class="headerlink" title="모듈러 연산자"></a>모듈러 연산자</h1><p>8%3</p>
+<h1 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자: +,-,,**,/,//,%,+=,-=,=,**=,"></a>산술연산자: +,-,<em>,**,/,//,%,+=,-=,</em>=,**=,</h1><h1 id="routine-subroutine-procedure-function"><a href="#routine-subroutine-procedure-function" class="headerlink" title="routine, subroutine, procedure, function"></a>routine, subroutine, procedure, function</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func_name(parameter1, paramwter2, ...):</span><br><span class="line"></span><br><span class="line">	local_var=연산</span><br><span class="line"></span><br><span class="line">	ret = ..</span><br><span class="line"></span><br><span class="line">	return ret</span><br></pre></td></tr></table></figure>
 <p>함수 호출시 저장되는? stack frame</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">g_var = 20</span><br><span class="line"></span><br><span class="line">def func(val):</span><br><span class="line"></span><br><span class="line">	val += 100</span><br></pre></td></tr></table></figure>
 <p>func(g_var)</p>
@@ -1113,13 +1089,11 @@ print(kwargs)
 <p><a href="http://pythontutor.com/visualize.html#mode=edit" target="_blank" rel="noopener">http://pythontutor.com/visualize.html#mode=edit</a> 참조</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g_var=20</span><br><span class="line"></span><br><span class="line">def func():</span><br><span class="line"></span><br><span class="line">	global g_var</span><br><span class="line"></span><br><span class="line">	g_var+=30</span><br></pre></td></tr></table></figure>
 <p>func(g_var)</p>
-<p>#함수에서의 namespace 개념</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line"></span><br><span class="line">def outer():</span><br><span class="line"></span><br><span class="line">	b=20</span><br><span class="line"></span><br><span class="line">	def inner1():</span><br><span class="line"></span><br><span class="line">		c=30</span><br><span class="line"></span><br><span class="line">		def inner2():</span><br><span class="line"></span><br><span class="line">			d=40</span><br><span class="line"></span><br><span class="line">			nonlocal b</span><br><span class="line"></span><br><span class="line">			b=50</span><br><span class="line"></span><br><span class="line">			print(b)  #값을 변경하지 않고 접근만 함 print는</span><br><span class="line"></span><br><span class="line">		inner2()</span><br><span class="line"></span><br><span class="line">		print(b)</span><br><span class="line"></span><br><span class="line">	inner1()</span><br><span class="line"></span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
+<h1 id="함수에서의-namespace-개념"><a href="#함수에서의-namespace-개념" class="headerlink" title="함수에서의 namespace 개념"></a>함수에서의 namespace 개념</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line"></span><br><span class="line">def outer():</span><br><span class="line"></span><br><span class="line">	b=20</span><br><span class="line"></span><br><span class="line">	def inner1():</span><br><span class="line"></span><br><span class="line">		c=30</span><br><span class="line"></span><br><span class="line">		def inner2():</span><br><span class="line"></span><br><span class="line">			d=40</span><br><span class="line"></span><br><span class="line">			nonlocal b</span><br><span class="line"></span><br><span class="line">			b=50</span><br><span class="line"></span><br><span class="line">			print(b)  #값을 변경하지 않고 접근만 함 print는</span><br><span class="line"></span><br><span class="line">		inner2()</span><br><span class="line"></span><br><span class="line">		print(b)</span><br><span class="line"></span><br><span class="line">	inner1()</span><br><span class="line"></span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
 <p>non local을 찾아갈 때 안쪽에서부터 바깥쪽으로 하나씩 찾아감. </p>
 <p>nonlocal과 global의 차이?</p>
 <p>==================================================</p>
-<p>#bubble sort</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def bubble_sort(li):</span><br><span class="line"></span><br><span class="line">	n = len(li)</span><br><span class="line"></span><br><span class="line">	for i in range(n-1):</span><br><span class="line"></span><br><span class="line">		for j in range(n-1-i):</span><br><span class="line"></span><br><span class="line">			if li[j] &gt; li[j+1]:</span><br><span class="line"></span><br><span class="line">				li[j], li[j+1] = li[j+1], li[j]</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h1 id="bubble-sort"><a href="#bubble-sort" class="headerlink" title="bubble sort"></a>bubble sort</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def bubble_sort(li):</span><br><span class="line"></span><br><span class="line">	n = len(li)</span><br><span class="line"></span><br><span class="line">	for i in range(n-1):</span><br><span class="line"></span><br><span class="line">		for j in range(n-1-i):</span><br><span class="line"></span><br><span class="line">			if li[j] &gt; li[j+1]:</span><br><span class="line"></span><br><span class="line">				li[j], li[j+1] = li[j+1], li[j]</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 <p>n=4일 때,</p>
 <p>총 3(=4-1)번 돌아야 함</p>
 <pre><code>j의 값
@@ -1133,7 +1107,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuiasnly000d182ij3kn9tsm" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuicgm70000fhi2i8bansg9c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1175,7 +1149,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuiasnlr0003182isc5z3oqs" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuicgm6s0003hi2ieghb2dpo" class="article-share-link">Share</a>
       
       
     </footer>

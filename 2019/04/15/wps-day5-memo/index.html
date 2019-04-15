@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day5 곱셈,나눗셈 - CPU에서 어떻게 이루어지는지1.CPU에는 ALU가 있음. 덧셈,뺏셈-가산기+보수 통해 계산곱셈-가산기와 shifter를 통해 곱셈 가능 2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit) 3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,RAM -&amp;gt;Reg -&amp;gt; ALU-&amp;gt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T11:51:44.343Z">
+<meta property="og:updated_time" content="2019-04-15T12:34:08.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day5_memo">
 <meta name="twitter:description" content="day5 곱셈,나눗셈 - CPU에서 어떻게 이루어지는지1.CPU에는 ALU가 있음. 덧셈,뺏셈-가산기+보수 통해 계산곱셈-가산기와 shifter를 통해 곱셈 가능 2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit) 3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,RAM -&amp;gt;Reg -&amp;gt; ALU-&amp;gt">
@@ -92,13 +92,13 @@
 <p>2.CPU에는 메모리가 있고 이걸 Reg라 부름 (32bit컴퓨터는 레지스터가 32bit)</p>
 <p>3.연산이 이루어질 때 메모리에서 절대 이루어지지 못하고,<br>RAM -&gt;Reg -&gt; ALU-&gt;Reg-&gt;RAM 과정을 거침 꼭 알아야. (이걸 알아야 나중에 context switching 할 수 있음) </p>
 <p>=============================================</p>
-<p>##곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)<br>ALU에서 일어나는 일 이해</p>
+<h2 id="곱셈에서는-Reg-2개-필요-4bit-4-bit-이런식"><a href="#곱셈에서는-Reg-2개-필요-4bit-4-bit-이런식" class="headerlink" title="곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)"></a>곱셈에서는 Reg 2개 필요 (4bit | 4 bit 이런식)</h2><p>ALU에서 일어나는 일 이해</p>
 <p>4bit Reg면 4번 shift한다.</p>
-<p>#곱셈<br>가산기와 shift통해<br><blockquote><pre><code>1010
+<h1 id="곱셈"><a href="#곱셈" class="headerlink" title="곱셈"></a>곱셈</h1><p>가산기와 shift통해<br><blockquote><pre><code>1010
 </code></pre><h2 id="x0101"><a href="#x0101" class="headerlink" title="  x0101"></a>  x0101</h2><p>110010           +1010     0000 | 0101     —-&gt;끝이 1이면 더해줌<br>              1010<br>                                  —————   shift 1 (&gt;&gt;)<br>                                 0101 | 0010      —-&gt;끝이 0이면 그냥 shift만</p>
 </blockquote></p>
-<p>#나눗셈<br>이번에는 왼쪽으로 shift 한다음에…공석을 0또는 1을 채운다.<br>        <strong>____</strong><br>0011 | 1011                         0000  |  1011   shift 1 (&lt;&lt;) 나눗셈에서의 shift는 사람이 나누기 할 때 안나누어질 때 자릿수 이동하는 개념을 컴퓨터가 쉬프트 방식으로 하는 것<br>                                        ( 0001)  |  011?  &lt;—여기서 ?이 값은 0 혹은 1인데 구할 때는 (괄호)안의 값을 0011의 2의 보수인 1101과 더해서 차이를 비교한다.-&gt;<br>                                                                   그러고나서 그 결과값이 음수인지 양수인지 판별해서 대소값 비교-&gt;<br>                    음수가 나왔다는것은 0011이 크다는 것이기에 끝에 0을 붙인다.<br>                    양수가 나왔다는 것은 0011이 작다는 것이고 나누어진다는 것이여서 1을 붙인다.</p>
-<p>###실수(어려움)<br>고정 소수점-&gt;정밀도는 높은데 표현 범위가 좁음(이젠 안씀)<br>부동 소수점(floating point) -&gt; 정밀도가 급감해서 최악됨 하지만 표현범위가 정말 좋아짐.<br>정밀도가 떨어지는데 이걸 어떻게 다뤄야하나 이 것에 대한 이야기<br>실수가 메모리에 어떻게 표현되는지. 실제 코딩은 어떻게 해야하는데 에 대한 이야기</p>
+<h1 id="나눗셈"><a href="#나눗셈" class="headerlink" title="나눗셈"></a>나눗셈</h1><p>이번에는 왼쪽으로 shift 한다음에…공석을 0또는 1을 채운다.<br>        <strong>____</strong><br>0011 | 1011                         0000  |  1011   shift 1 (&lt;&lt;) 나눗셈에서의 shift는 사람이 나누기 할 때 안나누어질 때 자릿수 이동하는 개념을 컴퓨터가 쉬프트 방식으로 하는 것<br>                                        ( 0001)  |  011?  &lt;—여기서 ?이 값은 0 혹은 1인데 구할 때는 (괄호)안의 값을 0011의 2의 보수인 1101과 더해서 차이를 비교한다.-&gt;<br>                                                                   그러고나서 그 결과값이 음수인지 양수인지 판별해서 대소값 비교-&gt;<br>                    음수가 나왔다는것은 0011이 크다는 것이기에 끝에 0을 붙인다.<br>                    양수가 나왔다는 것은 0011이 작다는 것이고 나누어진다는 것이여서 1을 붙인다.</p>
+<h3 id="실수-어려움"><a href="#실수-어려움" class="headerlink" title="실수(어려움)"></a>실수(어려움)</h3><p>고정 소수점-&gt;정밀도는 높은데 표현 범위가 좁음(이젠 안씀)<br>부동 소수점(floating point) -&gt; 정밀도가 급감해서 최악됨 하지만 표현범위가 정말 좋아짐.<br>정밀도가 떨어지는데 이걸 어떻게 다뤄야하나 이 것에 대한 이야기<br>실수가 메모리에 어떻게 표현되는지. 실제 코딩은 어떻게 해야하는데 에 대한 이야기</p>
 <p>비교할 때 어떻게 하냐는 이야기<br>a=0.12~<br>b=0.12~~~</p>
 <p>if a==b:</p>
 <p>실수를 비교할 때 문제가 됨..<br>이걸 알면…직접 함수를 조절해서 내가 원하는 정밀도 조정해서 쓸 수 있음.<br>epsilon comparison을 알아야함 결국…(굉장히 중요한 주제임)</p>
@@ -129,9 +129,8 @@
 <p>어떤 수와 그 다음 수의 그 작은 차이에 어떤수가 들어 있으면 그 수는 가장작은수로 퉁칠 수 있겠지. 즉 둘이 같다고 할 수 있겠지.</p>
 <p>1.절대 비교 -&gt;충분히 작은 수를 설정하는게 근거가 없을 수 있다. 매번 내부 함수를 바꿔야하니 추상화 위배됨.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from math import fabs</span><br><span class="line">def is_equal(a,b):</span><br><span class="line">	return fabs(a-b) &lt;= 1.0e-10</span><br><span class="line"></span><br><span class="line">if is_equal(a,b):</span><br><span class="line">	print(&apos;이정도 차이면 봐줄게&apos;)</span><br><span class="line">else:</span><br><span class="line">	print(&apos;이건 같은수가 아니지...&apos;)</span><br></pre></td></tr></table></figure></p>
 <p>2.상대 비교<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line"></span><br><span class="line">def is_equal2(a,b,w):</span><br><span class="line">	ep = 2**(-23)</span><br><span class="line">	diff = abs(a-b)</span><br><span class="line">	return diff &lt;= max(abs(a),abs(b)) * ep * 2**(w)</span><br></pre></td></tr></table></figure></p>
-<p>#상대오차 ,절대오차에 대해 더 공부하고 싶으시면<br>알고리즘 문제 해결 전략 세트 (책)</p>
-<p>#####빅오</p>
-<p>n —–&gt; T(n) = 3n^2 + 2n -1<br>이렇다고 하면 빅오는,<br>O (n^2)<br>big</p>
+<h1 id="상대오차-절대오차에-대해-더-공부하고-싶으시면"><a href="#상대오차-절대오차에-대해-더-공부하고-싶으시면" class="headerlink" title="상대오차 ,절대오차에 대해 더 공부하고 싶으시면"></a>상대오차 ,절대오차에 대해 더 공부하고 싶으시면</h1><p>알고리즘 문제 해결 전략 세트 (책)</p>
+<h3 id="빅오"><a href="#빅오" class="headerlink" title="빅오"></a>빅오</h3><p>n —–&gt; T(n) = 3n^2 + 2n -1<br>이렇다고 하면 빅오는,<br>O (n^2)<br>big</p>
 <p>(big o of n^2) 라고 부름<br>O(n) 는 상한선 개념임. </p>
 <p>if&gt; T(n) = 3n+3<br>O(n)</p>
 <p>if&gt; T(n) = log n<br>O(log n )</p>
@@ -148,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuiasnm7000q182izj200jor" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuicgm77000qhi2izbcw0dk6" class="article-share-link">Share</a>
       
       
     </footer>

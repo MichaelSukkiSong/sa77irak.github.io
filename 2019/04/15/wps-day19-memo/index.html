@@ -7,17 +7,17 @@
   
   <title>wps_day19_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day19 ##merge sort필기 참조 ##stack 2개로 queue 만들기queue/queue.py ###iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it">
+  <meta name="description" content="day19 merge sort필기 참조 stack 2개로 queue 만들기queue/queue.py iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it=iter(l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day19_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day19-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day19 ##merge sort필기 참조 ##stack 2개로 queue 만들기queue/queue.py ###iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it">
+<meta property="og:description" content="day19 merge sort필기 참조 stack 2개로 queue 만들기queue/queue.py iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it=iter(l">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:59:34.268Z">
+<meta property="og:updated_time" content="2019-04-15T12:34:27.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day19_memo">
-<meta name="twitter:description" content="day19 ##merge sort필기 참조 ##stack 2개로 queue 만들기queue/queue.py ###iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it">
+<meta name="twitter:description" content="day19 merge sort필기 참조 stack 2개로 queue 만들기queue/queue.py iterator (day6 메모참조)1) next() 함수에 의해서 값을 하나씩 반환–&amp;gt;next 호출 시점에 데이터를 가져옴2) StopIteration 이 마지막에 떠야함두 가지 조건 만족하면 iterator li=[1,2,3,4,5]it=iter(l">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,9 +87,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day19</p>
-<p>##merge sort<br>필기 참조</p>
-<p>##stack 2개로 queue 만들기<br>queue/queue.py</p>
-<p>###iterator (day6 메모참조)<br>1) next() 함수에 의해서 값을 하나씩 반환–&gt;next 호출 시점에 데이터를 가져옴<br>2) StopIteration 이 마지막에 떠야함<br>두 가지 조건 만족하면 iterator</p>
+<h2 id="merge-sort"><a href="#merge-sort" class="headerlink" title="merge sort"></a>merge sort</h2><p>필기 참조</p>
+<h2 id="stack-2개로-queue-만들기"><a href="#stack-2개로-queue-만들기" class="headerlink" title="stack 2개로 queue 만들기"></a>stack 2개로 queue 만들기</h2><p>queue/queue.py</p>
+<h3 id="iterator-day6-메모참조"><a href="#iterator-day6-메모참조" class="headerlink" title="iterator (day6 메모참조)"></a>iterator (day6 메모참조)</h3><p>1) next() 함수에 의해서 값을 하나씩 반환–&gt;next 호출 시점에 데이터를 가져옴<br>2) StopIteration 이 마지막에 떠야함<br>두 가지 조건 만족하면 iterator</p>
 <p>li=[1,2,3,4,5]<br>it=iter(li)<br>type(li)<br>type(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>for e in li:<br>    print(e)    –&gt;이 때 내부적으로 iter가 만들어짐.거기서 하나씩 가져오는거.</p>
 <h2 id="custum-iterator"><a href="#custum-iterator" class="headerlink" title="custum iterator"></a>custum iterator</h2><p>class MyIter:<br>    def <strong>init</strong>(self,li):<br>        self.container=li<br>        self.index=0<br>    def <strong>iter</strong>(self):<br>        return self<br>    def <strong>next</strong>(self):</p>
 <pre><code># 어느 시점에 StopIteration 에러만 넘겨줄 수 있으면 커스터마이징 조건 됨!!
@@ -102,15 +102,15 @@ return ret
 <p>**next를 호출하는 순간에 line 하나씩 test.txt(iterator 폴더)에서 가져오기 실습(Myiterator.py)</p>
 <p>class Reader:<br>    def <strong>init</strong>(self, filename):<br>        self.f=open(filename, ‘rt’)<br>    def <strong>iter</strong>(self):<br>        return self<br>    def <strong>next</strong>(self):<br>        line =self.f.readline()<br>        if line:<br>            return line[:-1]<br>        else:<br>            self.f.close()<br>            raise StopIteration        </p>
 <p>reader=Reader(‘test.txt’)<br>it=iter(reader)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)<br>next(it)</p>
-<p>###generator<br>asyncio가 generator 기반</p>
+<h3 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h3><p>asyncio가 generator 기반</p>
 <p>꼭 읽어보기,(귀도 반로썸)<br><a href="http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html" target="_blank" rel="noopener">http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html</a><br>위 글의 강의 버전.(파이썬 튜터 교수님의 강의)<br><a href="https://www.youtube.com/watch?v=gBSdm-v86Qw&amp;list=PLzV58Zm8FuBLnWKpg7XVy3XdTf-1fHjRQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=gBSdm-v86Qw&amp;list=PLzV58Zm8FuBLnWKpg7XVy3XdTf-1fHjRQ</a></p>
-<p>#generator<br>: 함수임! 근데 특수 함수임!<br>: body 안에 yield가 있어야 함.</p>
+<h1 id="generator-1"><a href="#generator-1" class="headerlink" title="generator"></a>generator</h1><p>: 함수임! 근데 특수 함수임!<br>: body 안에 yield가 있어야 함.</p>
 <p>def gen():<br>    print(‘gen start’)<br>    yield 1<br>    print(‘kjvkrjl’)<br>    yield 2<br>    print(‘aaaaaaaa’)<br>    yield 3<br>    print(‘g3333atart’)<br>    yield 4<br>    print(‘asdw’)<br>    return ‘done’</p>
 <h1 id="제너레이터를-호출했을-때-generator-객체가-생성됨"><a href="#제너레이터를-호출했을-때-generator-객체가-생성됨" class="headerlink" title="제너레이터를 호출했을 때 generator 객체가 생성됨."></a>제너레이터를 호출했을 때 generator 객체가 생성됨.</h1><p>g=gen()<br>g</p>
 <p>**iterator &gt; generator &lt;–제너레이터는 이터레이터의 부분집합~</p>
 <h1 id="첫번째-next-를-호출하면-이-때-함수가-실행-됨-yield를-만날-떄까지-실행-됨"><a href="#첫번째-next-를-호출하면-이-때-함수가-실행-됨-yield를-만날-떄까지-실행-됨" class="headerlink" title="첫번째 next()를 호출하면 이 때 함수가 실행 됨. yield를 만날 떄까지 실행 됨"></a>첫번째 next()를 호출하면 이 때 함수가 실행 됨. yield를 만날 떄까지 실행 됨</h1><p>next(g)<br>a=next(g)<br>print(a)<br>next(g)<br>next(g)<br>next(g)</p>
 <p>파이썬의 stackframe은 heap에서 조정됨. 따라서 oulive its function call할 수 있음. by 위에 귀도반썸 글<br> this means a Python stack frame can outlive its function call.</p>
-<p>##coroutine function<br>: 함수 실행 도중에 실행 주도권을 다른 함수에 이양 가능하고<br>: “내가 원하는 시점에” 다시 실행 주도권을 가져올 수 있는 함수를 coroutine 함수라 함.<br> (non-preemptive하게 실행 가능)<br>-&gt;주도권을 주고 받을 수 있다는 뜻.<br>-&gt;yield를 만나는 순간 stackframe를 유지한채로 주도권을 다른 함수에 넘김. 양보한다? yield~<br>-&gt;파이썬 coroutine은 구현 기반이 generator<br>-&gt;그럴려면 stackframe이 여러개 있어야 될텐데, 이것은 heap에 저장되어 있기에 가능한 일~</p>
+<h2 id="coroutine-function"><a href="#coroutine-function" class="headerlink" title="coroutine function"></a>coroutine function</h2><p>: 함수 실행 도중에 실행 주도권을 다른 함수에 이양 가능하고<br>: “내가 원하는 시점에” 다시 실행 주도권을 가져올 수 있는 함수를 coroutine 함수라 함.<br> (non-preemptive하게 실행 가능)<br>-&gt;주도권을 주고 받을 수 있다는 뜻.<br>-&gt;yield를 만나는 순간 stackframe를 유지한채로 주도권을 다른 함수에 넘김. 양보한다? yield~<br>-&gt;파이썬 coroutine은 구현 기반이 generator<br>-&gt;그럴려면 stackframe이 여러개 있어야 될텐데, 이것은 heap에 저장되어 있기에 가능한 일~</p>
 <h1 id="함수가-끝나면-stopiteration을-반환해야하는데-이-객체의-value라는-instance-member-아래-리턴값을-넣어서-반환함"><a href="#함수가-끝나면-stopiteration을-반환해야하는데-이-객체의-value라는-instance-member-아래-리턴값을-넣어서-반환함" class="headerlink" title="함수가 끝나면 stopiteration을 반환해야하는데, 이 객체의 value라는 instance member 아래 리턴값을 넣어서 반환함."></a>함수가 끝나면 stopiteration을 반환해야하는데, 이 객체의 value라는 instance member 아래 리턴값을 넣어서 반환함.</h1><p>try:<br>    next(g)<br>except StopIteration as exc:<br>    print(exc.value)<br>    pass</p>
 <p>*generator로 피보나치 만들기</p>
 <p>def fibo_gen(n):<br>    a, b = 0, 1<br>    for _ in range(n):<br>        yield a<br>        a, b = b, a + b</p>
@@ -141,7 +141,7 @@ return ret
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day19-memo/" data-id="cjuiasnlx000b182i7ma0zhet" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day19-memo/" data-id="cjuicgm6y000chi2iq6cn497f" class="article-share-link">Share</a>
       
       
     </footer>

@@ -7,17 +7,17 @@
   
   <title>wps_day30_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day30 ###트리 CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? #순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;">
+  <meta name="description" content="day30 트리CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? 순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;순회는">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day30_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day30-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day30 ###트리 CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? #순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;">
+<meta property="og:description" content="day30 트리CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? 순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;순회는">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T11:23:09.178Z">
+<meta property="og:updated_time" content="2019-04-15T12:34:42.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day30_memo">
-<meta name="twitter:description" content="day30 ###트리 CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? #순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;">
+<meta name="twitter:description" content="day30 트리CS/data_structure/tree/binary_tree.pdf 단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념. 완전 이진 트리(complete binary tree)–&amp;gt; heap의 근간? 순회(traversal)-&amp;gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.-&amp;gt;순회는">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,20 +87,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day30</p>
-<p>###트리</p>
-<p>CS/data_structure/tree/binary_tree.pdf</p>
+<h3 id="트리"><a href="#트리" class="headerlink" title="트리"></a>트리</h3><p>CS/data_structure/tree/binary_tree.pdf</p>
 <p>단순 경로: 지나간 곳을 다시 거치지 않고 이동 가능 하다는 개념.</p>
 <p>완전 이진 트리(complete binary tree)<br>–&gt; heap의 근간?</p>
-<p>#순회(traversal)<br>-&gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.<br>-&gt;순회는<br>    Stack계열의 알고리즘(Graph에서는 DFS라 함. Depth First Search)<br>    전위 순회(preorder traversal): cur를 전에 돈다는 의미~<br>    중위 순회(inorder traversal): cur를 ~중에~<br>    후위 순회(postorder traversal): cur를 후에</p>
-<pre><code>      * Stack계열 알고리즘은 1)재귀(내부적으로 stackframe이 쌓이기에)
-                                     2)반복문+stack 자료구조            
-         를 통해 구현 가능.
-
-Queue계열의 알고리즘(Graph에서는 BFS라 함. Brouth First Search:너비 우선 탐색)
-레벨 순서 순회(level order)
-</code></pre><p>이 있음. tree는 graph의 일종임.</p>
-<p>#BST</p>
-<p>CS/data_structure/tree/BST.pdf<br>녹음 3:16:00~remove 내용</p>
+<h1 id="순회-traversal"><a href="#순회-traversal" class="headerlink" title="순회(traversal)"></a>순회(traversal)</h1><p>-&gt;재방문을 허용하지 않고, 트리를 구성하는 모든 노드를 한번씩 방문하는 것.<br>-&gt;순회는<br><blockquote><p>   Stack계열의 알고리즘(Graph에서는 DFS라 함. Depth First Search)<br>전위 순회(preorder traversal): cur를 전에 돈다는 의미~<br>중위 순회(inorder traversal): cur를 ~중에~<br>후위 순회(postorder traversal): cur를 후에</p>
+<ul>
+<li><p>Stack계열 알고리즘은 1)재귀(내부적으로 stackframe이 쌓이기에)</p>
+<pre><code>2)반복문+stack 자료구조            
+</code></pre><p>를 통해 구현 가능.</p>
+<p>Queue계열의 알고리즘(Graph에서는 BFS라 함. Brouth First Search:너비 우선 탐색)<br>레벨 순서 순회(level order)</p>
+</li>
+</ul>
+</blockquote><br>이 있음. tree는 graph의 일종임.</p>
+<h1 id="BST"><a href="#BST" class="headerlink" title="BST"></a>BST</h1><p>CS/data_structure/tree/BST.pdf<br>녹음 3:16:00~remove 내용</p>
 <p>*delete와 remove의 차이<br>delete()→None<br>remove()-&gt;removed-data</p>
 <p>dictionary 구현 방법</p>
 <ol>
@@ -113,7 +112,7 @@ Queue계열의 알고리즘(Graph에서는 BFS라 함. Brouth First Search:너�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjuiasnm5000o182iqcdktg2g" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjuicgm75000ohi2iprak871p" class="article-share-link">Share</a>
       
       
     </footer>
