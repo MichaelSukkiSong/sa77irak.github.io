@@ -88,8 +88,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day10</p>
-<p>###list의 참조,shallow copy,deep copy</p>
-<h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
+<h3 id="list의-참조-shallow-copy-deep-copy"><a href="#list의-참조-shallow-copy-deep-copy" class="headerlink" title="list의 참조,shallow copy,deep copy"></a>list의 참조,shallow copy,deep copy</h3><h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
 <p>–&gt;참조는 완전히 같은거라 보면 됨.</p>
 <p>**shallow copy<br>li3 = li.copy()<br>li3<br>li3.append(5)<br>li3<br>li<br>li.append([6,7])<br>li<br>li3 = li<br>li3 = li.copy()<br>li3<br>li3[4].append(8)<br>li3<br>li</p>
 <p>–&gt;shallow copy 다른 곳에 만들어진다. </p>
@@ -133,8 +132,7 @@
 <p>Garbage Collector : 언어차원에서 메모리 관리(heap관리)를 해줄게.<br>-&gt;기법중 하나가 : reference counter(파이썬은 이거 함): reference counter가 0이 되면 지워줌.</p>
 <p>a = “I am your F!”<br>import sys<br>sys.getrefcount(a)<br>b=a<br>sys.getrefcount(a)<br>c=b<br>sys.getrefcount(c)<br>c=10<br>sys.getrefcount(a)<br>del b<br>sys.getrefcount(a)<br>a=1<br>sys.getrefcount(a)<br>b=2<br>sys.getrefcount(b)</p>
 <hr>
-<p>##가상메모리</p>
-<p>virtual_memory.md 참조</p>
+<h2 id="가상메모리"><a href="#가상메모리" class="headerlink" title="가상메모리"></a>가상메모리</h2><p>virtual_memory.md 참조</p>
 <p>virtual_memory.pdf 그림 참조</p>
 <p>virtual address space이란?</p>
 <h2 id="user영역"><a href="#user영역" class="headerlink" title="user영역"></a>user영역</h2><p>kernel영역</p>
@@ -177,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuicgm6s0002hi2i2de5wyzh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj42q3w00041y2i1443obgk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,18 +209,16 @@
       
         <p>day9</p>
 <p>#<br>call by value<br>-&gt;stack frame 바깥으로 나갈 수 없다. 안에 있는 값만 바꿀 수 있고 바깥 변수는 바꿀 수 없다.<br>call by reference</p>
-<h2 id="gt-stack-frame-바깥으로-나갈-수-있다-바깥에-있는-변수에-접근할-수있어서-값을-바꿀-수-있다"><a href="#gt-stack-frame-바깥으로-나갈-수-있다-바깥에-있는-변수에-접근할-수있어서-값을-바꿀-수-있다" class="headerlink" title="-&gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다."></a>-&gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다.</h2><p>#CPU/memory.pdf</p>
-<p>ctrl+shift+esc -&gt;작업관리자-&gt;성능</p>
+<h2 id="gt-stack-frame-바깥으로-나갈-수-있다-바깥에-있는-변수에-접근할-수있어서-값을-바꿀-수-있다"><a href="#gt-stack-frame-바깥으로-나갈-수-있다-바깥에-있는-변수에-접근할-수있어서-값을-바꿀-수-있다" class="headerlink" title="-&gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다."></a>-&gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다.</h2><h1 id="CPU-memory-pdf"><a href="#CPU-memory-pdf" class="headerlink" title="CPU/memory.pdf"></a>CPU/memory.pdf</h1><p>ctrl+shift+esc -&gt;작업관리자-&gt;성능</p>
 <p>Program Counter(PC) : 다음에 실행될 instruction의 주소값(메모리에 있는)을 저장하고 있는 레지스터<br>IR(Instruction Register): 지금 현재 CPU가 실행하는 Instruction이 저장되어 있는 곳. 기계어 자체가 저장되는 공간. Instruction은 기계어 0101 한줄한줄을 의미</p>
 <p>***(중요!)메모리에 있는 값을 CPU에 있는 레지스터로 가져와서 ALU를 통해 계산하고 계산된 값이 반드시 ax에 먼저 저장되고, 그 다음에 다음 instruction이 진행되면서 다시 메모리로 보내는 개념.</p>
-<h2 id="필기-그림-참조-C에서-이렇다는-거임-파이썬에서는-heap인듯"><a href="#필기-그림-참조-C에서-이렇다는-거임-파이썬에서는-heap인듯" class="headerlink" title="필기 그림 참조.(C에서 이렇다는 거임. 파이썬에서는 heap인듯..)"></a>필기 그림 참조.(C에서 이렇다는 거임. 파이썬에서는 heap인듯..)</h2><p>##이것만은 알자.</p>
-<ol>
+<h2 id="필기-그림-참조-C에서-이렇다는-거임-파이썬에서는-heap인듯"><a href="#필기-그림-참조-C에서-이렇다는-거임-파이썬에서는-heap인듯" class="headerlink" title="필기 그림 참조.(C에서 이렇다는 거임. 파이썬에서는 heap인듯..)"></a>필기 그림 참조.(C에서 이렇다는 거임. 파이썬에서는 heap인듯..)</h2><h2 id="이것만은-알자"><a href="#이것만은-알자" class="headerlink" title="이것만은 알자."></a>이것만은 알자.</h2><ol>
 <li>Instruction = 기계어&lt;—1:1—&gt;어셈블리어<pre><code>Assembler
 </code></pre>2.c = a+b;</li>
 </ol>
 <p>mem에 있는 a=10과 b=20을 반드시! cpu의 ax=10 bx=20 (범용 레지스터: 데이터를 일시적으로 저장(general purpose register)) 에 옮겨왔다가 결과값을 반드시 한번더 레지스터에 저장하고!!!! 그 다음에<br>그 값을 mem의 c에 줌.</p>
 <p>3.<br>PC(Program Counter): 다음에 실행될 Instruction이 메모리에서(메인메모리,RAM) 저장된 주소값을 저장하는 레지스터</p>
-<h2 id="IR-Instruction-Register-현재-실행중인-Instruction-자체가-저장된-레지스터-lt-—————-이런IR을-CU-실행의-주체-총책임-가-참조함"><a href="#IR-Instruction-Register-현재-실행중인-Instruction-자체가-저장된-레지스터-lt-—————-이런IR을-CU-실행의-주체-총책임-가-참조함" class="headerlink" title="IR(Instruction Register): 현재 실행중인 Instruction 자체가 저장된 레지스터.&lt;—————-이런IR을 CU(실행의 주체,총책임)가 참조함"></a>IR(Instruction Register): 현재 실행중인 Instruction 자체가 저장된 레지스터.&lt;—————-이런IR을 CU(실행의 주체,총책임)가 참조함</h2><p>#CPU.pdf<br>clock</p>
+<h2 id="IR-Instruction-Register-현재-실행중인-Instruction-자체가-저장된-레지스터-lt-—————-이런IR을-CU-실행의-주체-총책임-가-참조함"><a href="#IR-Instruction-Register-현재-실행중인-Instruction-자체가-저장된-레지스터-lt-—————-이런IR을-CU-실행의-주체-총책임-가-참조함" class="headerlink" title="IR(Instruction Register): 현재 실행중인 Instruction 자체가 저장된 레지스터.&lt;—————-이런IR을 CU(실행의 주체,총책임)가 참조함"></a>IR(Instruction Register): 현재 실행중인 Instruction 자체가 저장된 레지스터.&lt;—————-이런IR을 CU(실행의 주체,총책임)가 참조함</h2><h1 id="CPU-pdf"><a href="#CPU-pdf" class="headerlink" title="CPU.pdf"></a>CPU.pdf</h1><p>clock</p>
 <p>GHz -&gt; 주파수(frequency)</p>
 <p>f = 1/T, T=주기</p>
 <p>T(period, sec):<br>0.43ns라면…0.43ns마다 한번씩 instuction을 실행하려고 함.</p>
@@ -230,33 +226,28 @@
 <p>(안중요)<br>RISC(Reduced Instruction set computer): 기계어 = 어셈블리어<br>CISC(complex Instruction set computer): 기계어 =(거의) 어셈블리어</p>
 <p>한 instruction 당 걸리는 clock수 -&gt;clock cycles per Instruction -&gt;CPI (알아야)<br><a href="https://en.wikipedia.org/wiki/Cycles_per_instruction" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Cycles_per_instruction</a></p>
 <p>결국…<br>gcc랑 fbstring의 차이는 CPI차이라 할 수 있지.<br>gcc는 CPI가 높은거고 fbstring은 CPI가 낮은거지.</p>
-<p>###stackframe.pdf</p>
-<p>stack pointer(파이썬에선 instruction pointer?): stack segment 의 맨 위를 가리킨다.<br>frame pointer(base pointer): stack frame의 기준(가운데)을 가리킨다.</p>
+<h3 id="stackframe-pdf"><a href="#stackframe-pdf" class="headerlink" title="stackframe.pdf"></a>stackframe.pdf</h3><p>stack pointer(파이썬에선 instruction pointer?): stack segment 의 맨 위를 가리킨다.<br>frame pointer(base pointer): stack frame의 기준(가운데)을 가리킨다.</p>
 <p>ret addr: 리턴 주소값. PC가 call을 통해 함수의 라인들을 실행하고 return을 통해 돌아올 때 돌아올 주소값을 알아야 돌아올 수 있다. 이 주소값을 저장하는 곳.</p>
 <p>n,b,a,를 쌓고 ret addr을 쌓았고<br>ebp가 메인함수의 기준을 가리키고 있다가 stack frame이 생기고 stack frame이 지워질 때 원래 가리키고 있던 main 함수 기준의 주소를 모르니 이 주소값을 original ebp value로 저장?<br>esp에서 지역변수 3개 만큼의 공간을 빼서 -&gt;esp에 저장. 빼는 이유는 위로 이동하려면 주소값에서 빼야함. 위에서부터 code/data/heap/stack순서이지<br>esp는 스택의 맨위를 가리킴.<br>ebp는 stackframe이 쌓여 있을 때, 데이터에 접근할 때 아래쪽에 접근할 떄는 ebp+8/12 지역변수에 접근할 떄는 ebp-8/12<br>esp=ebp함으로써 esp가 ebp로 내려옴-&gt;값은 남아있지만 지워진것 같이 된다.(stackframe이 사라지는 개념)<br>pop을 통해 ebp가 main을 가리키게 됨.<br>add를 통해 esp가 내려옴.지워진것 같이 됨.</p>
 <p>stack pointer : stackframe을 생성하는 얘. stack이라는 segment의 맨 꼭대기.<br>frame pointer(base pointer): stackframe 내에서 변수(data,memory)에 접근할 때 그 기준점이 됨.</p>
 <p>하드웨어 아키텍처는 여기까지. CPU는 끝!<br><a href="https://www.youtube.com/watch?v=cNN_tTXABUA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cNN_tTXABUA</a><br>좋은 영상!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
 <hr>
 <h1 id><a href="#" class="headerlink" title="==================================================================================================="></a>===================================================================================================</h1><p>===================================================================================================</p>
-<p>###memory</p>
-<p>CS/memory/memory.md<br>CS/memory/memory.pdf</p>
+<h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><p>CS/memory/memory.md<br>CS/memory/memory.pdf</p>
 <p>*메모리 계층구조</p>
 <p>  Register(CPU)<br>   Cache (L1, ,,,)<br>   Memory(RAM)<br>  Hard Disk(SSD)</p>
 <p>-&gt;위로 올라갈수록 빠르다. 위로 올라갈수록 용량이 작다<br>-&gt;한번에 가져올 수는 없다. 각 단계를 거쳐야지만 다른 단계로 갈 수 있다.<br>-&gt;cache에서 reg가져올 떄는 3 cycle, mem에서 reg 가져올 떄는 20cycle.</p>
 <p>*locality(지역성)<br>temporal locality 시간 지역성 :<br>spatial locality 공간 지역성 : </p>
 <p>li = [1, 2, 3, 4, 5]<br>res = 0<br>for e in li:</p>
-<p>#temporal locality + spatial locality<br>    res += e</p>
-<p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
+<h1 id="temporal-locality-spatial-locality"><a href="#temporal-locality-spatial-locality" class="headerlink" title="temporal locality + spatial locality"></a>temporal locality + spatial locality</h1><pre><code>res += e
+</code></pre><p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
 <p>cache line: cache에 들어올 때 뭉탱이로 들어옴.<br>cache miss: CPU가 요청했을 때 cache에 없을 때<br>cache hit: CPU가 요청했을 떄 CPU에 요청한 데이터가 있을 때 cache에서 CPU로 바로 data를 줄 수 있을 때</p>
 <p>과학연구 결과 cache hit가 일어날 확률이 기본적으로 95% ㄷ.ㄷ</p>
 <p>gcc와 fbstring 에서 cache miss 내용 이해 가능.</p>
 <p>L1 cache  –&gt;빠르지만 용량 작고.<br>L2     ‘’<br>L3     ‘’</p>
 <hr>
 <p>내일:<br>RAM을 OS가 어떻게 관리하나.<br>가상메모리(어려움)</p>
-<h2 id="다음주에-OOP"><a href="#다음주에-OOP" class="headerlink" title="다음주에 OOP"></a>다음주에 OOP</h2><p>#기존 자료 구조를 이용해 새로운 자료구조를 만드는 것</p>
-<p>#어댑터(adapter): </p>
-<p>#컨테이너(container)</p>
-<p>내부를 이용해 ——&gt;내가 이용하고자 하는 인터페이스를 완성하는 것.<br>                   adapter?</p>
+<h2 id="다음주에-OOP"><a href="#다음주에-OOP" class="headerlink" title="다음주에 OOP"></a>다음주에 OOP</h2><h1 id="기존-자료-구조를-이용해-새로운-자료구조를-만드는-것"><a href="#기존-자료-구조를-이용해-새로운-자료구조를-만드는-것" class="headerlink" title="기존 자료 구조를 이용해 새로운 자료구조를 만드는 것"></a>기존 자료 구조를 이용해 새로운 자료구조를 만드는 것</h1><h1 id="어댑터-adapter"><a href="#어댑터-adapter" class="headerlink" title="어댑터(adapter):"></a>어댑터(adapter):</h1><h1 id="컨테이너-container"><a href="#컨테이너-container" class="headerlink" title="컨테이너(container)"></a>컨테이너(container)</h1><p>내부를 이용해 ——&gt;내가 이용하고자 하는 인터페이스를 완성하는 것.<br>                   adapter?</p>
 <p>class Stack:<br>    def <strong>init</strong>(self):<br>        self.container = list()</p>
 <pre><code>def empty(self):
     &apos;&apos;&apos;
@@ -317,7 +308,7 @@ def peek(self):
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuicgm79000uhi2igv43rmn7" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuj42q4f000u1y2ix03j01cj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +341,7 @@ def peek(self):
     <div class="article-entry" itemprop="articleBody">
       
         <p>day8</p>
-<p>##면접 출제 문제 작년<br>1~100,000,000 를 모두 더한 값 (for/while문은 안됨.)</p>
+<h2 id="면접-출제-문제-작년"><a href="#면접-출제-문제-작년" class="headerlink" title="면접 출제 문제 작년"></a>면접 출제 문제 작년</h2><p>1~100,000,000 를 모두 더한 값 (for/while문은 안됨.)</p>
 <h2 id="def-sumto-start-end-gt-int"><a href="#def-sumto-start-end-gt-int" class="headerlink" title="def sumto(start, end) -&gt;int"></a>def sumto(start, end) -&gt;int</h2><p>def sumto(start, end):<br>    result = (start+end)*(end-start+1) // 2<br>    return result</p>
 <p>def sumto_step(start, end,step):</p>
 <p>*푼 사람 풀이</p>
@@ -358,8 +349,7 @@ def peek(self):
 <p>def sumto(s,e):<br>    if s==e:<br>        return s<br>    return sumto(s,e-1)+e</p>
 <p>2.터지는걸 인지하고 수학적으로 푼것<br>내가 한 것.</p>
 <hr>
-<p>#stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)</p>
-<p>스택이나 큐는  데이터를 일시적으로 저장할 때 많이 쓰는 자료 구조</p>
+<h1 id="stack-gt-접시쌓기-data-structure로서의-stack이-있고-memory랑-관련된-stack개념이-있다"><a href="#stack-gt-접시쌓기-data-structure로서의-stack이-있고-memory랑-관련된-stack개념이-있다" class="headerlink" title="stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)"></a>stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)</h1><p>스택이나 큐는  데이터를 일시적으로 저장할 때 많이 쓰는 자료 구조</p>
 <p>LIFO(Last in First Out)</p>
 <p>ADT (Abstract Data Type): 추상 자료형<br>-&gt;한마디로, 어떤 자료 구조가 가지고 있는 operation(함수)의 나열/목록<br>-&gt;함수 시그니처(interface)만 나열할 뿐, 내부 구현은 표기하지 않는다.<br>-&gt;함수(operation)의 작동방식 약간 설명</p>
 <p>dir(list)</p>
@@ -381,27 +371,24 @@ def peek(self):
 <h2 id="그냥-숫자-보고-계산해봄"><a href="#그냥-숫자-보고-계산해봄" class="headerlink" title="그냥 숫자 보고 계산해봄"></a>그냥 숫자 보고 계산해봄</h2><p>후위표기법으로 바꾸는 법 함.<br>빈 리스트와 스택 각 1개씩 필요</p>
 <h2 id="pdf파일-calculator-앞부분-내용"><a href="#pdf파일-calculator-앞부분-내용" class="headerlink" title="pdf파일 calculator 앞부분 내용"></a>pdf파일 calculator 앞부분 내용</h2><p>다음주에 OOP끝날 떄까지는 절차지향으로 해보기</p>
 <hr>
-<p>#그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</p>
-<p>#example.py<br>from stack import Stack</p>
+<h1 id="그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음"><a href="#그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음" class="headerlink" title="그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)"></a>그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</h1><h1 id="example-py"><a href="#example-py" class="headerlink" title="example.py"></a>example.py</h1><p>from stack import Stack</p>
 <p>st = Stack()   #li = list()같은 것</p>
 <p>st.push(1)<br>st.push(2)<br>st.push(3)<br>st.push(4)<br>st.push(5)</p>
 <p>while not st.empty():<br>    data = st.pop()<br>    print(data)</p>
-<p>##하드웨어 아키텍처</p>
-<p>CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.<br>    CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)<br>              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </p>
+<h2 id="하드웨어-아키텍처"><a href="#하드웨어-아키텍처" class="headerlink" title="하드웨어 아키텍처"></a>하드웨어 아키텍처</h2><p>CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.<br>    CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)<br>              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </p>
 <pre><code>- Instruction Register (IR) : the instruction register (IR) or current instruction register (CIR) is the part of a CPU&apos;s control unit that holds the instruction currently being executed or decoded
 - Stack pointer :  a computer central processor register whose purpose is to keep track of a call stack
 - base pointer(frame pointer)      
 </code></pre><p>Register를 해야 context switching을 알 수있음.</p>
 <p>범용 레지스터 EAX EBX …</p>
-<p>##메모리 레이아웃 / Memory 계층</p>
-<pre><code>                       Reg
+<h2 id="메모리-레이아웃-Memory-계층"><a href="#메모리-레이아웃-Memory-계층" class="headerlink" title="메모리 레이아웃 / Memory 계층"></a>메모리 레이아웃 / Memory 계층</h2><pre><code>                       Reg
 locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 데이터가 cache 에 있을 때!
             Main memory - (RAM)             cache miss 개념: 찾는 데이터가 cache에 없을 때!
            하드 디스크 (HDD, SSD)
 </code></pre><p>cache: computer memory with short access time used for the storage of frequently or recently used instructions or data<br>locality: programs tend to use data and instructions with addresses near or equal to those have used recently</p>
-<p>##memory segment<br>code seg<br>data seg<br>stack seg(빠름)<br>heap seg(느림)</p>
+<h2 id="memory-segment"><a href="#memory-segment" class="headerlink" title="memory segment"></a>memory segment</h2><p>code seg<br>data seg<br>stack seg(빠름)<br>heap seg(느림)</p>
 <p>data stack heap부분은 변수랑 관련..</p>
-<p>#가상메모리(어려움,프로그래머라면 넘어야 할 장벽)<br>OS이론과 하드웨어 아키텍처 이론 모두 들어감.</p>
+<h1 id="가상메모리-어려움-프로그래머라면-넘어야-할-장벽"><a href="#가상메모리-어려움-프로그래머라면-넘어야-할-장벽" class="headerlink" title="가상메모리(어려움,프로그래머라면 넘어야 할 장벽)"></a>가상메모리(어려움,프로그래머라면 넘어야 할 장벽)</h1><p>OS이론과 하드웨어 아키텍처 이론 모두 들어감.</p>
 <p>OS가 -&gt;4G 주는데 나는 400G 가까이 쓰지<br>근데 램은 12G이지 이 갭은 무엇인가에 대한 이야기</p>
 <hr>
 <p>알아야 들어야 하는데 목표 영상<br>유투브 검색: fbstring cpp</p>
@@ -410,7 +397,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuicgm79000thi2iczf677em" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuj42q4e000t1y2ihy0sk1hx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -443,14 +430,15 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
     <div class="article-entry" itemprop="articleBody">
       
         <p>day7</p>
-<p>###closure<br>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
+<h3 id="closure"><a href="#closure" class="headerlink" title="closure"></a>closure</h3><p>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
 <p>(중요)###문자와 문자열 -&gt;character set<br>                                  ASCII –&gt;UNICODE –&gt;     utf-8 (웹표준)      &lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!!!!!!<br>                                           utf-16<br>                              utf-32</p>
-<p>##call by value         C로 보여만 줄거임, 면접 단골<br>    call by reference</p>
-<pre><code>call by object reference(좀 어려움,(중요))
+<h2 id="call-by-value-C로-보여만-줄거임-면접-단골"><a href="#call-by-value-C로-보여만-줄거임-면접-단골" class="headerlink" title="call by value         C로 보여만 줄거임, 면접 단골"></a>call by value         C로 보여만 줄거임, 면접 단골</h2><pre><code>call by reference
+
+call by object reference(좀 어려움,(중요))
   (call by assignment)
-</code></pre><p>##일주일짜리 프로젝트, 계산기, 스택 하고<br>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
-<p>###closure<br>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
-<p>#은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것<br>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
+</code></pre><h2 id="일주일짜리-프로젝트-계산기-스택-하고"><a href="#일주일짜리-프로젝트-계산기-스택-하고" class="headerlink" title="일주일짜리 프로젝트, 계산기, 스택 하고"></a>일주일짜리 프로젝트, 계산기, 스택 하고</h2><p>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
+<h3 id="closure-1"><a href="#closure-1" class="headerlink" title="closure"></a>closure</h3><p>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
+<h1 id="은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것"><a href="#은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것" class="headerlink" title="은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것"></a>은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것</h1><p>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
 <p>my_acnt = account(‘greg’, 5000)<br>your_acnt = account(‘john’, 3000)</p>
 <p>type(my_acnt)</p>
 <p>my_acnt.<strong>name</strong> == your_acnt.<strong>name</strong><br>True</p>
@@ -462,8 +450,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <p>cells = my_acnt.<strong>closure</strong></p>
 <p>for cell in cells:<br>    print(cell.cell_contents)</p>
 <p>===========================================================================</p>
-<p>#문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</p>
-<p>character set </p>
+<h1 id="문자와-문자열-수업자료-character-unicode-부분-꼭-참조"><a href="#문자와-문자열-수업자료-character-unicode-부분-꼭-참조" class="headerlink" title="문자와 문자열(수업자료 character/unicode 부분 꼭 참조)"></a>문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</h1><p>character set </p>
 <p>character encoding (모스 부호)</p>
 <p>code point</p>
 <p>문자 하나에 매핑된 숫자를 코드 포인트라 함. 그 테이블을 ASCII라 함.<br>7bit로 모든 문자 표현할 수있음.ASCII 코드가 0~127(10)까지 있으니.<br>그래서 1byte면 충분히 저장 가능.<br>char 자료형(C에서)이 나옴. 1byte 자료형</p>
@@ -522,23 +509,22 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <h2 id="print-num"><a href="#print-num" class="headerlink" title="print(num)"></a>print(num)</h2><p>*mutable</p>
 <p>li = [1,2,3]  —&gt;mutable<br>def change_elem(li, idx, new_elem):<br>    li[idx] = new_elem<br>    print(li)</p>
 <p>change_elem(li, 1, 100)<br>print(li)        —&gt;call by value는 확실히 아니군.</p>
-<p>###call by object reference<br>      (call by assignment)</p>
-<p>*immutable(상수)<br>할당(assignment) 할 때 바뀜<br>화살표가 바뀜</p>
+<h3 id="call-by-object-reference"><a href="#call-by-object-reference" class="headerlink" title="call by object reference"></a>call by object reference</h3><pre><code>(call by assignment)
+</code></pre><p>*immutable(상수)<br>할당(assignment) 할 때 바뀜<br>화살표가 바뀜</p>
 <p>*mutable<br>list 같은 것<br>list 내에서의 화살표가 바뀜</p>
 <p>유튜부 동영상이랑 같은 내용</p>
 <hr>
-<p>#reference counter<br>import sys<br>a=1<br>sys.getrefcount(a)  —-&gt;가리키는 숫자를 알 수 있음.</p>
+<h1 id="reference-counter"><a href="#reference-counter" class="headerlink" title="reference counter"></a>reference counter</h1><p>import sys<br>a=1<br>sys.getrefcount(a)  —-&gt;가리키는 숫자를 알 수 있음.</p>
 <hr>
 <p>tu = (1,2,3)<br>def change_elem(tu,a,b,c):<br>    tu = (a,b,c)<br>    print(tu)<br>    return tu</p>
 <p>tu = change_elem(tu, 1,100,2)<br>print(tu)</p>
 <hr>
-<p>##과제</p>
-<p>내일 스택이랑 과제 설명</p>
+<h2 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h2><p>내일 스택이랑 과제 설명</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuicgm78000rhi2igxs2l6bb" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuj42q4e000s1y2i1wpoqrkz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -571,14 +557,12 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
     <div class="article-entry" itemprop="articleBody">
       
         <p>day6</p>
-<p>###lambda functin: 익명함수(이름이 없다)<br>함수를 재사용하지 않고 몇 번정도만 쓸 때 쓴다.</p>
+<h3 id="lambda-functin-익명함수-이름이-없다"><a href="#lambda-functin-익명함수-이름이-없다" class="headerlink" title="lambda functin: 익명함수(이름이 없다)"></a>lambda functin: 익명함수(이름이 없다)</h3><p>함수를 재사용하지 않고 몇 번정도만 쓸 때 쓴다.</p>
 <p>def func(a,b):<br>    return a+b</p>
 <p>lambda a,b: a+b</p>
 <p>f=lambda a,b:a+b  –&gt;이런식으로 하지 않으면 메모리에서 다음 라인 가는 순간 사라져버림</p>
 <p>f=lambda a,b:a+b<br>f(1,2)<br>–&gt;first class function임</p>
-<p>##파이썬의 함수는 “식”임.</p>
-<p>#식은 expression임.</p>
-<p>a=10<br>b = 20<br>a+b  -&gt;&gt;이런걸 식이라 하지. 이항식이라 함</p>
+<h2 id="파이썬의-함수는-“식”임"><a href="#파이썬의-함수는-“식”임" class="headerlink" title="파이썬의 함수는 “식”임."></a>파이썬의 함수는 “식”임.</h2><h1 id="식은-expression임"><a href="#식은-expression임" class="headerlink" title="식은 expression임."></a>식은 expression임.</h1><p>a=10<br>b = 20<br>a+b  -&gt;&gt;이런걸 식이라 하지. 이항식이라 함</p>
 <p>10  –&gt; 이런걸 단항식(unary expression)이라 함.</p>
 <p>식이란, 반환값이 있다 즉 값이 있다.</p>
 <p>“I am your father!” –&gt;이것도 식</p>
@@ -587,8 +571,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <p>print(func(10,20))</p>
 <p>print(print(func(10,20)))  –&gt;이것도 식이다. 반환값이 None</p>
 <p>파이썬의 함수는 무조건 식이다.<br>이건 언어마다 다른 것.</p>
-<p>##lambda 문법</p>
-<p>lambda a, b: a+b  –&gt;람다는 무조건 값을 반환하기 때문에 return을 a+b앞에 쓰지 않음. 람다는 값을 반환하지 않게 할수 없음.<br>                             리턴이 명시되지 않았지만 암묵적으로 무조건 return이 있는것.</p>
+<h2 id="lambda-문법"><a href="#lambda-문법" class="headerlink" title="lambda 문법"></a>lambda 문법</h2><p>lambda a, b: a+b  –&gt;람다는 무조건 값을 반환하기 때문에 return을 a+b앞에 쓰지 않음. 람다는 값을 반환하지 않게 할수 없음.<br>                             리턴이 명시되지 않았지만 암묵적으로 무조건 return이 있는것.</p>
 <p>f2=lambda a,b:a+b<br>f2(1,2)</p>
 <p>###<br>li = [5,2,3,1,7,10]</p>
 <p>def pred(x):<br>    return x % 2    </p>
@@ -596,19 +579,16 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <p>li</p>
 <p>stable sorting 쏘팅 개념으로 됨-기존 정렬은 유지되면서..</p>
 <p>li.sort(key=lambda x: x%2, reverse = True)</p>
-<p>##filter, map,reduce</p>
-<p>#lazy evaluation(게으른 연산)</p>
-<p>from functools import reduce</p>
+<h2 id="filter-map-reduce"><a href="#filter-map-reduce" class="headerlink" title="filter, map,reduce"></a>filter, map,reduce</h2><h1 id="lazy-evaluation-게으른-연산"><a href="#lazy-evaluation-게으른-연산" class="headerlink" title="lazy evaluation(게으른 연산)"></a>lazy evaluation(게으른 연산)</h1><p>from functools import reduce</p>
 <p>reduce</p>
-<p>##filter</p>
-<p>li = [-3,5,1,2,-5,-4,14]</p>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>li = [-3,5,1,2,-5,-4,14]</p>
 <p>f = filter(lambda e: e &gt;0, list)    —-&gt;filter 객체가 나옴. list에 iterable을 넣어줌. 앞쪽에 리턴값은 부울리언. true는 반환해주고 아닌것은 버림.</p>
 <p>f</p>
 <p>next(f)<br>5<br>next(f)<br>1<br>next(f)<br>14</p>
 <p>next(f)<br>stopiteration error.</p>
 <p>다시 filter객체를 만들고,,,<br>for e in f:<br>    print(e)</p>
 <p>without_neg = list(filter(lambda e: e&gt;0, li))</p>
-<p>##lazy evaluation의 개념<br>map,filter,reduce,generator를 쓰는 이유!<br>함수의 실행 시기를 내가 결정한다!<br>그래서 내가 원할 때만 결과값을 가져온다!</p>
+<h2 id="lazy-evaluation의-개념"><a href="#lazy-evaluation의-개념" class="headerlink" title="lazy evaluation의 개념"></a>lazy evaluation의 개념</h2><p>map,filter,reduce,generator를 쓰는 이유!<br>함수의 실행 시기를 내가 결정한다!<br>그래서 내가 원할 때만 결과값을 가져온다!</p>
 <p>li=[1,2,3]</p>
 <p>def func(x):<br>    print(“func executed”)<br>    return x&gt;0</p>
 <p>f= filter(func, li)</p>
@@ -619,7 +599,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <p>f= filter(func,li)<br>print(“다른 작업”)<br>next(f)<br>print(‘another job’)</p>
 <p>next(f)  –&gt;다른 일하다가 내가 필요한 순간에 그 다음 값을 쓸 수있다.<br>           값을 하나 가져오고 쓴다음에 버린다.</p>
 <p>1.내가 함수의 실행시간을 결정 가능(연산을 게으르게 쉬다가 니가 나를 호출할 때만 그 때 계산해줄게)<br>2.메모리 절약 가능</p>
-<p>##map<br>사상한다, 선형대수에서 나오는 개념. 한마디로 함수 같이 연결의 의미</p>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>사상한다, 선형대수에서 나오는 개념. 한마디로 함수 같이 연결의 의미</p>
 <p>li = [2,3,5,7]</p>
 <p>m = map(lambda x: x**2 ,li)  –&gt;map 객체</p>
 <p>next(m)<br>4<br>next(m)<br>9<br>next(m)<br>25<br>next(m)<br>49<br>next(m)<br>stopiteration</p>
@@ -627,19 +607,17 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <p>li = [2,3,-5,6,-2,1,-10]<br>양수를 골라내서 제곱한 값을 리스트로 만드시오</p>
 <p>result = list(map(lambda b: b**2,  filter(lambda a: a &gt;0, li)  ))</p>
 <p>result</p>
-<p>##reduce<br>자료구조 (list,tuple)를 연산을 통해서 단 하나의 값으로 만드는 함수</p>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><p>자료구조 (list,tuple)를 연산을 통해서 단 하나의 값으로 만드는 함수</p>
 <p>from functools import reduce</p>
 <p>help(reduce)</p>
 <p>li = [2,3,-5,6,-2,1,-10]</p>
 <p>result = reduce(lambda a,b: a+b, li)  —&gt;앞에서부터 2개씩 들어가서 계산 후 값을 넣어준다. 2+3 = 5,, 5+(-5) = 0………………쭉~</p>
 <p>result<br>-5</p>
 <p>result = reduce(lambda a,b: a+b, li, 100)  —&gt;초기값을 100넣어줄 경우,, 100+2해서 넣어주고 쭉~<br>result</p>
-<p>#간단 문제(최대값 구하기)</p>
-<p>li = [3,6,8,-10,2,1,100,50,46,-47]</p>
+<h1 id="간단-문제-최대값-구하기"><a href="#간단-문제-최대값-구하기" class="headerlink" title="간단 문제(최대값 구하기)"></a>간단 문제(최대값 구하기)</h1><p>li = [3,6,8,-10,2,1,100,50,46,-47]</p>
 <p>result = reduce(lambda a,b: b if a&lt;b else a , li)</p>
 <p>(최소값 구하기)<br>result = reduce(lambda a,b: b if a&gt;b else a , li)</p>
-<p>##문자수 세기 문제~</p>
-<p>li = [‘a’, ‘b’,’a’,’b’,’b’,’a’,’c’,’a’]</p>
+<h2 id="문자수-세기-문제"><a href="#문자수-세기-문제" class="headerlink" title="문자수 세기 문제~"></a>문자수 세기 문제~</h2><p>li = [‘a’, ‘b’,’a’,’b’,’b’,’a’,’c’,’a’]</p>
 <p>dic = {‘a’:4, ‘b’:3, ‘c’:1} –&gt;목표</p>
 <p>1.파이썬의 함수는 식이니까–&gt;무조건 값을 반환함. 없으면 none 반환<br>2.부울린 연산을 할 때 마지막으로 참조한 값을 반환한다.<br>아래 3가지 이용…</p>
 <p>[1,2] or []  —&gt; or의 특성 이용<br>[1,2]      </p>
@@ -651,12 +629,12 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
 <p>li = [‘a’, ‘b’,’a’,’b’,’b’,’a’,’c’,’a’]</p>
 <p>result = reduce(lambda dic, ch:  …  , li, {})</p>
 <p>result = reduce(lambda dic, ch: dic.update({ch: dic.get(ch,0)+1}) or dic, li, {})</p>
-<p>###decorator(데코레이터)<br>쉽게 기능을 추가 할 수 있다.함수를 추가한다.</p>
+<h3 id="decorator-데코레이터"><a href="#decorator-데코레이터" class="headerlink" title="decorator(데코레이터)"></a>decorator(데코레이터)</h3><p>쉽게 기능을 추가 할 수 있다.함수를 추가한다.</p>
 <p>from fancy import decofunc</p>
 <p>@decofunc         —–&gt;골뱅이로 부치면 그냥 된다. 위에서부터 아래로 실행된다.<br>@deco2<br>@deco3<br>@deco4<br>def func(a,b):</p>
 <pre><code>return a+b
 </code></pre><hr>
-<p>#함수 기능을 대변하는 이름으로<br>def outer(org_func):     —&gt;내가 정의하는 함수, function을 매개변수로 받음<br>    def inner(*args, **kwargs):    —-&gt;인자들, 가변인자들</p>
+<h1 id="함수-기능을-대변하는-이름으로"><a href="#함수-기능을-대변하는-이름으로" class="headerlink" title="함수 기능을 대변하는 이름으로"></a>함수 기능을 대변하는 이름으로</h1><p>def outer(org_func):     —&gt;내가 정의하는 함수, function을 매개변수로 받음<br>    def inner(*args, **kwargs):    —-&gt;인자들, 가변인자들</p>
 <pre><code>    #추가하는 기능을 구현한다.
     print(&apos;added functionalty&apos;)
     return org_func(*args, **kwargs)  ---&gt;함수실행, unpacking하겠다는 거지.
@@ -671,28 +649,21 @@ return inner  -----&gt;function을 리턴
 <p>f(2,7)  —&gt;위에것이 생겼다가 아래것이 덮어버림.function overloading  <-> overriding (?)<br>14</-></p>
 <p>Overloading is a concept where a method/function can have multiple calling signatures as compared to just one in non-overloaded method/function. To be specific, number of arguments with which a function can be called with, in python defines overloading in python.<br>Overriding is a concept to redefine the definition of a function in the inheritance hierarchies. This simply means that, if a method is defined in a parent class, and the child class redefines the same method again inside it, that method is said to be overridden.</p>
 <hr>
-<p>##데코레이터 다시 보기</p>
-<p>def outer(org_func):    —&gt;org_func는 주니어가 개발한 함수<br>    def inner(<em>args, **kwargs):  —-&gt;<br>        print(“여기에 기능 추가”)<br>        return org_func(</em>args, **kwargs)  —–&gt;namespace 개념 적용..안에 없으니 바깥에서 매개변수 org_func로 찾음<br>    return inner  —&gt;실행이 아니라 반환</p>
+<h2 id="데코레이터-다시-보기"><a href="#데코레이터-다시-보기" class="headerlink" title="데코레이터 다시 보기"></a>데코레이터 다시 보기</h2><p>def outer(org_func):    —&gt;org_func는 주니어가 개발한 함수<br>    def inner(<em>args, **kwargs):  —-&gt;<br>        print(“여기에 기능 추가”)<br>        return org_func(</em>args, **kwargs)  —–&gt;namespace 개념 적용..안에 없으니 바깥에서 매개변수 org_func로 찾음<br>    return inner  —&gt;실행이 아니라 반환</p>
 <p>def func(a,b):<br>    return a+b</p>
 <p>func.<strong>name</strong><br>‘func’</p>
 <p>func = outer(func)    —&gt;func는 inner</p>
 <p>func.<strong>name</strong><br>‘inner’</p>
 <p>func(4,5)<br>여기에 기능 추가<br>9</p>
 <p>———–아름답게 하기 위해 아래와 같이 압축시켜 표현———<br>@outer<br>def func(a,b):<br>    return a+b</p>
-<p>###타이머 만들어보기<br>친구가 만든 함수의 실행시간을 재고싶음</p>
+<h3 id="타이머-만들어보기"><a href="#타이머-만들어보기" class="headerlink" title="타이머 만들어보기"></a>타이머 만들어보기</h3><p>친구가 만든 함수의 실행시간을 재고싶음</p>
 <p>from functools import wraps</p>
 <p>import time</p>
 <p>def benchmarker(org_func):<br>    @wraps(org_func)<br>    def inner(<em>args, **kwargs):<br>        start = time.time()           —-&gt;현재 시간을 반환.1970년 1월 1일 0시0분 0초부터 지금까지 지난 초수.<br>        result = org_func(</em>args,**kwargs)<br>        elapsed = time.time() - start<br>        print(f’elapsed time : {elapsed: .2f}’)<br>        return result<br>    return inner</p>
 <p>@benchmarker<br>def something(a,b):<br>    time.sleep(5)<br>    return a+b</p>
 <p>something(1,2)</p>
 <p>elapsed time:5.00<br>3</p>
-<p>###과제</p>
-<p>#callcounter</p>
-<p>#어떤 함수를 호출한 횟수를 보여준다. </p>
-<p>#func(a,b)</p>
-<p>#–&gt;’5번 호출되었습니다’</p>
-<p>#–&gt; 15</p>
-<p>g_call_num = 0<br>def callcounter(org_func):<br>    pass</p>
+<h3 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h3><h1 id="callcounter"><a href="#callcounter" class="headerlink" title="callcounter"></a>callcounter</h1><h1 id="어떤-함수를-호출한-횟수를-보여준다"><a href="#어떤-함수를-호출한-횟수를-보여준다" class="headerlink" title="어떤 함수를 호출한 횟수를 보여준다."></a>어떤 함수를 호출한 횟수를 보여준다.</h1><h1 id="func-a-b"><a href="#func-a-b" class="headerlink" title="func(a,b)"></a>func(a,b)</h1><h1 id="–-gt-’5번-호출되었습니다’"><a href="#–-gt-’5번-호출되었습니다’" class="headerlink" title="–&gt;’5번 호출되었습니다’"></a>–&gt;’5번 호출되었습니다’</h1><h1 id="–-gt-15"><a href="#–-gt-15" class="headerlink" title="–&gt; 15"></a>–&gt; 15</h1><p>g_call_num = 0<br>def callcounter(org_func):<br>    pass</p>
 <p>@callcounter<br>def func(a,b):<br>    return a+b</p>
 <p>for _ in range(10):<br>    func(1,2)<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>…<br>3                             —-&gt;이런식으로 나오면 됨.</p>
 <p>답:<br>g_call_num = 0</p>
@@ -708,7 +679,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuicgm78000shi2iqi152bcr" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuj42q4d000r1y2io4l63net" class="article-share-link">Share</a>
       
       
     </footer>
@@ -801,7 +772,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuicgm77000qhi2izbcw0dk6" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuj42q4d000q1y2iqgt7ghyo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -894,7 +865,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuicgm76000phi2ig7357fsb" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuj42q4c000p1y2i4trlvs6c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -993,7 +964,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuicgm75000nhi2iepuybua8" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuj42q4a000m1y2iyl8ind3w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1107,7 +1078,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuicgm70000fhi2i8bansg9c" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuj42q43000d1y2ibagk0w9d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1149,7 +1120,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuicgm6s0003hi2ieghb2dpo" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuj42q3s00011y2i2uvuem4y" class="article-share-link">Share</a>
       
       
     </footer>

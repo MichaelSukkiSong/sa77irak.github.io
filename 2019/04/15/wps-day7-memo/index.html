@@ -7,17 +7,17 @@
   
   <title>wps_day7_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day7 ###closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!">
+  <meta name="description" content="day7 closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day7_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day7-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day7 ###closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!">
+<meta property="og:description" content="day7 closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:59:08.856Z">
+<meta property="og:updated_time" content="2019-04-15T12:45:23.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day7_memo">
-<meta name="twitter:description" content="day7 ###closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!">
+<meta name="twitter:description" content="day7 closureJS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐. (중요)###문자와 문자열 -&amp;gt;character set                                  ASCII –&amp;gt;UNICODE –&amp;gt;     utf-8 (웹표준)      &amp;lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,14 +87,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day7</p>
-<p>###closure<br>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
+<h3 id="closure"><a href="#closure" class="headerlink" title="closure"></a>closure</h3><p>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
 <p>(중요)###문자와 문자열 -&gt;character set<br>                                  ASCII –&gt;UNICODE –&gt;     utf-8 (웹표준)      &lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!!!!!!<br>                                           utf-16<br>                              utf-32</p>
-<p>##call by value         C로 보여만 줄거임, 면접 단골<br>    call by reference</p>
-<pre><code>call by object reference(좀 어려움,(중요))
+<h2 id="call-by-value-C로-보여만-줄거임-면접-단골"><a href="#call-by-value-C로-보여만-줄거임-면접-단골" class="headerlink" title="call by value         C로 보여만 줄거임, 면접 단골"></a>call by value         C로 보여만 줄거임, 면접 단골</h2><pre><code>call by reference
+
+call by object reference(좀 어려움,(중요))
   (call by assignment)
-</code></pre><p>##일주일짜리 프로젝트, 계산기, 스택 하고<br>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
-<p>###closure<br>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
-<p>#은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것<br>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
+</code></pre><h2 id="일주일짜리-프로젝트-계산기-스택-하고"><a href="#일주일짜리-프로젝트-계산기-스택-하고" class="headerlink" title="일주일짜리 프로젝트, 계산기, 스택 하고"></a>일주일짜리 프로젝트, 계산기, 스택 하고</h2><p>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
+<h3 id="closure-1"><a href="#closure-1" class="headerlink" title="closure"></a>closure</h3><p>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
+<h1 id="은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것"><a href="#은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것" class="headerlink" title="은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것"></a>은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것</h1><p>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
 <p>my_acnt = account(‘greg’, 5000)<br>your_acnt = account(‘john’, 3000)</p>
 <p>type(my_acnt)</p>
 <p>my_acnt.<strong>name</strong> == your_acnt.<strong>name</strong><br>True</p>
@@ -106,8 +107,7 @@
 <p>cells = my_acnt.<strong>closure</strong></p>
 <p>for cell in cells:<br>    print(cell.cell_contents)</p>
 <p>===========================================================================</p>
-<p>#문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</p>
-<p>character set </p>
+<h1 id="문자와-문자열-수업자료-character-unicode-부분-꼭-참조"><a href="#문자와-문자열-수업자료-character-unicode-부분-꼭-참조" class="headerlink" title="문자와 문자열(수업자료 character/unicode 부분 꼭 참조)"></a>문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</h1><p>character set </p>
 <p>character encoding (모스 부호)</p>
 <p>code point</p>
 <p>문자 하나에 매핑된 숫자를 코드 포인트라 함. 그 테이블을 ASCII라 함.<br>7bit로 모든 문자 표현할 수있음.ASCII 코드가 0~127(10)까지 있으니.<br>그래서 1byte면 충분히 저장 가능.<br>char 자료형(C에서)이 나옴. 1byte 자료형</p>
@@ -166,23 +166,22 @@
 <h2 id="print-num"><a href="#print-num" class="headerlink" title="print(num)"></a>print(num)</h2><p>*mutable</p>
 <p>li = [1,2,3]  —&gt;mutable<br>def change_elem(li, idx, new_elem):<br>    li[idx] = new_elem<br>    print(li)</p>
 <p>change_elem(li, 1, 100)<br>print(li)        —&gt;call by value는 확실히 아니군.</p>
-<p>###call by object reference<br>      (call by assignment)</p>
-<p>*immutable(상수)<br>할당(assignment) 할 때 바뀜<br>화살표가 바뀜</p>
+<h3 id="call-by-object-reference"><a href="#call-by-object-reference" class="headerlink" title="call by object reference"></a>call by object reference</h3><pre><code>(call by assignment)
+</code></pre><p>*immutable(상수)<br>할당(assignment) 할 때 바뀜<br>화살표가 바뀜</p>
 <p>*mutable<br>list 같은 것<br>list 내에서의 화살표가 바뀜</p>
 <p>유튜부 동영상이랑 같은 내용</p>
 <hr>
-<p>#reference counter<br>import sys<br>a=1<br>sys.getrefcount(a)  —-&gt;가리키는 숫자를 알 수 있음.</p>
+<h1 id="reference-counter"><a href="#reference-counter" class="headerlink" title="reference counter"></a>reference counter</h1><p>import sys<br>a=1<br>sys.getrefcount(a)  —-&gt;가리키는 숫자를 알 수 있음.</p>
 <hr>
 <p>tu = (1,2,3)<br>def change_elem(tu,a,b,c):<br>    tu = (a,b,c)<br>    print(tu)<br>    return tu</p>
 <p>tu = change_elem(tu, 1,100,2)<br>print(tu)</p>
 <hr>
-<p>##과제</p>
-<p>내일 스택이랑 과제 설명</p>
+<h2 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h2><p>내일 스택이랑 과제 설명</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuicgm78000rhi2igxs2l6bb" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuj42q4e000s1y2i1wpoqrkz" class="article-share-link">Share</a>
       
       
     </footer>

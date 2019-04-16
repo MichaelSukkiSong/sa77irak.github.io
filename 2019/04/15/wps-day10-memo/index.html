@@ -7,17 +7,17 @@
   
   <title>wps_day10_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day10 ###list의 참조,shallow copy,deep copy help(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])l">
+  <meta name="description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])lili3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day10_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day10-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day10 ###list의 참조,shallow copy,deep copy help(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])l">
+<meta property="og:description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])lili3">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T10:59:15.168Z">
+<meta property="og:updated_time" content="2019-04-15T12:46:40.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day10_memo">
-<meta name="twitter:description" content="day10 ###list의 참조,shallow copy,deep copy help(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])l">
+<meta name="twitter:description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])lili3">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,8 +87,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day10</p>
-<p>###list의 참조,shallow copy,deep copy</p>
-<h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
+<h3 id="list의-참조-shallow-copy-deep-copy"><a href="#list의-참조-shallow-copy-deep-copy" class="headerlink" title="list의 참조,shallow copy,deep copy"></a>list의 참조,shallow copy,deep copy</h3><h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
 <p>–&gt;참조는 완전히 같은거라 보면 됨.</p>
 <p>**shallow copy<br>li3 = li.copy()<br>li3<br>li3.append(5)<br>li3<br>li<br>li.append([6,7])<br>li<br>li3 = li<br>li3 = li.copy()<br>li3<br>li3[4].append(8)<br>li3<br>li</p>
 <p>–&gt;shallow copy 다른 곳에 만들어진다. </p>
@@ -132,8 +131,7 @@
 <p>Garbage Collector : 언어차원에서 메모리 관리(heap관리)를 해줄게.<br>-&gt;기법중 하나가 : reference counter(파이썬은 이거 함): reference counter가 0이 되면 지워줌.</p>
 <p>a = “I am your F!”<br>import sys<br>sys.getrefcount(a)<br>b=a<br>sys.getrefcount(a)<br>c=b<br>sys.getrefcount(c)<br>c=10<br>sys.getrefcount(a)<br>del b<br>sys.getrefcount(a)<br>a=1<br>sys.getrefcount(a)<br>b=2<br>sys.getrefcount(b)</p>
 <hr>
-<p>##가상메모리</p>
-<p>virtual_memory.md 참조</p>
+<h2 id="가상메모리"><a href="#가상메모리" class="headerlink" title="가상메모리"></a>가상메모리</h2><p>virtual_memory.md 참조</p>
 <p>virtual_memory.pdf 그림 참조</p>
 <p>virtual address space이란?</p>
 <h2 id="user영역"><a href="#user영역" class="headerlink" title="user영역"></a>user영역</h2><p>kernel영역</p>
@@ -176,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuicgm6s0002hi2i2de5wyzh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj42q3w00041y2i1443obgk" class="article-share-link">Share</a>
       
       
     </footer>
