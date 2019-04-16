@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day9 #call by value-&amp;gt;stack frame 바깥으로 나갈 수 없다. 안에 있는 값만 바꿀 수 있고 바깥 변수는 바꿀 수 없다.call by reference -&amp;gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다.CPU/memory.pdfctrl+shift+esc -&amp;gt;작업관리">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T12:46:27.634Z">
+<meta property="og:updated_time" content="2019-04-16T01:59:35.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day9_memo">
 <meta name="twitter:description" content="day9 #call by value-&amp;gt;stack frame 바깥으로 나갈 수 없다. 안에 있는 값만 바꿀 수 있고 바깥 변수는 바꿀 수 없다.call by reference -&amp;gt;stack frame 바깥으로 나갈 수 있다. 바깥에 있는 변수에 접근할 수있어서 값을 바꿀 수 있다.CPU/memory.pdfctrl+shift+esc -&amp;gt;작업관리">
@@ -111,15 +111,14 @@
 <p>stack pointer : stackframe을 생성하는 얘. stack이라는 segment의 맨 꼭대기.<br>frame pointer(base pointer): stackframe 내에서 변수(data,memory)에 접근할 때 그 기준점이 됨.</p>
 <p>하드웨어 아키텍처는 여기까지. CPU는 끝!<br><a href="https://www.youtube.com/watch?v=cNN_tTXABUA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cNN_tTXABUA</a><br>좋은 영상!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
 <hr>
-<h1 id><a href="#" class="headerlink" title="==================================================================================================="></a>===================================================================================================</h1><p>===================================================================================================</p>
 <h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><p>CS/memory/memory.md<br>CS/memory/memory.pdf</p>
 <p>*메모리 계층구조</p>
 <p>  Register(CPU)<br>   Cache (L1, ,,,)<br>   Memory(RAM)<br>  Hard Disk(SSD)</p>
 <p>-&gt;위로 올라갈수록 빠르다. 위로 올라갈수록 용량이 작다<br>-&gt;한번에 가져올 수는 없다. 각 단계를 거쳐야지만 다른 단계로 갈 수 있다.<br>-&gt;cache에서 reg가져올 떄는 3 cycle, mem에서 reg 가져올 떄는 20cycle.</p>
 <p>*locality(지역성)<br>temporal locality 시간 지역성 :<br>spatial locality 공간 지역성 : </p>
 <p>li = [1, 2, 3, 4, 5]<br>res = 0<br>for e in li:</p>
-<h1 id="temporal-locality-spatial-locality"><a href="#temporal-locality-spatial-locality" class="headerlink" title="temporal locality + spatial locality"></a>temporal locality + spatial locality</h1><pre><code>res += e
-</code></pre><p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
+<p>#temporal locality + spatial locality<br>    res += e</p>
+<p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
 <p>cache line: cache에 들어올 때 뭉탱이로 들어옴.<br>cache miss: CPU가 요청했을 때 cache에 없을 때<br>cache hit: CPU가 요청했을 떄 CPU에 요청한 데이터가 있을 때 cache에서 CPU로 바로 data를 줄 수 있을 때</p>
 <p>과학연구 결과 cache hit가 일어날 확률이 기본적으로 95% ㄷ.ㄷ</p>
 <p>gcc와 fbstring 에서 cache miss 내용 이해 가능.</p>
@@ -127,67 +126,13 @@
 <hr>
 <p>내일:<br>RAM을 OS가 어떻게 관리하나.<br>가상메모리(어려움)</p>
 <h2 id="다음주에-OOP"><a href="#다음주에-OOP" class="headerlink" title="다음주에 OOP"></a>다음주에 OOP</h2><h1 id="기존-자료-구조를-이용해-새로운-자료구조를-만드는-것"><a href="#기존-자료-구조를-이용해-새로운-자료구조를-만드는-것" class="headerlink" title="기존 자료 구조를 이용해 새로운 자료구조를 만드는 것"></a>기존 자료 구조를 이용해 새로운 자료구조를 만드는 것</h1><h1 id="어댑터-adapter"><a href="#어댑터-adapter" class="headerlink" title="어댑터(adapter):"></a>어댑터(adapter):</h1><h1 id="컨테이너-container"><a href="#컨테이너-container" class="headerlink" title="컨테이너(container)"></a>컨테이너(container)</h1><p>내부를 이용해 ——&gt;내가 이용하고자 하는 인터페이스를 완성하는 것.<br>                   adapter?</p>
-<p>class Stack:<br>    def <strong>init</strong>(self):<br>        self.container = list()</p>
-<pre><code>def empty(self):
-    &apos;&apos;&apos;
-    s.empty() -&gt; bool
-    만약에 스택에 요소가 있다면 False
-    아니면 True
-    &apos;&apos;&apos;
-    if len(container)==0:
-        return True
-    else:
-        return False    
-
-
-def push(self, data):
-    &apos;&apos;&apos;
-    s.push(data) -&gt; None
-    리스트의 append를 이용해서 구현하세요
-    &apos;&apos;&apos;
-    container.append(data)
-
-def pop(self):
-    &apos;&apos;&apos;
-    s.pop() -&gt; data
-    스택의 맨 꼭대기 값을 반환하면서 삭제
-    리스트의 pop 함수 이용
-    &apos;&apos;&apos;
-    container.pop()
-
-
-def peek(self):
-    &apos;&apos;&apos;
-    s.peek() -&gt;data
-    스택의 맨 꼭대기 값을 반환
-    리스트의 인덱스를 이용해서 구현
-    &apos;&apos;&apos;
-    container[len(container)+1]
-</code></pre><p>——————-내가 해본거-0- ————————–<br>class Stack:</p>
-<pre><code>def __init__(self):
-    self.container = list()
-
-def empty(self):
-
-    if len(self.container)==0:
-        return print(True)
-    else:
-        return print(False)    
-
-def push(self, data):
-    self.container.append(data)
-
-def pop(self):
-    return print(self.container.pop())
-
-def peek(self):
-    return print(self.container[-1])
-</code></pre><p>s = Stack()<br>s.push(1)<br>s.push(2)<br>s.push(3)<br>s.pop()<br>s.empty()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.container = list()</span><br><span class="line"></span><br><span class="line">	def empty(self):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.empty() -&gt; bool</span><br><span class="line">		만약에 스택에 요소가 있다면 False</span><br><span class="line">		아니면 True</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		if len(container)==0:</span><br><span class="line">			return True</span><br><span class="line">		else:</span><br><span class="line">			return False	</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	def push(self, data):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.push(data) -&gt; None</span><br><span class="line">		리스트의 append를 이용해서 구현하세요</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		container.append(data)</span><br><span class="line"></span><br><span class="line">	def pop(self):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.pop() -&gt; data</span><br><span class="line">		스택의 맨 꼭대기 값을 반환하면서 삭제</span><br><span class="line">		리스트의 pop 함수 이용</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		container.pop()</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	def peek(self):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.peek() -&gt;data</span><br><span class="line">		스택의 맨 꼭대기 값을 반환</span><br><span class="line">		리스트의 인덱스를 이용해서 구현</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		container[len(container)+1]</span><br></pre></td></tr></table></figure>
+<p>——————-내가 해본거-0- ————————–<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.container = list()</span><br><span class="line"></span><br><span class="line">    def empty(self):</span><br><span class="line">        </span><br><span class="line">        if len(self.container)==0:</span><br><span class="line">            return print(True)</span><br><span class="line">        else:</span><br><span class="line">            return print(False)	</span><br><span class="line"></span><br><span class="line">    def push(self, data):</span><br><span class="line">        self.container.append(data)</span><br><span class="line"></span><br><span class="line">    def pop(self):</span><br><span class="line">        return print(self.container.pop())</span><br><span class="line"></span><br><span class="line">    def peek(self):</span><br><span class="line">        return print(self.container[-1])</span><br><span class="line"></span><br><span class="line">s = Stack()</span><br><span class="line">s.push(1)</span><br><span class="line">s.push(2)</span><br><span class="line">s.push(3)</span><br><span class="line">s.pop()</span><br><span class="line">s.empty()</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuj4bjvc000uee2izktp7al1" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuj5nvmd000uam2idmvutms6" class="article-share-link">Share</a>
       
       
     </footer>

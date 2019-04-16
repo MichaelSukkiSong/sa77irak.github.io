@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day14 —시험 공고—1가지 알고리즘에 대해서 푸는 방법 3가지첫번째는 배움,                 두번째              /              세번째에 대해 고민하고 만들어보기  재귀                재귀를 while로 고쳐서                        ???? 1시간정도..걸릴 것임  오늘,내일할 것 정리-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T12:46:59.462Z">
+<meta property="og:updated_time" content="2019-04-16T02:09:44.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day14_memo">
 <meta name="twitter:description" content="day14 —시험 공고—1가지 알고리즘에 대해서 푸는 방법 3가지첫번째는 배움,                 두번째              /              세번째에 대해 고민하고 만들어보기  재귀                재귀를 while로 고쳐서                        ???? 1시간정도..걸릴 것임  오늘,내일할 것 정리-">
@@ -123,8 +123,9 @@
 <p>Encapsulation<br>“관련 있는” 멤버(데이터,변수)와 메서드(함수,기능,행동)을 하나의 단위로 묶는 것<br>하나의 단위가 중요한거고 이 유닛은 머든지 될 수 있다는 것이 중요.<br>하지만 대부분의 언어가 class를 지원하기에 class로 짜도 괜찬타<br>class가 아니여도 변수와 함수를 묶을 수만 있다면 그것은 OOP<br>정보은닉은 Encapsulation에 포함됨.</p>
 <p>message passing</p>
 <p>클래스와 객체의 메모리는 다른 공간에 있다<br>객체마다 객체가 가지는 인스턴스 멤버는 따로 가지고 있다.</p>
-<h2 id="과제———————————–"><a href="#과제———————————–" class="headerlink" title="과제———————————–"></a>과제———————————–</h2><p>account_opp.py 를 함수 형태로<br>책 97쪽처럼</p>
-<h2 id="encapsulation은-dic로-고정"><a href="#encapsulation은-dic로-고정" class="headerlink" title="encapsulation은 dic로 고정"></a>encapsulation은 dic로 고정</h2><p>encapsulation을 하면서 정보은닉을 하는데 보통..</p>
+<h3 id="과제———————————–"><a href="#과제———————————–" class="headerlink" title="과제———————————–"></a>과제———————————–</h3><p>account_opp.py 를 함수 형태로<br>책 97쪽처럼<br>encapsulation은 dic로 고정</p>
+<hr>
+<p>encapsulation을 하면서 정보은닉을 하는데 보통..</p>
 <p>어떤 멤버를 공개/비공개<br>어떤 메서드를 공개/비공개</p>
 <p>비공개하는 것을 정보 은닉이라 함.</p>
 <p>정보은닉:<br>1.파이썬에서는 완벽한 정보은닉을 제공하지 않음<br>2.대신에 name-mangling(?) 을 통해 정보은닉처럼 보이게 할 수는 있음. 하지만 정보은닉은 아님<br>            property</p>
@@ -132,145 +133,11 @@
 <p>파이선은..<br><strong>balance 처럼 해서 정보은닉했다는 것을 알림.<br>하지만 </strong>balance는 _Account__balance 을 통해 꺼내 쓸 수 있으므로 정보은닉은 아님.<br>balance처럼 변수뿐 아니라 함수이름도 같은 방식으로 짜가 정보은닉 가능.</p>
 <hr>
 <p>수업 시간 코드(window에서 pracitce폴더의 account_oop.py)</p>
-<p>class Account:</p>
-<pre><code># 클래스 멤버(class member)
-# 모든 객체가 공유한다.
-# 전역변수(global variable)를 대체
-
-# 이자율
-interest_rate=0.08
-num_of_account=0
-
-# 클래스 메서드(class method)
-# 객체가 하나도 없는 상태에서도 호출이 가능!!
-# 전역 함수(global variable)를 대체
-# 전역 함수를 대체할 때는 static method를 쓸 수도 있다.
-# 대체 생성자(alternative constructor)
-
-# 메서드처럼 보이지만 함수 : 전역 함수
-@staticmethod
-def func(a,b):
-    return a+b
-
-@classmethod
-def get_num_of_account(cls):
-    &apos;&apos;&apos;
-    Account.get_num_of_account() -&gt; integer
-    return : 개설된 계좌 수
-    &apos;&apos;&apos;
-    return cls.num_of_account
-
-@classmethod
-def string_constructor(cls, string):
-    data=string.split(&apos;_&apos;)
-    clnt_name=data[0]
-    balance = int(data[1])
-    return cls(clnt_name, balance)
-
-# 생성자(constructor) : 파이썬에서는 오직 하나
-# 객체(object)가 생성될 때 반드시!!! 한번 호출된다.
-def __init__(self, clnt_name, balance):
-    # 인스턴스 멤버(instance member)
-    self.clnt_name=clnt_name
-    # 이건 비공개야! 외부에서 쓰지마!
-    self.__balance=balance
-
-    # 클래스 멤버에 접근하는 방법
-    Account.num_of_account+=1
-
-# 인스턴스 메서드(instance method) --&gt; 함수랑 비슷! 하지만 역할은 다르다
-def deposit(self, money):
-    &apos;&apos;&apos;
-    a.deposit(money) -&gt; boolean
-    만약에 money &gt; 0 이면 입금 성공!
-    아니면 에러 메시지 출력 후 실패!
-    &apos;&apos;&apos;
-    if money &lt; 0:
-        print(&quot;입금은 0원 초과부터 가능합니다.&quot;)
-        return False
-
-    self.__balance+=money
-    return True
-
-# 인스턴스 메서드
-def withdraw(self, money):
-    &apos;&apos;&apos;
-    a.withdraw(money) -&gt; integer
-    return : 인출된 돈
-    만약 잔고가 모자라면 None
-    &apos;&apos;&apos;
-    if money &gt; self.__balance:
-        print(&quot;돈이 모자랍니다.출금금액은 balance보다 작아야 합니다.&quot;)
-        return None
-    else:
-        self.__balance-=money
-        return money
-
-# message passing(메시지 패씽 개념)
-def transfer(self, other, money):
-    # 내 객체가 가진 돈
-    self.__balance += money
-    # message passing
-    # 다른 객체의 상태 정보(인스턴스 멤버)를 변경할 때는
-    # 반드시 상대 객체가 가진 메서드를 이용
-    other.__deposit(money)
-
-def __str__(self):
-    return f&apos;{self.clnt_name} : {self.__balance}&apos;
-</code></pre><p>if <strong>name</strong>==”<strong>main</strong>“:<br>    acnt=Account(‘yang’, 1000)</p>
-<pre><code># 외부에서 멤버에 접근 가능
-print(acnt.clnt_name)
-print(acnt._Account__balance)
-
-
-# print(Account.interest_rate)
-# print(Account.get_num_of_account())
-# # # 객체를 생성
-# my_acnt=Account(&apos;greg&apos;, 5000)
-# # your_acnt=Account(&apos;john&apos;, 2000)
-# print(my_acnt.interest_rate)
-# print(my_acnt.get_num_of_account())
-# #전역 함수 대용
-# print(Account.func(5,4))
-# print(type(Account.func))
-# print(type(Account.get_num_of_account))
-# print(type(my_acnt.deposit))
-
-# # 대체 생성자를 이용한 객체의 생성
-# s=&apos;hames_6000&apos;
-# his_acnt=Account.string_constructor(s)
-# print(his_acnt)
-
-# # # instance method 호출하는 방법
-# # my_acnt.deposit(7000)
-# # print(my_acnt)
-
-# # # 메서드 : 입력+인스턴스 멤버(상태정보,데이터)에 의해 결과 값이 결정!
-# #          #-&gt; 인스턴스 멤버(상태정보)를 바꾸는 역할도 함
-
-# # # 일반적인 함수: 입력에 의해서 출력이 결정
-# # res1 = my_acnt.withdraw(3000)
-# # res2 = your_acnt.withdraw(3000) #같은 이름의 같은 입력이면 출력이 같아야 하나 but 다르다! 이게 메소드와 함수와의 차이임.
-
-# # # 돈을 주기 전의 상태
-# # print(my_acnt)
-# # print(your_acnt)
-
-# # # 객체 간에 상호 작용 -&gt; 객체가 가지고 있는 멤버 값(데이터, 상태정보)
-# # # INTERACTION by 메서드에 의해!!
-# # my_acnt.transfer(your_acnt, 1000)
-
-# # # 절대 짜서는 안되는 코드
-# # # my_acnt.balance-=1000
-# # # your_acnt.balance+=1000
-
-# # print(my_acnt)
-# # print(your_acnt)
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Account:</span><br><span class="line">    # 클래스 멤버(class member)</span><br><span class="line">    # 모든 객체가 공유한다.</span><br><span class="line">    # 전역변수(global variable)를 대체</span><br><span class="line">    </span><br><span class="line">    # 이자율</span><br><span class="line">    interest_rate=0.08</span><br><span class="line">    num_of_account=0</span><br><span class="line"></span><br><span class="line">    # 클래스 메서드(class method)</span><br><span class="line">    # 객체가 하나도 없는 상태에서도 호출이 가능!!</span><br><span class="line">    # 전역 함수(global variable)를 대체</span><br><span class="line">    # 전역 함수를 대체할 때는 static method를 쓸 수도 있다.</span><br><span class="line">    # 대체 생성자(alternative constructor)</span><br><span class="line"></span><br><span class="line">    # 메서드처럼 보이지만 함수 : 전역 함수</span><br><span class="line">    @staticmethod</span><br><span class="line">    def func(a,b):</span><br><span class="line">        return a+b</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def get_num_of_account(cls):</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        Account.get_num_of_account() -&gt; integer</span><br><span class="line">        return : 개설된 계좌 수</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        return cls.num_of_account</span><br><span class="line"></span><br><span class="line">    @classmethod</span><br><span class="line">    def string_constructor(cls, string):</span><br><span class="line">        data=string.split(&apos;_&apos;)</span><br><span class="line">        clnt_name=data[0]</span><br><span class="line">        balance = int(data[1])</span><br><span class="line">        return cls(clnt_name, balance)</span><br><span class="line"></span><br><span class="line">    # 생성자(constructor) : 파이썬에서는 오직 하나</span><br><span class="line">    # 객체(object)가 생성될 때 반드시!!! 한번 호출된다.</span><br><span class="line">    def __init__(self, clnt_name, balance):</span><br><span class="line">        # 인스턴스 멤버(instance member)</span><br><span class="line">        self.clnt_name=clnt_name</span><br><span class="line">        # 이건 비공개야! 외부에서 쓰지마!</span><br><span class="line">        self.__balance=balance</span><br><span class="line"></span><br><span class="line">        # 클래스 멤버에 접근하는 방법</span><br><span class="line">        Account.num_of_account+=1</span><br><span class="line"></span><br><span class="line">    # 인스턴스 메서드(instance method) --&gt; 함수랑 비슷! 하지만 역할은 다르다</span><br><span class="line">    def deposit(self, money):</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        a.deposit(money) -&gt; boolean</span><br><span class="line">        만약에 money &gt; 0 이면 입금 성공!</span><br><span class="line">        아니면 에러 메시지 출력 후 실패!</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        if money &lt; 0:</span><br><span class="line">            print(&quot;입금은 0원 초과부터 가능합니다.&quot;)</span><br><span class="line">            return False</span><br><span class="line">        </span><br><span class="line">        self.__balance+=money</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">    # 인스턴스 메서드</span><br><span class="line">    def withdraw(self, money):</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        a.withdraw(money) -&gt; integer</span><br><span class="line">        return : 인출된 돈</span><br><span class="line">        만약 잔고가 모자라면 None</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        if money &gt; self.__balance:</span><br><span class="line">            print(&quot;돈이 모자랍니다.출금금액은 balance보다 작아야 합니다.&quot;)</span><br><span class="line">            return None</span><br><span class="line">        else:</span><br><span class="line">            self.__balance-=money</span><br><span class="line">            return money</span><br><span class="line"></span><br><span class="line">    # message passing(메시지 패씽 개념)</span><br><span class="line">    def transfer(self, other, money):</span><br><span class="line">        # 내 객체가 가진 돈</span><br><span class="line">        self.__balance += money</span><br><span class="line">        # message passing</span><br><span class="line">        # 다른 객체의 상태 정보(인스턴스 멤버)를 변경할 때는</span><br><span class="line">        # 반드시 상대 객체가 가진 메서드를 이용</span><br><span class="line">        other.__deposit(money)</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line">        return f&apos;&#123;self.clnt_name&#125; : &#123;self.__balance&#125;&apos;</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    acnt=Account(&apos;yang&apos;, 1000)</span><br><span class="line">    # 외부에서 멤버에 접근 가능</span><br><span class="line">    print(acnt.clnt_name)</span><br><span class="line">    print(acnt._Account__balance)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # print(Account.interest_rate)</span><br><span class="line">    # print(Account.get_num_of_account())</span><br><span class="line">    # # # 객체를 생성</span><br><span class="line">    # my_acnt=Account(&apos;greg&apos;, 5000)</span><br><span class="line">    # # your_acnt=Account(&apos;john&apos;, 2000)</span><br><span class="line">    # print(my_acnt.interest_rate)</span><br><span class="line">    # print(my_acnt.get_num_of_account())</span><br><span class="line">    # #전역 함수 대용</span><br><span class="line">    # print(Account.func(5,4))</span><br><span class="line">    # print(type(Account.func))</span><br><span class="line">    # print(type(Account.get_num_of_account))</span><br><span class="line">    # print(type(my_acnt.deposit))</span><br><span class="line"></span><br><span class="line">    # # 대체 생성자를 이용한 객체의 생성</span><br><span class="line">    # s=&apos;hames_6000&apos;</span><br><span class="line">    # his_acnt=Account.string_constructor(s)</span><br><span class="line">    # print(his_acnt)</span><br><span class="line"></span><br><span class="line">    # # # instance method 호출하는 방법</span><br><span class="line">    # # my_acnt.deposit(7000)</span><br><span class="line">    # # print(my_acnt)</span><br><span class="line"></span><br><span class="line">    # # # 메서드 : 입력+인스턴스 멤버(상태정보,데이터)에 의해 결과 값이 결정!</span><br><span class="line">    # #          #-&gt; 인스턴스 멤버(상태정보)를 바꾸는 역할도 함</span><br><span class="line">    </span><br><span class="line">    # # # 일반적인 함수: 입력에 의해서 출력이 결정</span><br><span class="line">    # # res1 = my_acnt.withdraw(3000)</span><br><span class="line">    # # res2 = your_acnt.withdraw(3000) #같은 이름의 같은 입력이면 출력이 같아야 하나 but 다르다! 이게 메소드와 함수와의 차이임.</span><br><span class="line"></span><br><span class="line">    # # # 돈을 주기 전의 상태</span><br><span class="line">    # # print(my_acnt)</span><br><span class="line">    # # print(your_acnt)</span><br><span class="line"></span><br><span class="line">    # # # 객체 간에 상호 작용 -&gt; 객체가 가지고 있는 멤버 값(데이터, 상태정보)</span><br><span class="line">    # # # INTERACTION by 메서드에 의해!!</span><br><span class="line">    # # my_acnt.transfer(your_acnt, 1000)</span><br><span class="line"></span><br><span class="line">    # # # 절대 짜서는 안되는 코드</span><br><span class="line">    # # # my_acnt.balance-=1000</span><br><span class="line">    # # # your_acnt.balance+=1000</span><br><span class="line"></span><br><span class="line">    # # print(my_acnt)</span><br><span class="line">    # # print(your_acnt)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day14-memo/" data-id="cjuj4bjuz0007ee2iwn1mgf4g" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day14-memo/" data-id="cjuj5nvm00007am2i75xyiciv" class="article-share-link">Share</a>
       
       
     </footer>

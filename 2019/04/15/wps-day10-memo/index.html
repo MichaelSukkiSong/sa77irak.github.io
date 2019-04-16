@@ -7,17 +7,17 @@
   
   <title>wps_day10_memo | Sukki&#39;s Home :D</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])lili3">
+  <meta name="description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조12345li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li–&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copy12345678910111213li3 = li.copy()li3li3.append(5)li3li">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wps_day10_memo">
 <meta property="og:url" content="http://sa77irak.github.io/2019/04/15/wps-day10-memo/index.html">
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
-<meta property="og:description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])lili3">
+<meta property="og:description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조12345li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li–&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copy12345678910111213li3 = li.copy()li3li3.append(5)li3li">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T12:46:40.390Z">
+<meta property="og:updated_time" content="2019-04-16T02:06:47.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day10_memo">
-<meta name="twitter:description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li –&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copyli3 = li.copy()li3li3.append(5)li3lili.append([6,7])lili3">
+<meta name="twitter:description" content="day10 list의 참조,shallow copy,deep copyhelp(list.copy)**참조12345li=[1,2,3]li2 = li  &amp;lt;-참조한 것li2.append(4)li2li–&amp;gt;참조는 완전히 같은거라 보면 됨. **shallow copy12345678910111213li3 = li.copy()li3li3.append(5)li3li">
   
     <link rel="alternate" href="/atom.xml" title="Sukki&#39;s Home :D" type="application/atom+xml">
   
@@ -87,16 +87,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day10</p>
-<h3 id="list의-참조-shallow-copy-deep-copy"><a href="#list의-참조-shallow-copy-deep-copy" class="headerlink" title="list의 참조,shallow copy,deep copy"></a>list의 참조,shallow copy,deep copy</h3><h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
-<p>–&gt;참조는 완전히 같은거라 보면 됨.</p>
-<p>**shallow copy<br>li3 = li.copy()<br>li3<br>li3.append(5)<br>li3<br>li<br>li.append([6,7])<br>li<br>li3 = li<br>li3 = li.copy()<br>li3<br>li3[4].append(8)<br>li3<br>li</p>
-<p>–&gt;shallow copy 다른 곳에 만들어진다. </p>
-<p>**deep copy<br>import copy<br>li4 = copy.deepcopy(li)<br>li4<br>li4[4][1]=10<br>li4<br>li</p>
-<p>—&gt;deep copy. 다른곳에 만들어지고 완전히독립적. 내용물 공유 안함.</p>
+<h3 id="list의-참조-shallow-copy-deep-copy"><a href="#list의-참조-shallow-copy-deep-copy" class="headerlink" title="list의 참조,shallow copy,deep copy"></a>list의 참조,shallow copy,deep copy</h3><h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">li=[1,2,3]</span><br><span class="line">li2 = li  &lt;-참조한 것</span><br><span class="line">li2.append(4)</span><br><span class="line">li2</span><br><span class="line">li</span><br></pre></td></tr></table></figure><br>–&gt;참조는 완전히 같은거라 보면 됨.</p>
+<p>**shallow copy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">li3 = li.copy()</span><br><span class="line">li3</span><br><span class="line">li3.append(5)</span><br><span class="line">li3</span><br><span class="line">li</span><br><span class="line">li.append([6,7])</span><br><span class="line">li</span><br><span class="line">li3 = li</span><br><span class="line">li3 = li.copy()</span><br><span class="line">li3</span><br><span class="line">li3[4].append(8)</span><br><span class="line">li3</span><br><span class="line">li</span><br></pre></td></tr></table></figure><br>–&gt;shallow copy 다른 곳에 만들어진다. </p>
+<p>**deep copy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line">li4 = copy.deepcopy(li)</span><br><span class="line">li4</span><br><span class="line">li4[4][1]=10</span><br><span class="line">li4</span><br><span class="line">li</span><br></pre></td></tr></table></figure><br>—&gt;deep copy. 다른곳에 만들어지고 완전히독립적. 내용물 공유 안함.</p>
 <p>—&gt;필기 노트 그림 참고</p>
 <p>#<br>fetch - PC가 가리키고 있던 instruction을 mem-&gt;cpu IR로 가져오는 것<br>decode CU가 IR 을 분석,해석 하는 것<br>execute 실제 연산</p>
-<p>——오늘의 핵심—-<br>1.MMU</p>
-<h2 id="2-logical-address-논리-주소-physical-address-물리-주소"><a href="#2-logical-address-논리-주소-physical-address-물리-주소" class="headerlink" title="2.logical address(논리 주소) physical address(물리 주소)"></a>2.logical address(논리 주소) <->physical address(물리 주소)</-></h2><p>code<br>data         user 영역<br>heap<br>stack</p>
+<p>——오늘의 핵심—-<br>1.MMU<br>2.logical address(논리 주소) <->physical address(물리 주소)</-></p>
+<hr>
+<p>code<br>data         user 영역<br>heap<br>stack</p>
 <p>code<br>data          kernel 영역 -&gt;os가 관리<br>heap<br>stack            </p>
 <p>-&gt;어셈블리어를 통해 직접 kernel 영역을 조작하는 것을 막기 위해 OS가 가운데서 막아줌.</p>
 <p>메모리를 준것 같지만 실제로 준건 아님(우리가 생각할 때는 가상 공간이지민 실제 공간이라 생각하고 코딩하면 됨)<br>OS가 프로세스가 시작될 때 할당해주는 가상 메모리 공간 -&gt;가상 주소 공간(virtual address space, VAS)<br>OS가 나 믿고 있는 척해~</p>
@@ -119,8 +117,9 @@
 <p>heap에다가 저장해 놓으면, 함수 호출이 끝나서 stackframe이 사라지더라도 데이터가 남아 있게 된다. 함수의 호출과 생성에 묶이지 않는다는 말이지.<br>free(x) —&gt;이거 하면 heap영역의 메모리 해제 가능. 즉 내가 원하는 시점에 해제 가능.</p>
 <p>—-메모리 누수란(memory leak)(heap의 단점 중 하나)—-<br>stackframe이 사라지면서 가리키고 있던 것이 사라지고..프로그램이 끝날 때까지 어떤 것도 지울 수 데이터가 쌓이는 것.<br>heap에 할당은 되어있는데 소멸은 안되는 상태.<br>언어차원에서 지원하는 garbage collector가 메모리 누수를 막음.</p>
 <hr>
-<p>다음주 월요일까지<br>visual studio code깔기<br>다음주 금요일까지</p>
-<h2 id="우분투"><a href="#우분투" class="headerlink" title="우분투"></a>우분투</h2><p>**heap의 단점:<br>1.메모리누수(memory leak)<br>2.느리다(malloc이 느리다)<br>3.메모리 단편화(memory fragmentation): 전체로 봤을 떄 충분하지만 메모리가 쪼개져 있어서 메모리를 할당하기 힘들거나 찾는데 오래 걸리는 많은 어려움이 있다.</p>
+<p>다음주 월요일까지<br>visual studio code깔기<br>다음주 금요일까지<br>우분투</p>
+<hr>
+<p>**heap의 단점:<br>1.메모리누수(memory leak)<br>2.느리다(malloc이 느리다)<br>3.메모리 단편화(memory fragmentation): 전체로 봤을 떄 충분하지만 메모리가 쪼개져 있어서 메모리를 할당하기 힘들거나 찾는데 오래 걸리는 많은 어려움이 있다.</p>
 <p>stack은 왜 빠른데?..<br>-&gt;메모리 할당 주소를 찾을 필요가 없다(stack pointer가 가리키고 있기 때문에 그 위에 그냥 쌓으면 됨)-&gt;speed가 엄청나게 빠르다.</p>
 <p>heap은 왜 느린데?<br>double linked list개념..<br>malloc();하면 OS가 heap에 쌓을 때..헤더마다 OS가 찾아가서 너 비어있어? 물어봄..돌아다니다가 빈 곳 찾음.</p>
 <p>메모리 단편화(memory fragmentation)이란?<br>-&gt;8byte를 넣으려는데 2+4+4=10 byte같은 공간이 heap있다 하더라도 넣을 수가 없다. 이런 현상을 memory fragmentation.</p>
@@ -129,12 +128,14 @@
 <p>파이썬은 heap을 쓴다..파이썬은 PyMem Malloc 처럼 OS가 하는 일을 대신할 수 있는 애가 있음. 메모리를 할당하는 OS역할을 하는거지. </p>
 <hr>
 <p>Garbage Collector : 언어차원에서 메모리 관리(heap관리)를 해줄게.<br>-&gt;기법중 하나가 : reference counter(파이썬은 이거 함): reference counter가 0이 되면 지워줌.</p>
-<p>a = “I am your F!”<br>import sys<br>sys.getrefcount(a)<br>b=a<br>sys.getrefcount(a)<br>c=b<br>sys.getrefcount(c)<br>c=10<br>sys.getrefcount(a)<br>del b<br>sys.getrefcount(a)<br>a=1<br>sys.getrefcount(a)<br>b=2<br>sys.getrefcount(b)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = &quot;I am your F!&quot;</span><br><span class="line">import sys</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">b=a</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">c=b</span><br><span class="line">sys.getrefcount(c)</span><br><span class="line">c=10</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">del b</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">a=1</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">b=2</span><br><span class="line">sys.getrefcount(b)</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="가상메모리"><a href="#가상메모리" class="headerlink" title="가상메모리"></a>가상메모리</h2><p>virtual_memory.md 참조</p>
 <p>virtual_memory.pdf 그림 참조</p>
 <p>virtual address space이란?</p>
-<h2 id="user영역"><a href="#user영역" class="headerlink" title="user영역"></a>user영역</h2><p>kernel영역</p>
+<p>user영역</p>
+<hr>
+<p>kernel영역</p>
 <hr>
 <p>page란?</p>
 <p>VAS의 주소 공간 4G을 4096byte단위로 쪼갬 그 하나를 page라 함.<br>32bit computer에서..</p>
@@ -167,14 +168,16 @@
 <p>결국 page file은 victim page만 모여 있는 곳이 되지.</p>
 <p>가상메모리 = RAM + page file(짜가)</p>
 <p>이 과정을 paging</p>
-<h2 id="virtual-memory-md-참조"><a href="#virtual-memory-md-참조" class="headerlink" title="virtual_memory.md 참조"></a>virtual_memory.md 참조</h2><p>thrashing :</p>
+<p>virtual_memory.md 참조</p>
+<hr>
+<p>thrashing :</p>
 <p>page 교체가 필요하지만 이미 활발히 사용되는 페이지들만으로 이루어져 있으므로 어떤 페이지가 교체되던 바로 다시 page 교체가 필요한 상황에서 지속적으로 page fault가 발생하고 교체된 page는 얼마<br>지나지 않아 다시 읽어올 필요가 있게 되는 것이 무한히 반복하는 상태</p>
 <p>실행은 안되면서 page out은 무한 반복상황. 프로그램은 작동되는 상태.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj4bjuw0003ee2i93yrx7wh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj5nvlv0002am2is9vl5poa" class="article-share-link">Share</a>
       
       
     </footer>

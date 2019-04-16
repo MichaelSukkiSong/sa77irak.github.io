@@ -88,16 +88,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>day10</p>
-<h3 id="list의-참조-shallow-copy-deep-copy"><a href="#list의-참조-shallow-copy-deep-copy" class="headerlink" title="list의 참조,shallow copy,deep copy"></a>list의 참조,shallow copy,deep copy</h3><h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br>li=[1,2,3]<br>li2 = li  &lt;-참조한 것<br>li2.append(4)<br>li2<br>li</p>
-<p>–&gt;참조는 완전히 같은거라 보면 됨.</p>
-<p>**shallow copy<br>li3 = li.copy()<br>li3<br>li3.append(5)<br>li3<br>li<br>li.append([6,7])<br>li<br>li3 = li<br>li3 = li.copy()<br>li3<br>li3[4].append(8)<br>li3<br>li</p>
-<p>–&gt;shallow copy 다른 곳에 만들어진다. </p>
-<p>**deep copy<br>import copy<br>li4 = copy.deepcopy(li)<br>li4<br>li4[4][1]=10<br>li4<br>li</p>
-<p>—&gt;deep copy. 다른곳에 만들어지고 완전히독립적. 내용물 공유 안함.</p>
+<h3 id="list의-참조-shallow-copy-deep-copy"><a href="#list의-참조-shallow-copy-deep-copy" class="headerlink" title="list의 참조,shallow copy,deep copy"></a>list의 참조,shallow copy,deep copy</h3><h2 id="help-list-copy"><a href="#help-list-copy" class="headerlink" title="help(list.copy)"></a>help(list.copy)</h2><p>**참조<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">li=[1,2,3]</span><br><span class="line">li2 = li  &lt;-참조한 것</span><br><span class="line">li2.append(4)</span><br><span class="line">li2</span><br><span class="line">li</span><br></pre></td></tr></table></figure><br>–&gt;참조는 완전히 같은거라 보면 됨.</p>
+<p>**shallow copy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">li3 = li.copy()</span><br><span class="line">li3</span><br><span class="line">li3.append(5)</span><br><span class="line">li3</span><br><span class="line">li</span><br><span class="line">li.append([6,7])</span><br><span class="line">li</span><br><span class="line">li3 = li</span><br><span class="line">li3 = li.copy()</span><br><span class="line">li3</span><br><span class="line">li3[4].append(8)</span><br><span class="line">li3</span><br><span class="line">li</span><br></pre></td></tr></table></figure><br>–&gt;shallow copy 다른 곳에 만들어진다. </p>
+<p>**deep copy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line">li4 = copy.deepcopy(li)</span><br><span class="line">li4</span><br><span class="line">li4[4][1]=10</span><br><span class="line">li4</span><br><span class="line">li</span><br></pre></td></tr></table></figure><br>—&gt;deep copy. 다른곳에 만들어지고 완전히독립적. 내용물 공유 안함.</p>
 <p>—&gt;필기 노트 그림 참고</p>
 <p>#<br>fetch - PC가 가리키고 있던 instruction을 mem-&gt;cpu IR로 가져오는 것<br>decode CU가 IR 을 분석,해석 하는 것<br>execute 실제 연산</p>
-<p>——오늘의 핵심—-<br>1.MMU</p>
-<h2 id="2-logical-address-논리-주소-physical-address-물리-주소"><a href="#2-logical-address-논리-주소-physical-address-물리-주소" class="headerlink" title="2.logical address(논리 주소) physical address(물리 주소)"></a>2.logical address(논리 주소) <->physical address(물리 주소)</-></h2><p>code<br>data         user 영역<br>heap<br>stack</p>
+<p>——오늘의 핵심—-<br>1.MMU<br>2.logical address(논리 주소) <->physical address(물리 주소)</-></p>
+<hr>
+<p>code<br>data         user 영역<br>heap<br>stack</p>
 <p>code<br>data          kernel 영역 -&gt;os가 관리<br>heap<br>stack            </p>
 <p>-&gt;어셈블리어를 통해 직접 kernel 영역을 조작하는 것을 막기 위해 OS가 가운데서 막아줌.</p>
 <p>메모리를 준것 같지만 실제로 준건 아님(우리가 생각할 때는 가상 공간이지민 실제 공간이라 생각하고 코딩하면 됨)<br>OS가 프로세스가 시작될 때 할당해주는 가상 메모리 공간 -&gt;가상 주소 공간(virtual address space, VAS)<br>OS가 나 믿고 있는 척해~</p>
@@ -120,8 +118,9 @@
 <p>heap에다가 저장해 놓으면, 함수 호출이 끝나서 stackframe이 사라지더라도 데이터가 남아 있게 된다. 함수의 호출과 생성에 묶이지 않는다는 말이지.<br>free(x) —&gt;이거 하면 heap영역의 메모리 해제 가능. 즉 내가 원하는 시점에 해제 가능.</p>
 <p>—-메모리 누수란(memory leak)(heap의 단점 중 하나)—-<br>stackframe이 사라지면서 가리키고 있던 것이 사라지고..프로그램이 끝날 때까지 어떤 것도 지울 수 데이터가 쌓이는 것.<br>heap에 할당은 되어있는데 소멸은 안되는 상태.<br>언어차원에서 지원하는 garbage collector가 메모리 누수를 막음.</p>
 <hr>
-<p>다음주 월요일까지<br>visual studio code깔기<br>다음주 금요일까지</p>
-<h2 id="우분투"><a href="#우분투" class="headerlink" title="우분투"></a>우분투</h2><p>**heap의 단점:<br>1.메모리누수(memory leak)<br>2.느리다(malloc이 느리다)<br>3.메모리 단편화(memory fragmentation): 전체로 봤을 떄 충분하지만 메모리가 쪼개져 있어서 메모리를 할당하기 힘들거나 찾는데 오래 걸리는 많은 어려움이 있다.</p>
+<p>다음주 월요일까지<br>visual studio code깔기<br>다음주 금요일까지<br>우분투</p>
+<hr>
+<p>**heap의 단점:<br>1.메모리누수(memory leak)<br>2.느리다(malloc이 느리다)<br>3.메모리 단편화(memory fragmentation): 전체로 봤을 떄 충분하지만 메모리가 쪼개져 있어서 메모리를 할당하기 힘들거나 찾는데 오래 걸리는 많은 어려움이 있다.</p>
 <p>stack은 왜 빠른데?..<br>-&gt;메모리 할당 주소를 찾을 필요가 없다(stack pointer가 가리키고 있기 때문에 그 위에 그냥 쌓으면 됨)-&gt;speed가 엄청나게 빠르다.</p>
 <p>heap은 왜 느린데?<br>double linked list개념..<br>malloc();하면 OS가 heap에 쌓을 때..헤더마다 OS가 찾아가서 너 비어있어? 물어봄..돌아다니다가 빈 곳 찾음.</p>
 <p>메모리 단편화(memory fragmentation)이란?<br>-&gt;8byte를 넣으려는데 2+4+4=10 byte같은 공간이 heap있다 하더라도 넣을 수가 없다. 이런 현상을 memory fragmentation.</p>
@@ -130,12 +129,14 @@
 <p>파이썬은 heap을 쓴다..파이썬은 PyMem Malloc 처럼 OS가 하는 일을 대신할 수 있는 애가 있음. 메모리를 할당하는 OS역할을 하는거지. </p>
 <hr>
 <p>Garbage Collector : 언어차원에서 메모리 관리(heap관리)를 해줄게.<br>-&gt;기법중 하나가 : reference counter(파이썬은 이거 함): reference counter가 0이 되면 지워줌.</p>
-<p>a = “I am your F!”<br>import sys<br>sys.getrefcount(a)<br>b=a<br>sys.getrefcount(a)<br>c=b<br>sys.getrefcount(c)<br>c=10<br>sys.getrefcount(a)<br>del b<br>sys.getrefcount(a)<br>a=1<br>sys.getrefcount(a)<br>b=2<br>sys.getrefcount(b)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = &quot;I am your F!&quot;</span><br><span class="line">import sys</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">b=a</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">c=b</span><br><span class="line">sys.getrefcount(c)</span><br><span class="line">c=10</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">del b</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">a=1</span><br><span class="line">sys.getrefcount(a)</span><br><span class="line">b=2</span><br><span class="line">sys.getrefcount(b)</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="가상메모리"><a href="#가상메모리" class="headerlink" title="가상메모리"></a>가상메모리</h2><p>virtual_memory.md 참조</p>
 <p>virtual_memory.pdf 그림 참조</p>
 <p>virtual address space이란?</p>
-<h2 id="user영역"><a href="#user영역" class="headerlink" title="user영역"></a>user영역</h2><p>kernel영역</p>
+<p>user영역</p>
+<hr>
+<p>kernel영역</p>
 <hr>
 <p>page란?</p>
 <p>VAS의 주소 공간 4G을 4096byte단위로 쪼갬 그 하나를 page라 함.<br>32bit computer에서..</p>
@@ -168,14 +169,16 @@
 <p>결국 page file은 victim page만 모여 있는 곳이 되지.</p>
 <p>가상메모리 = RAM + page file(짜가)</p>
 <p>이 과정을 paging</p>
-<h2 id="virtual-memory-md-참조"><a href="#virtual-memory-md-참조" class="headerlink" title="virtual_memory.md 참조"></a>virtual_memory.md 참조</h2><p>thrashing :</p>
+<p>virtual_memory.md 참조</p>
+<hr>
+<p>thrashing :</p>
 <p>page 교체가 필요하지만 이미 활발히 사용되는 페이지들만으로 이루어져 있으므로 어떤 페이지가 교체되던 바로 다시 page 교체가 필요한 상황에서 지속적으로 page fault가 발생하고 교체된 page는 얼마<br>지나지 않아 다시 읽어올 필요가 있게 되는 것이 무한히 반복하는 상태</p>
 <p>실행은 안되면서 page out은 무한 반복상황. 프로그램은 작동되는 상태.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj4bjuw0003ee2i93yrx7wh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj5nvlv0002am2is9vl5poa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,15 +235,14 @@
 <p>stack pointer : stackframe을 생성하는 얘. stack이라는 segment의 맨 꼭대기.<br>frame pointer(base pointer): stackframe 내에서 변수(data,memory)에 접근할 때 그 기준점이 됨.</p>
 <p>하드웨어 아키텍처는 여기까지. CPU는 끝!<br><a href="https://www.youtube.com/watch?v=cNN_tTXABUA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cNN_tTXABUA</a><br>좋은 영상!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
 <hr>
-<h1 id><a href="#" class="headerlink" title="==================================================================================================="></a>===================================================================================================</h1><p>===================================================================================================</p>
 <h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><p>CS/memory/memory.md<br>CS/memory/memory.pdf</p>
 <p>*메모리 계층구조</p>
 <p>  Register(CPU)<br>   Cache (L1, ,,,)<br>   Memory(RAM)<br>  Hard Disk(SSD)</p>
 <p>-&gt;위로 올라갈수록 빠르다. 위로 올라갈수록 용량이 작다<br>-&gt;한번에 가져올 수는 없다. 각 단계를 거쳐야지만 다른 단계로 갈 수 있다.<br>-&gt;cache에서 reg가져올 떄는 3 cycle, mem에서 reg 가져올 떄는 20cycle.</p>
 <p>*locality(지역성)<br>temporal locality 시간 지역성 :<br>spatial locality 공간 지역성 : </p>
 <p>li = [1, 2, 3, 4, 5]<br>res = 0<br>for e in li:</p>
-<h1 id="temporal-locality-spatial-locality"><a href="#temporal-locality-spatial-locality" class="headerlink" title="temporal locality + spatial locality"></a>temporal locality + spatial locality</h1><pre><code>res += e
-</code></pre><p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
+<p>#temporal locality + spatial locality<br>    res += e</p>
+<p>res += e할 때…..<br>res는 시간 지역성<br>e에는 공간 지역성 이 적용되네~</p>
 <p>cache line: cache에 들어올 때 뭉탱이로 들어옴.<br>cache miss: CPU가 요청했을 때 cache에 없을 때<br>cache hit: CPU가 요청했을 떄 CPU에 요청한 데이터가 있을 때 cache에서 CPU로 바로 data를 줄 수 있을 때</p>
 <p>과학연구 결과 cache hit가 일어날 확률이 기본적으로 95% ㄷ.ㄷ</p>
 <p>gcc와 fbstring 에서 cache miss 내용 이해 가능.</p>
@@ -248,67 +250,13 @@
 <hr>
 <p>내일:<br>RAM을 OS가 어떻게 관리하나.<br>가상메모리(어려움)</p>
 <h2 id="다음주에-OOP"><a href="#다음주에-OOP" class="headerlink" title="다음주에 OOP"></a>다음주에 OOP</h2><h1 id="기존-자료-구조를-이용해-새로운-자료구조를-만드는-것"><a href="#기존-자료-구조를-이용해-새로운-자료구조를-만드는-것" class="headerlink" title="기존 자료 구조를 이용해 새로운 자료구조를 만드는 것"></a>기존 자료 구조를 이용해 새로운 자료구조를 만드는 것</h1><h1 id="어댑터-adapter"><a href="#어댑터-adapter" class="headerlink" title="어댑터(adapter):"></a>어댑터(adapter):</h1><h1 id="컨테이너-container"><a href="#컨테이너-container" class="headerlink" title="컨테이너(container)"></a>컨테이너(container)</h1><p>내부를 이용해 ——&gt;내가 이용하고자 하는 인터페이스를 완성하는 것.<br>                   adapter?</p>
-<p>class Stack:<br>    def <strong>init</strong>(self):<br>        self.container = list()</p>
-<pre><code>def empty(self):
-    &apos;&apos;&apos;
-    s.empty() -&gt; bool
-    만약에 스택에 요소가 있다면 False
-    아니면 True
-    &apos;&apos;&apos;
-    if len(container)==0:
-        return True
-    else:
-        return False    
-
-
-def push(self, data):
-    &apos;&apos;&apos;
-    s.push(data) -&gt; None
-    리스트의 append를 이용해서 구현하세요
-    &apos;&apos;&apos;
-    container.append(data)
-
-def pop(self):
-    &apos;&apos;&apos;
-    s.pop() -&gt; data
-    스택의 맨 꼭대기 값을 반환하면서 삭제
-    리스트의 pop 함수 이용
-    &apos;&apos;&apos;
-    container.pop()
-
-
-def peek(self):
-    &apos;&apos;&apos;
-    s.peek() -&gt;data
-    스택의 맨 꼭대기 값을 반환
-    리스트의 인덱스를 이용해서 구현
-    &apos;&apos;&apos;
-    container[len(container)+1]
-</code></pre><p>——————-내가 해본거-0- ————————–<br>class Stack:</p>
-<pre><code>def __init__(self):
-    self.container = list()
-
-def empty(self):
-
-    if len(self.container)==0:
-        return print(True)
-    else:
-        return print(False)    
-
-def push(self, data):
-    self.container.append(data)
-
-def pop(self):
-    return print(self.container.pop())
-
-def peek(self):
-    return print(self.container[-1])
-</code></pre><p>s = Stack()<br>s.push(1)<br>s.push(2)<br>s.push(3)<br>s.pop()<br>s.empty()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.container = list()</span><br><span class="line"></span><br><span class="line">	def empty(self):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.empty() -&gt; bool</span><br><span class="line">		만약에 스택에 요소가 있다면 False</span><br><span class="line">		아니면 True</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		if len(container)==0:</span><br><span class="line">			return True</span><br><span class="line">		else:</span><br><span class="line">			return False	</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	def push(self, data):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.push(data) -&gt; None</span><br><span class="line">		리스트의 append를 이용해서 구현하세요</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		container.append(data)</span><br><span class="line"></span><br><span class="line">	def pop(self):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.pop() -&gt; data</span><br><span class="line">		스택의 맨 꼭대기 값을 반환하면서 삭제</span><br><span class="line">		리스트의 pop 함수 이용</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		container.pop()</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	def peek(self):</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		s.peek() -&gt;data</span><br><span class="line">		스택의 맨 꼭대기 값을 반환</span><br><span class="line">		리스트의 인덱스를 이용해서 구현</span><br><span class="line">		&apos;&apos;&apos;</span><br><span class="line">		container[len(container)+1]</span><br></pre></td></tr></table></figure>
+<p>——————-내가 해본거-0- ————————–<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Stack:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.container = list()</span><br><span class="line"></span><br><span class="line">    def empty(self):</span><br><span class="line">        </span><br><span class="line">        if len(self.container)==0:</span><br><span class="line">            return print(True)</span><br><span class="line">        else:</span><br><span class="line">            return print(False)	</span><br><span class="line"></span><br><span class="line">    def push(self, data):</span><br><span class="line">        self.container.append(data)</span><br><span class="line"></span><br><span class="line">    def pop(self):</span><br><span class="line">        return print(self.container.pop())</span><br><span class="line"></span><br><span class="line">    def peek(self):</span><br><span class="line">        return print(self.container[-1])</span><br><span class="line"></span><br><span class="line">s = Stack()</span><br><span class="line">s.push(1)</span><br><span class="line">s.push(2)</span><br><span class="line">s.push(3)</span><br><span class="line">s.pop()</span><br><span class="line">s.empty()</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuj4bjvc000uee2izktp7al1" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuj5nvmd000uam2idmvutms6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,8 +293,7 @@ def peek(self):
 <h2 id="def-sumto-start-end-gt-int"><a href="#def-sumto-start-end-gt-int" class="headerlink" title="def sumto(start, end) -&gt;int"></a>def sumto(start, end) -&gt;int</h2><p>def sumto(start, end):<br>    result = (start+end)*(end-start+1) // 2<br>    return result</p>
 <p>def sumto_step(start, end,step):</p>
 <p>*푼 사람 풀이</p>
-<p>1.재귀함수</p>
-<p>def sumto(s,e):<br>    if s==e:<br>        return s<br>    return sumto(s,e-1)+e</p>
+<p>1.재귀함수<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def sumto(s,e):</span><br><span class="line">	if s==e:</span><br><span class="line">		return s</span><br><span class="line">	return sumto(s,e-1)+e</span><br></pre></td></tr></table></figure></p>
 <p>2.터지는걸 인지하고 수학적으로 푼것<br>내가 한 것.</p>
 <hr>
 <h1 id="stack-gt-접시쌓기-data-structure로서의-stack이-있고-memory랑-관련된-stack개념이-있다"><a href="#stack-gt-접시쌓기-data-structure로서의-stack이-있고-memory랑-관련된-stack개념이-있다" class="headerlink" title="stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)"></a>stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)</h1><p>스택이나 큐는  데이터를 일시적으로 저장할 때 많이 쓰는 자료 구조</p>
@@ -362,30 +309,26 @@ def peek(self):
 <p>stack의 경우<br>insert - push<br>search - peek<br>delete - pop<br>이렇게 되징</p>
 <hr>
 <p>visual studio 설치</p>
-<h2 id="다음주까지-듀얼부팅-우분투-깔려-있어야"><a href="#다음주까지-듀얼부팅-우분투-깔려-있어야" class="headerlink" title="다음주까지 듀얼부팅(우분투)깔려 있어야"></a>다음주까지 듀얼부팅(우분투)깔려 있어야</h2><p>data_structure/stack/calculator.pdf 참고</p>
+<p>다음주까지 듀얼부팅(우분투)깔려 있어야</p>
+<hr>
+<p>data_structure/stack/calculator.pdf 참고</p>
 <p>후위표기법 계산(pdf중간부터~): 후위표기법 설명~<br>expression 예제들 해봐라~</p>
 <p>제한 조건:<br>1.입력시 피연산자는 1자리<br>2.정수 연산</p>
 <p>from stack import Stack<br>st = Stack()   #list만들 때 list()만드는 것처럼 빈 스택 만드는 방법</p>
 <p>for ch in ‘322 <em> + 4 - 3 </em> 257 - * +’</p>
 <p>st.push(int(ch))<br>st.isdigit<br>st.pop<br>이런거 쓰기</p>
-<h2 id="그냥-숫자-보고-계산해봄"><a href="#그냥-숫자-보고-계산해봄" class="headerlink" title="그냥 숫자 보고 계산해봄"></a>그냥 숫자 보고 계산해봄</h2><p>후위표기법으로 바꾸는 법 함.<br>빈 리스트와 스택 각 1개씩 필요</p>
-<h2 id="pdf파일-calculator-앞부분-내용"><a href="#pdf파일-calculator-앞부분-내용" class="headerlink" title="pdf파일 calculator 앞부분 내용"></a>pdf파일 calculator 앞부분 내용</h2><p>다음주에 OOP끝날 떄까지는 절차지향으로 해보기</p>
+<p>그냥 숫자 보고 계산해봄</p>
 <hr>
-<h1 id="그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음"><a href="#그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음" class="headerlink" title="그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)"></a>그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</h1><h1 id="example-py"><a href="#example-py" class="headerlink" title="example.py"></a>example.py</h1><p>from stack import Stack</p>
-<p>st = Stack()   #li = list()같은 것</p>
-<p>st.push(1)<br>st.push(2)<br>st.push(3)<br>st.push(4)<br>st.push(5)</p>
-<p>while not st.empty():<br>    data = st.pop()<br>    print(data)</p>
-<h2 id="하드웨어-아키텍처"><a href="#하드웨어-아키텍처" class="headerlink" title="하드웨어 아키텍처"></a>하드웨어 아키텍처</h2><p>CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.<br>    CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)<br>              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </p>
-<pre><code>- Instruction Register (IR) : the instruction register (IR) or current instruction register (CIR) is the part of a CPU&apos;s control unit that holds the instruction currently being executed or decoded
-- Stack pointer :  a computer central processor register whose purpose is to keep track of a call stack
-- base pointer(frame pointer)      
-</code></pre><p>Register를 해야 context switching을 알 수있음.</p>
+<p>후위표기법으로 바꾸는 법 함.<br>빈 리스트와 스택 각 1개씩 필요</p>
+<p>pdf파일 calculator 앞부분 내용</p>
+<hr>
+<p>다음주에 OOP끝날 떄까지는 절차지향으로 해보기</p>
+<hr>
+<h1 id="그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음"><a href="#그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음" class="headerlink" title="그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)"></a>그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</h1><h1 id="example-py"><a href="#example-py" class="headerlink" title="example.py"></a>example.py</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from stack import Stack</span><br><span class="line"></span><br><span class="line">st = Stack()   #li = list()같은 것</span><br><span class="line"></span><br><span class="line">st.push(1)</span><br><span class="line">st.push(2)</span><br><span class="line">st.push(3)</span><br><span class="line">st.push(4)</span><br><span class="line">st.push(5)</span><br><span class="line"></span><br><span class="line">while not st.empty():</span><br><span class="line">    data = st.pop()</span><br><span class="line">    print(data)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="하드웨어-아키텍처"><a href="#하드웨어-아키텍처" class="headerlink" title="하드웨어 아키텍처"></a>하드웨어 아키텍처</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.</span><br><span class="line">	CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)</span><br><span class="line">              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </span><br><span class="line">                          - Instruction Register (IR) : the instruction register (IR) or current instruction register (CIR) is the part of a CPU&apos;s control unit that holds the instruction currently being executed or decoded</span><br><span class="line">                          - Stack pointer :  a computer central processor register whose purpose is to keep track of a call stack</span><br><span class="line">                          - base pointer(frame pointer)      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Register를 해야 context switching을 알 수있음.</p>
 <p>범용 레지스터 EAX EBX …</p>
-<h2 id="메모리-레이아웃-Memory-계층"><a href="#메모리-레이아웃-Memory-계층" class="headerlink" title="메모리 레이아웃 / Memory 계층"></a>메모리 레이아웃 / Memory 계층</h2><pre><code>                       Reg
-locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 데이터가 cache 에 있을 때!
-            Main memory - (RAM)             cache miss 개념: 찾는 데이터가 cache에 없을 때!
-           하드 디스크 (HDD, SSD)
-</code></pre><p>cache: computer memory with short access time used for the storage of frequently or recently used instructions or data<br>locality: programs tend to use data and instructions with addresses near or equal to those have used recently</p>
+<h2 id="메모리-레이아웃-Memory-계층"><a href="#메모리-레이아웃-Memory-계층" class="headerlink" title="메모리 레이아웃 / Memory 계층"></a>메모리 레이아웃 / Memory 계층</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">                                Reg</span><br><span class="line">         locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 데이터가 cache 에 있을 때!</span><br><span class="line">                     Main memory - (RAM)             cache miss 개념: 찾는 데이터가 cache에 없을 때!</span><br><span class="line">                    하드 디스크 (HDD, SSD)</span><br><span class="line"></span><br><span class="line">cache: computer memory with short access time used for the storage of frequently or recently used instructions or data</span><br><span class="line">locality: programs tend to use data and instructions with addresses near or equal to those have used recently</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="memory-segment"><a href="#memory-segment" class="headerlink" title="memory segment"></a>memory segment</h2><p>code seg<br>data seg<br>stack seg(빠름)<br>heap seg(느림)</p>
 <p>data stack heap부분은 변수랑 관련..</p>
 <h1 id="가상메모리-어려움-프로그래머라면-넘어야-할-장벽"><a href="#가상메모리-어려움-프로그래머라면-넘어야-할-장벽" class="headerlink" title="가상메모리(어려움,프로그래머라면 넘어야 할 장벽)"></a>가상메모리(어려움,프로그래머라면 넘어야 할 장벽)</h1><p>OS이론과 하드웨어 아키텍처 이론 모두 들어감.</p>
@@ -397,7 +340,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuj4bjvc000tee2i2p00k7kl" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuj5nvmc000tam2io7gsc1z6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,25 +373,15 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
     <div class="article-entry" itemprop="articleBody">
       
         <p>day7</p>
-<h3 id="closure"><a href="#closure" class="headerlink" title="closure"></a>closure</h3><p>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.</p>
-<p>(중요)###문자와 문자열 -&gt;character set<br>                                  ASCII –&gt;UNICODE –&gt;     utf-8 (웹표준)      &lt;——-엄청 중요!!!!!!!!!!!!!!!!!!!!!!!!!!<br>                                           utf-16<br>                              utf-32</p>
+<h3 id="closure"><a href="#closure" class="headerlink" title="closure"></a>closure</h3><p>JS에서 class를 못만들게 하면서 나온 문법중 하나. 중요도는 떨어짐.<br><blockquote><p>(중요)###문자와 문자열 -&gt;character set<br>                                  ASCII –&gt;UNICODE –&gt;     utf-8 (웹표준)      &lt;——-엄청중요!!!!!!!!!!!!!!!!!!!!!!!!!!<br>                                                           utf-16<br>                                                          utf-32</p>
+</blockquote></p>
 <h2 id="call-by-value-C로-보여만-줄거임-면접-단골"><a href="#call-by-value-C로-보여만-줄거임-면접-단골" class="headerlink" title="call by value         C로 보여만 줄거임, 면접 단골"></a>call by value         C로 보여만 줄거임, 면접 단골</h2><pre><code>call by reference
 
 call by object reference(좀 어려움,(중요))
   (call by assignment)
 </code></pre><h2 id="일주일짜리-프로젝트-계산기-스택-하고"><a href="#일주일짜리-프로젝트-계산기-스택-하고" class="headerlink" title="일주일짜리 프로젝트, 계산기, 스택 하고"></a>일주일짜리 프로젝트, 계산기, 스택 하고</h2><p>(후위 표기법 계산기) 알고리즘만 하고, 와꾸만 알려줌, 이건 절차지향하고 다음주에 OOP할것. 과제이자 프로젝트</p>
 <h3 id="closure-1"><a href="#closure-1" class="headerlink" title="closure"></a>closure</h3><p>함수 내부에 상태 정보를 가지고 있다. 내부에 상태정보를 클로징하고 있다.<br>상태 정보–&gt;내가 사용하려는 함수와 관련 있는 데이터<br>class를 사용할 수 없을 때 주로 씀(이런게 있다 정도, 사용은 거의 안함)</p>
-<h1 id="은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것"><a href="#은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것" class="headerlink" title="은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것"></a>은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것</h1><p>def account(clnt_name, balance):        ——&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.<br>    def change_money(money):<br>        nonlocal balance<br>        balance += money<br>        return (clnt_name, balance)<br>    return change_money</p>
-<p>my_acnt = account(‘greg’, 5000)<br>your_acnt = account(‘john’, 3000)</p>
-<p>type(my_acnt)</p>
-<p>my_acnt.<strong>name</strong> == your_acnt.<strong>name</strong><br>True</p>
-<p>my_acnt.<strong>name</strong><br>‘change_money’</p>
-<p>my_acnt(1000)     —–&gt;input은 같은데 결과값이 다름.<br>(‘greg’, 6000)</p>
-<p>your_acnt(1000)   —–&gt;input은 같은데 결과값이 다름.<br>(‘john’, 4000)</p>
-<p>-&gt;input + 상태정보에 따라 output이 결정됨. 원래 함수는 input따라 output이 결정되는거였지? 이건 이런면에서 다르다 이거야. 이 개념에 따라서 OOP가 나옴.</p>
-<p>my_acnt(-3000)<br>(‘greg’,3000)</p>
-<p>cells = my_acnt.<strong>closure</strong></p>
-<p>for cell in cells:<br>    print(cell.cell_contents)</p>
+<h1 id="은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것"><a href="#은행의-계좌-만들고-있는데…이-함수를-만들면-계좌를-만들-수-있는-것" class="headerlink" title="은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것"></a>은행의 계좌 만들고 있는데…이 함수를 만들면 계좌를 만들 수 있는 것</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">def account(clnt_name, balance):        ------&gt;clnt_name, balance를 상태정보라 하고 이를 free variable라 함..change_money입장에서 글로벌도 아니고 money처럼 local도 아니고 현재의 상태를 가지고 있는 variable.</span><br><span class="line">	def change_money(money):</span><br><span class="line">		nonlocal balance</span><br><span class="line">		balance += money</span><br><span class="line">		return (clnt_name, balance)</span><br><span class="line">	return change_money</span><br><span class="line"></span><br><span class="line">my_acnt = account(&apos;greg&apos;, 5000)</span><br><span class="line">your_acnt = account(&apos;john&apos;, 3000)</span><br><span class="line"></span><br><span class="line">type(my_acnt)</span><br><span class="line"></span><br><span class="line">my_acnt.__name__ == your_acnt.__name__</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line">my_acnt.__name__</span><br><span class="line">&apos;change_money&apos;</span><br><span class="line"></span><br><span class="line">my_acnt(1000)     -----&gt;input은 같은데 결과값이 다름.</span><br><span class="line">(&apos;greg&apos;, 6000)</span><br><span class="line"></span><br><span class="line">your_acnt(1000)   -----&gt;input은 같은데 결과값이 다름.</span><br><span class="line">(&apos;john&apos;, 4000)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt;input + 상태정보에 따라 output이 결정됨. 원래 함수는 input따라 output이 결정되는거였지? 이건 이런면에서 다르다 이거야. 이 개념에 따라서 OOP가 나옴.</span><br><span class="line"></span><br><span class="line">my_acnt(-3000)</span><br><span class="line">(&apos;greg&apos;,3000)</span><br><span class="line"></span><br><span class="line">cells = my_acnt.__closure__</span><br><span class="line"></span><br><span class="line">for cell in cells:</span><br><span class="line">	print(cell.cell_contents)</span><br></pre></td></tr></table></figure>
 <p>===========================================================================</p>
 <h1 id="문자와-문자열-수업자료-character-unicode-부분-꼭-참조"><a href="#문자와-문자열-수업자료-character-unicode-부분-꼭-참조" class="headerlink" title="문자와 문자열(수업자료 character/unicode 부분 꼭 참조)"></a>문자와 문자열(수업자료 character/unicode 부분 꼭 참조)</h1><p>character set </p>
 <p>character encoding (모스 부호)</p>
@@ -473,33 +406,12 @@ call by object reference(좀 어려움,(중요))
 <p>unicode의 경우…<br>‘가’–&gt;0xac00 -&gt;2byte니까..메모리에 그대로 하면 안될까?  1010 1100 0000 0000 이렇게..근데 이렇지 않음.<br>평면이 17개 있기에..2번째 평면부터는 최소 3byte있어야 한다. 평면이 17개면 2byte+4bit만 있으면 모든 평면 커버하겠지.</p>
 <p>encoding 방식(메모리에 저장할 떄의 방식) utf-bit란 뜻임.<br>utf-8  —&gt;1byte, 웹표준,<br>utf-16  –&gt;1차 평면 같은 경우(BMP)는 그냥 그대로 이 숫자들을 0,1 로 바꾸어서 쓰지. ac00을 그대로 0,1로 바꾸어서~ 2byte 16 / 4byte 32<br>utf-32   —-&gt;모든 숫자를 다 4byte로</p>
 <hr>
-<p>a = ‘가’<br>b = a.encode(‘utf8’)<br>type(b)</p>
-<p><class 'bytes'><br>b    —-&gt;0xeab080 즉 3바이트</class></p>
-<p>a.encode(‘utf-16’)  —&gt; ac00 가 00ac로 바뀜(little endian)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = &apos;가&apos;</span><br><span class="line">b = a.encode(&apos;utf8&apos;)</span><br><span class="line">type(b)</span><br><span class="line">&lt;class &apos;bytes&apos;&gt;</span><br><span class="line">b    ----&gt;0xeab080 즉 3바이트</span><br><span class="line"></span><br><span class="line">a.encode(&apos;utf-16&apos;)  ---&gt; ac00 가 00ac로 바뀜(little endian)</span><br></pre></td></tr></table></figure>
 <p>*little endian vs big endian<br>1423 사람이 알아보기 쉽게 앞에서부터 읽는걸 걸 big endian라 하고, 1이 most significant bit<br>3241 컴퓨터는 뒤에서부터 하기에 little endian ,1이 most significant bit</p>
 <p>network로 쏠때는 표준으로 big endian으로 쏘자 라고 약속.</p>
 <p>a.encode(‘cp949’) </p>
 <p>-&gt;encoding 방식 (유니코드 부호화 방식)(굉장히 중요) 코드 포인트가 메모리에 저장되는 다양한 방식</p>
-<p>웹 표준은 utf8<br>utf8에서 한글이 어떻게 변환하는지 볼 것.</p>
-<p>a = ‘가’<br>b = a.encode()  —&gt;부호화<br>b</p>
-<p>b.decode()   —&gt;복구화?</p>
-<p>c = a.encode(‘cp949’)<br>c</p>
-<p>c.decode()<br>error</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>try:<br>    d = c.decode()<br>except UnicodeDecodeError:<br>    d=c.decode(‘cp949’)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d<br>‘가’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><em>**</em>utf8은 endianless (가’의 encoding 과정 수업자료 참고)<br>‘가’의 코드 포인트 만들어서 프로토콜에 따라 진행됨.</p>
+<p>웹 표준은 utf8<br>utf8에서 한글이 어떻게 변환하는지 볼 것.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">a = &apos;가&apos;</span><br><span class="line">b = a.encode()  ---&gt;부호화</span><br><span class="line">b</span><br><span class="line"></span><br><span class="line">b.decode()   ---&gt;복구화?</span><br><span class="line"></span><br><span class="line">c = a.encode(&apos;cp949&apos;)</span><br><span class="line">c</span><br><span class="line"></span><br><span class="line">c.decode()</span><br><span class="line">error</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;try:</span><br><span class="line">	d = c.decode()</span><br><span class="line">except UnicodeDecodeError:</span><br><span class="line">	d=c.decode(&apos;cp949&apos;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;d</span><br><span class="line">&apos;가&apos;</span><br></pre></td></tr></table></figure><br><em>**</em>utf8은 endianless (가’의 encoding 과정 수업자료 참고)<br>‘가’의 코드 포인트 만들어서 프로토콜에 따라 진행됨.</p>
 <h2 id="https-ko-wikipedia-org-wiki-UTF-8"><a href="#https-ko-wikipedia-org-wiki-UTF-8" class="headerlink" title="https://ko.wikipedia.org/wiki/UTF-8"></a><a href="https://ko.wikipedia.org/wiki/UTF-8" target="_blank" rel="noopener">https://ko.wikipedia.org/wiki/UTF-8</a></h2><p>함수의 종류(기준: 함수 정의가 아니라 호출에서의 인자(parameter,argument) 전달 방식)</p>
 <p>call by value<br>-&gt;함수 안에서 인자의 값이 변경되어도, 외부의 변수의 값은 변경되지 않는다<br>call by reference<br>-&gt;stack frame 넘나들 수 있음</p>
 <p>call by obj reference</p>
@@ -524,7 +436,7 @@ call by object reference(좀 어려움,(중요))
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuj4bjvb000see2i4itq1nkh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuj5nvmc000sam2iruypurqo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,46 +542,16 @@ call by object reference(좀 어려움,(중요))
 <p>result = reduce(lambda dic, ch:  …  , li, {})</p>
 <p>result = reduce(lambda dic, ch: dic.update({ch: dic.get(ch,0)+1}) or dic, li, {})</p>
 <h3 id="decorator-데코레이터"><a href="#decorator-데코레이터" class="headerlink" title="decorator(데코레이터)"></a>decorator(데코레이터)</h3><p>쉽게 기능을 추가 할 수 있다.함수를 추가한다.</p>
-<p>from fancy import decofunc</p>
-<p>@decofunc         —–&gt;골뱅이로 부치면 그냥 된다. 위에서부터 아래로 실행된다.<br>@deco2<br>@deco3<br>@deco4<br>def func(a,b):</p>
-<pre><code>return a+b
-</code></pre><hr>
-<h1 id="함수-기능을-대변하는-이름으로"><a href="#함수-기능을-대변하는-이름으로" class="headerlink" title="함수 기능을 대변하는 이름으로"></a>함수 기능을 대변하는 이름으로</h1><p>def outer(org_func):     —&gt;내가 정의하는 함수, function을 매개변수로 받음<br>    def inner(*args, **kwargs):    —-&gt;인자들, 가변인자들</p>
-<pre><code>    #추가하는 기능을 구현한다.
-    print(&apos;added functionalty&apos;)
-    return org_func(*args, **kwargs)  ---&gt;함수실행, unpacking하겠다는 거지.
-return inner  -----&gt;function을 리턴
-</code></pre><p>def func(a,b):<br>    return a+b</p>
-<p>func = outer(func)</p>
-<p>func(10,1)</p>
-<p>func.<strong>name</strong><br>‘inner’</p>
-<p>@outer<br>def func(a,b):<br>    return a+b</p>
-<h2 id="func-10-1"><a href="#func-10-1" class="headerlink" title="func(10,1)"></a>func(10,1)</h2><p>def f(a,b):<br>    return a+b</p>
-<p>def f(a,b):<br>    return a*b</p>
-<p>f(2,7)  —&gt;위에것이 생겼다가 아래것이 덮어버림.function overloading  <-> overriding (?)<br>14</-></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from fancy import decofunc</span><br><span class="line"></span><br><span class="line">@decofunc         -----&gt;골뱅이로 부치면 그냥 된다. 위에서부터 아래로 실행된다.</span><br><span class="line">@deco2</span><br><span class="line">@deco3</span><br><span class="line">@deco4</span><br><span class="line">def func(a,b):</span><br><span class="line">    return a+b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="함수-기능을-대변하는-이름으로"><a href="#함수-기능을-대변하는-이름으로" class="headerlink" title="함수 기능을 대변하는 이름으로"></a>함수 기능을 대변하는 이름으로</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">def outer(org_func):     ---&gt;내가 정의하는 함수, function을 매개변수로 받음</span><br><span class="line">	def inner(*args, **kwargs):    ----&gt;인자들, 가변인자들</span><br><span class="line">		#추가하는 기능을 구현한다.</span><br><span class="line">		print(&apos;added functionalty&apos;)</span><br><span class="line">		return org_func(*args, **kwargs)  ---&gt;함수실행, unpacking하겠다는 거지.</span><br><span class="line">	return inner  -----&gt;function을 리턴</span><br><span class="line"></span><br><span class="line">def func(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">func = outer(func)</span><br><span class="line"></span><br><span class="line">func(10,1)</span><br><span class="line"></span><br><span class="line">func.__name__</span><br><span class="line">&apos;inner&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@outer</span><br><span class="line">def func(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">func(10,1)</span><br><span class="line">--------------------------------------------------</span><br><span class="line"></span><br><span class="line">def f(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">def f(a,b):</span><br><span class="line">	return a*b</span><br><span class="line"></span><br><span class="line">f(2,7)  ---&gt;위에것이 생겼다가 아래것이 덮어버림.function overloading  &lt;-&gt; overriding (?)</span><br><span class="line">14</span><br></pre></td></tr></table></figure>
 <p>Overloading is a concept where a method/function can have multiple calling signatures as compared to just one in non-overloaded method/function. To be specific, number of arguments with which a function can be called with, in python defines overloading in python.<br>Overriding is a concept to redefine the definition of a function in the inheritance hierarchies. This simply means that, if a method is defined in a parent class, and the child class redefines the same method again inside it, that method is said to be overridden.</p>
 <hr>
-<h2 id="데코레이터-다시-보기"><a href="#데코레이터-다시-보기" class="headerlink" title="데코레이터 다시 보기"></a>데코레이터 다시 보기</h2><p>def outer(org_func):    —&gt;org_func는 주니어가 개발한 함수<br>    def inner(<em>args, **kwargs):  —-&gt;<br>        print(“여기에 기능 추가”)<br>        return org_func(</em>args, **kwargs)  —–&gt;namespace 개념 적용..안에 없으니 바깥에서 매개변수 org_func로 찾음<br>    return inner  —&gt;실행이 아니라 반환</p>
-<p>def func(a,b):<br>    return a+b</p>
-<p>func.<strong>name</strong><br>‘func’</p>
-<p>func = outer(func)    —&gt;func는 inner</p>
-<p>func.<strong>name</strong><br>‘inner’</p>
-<p>func(4,5)<br>여기에 기능 추가<br>9</p>
-<p>———–아름답게 하기 위해 아래와 같이 압축시켜 표현———<br>@outer<br>def func(a,b):<br>    return a+b</p>
-<h3 id="타이머-만들어보기"><a href="#타이머-만들어보기" class="headerlink" title="타이머 만들어보기"></a>타이머 만들어보기</h3><p>친구가 만든 함수의 실행시간을 재고싶음</p>
-<p>from functools import wraps</p>
-<p>import time</p>
-<p>def benchmarker(org_func):<br>    @wraps(org_func)<br>    def inner(<em>args, **kwargs):<br>        start = time.time()           —-&gt;현재 시간을 반환.1970년 1월 1일 0시0분 0초부터 지금까지 지난 초수.<br>        result = org_func(</em>args,**kwargs)<br>        elapsed = time.time() - start<br>        print(f’elapsed time : {elapsed: .2f}’)<br>        return result<br>    return inner</p>
-<p>@benchmarker<br>def something(a,b):<br>    time.sleep(5)<br>    return a+b</p>
-<p>something(1,2)</p>
-<p>elapsed time:5.00<br>3</p>
-<h3 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h3><h1 id="callcounter"><a href="#callcounter" class="headerlink" title="callcounter"></a>callcounter</h1><h1 id="어떤-함수를-호출한-횟수를-보여준다"><a href="#어떤-함수를-호출한-횟수를-보여준다" class="headerlink" title="어떤 함수를 호출한 횟수를 보여준다."></a>어떤 함수를 호출한 횟수를 보여준다.</h1><h1 id="func-a-b"><a href="#func-a-b" class="headerlink" title="func(a,b)"></a>func(a,b)</h1><h1 id="–-gt-’5번-호출되었습니다’"><a href="#–-gt-’5번-호출되었습니다’" class="headerlink" title="–&gt;’5번 호출되었습니다’"></a>–&gt;’5번 호출되었습니다’</h1><h1 id="–-gt-15"><a href="#–-gt-15" class="headerlink" title="–&gt; 15"></a>–&gt; 15</h1><p>g_call_num = 0<br>def callcounter(org_func):<br>    pass</p>
-<p>@callcounter<br>def func(a,b):<br>    return a+b</p>
-<p>for _ in range(10):<br>    func(1,2)<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>‘몇번 호출되었습니다’<br>…<br>3                             —-&gt;이런식으로 나오면 됨.</p>
-<p>답:<br>g_call_num = 0</p>
-<p>def callcounter(org_func):<br>    @wraps(org_func)<br>    def inner(<em>args, **kwargs):<br>        global g_call_num<br>        g_call_num+=1<br>        print(f’{g_call_num}번 호출했습니다.’)<br>        return org_func(</em>args, **kwargs)<br>    return inner</p>
-<p>@callcounter<br>def func(a,b):<br>    return a+b</p>
-<p>for _ in range(10):<br>    func(1,2)</p>
+<h2 id="데코레이터-다시-보기"><a href="#데코레이터-다시-보기" class="headerlink" title="데코레이터 다시 보기"></a>데코레이터 다시 보기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">def outer(org_func):    ---&gt;org_func는 주니어가 개발한 함수</span><br><span class="line">	def inner(*args, **kwargs):  ----&gt;</span><br><span class="line">		print(&quot;여기에 기능 추가&quot;)</span><br><span class="line">		return org_func(*args, **kwargs)  -----&gt;namespace 개념 적용..안에 없으니 바깥에서 매개변수 org_func로 찾음</span><br><span class="line">	return inner  ---&gt;실행이 아니라 반환</span><br><span class="line"></span><br><span class="line">def func(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">func.__name__</span><br><span class="line">&apos;func&apos;</span><br><span class="line"></span><br><span class="line">func = outer(func)    ---&gt;func는 inner</span><br><span class="line"></span><br><span class="line">func.__name__</span><br><span class="line">&apos;inner&apos;</span><br><span class="line"></span><br><span class="line">func(4,5)</span><br><span class="line">여기에 기능 추가</span><br><span class="line">9</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-----------아름답게 하기 위해 아래와 같이 압축시켜 표현---------</span><br><span class="line">@outer</span><br><span class="line">def func(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="타이머-만들어보기"><a href="#타이머-만들어보기" class="headerlink" title="타이머 만들어보기"></a>타이머 만들어보기</h3><p>친구가 만든 함수의 실행시간을 재고싶음<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">from functools import wraps</span><br><span class="line"></span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def benchmarker(org_func):</span><br><span class="line">	@wraps(org_func)</span><br><span class="line">	def inner(*args, **kwargs):</span><br><span class="line">		start = time.time()           ----&gt;현재 시간을 반환.1970년 1월 1일 0시0분 0초부터 지금까지 지난 초수.</span><br><span class="line">		result = org_func(*args,**kwargs)	</span><br><span class="line">		elapsed = time.time() - start</span><br><span class="line">		print(f&apos;elapsed time : &#123;elapsed: .2f&#125;&apos;)</span><br><span class="line">		return result	</span><br><span class="line">	return inner</span><br><span class="line"></span><br><span class="line">@benchmarker</span><br><span class="line">def something(a,b):</span><br><span class="line">	time.sleep(5)</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">something(1,2)</span><br><span class="line"></span><br><span class="line">elapsed time:5.00</span><br><span class="line">3</span><br></pre></td></tr></table></figure></p>
+<h3 id="과제"><a href="#과제" class="headerlink" title="과제"></a>과제</h3><h1 id="callcounter"><a href="#callcounter" class="headerlink" title="callcounter"></a>callcounter</h1><h1 id="어떤-함수를-호출한-횟수를-보여준다"><a href="#어떤-함수를-호출한-횟수를-보여준다" class="headerlink" title="어떤 함수를 호출한 횟수를 보여준다."></a>어떤 함수를 호출한 횟수를 보여준다.</h1><h1 id="func-a-b"><a href="#func-a-b" class="headerlink" title="func(a,b)"></a>func(a,b)</h1><h1 id="–-gt-’5번-호출되었습니다’"><a href="#–-gt-’5번-호출되었습니다’" class="headerlink" title="–&gt;’5번 호출되었습니다’"></a>–&gt;’5번 호출되었습니다’</h1><h1 id="–-gt-15"><a href="#–-gt-15" class="headerlink" title="–&gt; 15"></a>–&gt; 15</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">g_call_num = 0</span><br><span class="line">def callcounter(org_func):</span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line">@callcounter</span><br><span class="line">def func(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">for _ in range(10):</span><br><span class="line">	func(1,2)</span><br><span class="line">&apos;몇번 호출되었습니다&apos;</span><br><span class="line">&apos;몇번 호출되었습니다&apos;</span><br><span class="line">&apos;몇번 호출되었습니다&apos;</span><br><span class="line">&apos;몇번 호출되었습니다&apos;</span><br><span class="line">...</span><br><span class="line">3                             ----&gt;이런식으로 나오면 됨.</span><br></pre></td></tr></table></figure>
+<p>답:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">g_call_num = 0</span><br><span class="line"></span><br><span class="line">def callcounter(org_func):</span><br><span class="line">	@wraps(org_func)</span><br><span class="line">	def inner(*args, **kwargs):</span><br><span class="line">		global g_call_num</span><br><span class="line">		g_call_num+=1</span><br><span class="line">		print(f&apos;&#123;g_call_num&#125;번 호출했습니다.&apos;)</span><br><span class="line">		return org_func(*args, **kwargs)</span><br><span class="line">	return inner</span><br><span class="line"></span><br><span class="line">@callcounter</span><br><span class="line">def func(a,b):</span><br><span class="line">	return a+b</span><br><span class="line"></span><br><span class="line">for _ in range(10):</span><br><span class="line">	func(1,2)</span><br></pre></td></tr></table></figure>
 <hr>
 <p>2개 연속으로 있을 경우 독립성 부여하는 방법…</p>
 <p>@benchmarker<br>@callcounter<br>def another_func(a,b):<br>    return a+b</p>
@@ -679,7 +561,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuj4bjvb000ree2i6kcquzzs" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuj5nvmb000ram2iaguw6nh9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -772,7 +654,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuj4bjva000qee2iwj7bxgub" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuj5nvmb000qam2i72m4p2hk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -865,7 +747,7 @@ return inner  -----&gt;function을 리턴
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuj4bjva000pee2i75gtv8zr" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuj5nvma000pam2ix4tfjre2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -964,7 +846,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuj4bjv9000nee2is8hknfn6" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuj5nvm9000nam2iwev7xuem" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1078,7 +960,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuj4bjv4000eee2il9g1vwlr" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuj5nvm4000dam2ij2pwzyp4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1120,7 +1002,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuj4bjuw0002ee2i9k8ahyjw" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuj5nvlu0001am2itma2ti3g" class="article-share-link">Share</a>
       
       
     </footer>

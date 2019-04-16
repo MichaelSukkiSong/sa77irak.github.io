@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Sukki&#39;s Home :D">
 <meta property="og:description" content="day8 면접 출제 문제 작년1~100,000,000 를 모두 더한 값 (for/while문은 안됨.) def sumto(start, end) -&amp;gt;intdef sumto(start, end):    result = (start+end)*(end-start+1) // 2    return result def sumto_step(start, end,ste">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T12:45:58.807Z">
+<meta property="og:updated_time" content="2019-04-16T01:56:59.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wps_day8_memo">
 <meta name="twitter:description" content="day8 면접 출제 문제 작년1~100,000,000 를 모두 더한 값 (for/while문은 안됨.) def sumto(start, end) -&amp;gt;intdef sumto(start, end):    result = (start+end)*(end-start+1) // 2    return result def sumto_step(start, end,ste">
@@ -91,8 +91,7 @@
 <h2 id="def-sumto-start-end-gt-int"><a href="#def-sumto-start-end-gt-int" class="headerlink" title="def sumto(start, end) -&gt;int"></a>def sumto(start, end) -&gt;int</h2><p>def sumto(start, end):<br>    result = (start+end)*(end-start+1) // 2<br>    return result</p>
 <p>def sumto_step(start, end,step):</p>
 <p>*푼 사람 풀이</p>
-<p>1.재귀함수</p>
-<p>def sumto(s,e):<br>    if s==e:<br>        return s<br>    return sumto(s,e-1)+e</p>
+<p>1.재귀함수<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def sumto(s,e):</span><br><span class="line">	if s==e:</span><br><span class="line">		return s</span><br><span class="line">	return sumto(s,e-1)+e</span><br></pre></td></tr></table></figure></p>
 <p>2.터지는걸 인지하고 수학적으로 푼것<br>내가 한 것.</p>
 <hr>
 <h1 id="stack-gt-접시쌓기-data-structure로서의-stack이-있고-memory랑-관련된-stack개념이-있다"><a href="#stack-gt-접시쌓기-data-structure로서의-stack이-있고-memory랑-관련된-stack개념이-있다" class="headerlink" title="stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)"></a>stack-&gt;접시쌓기 (data structure로서의 stack이 있고 memory랑 관련된 stack개념이 있다)</h1><p>스택이나 큐는  데이터를 일시적으로 저장할 때 많이 쓰는 자료 구조</p>
@@ -108,30 +107,26 @@
 <p>stack의 경우<br>insert - push<br>search - peek<br>delete - pop<br>이렇게 되징</p>
 <hr>
 <p>visual studio 설치</p>
-<h2 id="다음주까지-듀얼부팅-우분투-깔려-있어야"><a href="#다음주까지-듀얼부팅-우분투-깔려-있어야" class="headerlink" title="다음주까지 듀얼부팅(우분투)깔려 있어야"></a>다음주까지 듀얼부팅(우분투)깔려 있어야</h2><p>data_structure/stack/calculator.pdf 참고</p>
+<p>다음주까지 듀얼부팅(우분투)깔려 있어야</p>
+<hr>
+<p>data_structure/stack/calculator.pdf 참고</p>
 <p>후위표기법 계산(pdf중간부터~): 후위표기법 설명~<br>expression 예제들 해봐라~</p>
 <p>제한 조건:<br>1.입력시 피연산자는 1자리<br>2.정수 연산</p>
 <p>from stack import Stack<br>st = Stack()   #list만들 때 list()만드는 것처럼 빈 스택 만드는 방법</p>
 <p>for ch in ‘322 <em> + 4 - 3 </em> 257 - * +’</p>
 <p>st.push(int(ch))<br>st.isdigit<br>st.pop<br>이런거 쓰기</p>
-<h2 id="그냥-숫자-보고-계산해봄"><a href="#그냥-숫자-보고-계산해봄" class="headerlink" title="그냥 숫자 보고 계산해봄"></a>그냥 숫자 보고 계산해봄</h2><p>후위표기법으로 바꾸는 법 함.<br>빈 리스트와 스택 각 1개씩 필요</p>
-<h2 id="pdf파일-calculator-앞부분-내용"><a href="#pdf파일-calculator-앞부분-내용" class="headerlink" title="pdf파일 calculator 앞부분 내용"></a>pdf파일 calculator 앞부분 내용</h2><p>다음주에 OOP끝날 떄까지는 절차지향으로 해보기</p>
+<p>그냥 숫자 보고 계산해봄</p>
 <hr>
-<h1 id="그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음"><a href="#그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음" class="headerlink" title="그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)"></a>그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</h1><h1 id="example-py"><a href="#example-py" class="headerlink" title="example.py"></a>example.py</h1><p>from stack import Stack</p>
-<p>st = Stack()   #li = list()같은 것</p>
-<p>st.push(1)<br>st.push(2)<br>st.push(3)<br>st.push(4)<br>st.push(5)</p>
-<p>while not st.empty():<br>    data = st.pop()<br>    print(data)</p>
-<h2 id="하드웨어-아키텍처"><a href="#하드웨어-아키텍처" class="headerlink" title="하드웨어 아키텍처"></a>하드웨어 아키텍처</h2><p>CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.<br>    CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)<br>              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </p>
-<pre><code>- Instruction Register (IR) : the instruction register (IR) or current instruction register (CIR) is the part of a CPU&apos;s control unit that holds the instruction currently being executed or decoded
-- Stack pointer :  a computer central processor register whose purpose is to keep track of a call stack
-- base pointer(frame pointer)      
-</code></pre><p>Register를 해야 context switching을 알 수있음.</p>
+<p>후위표기법으로 바꾸는 법 함.<br>빈 리스트와 스택 각 1개씩 필요</p>
+<p>pdf파일 calculator 앞부분 내용</p>
+<hr>
+<p>다음주에 OOP끝날 떄까지는 절차지향으로 해보기</p>
+<hr>
+<h1 id="그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음"><a href="#그냥-stack-써보는-예제-같은-디렉토리에-stack-py-넣고-하면-조음" class="headerlink" title="그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)"></a>그냥 stack 써보는 예제(같은 디렉토리에 stack.py 넣고 하면 조음)</h1><h1 id="example-py"><a href="#example-py" class="headerlink" title="example.py"></a>example.py</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from stack import Stack</span><br><span class="line"></span><br><span class="line">st = Stack()   #li = list()같은 것</span><br><span class="line"></span><br><span class="line">st.push(1)</span><br><span class="line">st.push(2)</span><br><span class="line">st.push(3)</span><br><span class="line">st.push(4)</span><br><span class="line">st.push(5)</span><br><span class="line"></span><br><span class="line">while not st.empty():</span><br><span class="line">    data = st.pop()</span><br><span class="line">    print(data)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="하드웨어-아키텍처"><a href="#하드웨어-아키텍처" class="headerlink" title="하드웨어 아키텍처"></a>하드웨어 아키텍처</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CPU구조 -ALU(+-*/이미 앞에서 대략 햇지)                     FPU-실수 연산 담당하는 하드웨어로서 CPU에 1개밖에 없음.</span><br><span class="line">	CU                                                     (그래픽 카드는 FPU만 모아 놓은 것. 그래픽 카드의 코어라 불리는게 FPU. FPU가 병렬로 있어서 빠름.)</span><br><span class="line">              Register - Program counter(PC,Instruction Pointer // EIP): 마이크로프로세서(중앙 처리 장치) 내부에 있는 레지스터 중의 하나로서, 다음에 실행될 명령어의 주소를 가지고 있어 실행할 기계어 코드의 위치를 지정한다. </span><br><span class="line">                          - Instruction Register (IR) : the instruction register (IR) or current instruction register (CIR) is the part of a CPU&apos;s control unit that holds the instruction currently being executed or decoded</span><br><span class="line">                          - Stack pointer :  a computer central processor register whose purpose is to keep track of a call stack</span><br><span class="line">                          - base pointer(frame pointer)      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Register를 해야 context switching을 알 수있음.</p>
 <p>범용 레지스터 EAX EBX …</p>
-<h2 id="메모리-레이아웃-Memory-계층"><a href="#메모리-레이아웃-Memory-계층" class="headerlink" title="메모리 레이아웃 / Memory 계층"></a>메모리 레이아웃 / Memory 계층</h2><pre><code>                       Reg
-locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 데이터가 cache 에 있을 때!
-            Main memory - (RAM)             cache miss 개념: 찾는 데이터가 cache에 없을 때!
-           하드 디스크 (HDD, SSD)
-</code></pre><p>cache: computer memory with short access time used for the storage of frequently or recently used instructions or data<br>locality: programs tend to use data and instructions with addresses near or equal to those have used recently</p>
+<h2 id="메모리-레이아웃-Memory-계층"><a href="#메모리-레이아웃-Memory-계층" class="headerlink" title="메모리 레이아웃 / Memory 계층"></a>메모리 레이아웃 / Memory 계층</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">                                Reg</span><br><span class="line">         locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 데이터가 cache 에 있을 때!</span><br><span class="line">                     Main memory - (RAM)             cache miss 개념: 찾는 데이터가 cache에 없을 때!</span><br><span class="line">                    하드 디스크 (HDD, SSD)</span><br><span class="line"></span><br><span class="line">cache: computer memory with short access time used for the storage of frequently or recently used instructions or data</span><br><span class="line">locality: programs tend to use data and instructions with addresses near or equal to those have used recently</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="memory-segment"><a href="#memory-segment" class="headerlink" title="memory segment"></a>memory segment</h2><p>code seg<br>data seg<br>stack seg(빠름)<br>heap seg(느림)</p>
 <p>data stack heap부분은 변수랑 관련..</p>
 <h1 id="가상메모리-어려움-프로그래머라면-넘어야-할-장벽"><a href="#가상메모리-어려움-프로그래머라면-넘어야-할-장벽" class="headerlink" title="가상메모리(어려움,프로그래머라면 넘어야 할 장벽)"></a>가상메모리(어려움,프로그래머라면 넘어야 할 장벽)</h1><p>OS이론과 하드웨어 아키텍처 이론 모두 들어감.</p>
@@ -143,7 +138,7 @@ locality개념---&gt; cache    -----------------&gt; cache hit 개념: 찾는 �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuj4bjvc000tee2i2p00k7kl" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuj5nvmc000tam2io7gsc1z6" class="article-share-link">Share</a>
       
       
     </footer>
