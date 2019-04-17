@@ -65,6 +65,104 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wps-day11-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day11-memo/" class="article-date">
+  <time datetime="2019-04-15T10:44:26.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day11-memo/">wps_day11_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day11</p>
+<h1 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h1><p>pip install openpyxl</p>
+<p>pip list</p>
+<p>pip freeze 로 깔려 있는 것 확인</p>
+<p>import openpyxl</p>
+<hr>
+<p>students=[{‘name’:’greg’, ‘math’:95, ‘literature’: 65, ‘science’: 75},<br>{‘name’:’john’, ‘math’:30, ‘literature’: 55, ‘science’: 45}<br> ….]<br>이런식으로…</p>
+<p>import openpyxl as op<br>dir(op)</p>
+<p>workbook = op.load_workbook(‘exam.xlsx’)</p>
+<p>workbook</p>
+<p>workbook.sheetnames</p>
+<p>ws=workbook.active</p>
+<p>dir(ws)</p>
+<p>g=ws.rows</p>
+<p>keys = next(g)<br>dir(keys[0])</p>
+<p>keys[0].value</p>
+<p>key_list=[]<br>for cell in keys:<br>    key_list.append(cell.value)</p>
+<p>key_list</p>
+<hr>
+<p>*이거 사용</p>
+<p>dic = {}<br>tu1 = (‘name’, ‘math’, ‘liter’, ‘sci’)<br>tu2=(‘greg’,76,5,100)<br>z=zip(tu1,tu2)<br>z<br>for elem in z:<br>    print(elem)</p>
+<p>dic = {k:v for k,v in zip(tu1,tu2)}<br>dic</p>
+<hr>
+<p>students=[]<br>for row in g:<br>    students.append({k:})</p>
+<p><a href="https://github.com/ythwork/CS/blob/master/procedure/exam_openpyxl.ipynb" target="_blank" rel="noopener">https://github.com/ythwork/CS/blob/master/procedure/exam_openpyxl.ipynb</a><br>정답</p>
+<hr>
+<p>선형대수랑 확률은 할 줄 알아야..</p>
+<p>pyenv virtualenv</p>
+<p>(해커가)</p>
+<p>Python –version</p>
+<p>python</p>
+<p>li = []<br>for I in range(1000000000000000000000000000):<br>    li.append(i)</p>
+<p>exit()</p>
+<p>python</p>
+<p>li=[]</p>
+<p>for i in range(1000000000000000000000000):<br>    li.append(i)</p>
+<p>새 터미널 띄워서…(시니어)</p>
+<p>kill -9 5681(제일 처음 나와 있는PID,process ID) -&gt;내가 서비스 하고 있는 서비스만 죽이는 것. 서버를 살려야 하니까..</p>
+<p>(top)화면으로 돌아와서..<br>f<br>Q로 돌아오기</p>
+<p>d누르고 칼럼 바꾸기</p>
+<p>man top<br>/virtual address space</p>
+<p>demand paging(중요 개)</p>
+<p>clear</p>
+<h3 id="stack이-늘어가는-것을-보고-싶자나요"><a href="#stack이-늘어가는-것을-보고-싶자나요" class="headerlink" title="stack이 늘어가는 것을 보고 싶자나요~"></a>stack이 늘어가는 것을 보고 싶자나요~</h3><p>ls</p>
+<p>mkdir test2</p>
+<p>file test2</p>
+<p>cd test2</p>
+<p>vim test.py</p>
+<p>sudo apt-get install vim</p>
+<p>vim test.py</p>
+<p>import time</p>
+<h1 id="recursion"><a href="#recursion" class="headerlink" title="recursion"></a>recursion</h1><p>def func(a):<br>    time.sleep(0.1)<br>    func(a-1)</p>
+<p>func(10)<br>esc누르기<br>:wq 하고 enter</p>
+<p>cat test.py</p>
+<p>python test.py</p>
+<p>(다른 터미널 띄워서)<br>man top<br>man pmap<br>q해서 나오고<br>pmap </p>
+<p>top에서<br>o누르고<br>command = python</p>
+<p>top에서 =누르면 돌아옴</p>
+<p>Pycon / python,linkers, and virtual memory</p>
+<p><a href="https://www.youtube.com/watch?v=twQKAoq2OPE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=twQKAoq2OPE</a></p>
+<p>꼭보기</p>
+<p>리눅스 강의 담주에<br>top좀더 하고..</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day11-memo/" data-id="cjul1iilq00037t2iugj3lxf0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wps-day10-memo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/15/wps-day10-memo/" class="article-date">
@@ -178,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjuj5vdsk0004sc2i4ylwbs87" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day10-memo/" data-id="cjul1iilr00047t2i83jb7ohi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjuj5vdt0000usc2iabjjblj6" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day9-memo/" data-id="cjul1iima000v7t2ivt81xyaj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjuj5vdt0000tsc2i3ja07hoe" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day8-memo/" data-id="cjul1iim9000u7t2i80pw5q06" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,7 +534,7 @@ call by object reference(좀 어려움,(중요))
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjuj5vdsz000ssc2i6vrtmtal" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day7-memo/" data-id="cjul1iim9000t7t2idfvfv4q0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -561,7 +659,7 @@ call by object reference(좀 어려움,(중요))
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjuj5vdsz000rsc2i5acyctqv" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day6-memo/" data-id="cjul1iim8000s7t2ipr02qnaw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -654,7 +752,7 @@ call by object reference(좀 어려움,(중요))
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjuj5vdsy000qsc2id49shp0w" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day5-memo/" data-id="cjul1iim7000q7t2i8eyb11dr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -747,7 +845,7 @@ call by object reference(좀 어려움,(중요))
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjuj5vdsy000psc2ig90ehwr9" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day4-memo/" data-id="cjul1iim8000r7t2ir9e3ly6t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -846,7 +944,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjuj5vdsx000nsc2i6v32d2gj" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day3-memo/" data-id="cjul1iim4000n7t2icj3vpru6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -960,49 +1058,7 @@ print(kwargs)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjuj5vdsr000dsc2i2i9yqzfv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-wps-day1-memo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/15/wps-day1-memo/" class="article-date">
-  <time datetime="2019-04-15T10:15:14.000Z" itemprop="datePublished">2019-04-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/wps-day1-memo/">wps_day1_memo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>day1</p>
-<p>dual booting(bare-metal): HW 위에 window와 linux 동등하게 깔기</p>
-<p>혹은</p>
-<p>HW위에 window(host) linux(guest)</p>
-<p>우분투?</p>
-<p>pyenv-virtualenv 깔기</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjuj5vdsi0002sc2idqwqmwzq" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjul1iilz000f7t2il3itnoxk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1048,6 +1104,10 @@ print(kwargs)
       <ul>
         
           <li>
+            <a href="/2019/04/17/wps-day31-memo/">wps_day31_memo</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/15/wps-day30-memo/">wps_day30_memo</a>
           </li>
         
@@ -1061,10 +1121,6 @@ print(kwargs)
         
           <li>
             <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/15/wps-day26-memo/">wps_day26_memo</a>
           </li>
         
       </ul>
