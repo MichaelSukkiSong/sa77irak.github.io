@@ -65,6 +65,120 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wps-day2-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day2-memo/" class="article-date">
+  <time datetime="2019-04-15T10:32:47.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day2-memo/">wps_day2_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day2</p>
+<p>—–이거 알면 좋은 S/W 엔지니어(by 넥슨)——-</p>
+<p>Recursion(재귀), Index(배열), Sort, Binary Search  (자료구조와 알고리즘을 공부했는가)</p>
+<p>Stack / Heap (메모리 레이아웃 알고 있느냐)</p>
+<p>Process/ Thread (OS &amp;멀티쓰레딩을 구현해봤느냐, thread pool까지 만들어봤니)</p>
+<p>Call by Value / Call by Reference (함수에 대해 잘 아느냐, python은 call by obj ref))</p>
+<p>Native Code (C와 C++ 우리는 안함)</p>
+<p>MVC Architecture (design이야기, Model data, View, Controler //django: MTV)</p>
+<p>Write simple text-based games</p>
+<p>웹dev도 메모리에 대해서 알자</p>
+<p>========================================================================================</p>
+<p>dictionary 구현 방법:</p>
+<p>1.BST</p>
+<p>2.hash table (python은 이걸로 구현함)</p>
+<p>========================================================================================</p>
+<p>파이썬은</p>
+<p>a=10</p>
+<p>a=20 할 시,</p>
+<p>a-&gt;10          (10)</p>
+<p>   20      a-&gt;20</p>
+<p>상수는 immutable임. C에서의 box model이 아님.값 자체가 바뀌는게 아님. 20을 치면 다른 곳에 20이 채워지고 a가 20을 가리킴</p>
+<p>list = [1,2,3,”hi”] 이거 경우 파이썬에서는,</p>
+<p>1,2,3의 경우 근접해 있을 수 있으나, ‘hi’는 동떨어져서 저장될 수도 있음. list=[<em>(포인터),</em>,<em>,</em>] 이런 형태에서 각각의 포인터는 값을 가리킴.</p>
+<p>========================================================================================</p>
+<p>dictionary - view vs list의 차이 느끼기</p>
+<p>========================================================================================</p>
+<p>파이썬에서 false로 간주하는 객체</p>
+<p>False</p>
+<p>None</p>
+<p>“”</p>
+<p>bin(0b1010 } 0b1100)</p>
+<p>XOR</p>
+<p>bin(0b1100 ^ 0b1010)</p>
+<p>shift operator(엄청 빠름)</p>
+<p>1&lt;&lt;1                                0001(2)  왼쪽으로 하나 밈</p>
+<p>2</p>
+<p>1&lt;&lt;2</p>
+<p>4</p>
+<p>1&lt;&lt;3</p>
+<p>8</p>
+<p>10&gt;&gt;1</p>
+<p>5</p>
+<p>10&gt;&gt;2</p>
+<p>2</p>
+<h1 id="맨-마지막에-참조한-객체를-반환"><a href="#맨-마지막에-참조한-객체를-반환" class="headerlink" title="맨 마지막에 참조한 객체를 반환"></a>맨 마지막에 참조한 객체를 반환</h1><p>[1,2] or []</p>
+<p>[1,2] or [3,4]</p>
+<p>[1,2] and [3,4]</p>
+<p>[] and [1,2]</p>
+<h1 id="break문"><a href="#break문" class="headerlink" title="break문"></a>break문</h1><p>만나면 while,for문에서 바로 빠져나옴</p>
+<h1 id="모듈러-연산자"><a href="#모듈러-연산자" class="headerlink" title="모듈러 연산자"></a>모듈러 연산자</h1><p>8%3</p>
+<h1 id="산술연산자"><a href="#산술연산자" class="headerlink" title="산술연산자: +,-,,**,/,//,%,+=,-=,=,**=,"></a>산술연산자: +,-,<em>,**,/,//,%,+=,-=,</em>=,**=,</h1><h1 id="routine-subroutine-procedure-function"><a href="#routine-subroutine-procedure-function" class="headerlink" title="routine, subroutine, procedure, function"></a>routine, subroutine, procedure, function</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func_name(parameter1, paramwter2, ...):</span><br><span class="line"></span><br><span class="line">	local_var=연산</span><br><span class="line"></span><br><span class="line">	ret = ..</span><br><span class="line"></span><br><span class="line">	return ret</span><br></pre></td></tr></table></figure>
+<p>함수 호출시 저장되는? stack frame</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">g_var = 20</span><br><span class="line"></span><br><span class="line">def func(val):</span><br><span class="line"></span><br><span class="line">	val += 100</span><br></pre></td></tr></table></figure>
+<p>func(g_var)</p>
+<p><em>**</em>stack frame의 개념(call by ref, call by val 관련)</p>
+<p>global 변수 —–&gt;20을 가리키고 있음</p>
+<p>함수 호출시 stack frame이 생김. 그 안에 val이 생김</p>
+<p>즉,</p>
+<p>메모리 레이아웃</p>
+<p>func(val)——-&gt;120</p>
+<p>g_var———-&gt;20  글로벌은 얘를 가리킴</p>
+<p><a href="http://pythontutor.com/visualize.html#mode=edit" target="_blank" rel="noopener">http://pythontutor.com/visualize.html#mode=edit</a> 참조</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">g_var=20</span><br><span class="line"></span><br><span class="line">def func():</span><br><span class="line"></span><br><span class="line">	global g_var</span><br><span class="line"></span><br><span class="line">	g_var+=30</span><br></pre></td></tr></table></figure>
+<p>func(g_var)</p>
+<h1 id="함수에서의-namespace-개념"><a href="#함수에서의-namespace-개념" class="headerlink" title="함수에서의 namespace 개념"></a>함수에서의 namespace 개념</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">a=10</span><br><span class="line"></span><br><span class="line">def outer():</span><br><span class="line"></span><br><span class="line">	b=20</span><br><span class="line"></span><br><span class="line">	def inner1():</span><br><span class="line"></span><br><span class="line">		c=30</span><br><span class="line"></span><br><span class="line">		def inner2():</span><br><span class="line"></span><br><span class="line">			d=40</span><br><span class="line"></span><br><span class="line">			nonlocal b</span><br><span class="line"></span><br><span class="line">			b=50</span><br><span class="line"></span><br><span class="line">			print(b)  #값을 변경하지 않고 접근만 함 print는</span><br><span class="line"></span><br><span class="line">		inner2()</span><br><span class="line"></span><br><span class="line">		print(b)</span><br><span class="line"></span><br><span class="line">	inner1()</span><br><span class="line"></span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
+<p>non local을 찾아갈 때 안쪽에서부터 바깥쪽으로 하나씩 찾아감. </p>
+<p>nonlocal과 global의 차이?</p>
+<p>==================================================</p>
+<h1 id="bubble-sort"><a href="#bubble-sort" class="headerlink" title="bubble sort"></a>bubble sort</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def bubble_sort(li):</span><br><span class="line"></span><br><span class="line">	n = len(li)</span><br><span class="line"></span><br><span class="line">	for i in range(n-1):</span><br><span class="line"></span><br><span class="line">		for j in range(n-1-i):</span><br><span class="line"></span><br><span class="line">			if li[j] &gt; li[j+1]:</span><br><span class="line"></span><br><span class="line">				li[j], li[j+1] = li[j+1], li[j]</span><br><span class="line"></span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<p>n=4일 때,</p>
+<p>총 3(=4-1)번 돌아야 함</p>
+<pre><code>j의 값
+</code></pre><p>1번째-&gt;3번 0 1 2</p>
+<p>2번째-&gt;2번 0 1</p>
+<p>3번째-&gt;1번 0</p>
+<p>i=0   j=3  = 4-1-0</p>
+<p>i=1   j=2  = 4-1-1</p>
+<p>i=2   j=1  = 4-1-2</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day2-memo/" data-id="cjus605lm000c9t2iw6emwdg9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wps-day1-memo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/15/wps-day1-memo/" class="article-date">
@@ -97,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjul28ur60003dc2i614kacnu" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day1-memo/" data-id="cjus605le00029t2i3wptifnh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/04/hello-world/" data-id="cjul28uqz0000dc2i73xw6293" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/04/hello-world/" data-id="cjus605ld00019t2i48qgdmhg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/03/My-new-hexo-post/" data-id="cjul28ur30001dc2ir77hq1l8" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/03/My-new-hexo-post/" data-id="cjus605l900009t2iflnqexgu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,6 +341,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/22/wps-django-day1-memo/">wps_django_day1_memo</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/17/wps-day31-memo/">wps_day31_memo</a>
           </li>
         
@@ -240,10 +358,6 @@
         
           <li>
             <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
           </li>
         
       </ul>

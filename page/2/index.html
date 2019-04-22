@@ -65,6 +65,118 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wps-day22-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/15/wps-day22-memo/" class="article-date">
+  <time datetime="2019-04-15T10:45:02.000Z" itemprop="datePublished">2019-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/wps-day22-memo/">wps_day22_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>day22</p>
+<p>CS/linux/</p>
+<p>network.md<br>security.md<br>는 다음에</p>
+<hr>
+<p>access.md<br>apt_tar.md<br>booting.md<br>filesystem.md<br>memory.md<br>top.md<br>user.md</p>
+<hr>
+<p>access.md<br><a href="https://eunguru.tistory.com/90" target="_blank" rel="noopener">https://eunguru.tistory.com/90</a></p>
+<p>mkdir linux_example<br>cd linux_example<br>touch test.txt<br>ls -l<br><em>touch:파일이 없다면 만들고 , 있다면 최종 수정 일짜 변환해줌
+</em>ln  –&gt;link의 약자 hard link: 같은 하드 디스크 안에만 가능<br>*ln -s –&gt;symbolic link: 달라도 가능<br>ln test.txt test2.txt<br>ls<br>ls -i<br>ls -s test.txt t<br>ls<br>ls -l<br>ls -i</p>
+<p>ls -F –&gt;색깔과 표시 보기</p>
+<p>file top_test</p>
+<p>file xxx.py</p>
+<hr>
+<p>vim test.c<br>cat test.c</p>
+<p>which gcc<br>sudo apt-get install gcc<br>gcc -c test.c<br>ls<br>file test.o<br>gcc -o test test.o<br>ls<br>./test<br>vim test.py<br>—–test.py————–<br>s=0<br>for i in range(1000000000):</p>
+<pre><code>s+=i
+</code></pre><hr>
+<p>cat test.py<br>python test.py</p>
+<hr>
+<p>ls - l test.txt<br>chmod 777 test.txt<br>ls -l test.txt</p>
+<p>chmod u+r test.txt –&gt;유저한테 read주기<br>ls -l test.txt</p>
+<p>chmod g+w test.txt–&gt;그룹한테 w주기<br>ls -l test.txt</p>
+<p>chmod o=rwx test.txt –&gt;other한테 다 주기</p>
+<hr>
+<p>SetUID(넘김 구글링해)</p>
+<p>SetGID(넘김 구글링해)</p>
+<p>sticky bit(존재 자체만 알기)</p>
+<p>chmod 1~</p>
+<hr>
+<p>apt_tar.md</p>
+<p>tar(tape archive~): 파일들을 묶어 놓는 것. 압축은 아님.기초 중에 기초 명령 외우기!</p>
+<p>which tar –&gt;tar이라는 명령어가 위치해 있는 폴더</p>
+<p>tar cvf test.tar (묶을 파일들 싹 나열)</p>
+<p>tar tvf test.tar –&gt;묶여 있는 내용 보기</p>
+<p>tar xvf test.tar –&gt;묶여 있는거 풀기</p>
+<p>tar cvzf test2.tar test.c test.o test.py test.txt test2.txt –&gt;묶고 압축까지 하기</p>
+<p>tar xvf test2.tar –&gt;지가 알아서 압출 유무 판단 후 푼다.</p>
+<p>gzip test.tar –&gt;압축 시킴. 그러면 test.tar.gz처럼 됨.</p>
+<p>gunzip test.tar.gz –&gt;하면 풀림.</p>
+<p>zcat test.tar.gz –&gt;묶여 있는 모든 파일 다 보여줌</p>
+<p>chmod 755 test.txt<br>sudo echo “I am your father” &gt;&gt; test.txt –&gt;이 문자열을 여기에 집어넣어라(redirection)<br>cat test.txt</p>
+<p>tar uvf test.tar test.txt </p>
+<p>cvf 만드는거<br>xvf 푸는거<br>tvf 내용 보는거<br>–&gt;3개 정도만 기억</p>
+<hr>
+<h2 id="booting-md-이론적인-것만-간략히"><a href="#booting-md-이론적인-것만-간략히" class="headerlink" title="booting.md 이론적인 것만 간략히"></a>booting.md 이론적인 것만 간략히</h2><p>filesystem.md - linux mount<br>개발자 기본. 간략히만 함</p>
+<p>mount<br>umount /dev/sdc1(선생님은 일케 써있었음)<br>mount(로 다시 확인해서 업는거 확인)</p>
+<p>sudo fdik -l</p>
+<p>sudo fdisk /dev/sdc</p>
+<p>mount -t vfat /dev/sdc1 /mnt</p>
+<p>add disk</p>
+<p>sudo mke2fs -t ext4 /dev/sdc1</p>
+<p>sudo mount /dev/sdc1 /mnt<br>cd /nt<br>ls<br>cd</p>
+<hr>
+<p>memory.md</p>
+<p>page cache<br>dirty page</p>
+<hr>
+<p>user.md</p>
+<p>cat /etc/passwd</p>
+<p>sudo service mysql status</p>
+<p>sudo useradd -m -d /home/john john<br>cd /home<br>cat /etc/passwd<br>sudo passwd john<br>sudo cat /etc/shadow</p>
+<p>id<br>su john<br>1234<br>id</p>
+<p>exit<br>id<br>sudo userdel -r john<br>sudo useradd -s /bin/bash -m -d /home/john john<br>sudo passwd john<br>1234<br>su john<br>1234<br>ls<br>cd<br>touch test.txt<br>ls -l test.txt<br>mkdir test_dir<br>ls<br>ls -l<br>cd test_dir<br>ls<br>touch test2.txt<br>ls<br>cd ..<br>ls -l<br>su greg<br>sudo chown greg test.txt<br>sudo chown :greg test.txt<br>ls -l<br>sudo groupadd wps10<br>cat /etc/group<br>sudo gpasswd -a greg wps10<br>cat /etc/group<br>sudo chown -R greg:wps10 test_dir<br>ls -l<br>cd test_dir<br>ls -l</p>
+<p>su john<br>id<br>su greg<br>sudo gpasswd wps10<br>su john<br>id<br>newgrp wps10<br>abcd<br>id<br>su greg<br>sudo groupdel wps10<br>cat /etc/group<br>sudo userdel -r john<br>cat /etc/passwp</p>
+<hr>
+<p>우분투 리눅스(책 추천,이종원)</p>
+<p>내일 네트워크<br>1.network - osi 7계층 <-> TCP/IP 4계층<br>                 IP -&gt; ARP<br>                 IP -&gt; NAT -&gt; NAPT</-></p>
+<pre><code>TCP(sliding winsow(중요))/UDP의 차이
+port의 개념
+
+TCP-threeway hand-shaking
+     -seq#, Ack# 는 어떤 의미
+</code></pre><p>모레..<br>2.socket programming<br> -&gt;echo server/client   –&gt;socket의미 TCP연결 의미 socket과 port의 상관관계</p>
+<p>3.HTTP</p>
+<p>금요일은 DB…<br>mariadb<br>표준 SQL</p>
+<hr>
+<p>stack으로 미로찾기<br>트리<br>트리 순회<br>BST<br>red black tree<br>b tree?<br>graph<br>minimal~<br>shortest path~벨만코드 다이스트라~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day22-memo/" data-id="cjus605m1000f9t2i0diwvjb4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wps-day21-memo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/15/wps-day21-memo/" class="article-date">
@@ -99,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day21-memo/" data-id="cjul28urh000hdc2i77980j2f" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day21-memo/" data-id="cjus605m0000e9t2ia6mqy5jr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day20-memo/" data-id="cjul28ure000edc2inmnvirml" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day20-memo/" data-id="cjus605m2000g9t2i47no84zk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day19-memo/" data-id="cjul28urd000cdc2iasp0upi4" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day19-memo/" data-id="cjus605lz000d9t2ia6mwkmel" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day18-memo/" data-id="cjul28urb000adc2i6gtjvl24" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day18-memo/" data-id="cjus605ll000b9t2iv4nxj6pb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -382,7 +494,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day17-memo/" data-id="cjul28urc000bdc2iwd8nr4cp" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day17-memo/" data-id="cjus605lk000a9t2ivedrn2ns" class="article-share-link">Share</a>
       
       
     </footer>
@@ -422,7 +534,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day16-memo/" data-id="cjul28ura0009dc2ifn8enrg5" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day16-memo/" data-id="cjus605lj00099t2i8dg6uk6t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -478,7 +590,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day15-memo/" data-id="cjul28ur90008dc2idkk9cd89" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day15-memo/" data-id="cjus605lj00089t2iaotcgupw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -561,7 +673,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day14-memo/" data-id="cjul28ur90007dc2in9ash0h1" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day14-memo/" data-id="cjus605li00079t2if1vce9rw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -599,53 +711,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day13-memo/" data-id="cjul28ur80006dc2i59iimkuy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-wps-day12-memo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/15/wps-day12-memo/" class="article-date">
-  <time datetime="2019-04-15T10:44:29.000Z" itemprop="datePublished">2019-04-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/wps-day12-memo/">wps_day12_memo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>day12</p>
-<p>1.average(평균)<br>씨그마 elem  /  elem 수</p>
-<p>2.variation(분산)<br>avg&lt;-평균<br>씨그마 (element-avg)^2  /  elem 수 = </p>
-<p>3.standard-diviation(표준 편차)<br>var&lt;-분산<br>std = 루트(var)</p>
-<hr>
-<p>종 모양 곡선<br>정규분포</p>
-<p>분산 or 표준편차 -&gt; 분산도를 나타낼 때 필요</p>
-<hr>
-<p>절차지향 프로그램 실습~</p>
-<p>메인~<br>path~</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day12-memo/" data-id="cjul28ur70005dc2iskqm42sw" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day13-memo/" data-id="cjus605lh00069t2igaw2artp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,6 +757,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/22/wps-django-day1-memo/">wps_django_day1_memo</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/17/wps-day31-memo/">wps_day31_memo</a>
           </li>
         
@@ -704,10 +774,6 @@
         
           <li>
             <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
           </li>
         
       </ul>

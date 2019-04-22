@@ -65,6 +65,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-wps-django-day1-memo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/22/wps-django-day1-memo/" class="article-date">
+  <time datetime="2019-04-22T09:34:22.000Z" itemprop="datePublished">2019-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/wps-django-day1-memo/">wps_django_day1_memo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="송종근-강사님-소개"><a href="#송종근-강사님-소개" class="headerlink" title="송종근 강사님 소개"></a>송종근 강사님 소개</h1><h2 id="W3스쿨"><a href="#W3스쿨" class="headerlink" title="W3스쿨"></a>W3스쿨</h2><h2 id="책-추천"><a href="#책-추천" class="headerlink" title="책 추천:"></a>책 추천:</h2><p>모던 웹 디자인을 위한 HTML5+CSS3 입문 (윤인성)<br>모던 웹을 위한 JavaScript+JQuery 입문 (윤인성)</p>
+<h2 id="파이썬-책-추천"><a href="#파이썬-책-추천" class="headerlink" title="파이썬 책 추천:"></a>파이썬 책 추천:</h2><p>전문가를 위한 파이썬<br>러닝 파이썬 세트-&gt;바이블급,2권<br>파이썬 코딩 도장 -&gt;따라하기, 실습사이트 식,비전공자한테 책,깊음.</p>
+<h3 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h3><p>다른 서버 언어들도 공부</p>
+<p>Client의 종류는 여러가지임-모바일 웹 데스크톱 등등…</p>
+<p>API-우리한테 맞춰줘! 라는 식으로 하는 것.<br>오픈 API 모양새 참고.네이버 구글 카카오 많이 봐서 흉내내보기.</p>
+<p>백앤드는 잘 처리할거야. 빠르게. 동시에 잘.하는지의 관점.<br>프론트는 잘 보여야.</p>
+<p>커뮤데이,세미나,오프모임 많이 나가서 무엇을 공부할지 즉 기업별 빈틈을 아는 것이 좋음.</p>
+<p>Infra는 어디 위에서 돌아가냐 임. AWS LINUX . CDN(Content Delivery Network)같은것.<br>클라우드는 AWS GCP AZURE  수업 때 AWS했으면 다른 것도 봐보기.</p>
+<p>5월초까진 만들거 확정하기.해외/국내</p>
+<p><a href="https://docs.djangoproject.com" target="_blank" rel="noopener">https://docs.djangoproject.com</a></p>
+<p>pycharm 추천- 파이썬 장고 할거면</p>
+<h1 id="일반적인-작업-flow"><a href="#일반적인-작업-flow" class="headerlink" title="일반적인 작업 flow:"></a>일반적인 작업 flow:</h1><ol>
+<li>파이썬 프로젝트 생성</li>
+<li>가상환경 생성</li>
+<li>장고 설치</li>
+<li>장고 프로젝트 생성</li>
+<li>장고 프로젝트 내부에서 할일들 진행</li>
+</ol>
+<h1 id="가상환경-virtual-environment-줄여서-virtualenv"><a href="#가상환경-virtual-environment-줄여서-virtualenv" class="headerlink" title="가상환경(virtual environment, 줄여서 virtualenv)"></a>가상환경(virtual environment, 줄여서 virtualenv)</h1><p>작업하고 있는 프로젝트의 코드를 넣을 수 있는 일종의 전용 상자.<br>이를 이용해 서로 다른 프로젝트마다 코드가 섞이지 않도록 유지 가능.<br>개발 환경을 깔끔하게 관리.<br>생성할 곳만 정하면 이를 만들 수 있다.</p>
+<h1 id="장고걸스-누군가가-서버에-웹사이트를-요청하면-어떤일이-벌어지는지-요약"><a href="#장고걸스-누군가가-서버에-웹사이트를-요청하면-어떤일이-벌어지는지-요약" class="headerlink" title="(장고걸스) 누군가가 서버에 웹사이트를 요청하면 어떤일이 벌어지는지 요약."></a>(장고걸스) 누군가가 서버에 웹사이트를 요청하면 어떤일이 벌어지는지 요약.</h1><p>웹 서버에 요청이 오면 장고로 전달 됨.<br>장고 urlresolver는 웹 페이지의 주소를 가져와 무엇을 할지 확인.<br>urlresolver는 웹 사이트 주소인 URL를 통해 이해함.<br>장고는 패턴 목록을 가져와 URL과 맞는지 처음부터 하나씩 대조해 식별함.<br>만약 일치하는 패턴이 있다면 장고는 해당 요청을 관련됨 함수(view)에 넘김.<br>만약 데이터 수정 요청이 온다면 view함수는 수정할 수 있는 권한이 있는지 확인하고 나서 수정을 하고 답장을 주는데 장고는 그 답장을 사용자의 웹브라우저에 보내주는 역할을 함.</p>
+<h2 id="python3랑-python2랑-충돌해서-버츄얼-실행-안된-오류-해결"><a href="#python3랑-python2랑-충돌해서-버츄얼-실행-안된-오류-해결" class="headerlink" title="python3랑 python2랑 충돌해서 버츄얼 실행 안된 오류 해결"></a>python3랑 python2랑 충돌해서 버츄얼 실행 안된 오류 해결</h2><h1 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h1><p>작업 폴더를 만든다.</p>
+<p>pip 버전을 최신으로 업그레이드<br>pip3 install virtualenv<br>pip3</p>
+<p>(작업 폴더로 이동해) 가상환경 설치<br>pip3 install virtualenv</p>
+<p>venv라는 가상환경 만듬(venv라는 디렉토리가 생기고 그 안에 디렉토리와 파일들 있음)<br>python3 -m virtualenv venv</p>
+<p>venv 가동(새로운 python환경 생성 확인)<br>source venv/bin/activate</p>
+<p>장고 설치<br>pip install django</p>
+<p>장고 프로젝트 생성(프로젝트 이름 후 .을 입력하여 현재 디렉토리에 장고를 설치하라고 알려주기), 생성하면 해당 이름을 가진 디렉토리가 생성됨.<br>django-admin startproject [프로젝트 이름] .</p>
+<h3 id="django-admin-startproject-이름"><a href="#django-admin-startproject-이름" class="headerlink" title="django-admin startproject [이름]"></a>django-admin startproject [이름]</h3><p>django-admin: 장고 매니저<br>startproject: 프로젝트를 만들겠다라는 옵션<br>myside, config: 프로젝트 이름, 혹은 설정 폴더 이름<br>config.: 현재 디렉토리에 설정 디렉토리만 만들겠다는 의미</p>
+<h3 id="python-manage-py-명령어"><a href="#python-manage-py-명령어" class="headerlink" title="python manage.py [명령어]"></a>python manage.py [명령어]</h3><p>$ python manage.py runserver [ip]:[포트번호]<br>내 컴퓨터에서 임시로 홈페이지를 출력할 때 쓰는 명령<br>소스코드 변경이 자동으로 반영되나 폴더나 파일을 추가 생성한 경우는 자동반영이 불가.<br>포트번호 생략시 기본 8000<br>ip 생략시 기본 127.0.0.1</p>
+<h1 id="만들어지는-파일들에-대해"><a href="#만들어지는-파일들에-대해" class="headerlink" title="만들어지는 파일들에 대해"></a>만들어지는 파일들에 대해</h1><p>venv 디렉토리:<br>가상환경 생성시 만들어지는 디렉토리</p>
+<p>manage.py:<br>사이트 관리를 도와주는 역할</p>
+<h2 id="프로젝트-이름명을-가진-디렉토리-내의-파일들-설명"><a href="#프로젝트-이름명을-가진-디렉토리-내의-파일들-설명" class="headerlink" title="프로젝트 이름명을 가진 디렉토리 내의 파일들 설명"></a>프로젝트 이름명을 가진 디렉토리 내의 파일들 설명</h2><p>settings.py:<br>웹사이트 설정이 있는 파일<br>설정값을 저장하는 파일.<br>크리티컬한 정보는 운영체제 환경변수 값을 사용하거나, 별도 파일에서 불러온다.</p>
+<p>urls.py:<br>urlresolver가 사용하는 패턴 목록을 포함.<br>주소 설계 내용을 저장하는 곳. (파일을 여러개 나누는 것을 분기를 나눈다고 한다. 이를 라우팅한다고 한다.)</p>
+<p>wsgi.py:<br>웹 서버: Apache, NginX- 웹 서비스의 집사, 캐셔, 안내데스크 역할을 한다.<br>Tomcat<br>CGI →FastCGI → mod??? : 맥도날드에서 주문이 들어오면 켜서가 주문이 들어온만큼 자고 있는 크루를 깨워서 햄버거를 만들게 시킴. 이러면 깨우는 시간, 주문이 많으면 크루가 필요하여 효율이 좋지 않음.<br>Middleware → WSGI: Gunicorn, UWSGI(이 파일을 메모리에 항상 상주 시킴)<br>웹 어플리케이션: 메모리 상주(장고)<br>웹 어플리케이션 서버: 장고 같은 스크립트로 작성된 어플리케이션</p>
+<h1 id="앱"><a href="#앱" class="headerlink" title="앱"></a>앱</h1><p>장고에서 앱은 재사용을 위해서 만드는 기능 단위를 말한다.<br>어떤 페이지나 기능을 만들기 위해서는 앱을 만들고 그 안에 만든다.</p>
+<h2 id="python-manage-py-startapp-앱이름"><a href="#python-manage-py-startapp-앱이름" class="headerlink" title="python manage.py startapp [앱이름]"></a>python manage.py startapp [앱이름]</h2><p>앱을 만들면 앱 이름으로 폴더가 생성됨</p>
+<h3 id="앱-폴더안에-있는-파일들"><a href="#앱-폴더안에-있는-파일들" class="headerlink" title="앱 폴더안에 있는 파일들"></a>앱 폴더안에 있는 파일들</h3><p>migrations 폴더 :<br>DB 변경 사항 이력 파일들. 이전 상태로 돌아가거나 하는 것이 가능하다.</p>
+<p>admin.py :<br>모델을 관리하기 위해 등록, 관리자 페이지 커스터마이징.</p>
+<p>apps.py :<br>앱 정보 관리, 앱 진입시 로드할 기능 관리. 수정할 일이 거의 없음.</p>
+<p>models.py :<br>모델을 만들고 관리하는 부분<br>모델(Class)은 데이터베이스에 어떤 자료를 어떤 형식으로 저장할 것이냐는 것을 지정하는 것.<br>ORM : Object Relational Mapping : 데이터를 객체에 맵핑하는 것. 쿼리문을 ORM이 자동으로<br>사용하는 데이터베이스에 맞게 알아서 변경해줌.</p>
+<p>tests.py :<br>테스트 셋을 지정하는 파일 - TDD. 공부할 필요성은 있으나 필수는 아님</p>
+<p>views.py :<br>페이지나 기능을 코딩하는 파일</p>
+<ol>
+<li>매뉴얼적인 부분<br>1-1. 튜토리얼적인 부분</li>
+<li>관례적인 부분</li>
+<li>실무적인 부분</li>
+</ol>
+<h3 id="오류"><a href="#오류" class="headerlink" title="오류"></a>오류</h3><p>문법 오류 : 문법적 문제, 오타 80% -&gt; 해결볍 : 자동완성 사용<br>런타임 오류 : 실행시점 오류<br>논리 오류 : 수치를 0으로 나누는 경우. 회의에서 근거가 없는 경우</p>
+<h3 id="과제1"><a href="#과제1" class="headerlink" title="과제1"></a>과제1</h3><p>파이썬 가상 환경 모듈 설치<br>가상 환경 생성 명령어, 활성화, 비활성화 명령 정리 + 캡쳐</p>
+<h3 id="과제2"><a href="#과제2" class="headerlink" title="과제2"></a>과제2</h3><p>127.0.0.1 이란?<br>localhost란?</p>
+<h3 id="과제3"><a href="#과제3" class="headerlink" title="과제3"></a>과제3</h3><p>장고 튜토리얼</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sa77irak.github.io/2019/04/22/wps-django-day1-memo/" data-id="cjus605mc000t9t2ivu86i1kf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-wps-day31-memo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/17/wps-day31-memo/" class="article-date">
@@ -109,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/17/wps-day31-memo/" data-id="cjul28urm000pdc2ibo7tbzai" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/17/wps-day31-memo/" data-id="cjus605m8000n9t2ik7syzmmn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjul28urm000odc2ickvq5g55" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjus605m6000l9t2i77jnzrig" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day29-memo/" data-id="cjul28urk000mdc2i4ndrgd5j" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day29-memo/" data-id="cjus605m9000o9t2ikwtq4sgc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +383,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day28-memo/" data-id="cjul28urj000kdc2i6rppxod1" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day28-memo/" data-id="cjus605ma000q9t2iiw56codh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,7 +445,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day27-memo/" data-id="cjul28urk000ldc2i5fyh7d06" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day27-memo/" data-id="cjus605m7000m9t2i7f4l69d2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -419,7 +506,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day26-memo/" data-id="cjul28uri000jdc2iyp6e7ps7" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day26-memo/" data-id="cjus605m5000j9t2i8o7q4vod" class="article-share-link">Share</a>
       
       
     </footer>
@@ -509,7 +596,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjul28uri000idc2iown4l5pv" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjus605m3000h9t2iotp0sodi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -579,7 +666,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjul28urg000gdc2i7c8ywsuv" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjus605m4000i9t2iyvfxda5c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -657,119 +744,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day23-memo/" data-id="cjul28urs000wdc2i5iqa1a6y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-wps-day22-memo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/15/wps-day22-memo/" class="article-date">
-  <time datetime="2019-04-15T10:45:02.000Z" itemprop="datePublished">2019-04-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/wps-day22-memo/">wps_day22_memo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>day22</p>
-<p>CS/linux/</p>
-<p>network.md<br>security.md<br>는 다음에</p>
-<hr>
-<p>access.md<br>apt_tar.md<br>booting.md<br>filesystem.md<br>memory.md<br>top.md<br>user.md</p>
-<hr>
-<p>access.md<br><a href="https://eunguru.tistory.com/90" target="_blank" rel="noopener">https://eunguru.tistory.com/90</a></p>
-<p>mkdir linux_example<br>cd linux_example<br>touch test.txt<br>ls -l<br><em>touch:파일이 없다면 만들고 , 있다면 최종 수정 일짜 변환해줌
-</em>ln  –&gt;link의 약자 hard link: 같은 하드 디스크 안에만 가능<br>*ln -s –&gt;symbolic link: 달라도 가능<br>ln test.txt test2.txt<br>ls<br>ls -i<br>ls -s test.txt t<br>ls<br>ls -l<br>ls -i</p>
-<p>ls -F –&gt;색깔과 표시 보기</p>
-<p>file top_test</p>
-<p>file xxx.py</p>
-<hr>
-<p>vim test.c<br>cat test.c</p>
-<p>which gcc<br>sudo apt-get install gcc<br>gcc -c test.c<br>ls<br>file test.o<br>gcc -o test test.o<br>ls<br>./test<br>vim test.py<br>—–test.py————–<br>s=0<br>for i in range(1000000000):</p>
-<pre><code>s+=i
-</code></pre><hr>
-<p>cat test.py<br>python test.py</p>
-<hr>
-<p>ls - l test.txt<br>chmod 777 test.txt<br>ls -l test.txt</p>
-<p>chmod u+r test.txt –&gt;유저한테 read주기<br>ls -l test.txt</p>
-<p>chmod g+w test.txt–&gt;그룹한테 w주기<br>ls -l test.txt</p>
-<p>chmod o=rwx test.txt –&gt;other한테 다 주기</p>
-<hr>
-<p>SetUID(넘김 구글링해)</p>
-<p>SetGID(넘김 구글링해)</p>
-<p>sticky bit(존재 자체만 알기)</p>
-<p>chmod 1~</p>
-<hr>
-<p>apt_tar.md</p>
-<p>tar(tape archive~): 파일들을 묶어 놓는 것. 압축은 아님.기초 중에 기초 명령 외우기!</p>
-<p>which tar –&gt;tar이라는 명령어가 위치해 있는 폴더</p>
-<p>tar cvf test.tar (묶을 파일들 싹 나열)</p>
-<p>tar tvf test.tar –&gt;묶여 있는 내용 보기</p>
-<p>tar xvf test.tar –&gt;묶여 있는거 풀기</p>
-<p>tar cvzf test2.tar test.c test.o test.py test.txt test2.txt –&gt;묶고 압축까지 하기</p>
-<p>tar xvf test2.tar –&gt;지가 알아서 압출 유무 판단 후 푼다.</p>
-<p>gzip test.tar –&gt;압축 시킴. 그러면 test.tar.gz처럼 됨.</p>
-<p>gunzip test.tar.gz –&gt;하면 풀림.</p>
-<p>zcat test.tar.gz –&gt;묶여 있는 모든 파일 다 보여줌</p>
-<p>chmod 755 test.txt<br>sudo echo “I am your father” &gt;&gt; test.txt –&gt;이 문자열을 여기에 집어넣어라(redirection)<br>cat test.txt</p>
-<p>tar uvf test.tar test.txt </p>
-<p>cvf 만드는거<br>xvf 푸는거<br>tvf 내용 보는거<br>–&gt;3개 정도만 기억</p>
-<hr>
-<h2 id="booting-md-이론적인-것만-간략히"><a href="#booting-md-이론적인-것만-간략히" class="headerlink" title="booting.md 이론적인 것만 간략히"></a>booting.md 이론적인 것만 간략히</h2><p>filesystem.md - linux mount<br>개발자 기본. 간략히만 함</p>
-<p>mount<br>umount /dev/sdc1(선생님은 일케 써있었음)<br>mount(로 다시 확인해서 업는거 확인)</p>
-<p>sudo fdik -l</p>
-<p>sudo fdisk /dev/sdc</p>
-<p>mount -t vfat /dev/sdc1 /mnt</p>
-<p>add disk</p>
-<p>sudo mke2fs -t ext4 /dev/sdc1</p>
-<p>sudo mount /dev/sdc1 /mnt<br>cd /nt<br>ls<br>cd</p>
-<hr>
-<p>memory.md</p>
-<p>page cache<br>dirty page</p>
-<hr>
-<p>user.md</p>
-<p>cat /etc/passwd</p>
-<p>sudo service mysql status</p>
-<p>sudo useradd -m -d /home/john john<br>cd /home<br>cat /etc/passwd<br>sudo passwd john<br>sudo cat /etc/shadow</p>
-<p>id<br>su john<br>1234<br>id</p>
-<p>exit<br>id<br>sudo userdel -r john<br>sudo useradd -s /bin/bash -m -d /home/john john<br>sudo passwd john<br>1234<br>su john<br>1234<br>ls<br>cd<br>touch test.txt<br>ls -l test.txt<br>mkdir test_dir<br>ls<br>ls -l<br>cd test_dir<br>ls<br>touch test2.txt<br>ls<br>cd ..<br>ls -l<br>su greg<br>sudo chown greg test.txt<br>sudo chown :greg test.txt<br>ls -l<br>sudo groupadd wps10<br>cat /etc/group<br>sudo gpasswd -a greg wps10<br>cat /etc/group<br>sudo chown -R greg:wps10 test_dir<br>ls -l<br>cd test_dir<br>ls -l</p>
-<p>su john<br>id<br>su greg<br>sudo gpasswd wps10<br>su john<br>id<br>newgrp wps10<br>abcd<br>id<br>su greg<br>sudo groupdel wps10<br>cat /etc/group<br>sudo userdel -r john<br>cat /etc/passwp</p>
-<hr>
-<p>우분투 리눅스(책 추천,이종원)</p>
-<p>내일 네트워크<br>1.network - osi 7계층 <-> TCP/IP 4계층<br>                 IP -&gt; ARP<br>                 IP -&gt; NAT -&gt; NAPT</-></p>
-<pre><code>TCP(sliding winsow(중요))/UDP의 차이
-port의 개념
-
-TCP-threeway hand-shaking
-     -seq#, Ack# 는 어떤 의미
-</code></pre><p>모레..<br>2.socket programming<br> -&gt;echo server/client   –&gt;socket의미 TCP연결 의미 socket과 port의 상관관계</p>
-<p>3.HTTP</p>
-<p>금요일은 DB…<br>mariadb<br>표준 SQL</p>
-<hr>
-<p>stack으로 미로찾기<br>트리<br>트리 순회<br>BST<br>red black tree<br>b tree?<br>graph<br>minimal~<br>shortest path~벨만코드 다이스트라~</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day22-memo/" data-id="cjul28urg000fdc2izu6ad13a" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day23-memo/" data-id="cjus605mj000x9t2ikamm5qwh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -815,6 +790,10 @@ TCP-threeway hand-shaking
       <ul>
         
           <li>
+            <a href="/2019/04/22/wps-django-day1-memo/">wps_django_day1_memo</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/17/wps-day31-memo/">wps_day31_memo</a>
           </li>
         
@@ -828,10 +807,6 @@ TCP-threeway hand-shaking
         
           <li>
             <a href="/2019/04/15/wps-day28-memo/">wps_day28_memo</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/15/wps-day27-memo/">wps_day27_memo</a>
           </li>
         
       </ul>
