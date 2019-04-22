@@ -107,7 +107,7 @@
 </ol>
 <h1 id="가상환경-virtual-environment-줄여서-virtualenv"><a href="#가상환경-virtual-environment-줄여서-virtualenv" class="headerlink" title="가상환경(virtual environment, 줄여서 virtualenv)"></a>가상환경(virtual environment, 줄여서 virtualenv)</h1><p>작업하고 있는 프로젝트의 코드를 넣을 수 있는 일종의 전용 상자.<br>이를 이용해 서로 다른 프로젝트마다 코드가 섞이지 않도록 유지 가능.<br>개발 환경을 깔끔하게 관리.<br>생성할 곳만 정하면 이를 만들 수 있다.</p>
 <h1 id="장고걸스-누군가가-서버에-웹사이트를-요청하면-어떤일이-벌어지는지-요약"><a href="#장고걸스-누군가가-서버에-웹사이트를-요청하면-어떤일이-벌어지는지-요약" class="headerlink" title="(장고걸스) 누군가가 서버에 웹사이트를 요청하면 어떤일이 벌어지는지 요약."></a>(장고걸스) 누군가가 서버에 웹사이트를 요청하면 어떤일이 벌어지는지 요약.</h1><p>웹 서버에 요청이 오면 장고로 전달 됨.<br>장고 urlresolver는 웹 페이지의 주소를 가져와 무엇을 할지 확인.<br>urlresolver는 웹 사이트 주소인 URL를 통해 이해함.<br>장고는 패턴 목록을 가져와 URL과 맞는지 처음부터 하나씩 대조해 식별함.<br>만약 일치하는 패턴이 있다면 장고는 해당 요청을 관련됨 함수(view)에 넘김.<br>만약 데이터 수정 요청이 온다면 view함수는 수정할 수 있는 권한이 있는지 확인하고 나서 수정을 하고 답장을 주는데 장고는 그 답장을 사용자의 웹브라우저에 보내주는 역할을 함.</p>
-<h2 id="python3랑-python2랑-충돌해서-버츄얼-실행-안된-오류-해결"><a href="#python3랑-python2랑-충돌해서-버츄얼-실행-안된-오류-해결" class="headerlink" title="python3랑 python2랑 충돌해서 버츄얼 실행 안된 오류 해결"></a>python3랑 python2랑 충돌해서 버츄얼 실행 안된 오류 해결</h2><h1 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">작업 폴더를 만든다.</span><br><span class="line"></span><br><span class="line">pip 버전을 최신으로 업그레이드</span><br><span class="line">pip3 install virtualenv</span><br><span class="line">pip3</span><br><span class="line"></span><br><span class="line">(작업 폴더로 이동해) 가상환경 설치</span><br><span class="line">pip3 install virtualenv</span><br><span class="line"></span><br><span class="line">venv라는 가상환경 만듬(venv라는 디렉토리가 생기고 그 안에 디렉토리와 파일들 있음)</span><br><span class="line">python3 -m virtualenv venv</span><br><span class="line"></span><br><span class="line">venv 가동(새로운 python환경 생성 확인)</span><br><span class="line">source venv/bin/activate</span><br><span class="line"></span><br><span class="line">장고 설치</span><br><span class="line">pip install django</span><br><span class="line"></span><br><span class="line">장고 프로젝트 생성(프로젝트 이름 후 .을 입력하여 현재 디렉토리에 장고를 설치하라고 알려주기), 생성하면 해당 이름을 가진 디렉토리가 생성됨.</span><br><span class="line">django-admin startproject [프로젝트 이름] .</span><br></pre></td></tr></table></figure>
+<h2 id="python3랑-python2랑-충돌해서-버츄얼-실행-안된-오류-해결"><a href="#python3랑-python2랑-충돌해서-버츄얼-실행-안된-오류-해결" class="headerlink" title="python3랑 python2랑 충돌해서 버츄얼 실행 안된 오류 해결"></a>python3랑 python2랑 충돌해서 버츄얼 실행 안된 오류 해결</h2><h1 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">작업 폴더를 만든다.</span><br><span class="line"></span><br><span class="line">필요 시 pip 버전을 최신으로 업그레이드</span><br><span class="line">pip3</span><br><span class="line"></span><br><span class="line">(작업 폴더로 이동해) 가상환경 설치</span><br><span class="line">pip3 install virtualenv</span><br><span class="line"></span><br><span class="line">venv라는 가상환경 만듬(venv라는 디렉토리가 생기고 그 안에 디렉토리와 파일들 있음)</span><br><span class="line">python3 -m virtualenv venv</span><br><span class="line"></span><br><span class="line">venv 가동(새로운 python환경 생성 확인)</span><br><span class="line">source venv/bin/activate</span><br><span class="line"></span><br><span class="line">장고 설치</span><br><span class="line">pip install django</span><br><span class="line"></span><br><span class="line">장고 프로젝트 생성(프로젝트 이름 후 .을 입력하여 현재 디렉토리에 장고를 설치하라고 알려주기), 생성하면 해당 이름을 가진 디렉토리가 생성됨.</span><br><span class="line">django-admin startproject [프로젝트 이름] .</span><br></pre></td></tr></table></figure>
 <h3 id="django-admin-startproject-이름"><a href="#django-admin-startproject-이름" class="headerlink" title="django-admin startproject [이름]"></a>django-admin startproject [이름]</h3><p>django-admin: 장고 매니저<br>startproject: 프로젝트를 만들겠다라는 옵션<br>myside, config: 프로젝트 이름, 혹은 설정 폴더 이름<br>config.: 현재 디렉토리에 설정 디렉토리만 만들겠다는 의미</p>
 <h3 id="python-manage-py-명령어"><a href="#python-manage-py-명령어" class="headerlink" title="python manage.py [명령어]"></a>python manage.py [명령어]</h3><p>$ python manage.py runserver [ip]:[포트번호]<br>내 컴퓨터에서 임시로 홈페이지를 출력할 때 쓰는 명령<br>소스코드 변경이 자동으로 반영되나 폴더나 파일을 추가 생성한 경우는 자동반영이 불가.<br>포트번호 생략시 기본 8000<br>ip 생략시 기본 127.0.0.1</p>
 <h1 id="만들어지는-파일들에-대해"><a href="#만들어지는-파일들에-대해" class="headerlink" title="만들어지는 파일들에 대해"></a>만들어지는 파일들에 대해</h1><p>venv 디렉토리:<br>가상환경 생성시 만들어지는 디렉토리</p>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/22/wps-django-day1-memo/" data-id="cjus666dv000wlx2itwf62mgi" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/22/wps-django-day1-memo/" data-id="cjus6cx39000wzj2ie00zcv9g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/17/wps-day31-memo/" data-id="cjus666dr000plx2ikg2yvrjo" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/17/wps-day31-memo/" data-id="cjus6cx34000pzj2i0gzbzrkk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjus666dq000olx2i5vnbvfeh" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day30-memo/" data-id="cjus6cx33000nzj2i8sl06l15" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day29-memo/" data-id="cjus666dp000mlx2ieclk14ah" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day29-memo/" data-id="cjus6cx32000lzj2iiykuor70" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +377,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day28-memo/" data-id="cjus666dp000llx2infe0057p" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day28-memo/" data-id="cjus6cx34000ozj2ipqli1nsl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,7 +439,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day27-memo/" data-id="cjus666do000klx2if3zdjp5l" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day27-memo/" data-id="cjus6cx32000kzj2i8kezt8v4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -500,7 +500,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day26-memo/" data-id="cjus666do000jlx2i9ieo1dbi" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day26-memo/" data-id="cjus6cx31000jzj2ioa6h1ev2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -590,7 +590,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjus666dn000ilx2it8vn0s1b" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day25-memo/" data-id="cjus6cx31000izj2ijcgvc6jx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -660,7 +660,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjus666dn000hlx2ijs3w92v6" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day24-memo/" data-id="cjus6cx2z000gzj2inzvpmibb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -738,7 +738,7 @@ git/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day23-memo/" data-id="cjus666dz000xlx2i0ul6d3af" class="article-share-link">Share</a>
+      <a data-url="http://sa77irak.github.io/2019/04/15/wps-day23-memo/" data-id="cjus6cx3e000xzj2i5spck7ie" class="article-share-link">Share</a>
       
       
     </footer>
